@@ -37,12 +37,21 @@ YEAR_CONFIGS = {
     },
 }
 
+TITLE_MATCH_OVERRIDES = {
+    "Automatically Admit Top Students to SUNY and CUNY Campuses": "Automatically Admit High Achieving Students from Top 10 Percent of High School Classes to SUNY and CUNY Campuses",
+}
+
 HEADER_PATTERNS = (
     re.compile(r"^\d{4}\s+STATE OF THE STATE$", re.IGNORECASE),
     re.compile(r"^STATE OF THE STATE$", re.IGNORECASE),
     re.compile(r"^Governor Kathy Hochul$", re.IGNORECASE),
     re.compile(r"^January\s+\d{4}$", re.IGNORECASE),
 )
+
+STOPWORDS = {
+    "the", "and", "for", "to", "of", "in", "on", "our", "new", "york", "state",
+    "a", "an", "by", "with", "from", "more", "through", "access", "support",
+}
 
 
 def normalize_space(text):
@@ -82,6 +91,11 @@ def looks_like_heading(text):
         return False
     capitalized = sum(1 for word in words if word[:1].isupper() or word.isupper())
     return capitalized >= max(2, int(len(words) * 0.7))
+
+
+def tokenize(text):
+    words = re.findall(r"[a-z0-9]+", normalize_quotes(text).lower())
+    return {w for w in words if len(w) > 2 and w not in STOPWORDS}
 
 
 def normalize_for_match(text):
@@ -133,6 +147,28 @@ def page_blocks(pdf_path, body_start):
             if text_block:
                 blocks.append({"page": page_number, "text": text_block, "match": normalize_for_match(text_block), "is_heading": looks_like_heading(text_block)})
     return blocks
+
+
+def raw_lines(pdf_path, body_start):
+    text = subprocess.check_output(
+        ["pdftotext", "-f", str(body_start), "-raw", str(pdf_path), "-"],
+        text=True,
+        errors="ignore",
+    )
+    lines = []
+    for page_offset, page_text in enumerate(text.split("\f")):
+        page_number = body_start + page_offset
+        for raw in page_text.splitlines():
+            line = normalize_quotes(raw.rstrip())
+            collapsed = normalize_space(line)
+            if not collapsed:
+                continue
+            if re.fullmatch(r"\d+", collapsed):
+                continue
+            if any(pattern.match(collapsed) for pattern in HEADER_PATTERNS):
+                continue
+            lines.append({"page": page_number, "text": collapsed, "match": normalize_for_match(collapsed)})
+    return lines
 
 
 def read_rows(path):
@@ -206,6 +242,79 @@ def attach_text(rows, blocks):
     return rows
 
 
+def fallback_attach_missing(rows, lines):
+    title_norms = [normalize_for_match(row["proposal_title"]) for row in rows]
+    for row_index, row in enumerate(rows):
+        if row["text_capture_confidence"]:
+            continue
+        title_norm = title_norms[row_index]
+        start_idx = None
+        override_norm = normalize_for_match(TITLE_MATCH_OVERRIDES.get(row["proposal_title"], ""))
+        for idx, line in enumerate(lines):
+            joined_match = line["match"]
+            if idx + 1 < len(lines) and lines[idx + 1]["page"] == line["page"]:
+                joined_match = normalize_for_match(f"{line['text']} {lines[idx + 1]['text']}")
+            if (
+                line["match"] == title_norm
+                or (override_norm and line["match"] == override_norm)
+                or joined_match == title_norm
+                or (override_norm and joined_match == override_norm)
+            ):
+                start_idx = idx
+                break
+        if start_idx is None:
+            title_tokens = tokenize(row["proposal_title"])
+            best_idx = None
+            best_score = 0.0
+            for idx, line in enumerate(lines):
+                line_text = line["text"]
+                if idx + 1 < len(lines) and lines[idx + 1]["page"] == line["page"]:
+                    line_text = f"{line_text} {lines[idx + 1]['text']}"
+                if len(line_text) > 180 or not looks_like_heading(line_text):
+                    continue
+                line_tokens = tokenize(line_text)
+                if not line_tokens:
+                    continue
+                score = len(title_tokens & line_tokens) / len(title_tokens | line_tokens)
+                if score > best_score:
+                    best_score = score
+                    best_idx = idx
+            if best_score >= 0.4:
+                start_idx = best_idx
+        if start_idx is None:
+            continue
+
+        next_title_indices = []
+        for later_title in title_norms[row_index + 1 : row_index + 25]:
+            for idx in range(start_idx + 1, len(lines)):
+                if lines[idx]["match"] == later_title:
+                    next_title_indices.append(idx)
+                    break
+        end_idx = min(next_title_indices) if next_title_indices else len(lines)
+
+        collected = []
+        start_page = lines[start_idx]["page"]
+        end_page = start_page
+        for idx in range(start_idx + 1, end_idx):
+            line = lines[idx]
+            if looks_like_heading(line["text"]) and idx > start_idx + 1:
+                break
+            collected.append(line["text"])
+            end_page = line["page"]
+
+        if not collected:
+            continue
+
+        paragraph = normalize_space(" ".join(collected))
+        if len(paragraph) < 80:
+            continue
+        row["commitment_text"] = paragraph
+        row["source_page"] = str(start_page)
+        row["source_page_end"] = str(end_page)
+        row["text_capture_confidence"] = "medium"
+    return rows
+
+
 def ensure_columns(rows):
     for row in rows:
         row.setdefault("commitment_text", "")
@@ -220,6 +329,7 @@ def main():
         ensure_columns(rows)
         blocks = page_blocks(config["pdf"], config["body_start"])
         attach_text(rows, blocks)
+        fallback_attach_missing(rows, raw_lines(config["pdf"], config["body_start"]))
         write_rows(config["inventory"], rows)
 
         total = len(rows)

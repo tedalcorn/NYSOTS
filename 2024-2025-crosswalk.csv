@@ -48,7 +48,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2025-047,Secure Additional Funding for Law Enforcement Technology,unclear,new,,,
 2025-048,Establish a Mass Violence Crisis Response Team,mental_health_insurance,continuation,2024-011,Provide Crisis Intervention Team Training for Law Enforcement,"theme=mental_health_insurance; shared_terms=crisis, team"
 2025-049,"Protecting Pedestrians, Workers, Drivers, and Cyclists",unclear,continuation,2024-152,Protect New York's Workers,theme=unclear; shared_terms=workers
-2025-050,Enhance Safety for Work Zones and Transportation Workers,mta_service_and_finance,continuation,2024-238,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=
+2025-050,Enhance Safety for Work Zones and Transportation Workers,mta_service_and_finance,continuation,2024-237,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=
 2025-051,Strengthen Drugged Driving Laws,unclear,new,,,
 2025-052,Improve Safety at New York City's Elementary School Intersections,unclear,follow_on,2024-149,Expand State Apprenticeships to Youth and Public Service Workers,theme=unclear; shared_terms=
 2025-053,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,unclear,new,,,
@@ -68,7 +68,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2025-067,Supporting Agriculture,food_access_agriculture,continuation,2024-228,Innovate in Agriculture,theme=food_access_agriculture; shared_terms=agriculture
 2025-068,Enhance Local Food Supply Chains,food_access_agriculture,continuation,2024-230,Launch New York's Blue Food Transformation,theme=food_access_agriculture; shared_terms=food
 2025-069,Position New York as a Regional Leader in Fiber Production,unclear,new,,,
-2025-070,Launch a Maple Industry Growth Strategy,unclear,continuation,2024-147,Promote Economic Growth Through Investment in the Arts,theme=unclear; shared_terms=growth
+2025-070,Launch a Maple Industry Growth Strategy,unclear,new,,,
 2025-071,Expand Agriculture Education in the New York Schools,food_access_agriculture,expansion,2024-228,Innovate in Agriculture,theme=food_access_agriculture; shared_terms=agriculture
 2025-072,Advance the Sustainability of New York's Dairy Industry,unclear,continuation,2024-155,Protect Outdoor Workers from Extreme Weather Hazards,theme=unclear; shared_terms=
 2025-073,Facilitate Advanced Injury Detection for Thoroughbred Racing,unclear,new,,,
@@ -86,10 +86,10 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2025-085,Expand Access to Medical Care in the Workers' Compensation System,unclear,expansion,2024-153,Create and Distribute a Youth Workers Bill of Rights,theme=unclear; shared_terms=workers
 2025-086,Convene the Empire State Freedom Initiative,government_operations_general,new,,,
 2025-087,Expand Alternative Project Delivery Methods,government_operations_general,new,,,
-2025-088,Increase Opportunities for Minority- and Women-Owned Business Enterprises in State Procurement,mta_service_and_finance,expansion,2024-238,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=
+2025-088,Increase Opportunities for Minority- and Women-Owned Business Enterprises in State Procurement,mta_service_and_finance,expansion,2024-237,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=
 2025-089,Engage the Dormitory Authority to Speed Municipal Projects,government_operations_general,new,,,
 2025-090,Expand Pre-Qualified List Authority,government_operations_general,new,,,
-2025-091,Streamline Utility Relocations for Metropolitan Transportation Authority,mta_service_and_finance,continuation,2024-238,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=
+2025-091,Streamline Utility Relocations for Metropolitan Transportation Authority,mta_service_and_finance,continuation,2024-237,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=
 2025-092,Digitize Youth Working Papers,government_operations_general,continuation,2024-222,Remove Educational Barriers to Employment in State Government,theme=government_operations_general; shared_terms=
 2025-093,Improve Tracking and Transparency for State Assets and Capital Projects,government_operations_general,new,,,
 2025-094,Create a State Office of Innovation and Efficiency,government_operations_general,new,,,
@@ -117,15 +117,15 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2025-116,Expand Affordable Farmworker Housing,aging_long_term_care,expansion,2024-162,Improve Access and Transparency for Assisted Living Residences,theme=aging_long_term_care; shared_terms=
 2025-117,Ban Collusion Using of Algorithm-Enabled Rent Price Fixing,unclear,continuation,2024-141,Transform Blighted Communities,theme=unclear; shared_terms=
 2025-118,Reduce Shelter Rent Taxes for Mitchell-Lama Residents,unclear,continuation,2024-141,Transform Blighted Communities,theme=unclear; shared_terms=
-2025-119,Expand Capital to Maintain and Improve Supportive Housing,mental_health_supportive_housing,expansion,2024-010,Fund Specialized Housing for People with Serious Mental Illness and Criminal History,theme=mental_health_supportive_housing; shared_terms=housing
-2025-120,Increase Funding for Supportive Housing,mental_health_supportive_housing,expansion,2024-022,Expand Insurance Coverage and Hold Insurers Accountable,theme=mental_health_supportive_housing; shared_terms=
+2025-119,Expand Capital to Maintain and Improve Supportive Housing,mental_health_supportive_housing,expansion,2024-007,Increase Transitional Housing for Individuals Referred Through Court System,theme=mental_health_supportive_housing; shared_terms=housing
+2025-120,Increase Funding for Supportive Housing,mental_health_supportive_housing,expansion,2024-007,Increase Transitional Housing for Individuals Referred Through Court System,theme=mental_health_supportive_housing; shared_terms=housing
 2025-121,Extend Security Deposit Protections to Rent-Regulated Tenants,unclear,continuation,2024-141,Transform Blighted Communities,theme=unclear; shared_terms=
 2025-122,Help Affordable Housing Access Captive Insurance to Lower Costs,unclear,continuation,2024-141,Transform Blighted Communities,theme=unclear; shared_terms=
-2025-123,Make the Biggest Capital Investment in New York's Transportation History,mta_service_and_finance,continuation,2024-238,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=
-2025-124,Advance Second Avenue Subway and Other Major Transit Improvements,mta_service_and_finance,continuation,2024-238,Make it Possible to Extend the Second Avenue Subway West,"theme=mta_service_and_finance; shared_terms=avenue, second, subway"
-2025-125,Enhance Subway Safety with Expanded Security and Outreach Measures,mta_service_and_finance,continuation,2024-238,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=subway
+2025-123,Make the Biggest Capital Investment in New York's Transportation History,mta_service_and_finance,continuation,2024-237,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=
+2025-124,Advance Second Avenue Subway and Other Major Transit Improvements,mta_service_and_finance,continuation,2024-237,Make it Possible to Extend the Second Avenue Subway West,"theme=mta_service_and_finance; shared_terms=avenue, second, subway"
+2025-125,Enhance Subway Safety with Expanded Security and Outreach Measures,mta_service_and_finance,continuation,2024-237,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=subway
 2025-126,Invest in New York Roads and Statewide Transit,unclear,new,,,
-2025-127,"Modernize Rail Service for Faster, More Reliable Travel",mta_service_and_finance,follow_on,2024-238,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=
+2025-127,"Modernize Rail Service for Faster, More Reliable Travel",mta_service_and_finance,follow_on,2024-237,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=
 2025-128,Reconnect Communities in Albany and the Bronx,unclear,continuation,2024-141,Transform Blighted Communities,theme=unclear; shared_terms=communities
 2025-129,Fight Back Against Algorithmic Price Discrimination,unclear,new,,,
 2025-130,Standardize Returns and Refunds,unclear,new,,,
@@ -133,7 +133,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2025-132,Strengthen Subscription Cancellation and Renewal Protections,unclear,new,,,
 2025-133,Bolster Protections Against Overdraft and Non-Sufficient Funds Fees,unclear,continuation,2024-148,Bolster Workforce Development,theme=unclear; shared_terms=bolster
 2025-134,Hold Energy Service Companies Accountable for Revenue Return,unclear,continuation,2024-155,Protect Outdoor Workers from Extreme Weather Hazards,theme=unclear; shared_terms=
-2025-135,Combat Elder Financial Exploitation,aging_long_term_care,continuation,2024-236,Combat Elder Financial Exploitation,"theme=aging_long_term_care; shared_terms=combat, elder, exploitation, financial"
+2025-135,Combat Elder Financial Exploitation,aging_long_term_care,continuation,2024-235,Combat Elder Financial Exploitation,"theme=aging_long_term_care; shared_terms=combat, elder, exploitation, financial"
 2025-136,Trafficking,unclear,new,,,
 2025-137,Require Access to Trained Forensic Medical Examiners at All Hospitals,unclear,continuation,2024-146,Require Paid Breaks for Breast Milk Expression in the Workplace,theme=unclear; shared_terms=require
 2025-138,Increase Funding for Rape Crisis Programs,unclear,new,,,

@@ -197,6 +197,12 @@ def clean_later_year_rows(rows, year):
         "Connecting Higher Education and Opportunity",
         "Strengthening Our Supports",
         "Building a More Inclusive State",
+        "Protect Vulnerable Populations from Cyber Crime",
+        "Protecting Renters and Rent-Stabilized Housing",
+        "Building More Housing",
+        "Promoting Youth Mental Health",
+        "Improving Healthcare Coverage, Access, and Affordability",
+        "Improving Equity in Public Health",
     }
     for row in rows:
         title = normalize_whitespace(row["proposal_title"])

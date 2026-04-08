@@ -5,7 +5,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2024-004,Improve Mental Health Admission and Discharge Decisions by Hospitals,psychiatric_capacity,new,,,
 2024-005,Create New Mental Health Courts and Expand Existing Courts,mental_health_general,expansion,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
 2024-006,Fund Court-Based Mental Health Navigators,mental_health_general,new,,,
-2024-007,Increase Transitional Housing for Individuals Referred Through Court System,mental_health_general,new,,,
+2024-007,Increase Transitional Housing for Individuals Referred Through Court System,mental_health_supportive_housing,expansion,2023-022,"Create 3,500 New Housing Units for Individuals with Mental Illness","theme=mental_health_supportive_housing; shared_terms=housing, individuals"
 2024-008,Fund New Community-Based Mental Health Teams,mental_health_supportive_housing,continuation,2023-044,Expand Medicaid Coverage of Preventative Health Services,theme=mental_health_supportive_housing; shared_terms=health
 2024-009,Provide More Intensive Supervision of Individuals on Parole,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
 2024-010,Fund Specialized Housing for People with Serious Mental Illness and Criminal History,mental_health_supportive_housing,continuation,2023-022,"Create 3,500 New Housing Units for Individuals with Mental Illness","theme=mental_health_supportive_housing; shared_terms=housing, illness, mental"
@@ -145,7 +145,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2024-144,Help Small Businesses Navigate Environmental Regulations,recycling_waste,new,,,
 2024-145,Create New Avenues for Immigrant Entrepreneurs,college_workforce_pathways,continuation,2023-070,Create New Early College High School and P-TECH Programs,theme=college_workforce_pathways; shared_terms=
 2024-146,Require Paid Breaks for Breast Milk Expression in the Workplace,unclear,new,,,
-2024-147,Promote Economic Growth Through Investment in the Arts,unclear,new,,,
+2024-147,Promote Economic Growth Through Investment in the Arts,economic_development_general,continuation,2023-082,Establish Minority and Women’s Business Enterprises Certification Reciprocity,theme=economic_development_general; shared_terms=
 2024-148,Bolster Workforce Development,unclear,new,,,
 2024-149,Expand State Apprenticeships to Youth and Public Service Workers,unclear,new,,,
 2024-150,Establish an Office of Workforce Data and Research,unclear,new,,,
@@ -210,7 +210,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2024-209,Strengthen LGBTQ+ Cultural Competency,equity_general,new,,,
 2024-210,Increase Chief Diversity Officers Across State Agencies,equity_general,new,,,
 2024-211,Improve Access to Benefits and Services,government_operations_general,follow_on,2023-132,"Improve the Client Experience of Food Benefits for Women, Infants and Children",theme=government_operations_general; shared_terms=benefits
-2024-212,Use Data-Matching to Identify WIC-Eligible Families,government_operations_general,continuation,2023-132,"Improve the Client Experience of Food Benefits for Women, Infants and Children",theme=government_operations_general; shared_terms=
+2024-212,Use Data-Matching to Identify WIC-Eligible Families,medicaid_coverage,continuation,2023-045,Expand the Medicaid Buy-In Program for New Yorkers with Disabilities,theme=medicaid_coverage; shared_terms=
 2024-213,Launch Modern Housing Search System,veterans_services,new,,,
 2024-214,Pilot Language Access Certification Program,government_operations_general,new,,,
 2024-215,Expedite Processing Times for Services,digital_government,continuation,2023-135,Lower Call Wait Times and Reduce Reliance on Phone Calls,theme=digital_government; shared_terms=times
@@ -232,15 +232,14 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2024-231,Build Cyber Resilience,cyber_emergency_response,continuation,2023-037,Counter Cyber Threats,theme=cyber_emergency_response; shared_terms=cyber
 2024-232,Grow the New York State Joint Security Operations Center,cyber_emergency_response,new,,,
 2024-233,Expand Cybersecurity Shared Services,state_police_capacity,expansion,2023-027,Launch an Unprecedented Four New State Police Academy Classes,theme=state_police_capacity; shared_terms=
-2024-234,Protect Vulnerable Populations from Cyber Crime,cyber_emergency_response,continuation,2023-037,Counter Cyber Threats,theme=cyber_emergency_response; shared_terms=cyber
-2024-235,Safeguard Teens from Online Sexual Exploitation,cyber_emergency_response,continuation,2023-037,Counter Cyber Threats,theme=cyber_emergency_response; shared_terms=
-2024-236,Combat Elder Financial Exploitation,aging_long_term_care,continuation,2023-058,Make Energy More Affordable,theme=aging_long_term_care; shared_terms=
-2024-237,Invest in Infrastructure,transportation_general,new,,,
-2024-238,Make it Possible to Extend the Second Avenue Subway West,mta_service_and_finance,continuation,2023-119,Secure the MTA’s Future,theme=mta_service_and_finance; shared_terms=
-2024-239,Move the Interborough Express Forward,mta_service_and_finance,continuation,2023-121,Move Forward on Light Rail Option for the Interborough Express,"theme=mta_service_and_finance; shared_terms=express, forward, interborough, move"
-2024-240,Break Ground on New York's Largest Solar Carport,transportation_general,new,,,
-2024-241,Connect Local Residents to Good Jobs on MTA Projects,mta_service_and_finance,continuation,2023-119,Secure the MTA’s Future,theme=mta_service_and_finance; shared_terms=mta
-2024-242,Launch “Infrastructure Hub” to Simplify Access to Funding Opportunities,water_quality,continuation,2023-063,Invest in Critical Water Quality Infrastructure,theme=water_quality; shared_terms=infrastructure
-2024-243,Getting Around Safely and Equitably,transportation_general,new,,,
-2024-244,Pass Sammy's Law to Save Lives,college_workforce_pathways,continuation,2023-070,Create New Early College High School and P-TECH Programs,theme=college_workforce_pathways; shared_terms=
-2024-245,Improve Enforcement of Toll Violators and Implement a Balanced Approach to Fare Evasion,mta_service_and_finance,follow_on,2023-119,Secure the MTA’s Future,theme=mta_service_and_finance; shared_terms=
+2024-234,Safeguard Teens from Online Sexual Exploitation,cyber_emergency_response,continuation,2023-037,Counter Cyber Threats,theme=cyber_emergency_response; shared_terms=
+2024-235,Combat Elder Financial Exploitation,aging_long_term_care,continuation,2023-058,Make Energy More Affordable,theme=aging_long_term_care; shared_terms=
+2024-236,Invest in Infrastructure,transportation_general,new,,,
+2024-237,Make it Possible to Extend the Second Avenue Subway West,mta_service_and_finance,continuation,2023-119,Secure the MTA’s Future,theme=mta_service_and_finance; shared_terms=
+2024-238,Move the Interborough Express Forward,mta_service_and_finance,continuation,2023-121,Move Forward on Light Rail Option for the Interborough Express,"theme=mta_service_and_finance; shared_terms=express, forward, interborough, move"
+2024-239,Break Ground on New York's Largest Solar Carport,transportation_general,new,,,
+2024-240,Connect Local Residents to Good Jobs on MTA Projects,mta_service_and_finance,continuation,2023-119,Secure the MTA’s Future,theme=mta_service_and_finance; shared_terms=mta
+2024-241,Launch “Infrastructure Hub” to Simplify Access to Funding Opportunities,water_quality,continuation,2023-063,Invest in Critical Water Quality Infrastructure,theme=water_quality; shared_terms=infrastructure
+2024-242,Getting Around Safely and Equitably,transportation_general,new,,,
+2024-243,Pass Sammy's Law to Save Lives,college_workforce_pathways,continuation,2023-070,Create New Early College High School and P-TECH Programs,theme=college_workforce_pathways; shared_terms=
+2024-244,Improve Enforcement of Toll Violators and Implement a Balanced Approach to Fare Evasion,mta_service_and_finance,follow_on,2023-119,Secure the MTA’s Future,theme=mta_service_and_finance; shared_terms=

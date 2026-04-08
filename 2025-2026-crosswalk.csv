@@ -24,178 +24,173 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2026-023,Expanding Automatic Discounts for Commercial Multifamily Properties,unclear,continuation,2025-115,Empower Communities to Redevelop Vacant Properties into Housing,theme=unclear; shared_terms=properties
 2026-024,Increasing Transparency for Policyholders in the Home Insurance Market,unclear,continuation,2025-108,Strengthen Laws and Policies to Combat Home Appraisal Discrimination,theme=unclear; shared_terms=home
 2026-025,Convening Stakeholders to Bring Down Home and Property Insurance Costs,unclear,continuation,2025-122,Help Affordable Housing Access Captive Insurance to Lower Costs,"theme=unclear; shared_terms=costs, insurance"
-2026-026,Protecting Renters and Rent-Stabilized Housing,unclear,continuation,2025-113,Double New York State Low Income Housing Credits,theme=unclear; shared_terms=housing
-2026-027,Enhancing Penalties to Protect Rent-Regulated Tenants from Pervasive Harassment,unclear,continuation,2025-121,Extend Security Deposit Protections to Rent-Regulated Tenants,"theme=unclear; shared_terms=regulated, rent, tenants"
-2026-028,Reforming J-51 to Preserve More Rent-Regulated Housing,unclear,continuation,2025-121,Extend Security Deposit Protections to Rent-Regulated Tenants,"theme=unclear; shared_terms=regulated, rent"
-2026-029,Expanding a Critical Rent Freeze Program for Seniors and People with Disabilities,disability_inclusion,new,,,
-2026-030,Tackling Utility Costs,unclear,continuation,2025-122,Help Affordable Housing Access Captive Insurance to Lower Costs,theme=unclear; shared_terms=costs
-2026-031,Improving Fairness for Ratepayers Through Affordable Utilities Omnibus Legislation,unclear,continuation,2025-056,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,theme=unclear; shared_terms=
-2026-032,Revitalizing EmPower+ to Upgrade Homes,unclear,continuation,2025-056,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,theme=unclear; shared_terms=
-2026-033,Excelsior Power: Cheaper Utility Bills for a More Flexible and Affordable Grid,unclear,continuation,2025-056,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,theme=unclear; shared_terms=
-2026-034,Increasing Uptake of Energy Assistance Programs,unclear,continuation,2025-057,Build Clean Energy Zones,theme=unclear; shared_terms=energy
-2026-035,Requiring Data Centers to Pay Their Fair Share and Streamlining Interconnections for Job-Creating Businesses,unclear,continuation,2025-056,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,theme=unclear; shared_terms=
-2026-036,Protecting Tenants from Unfair Utility Shutoffs,unclear,continuation,2025-028,Get More Kids Swimming and Prevent Child Drowning,theme=unclear; shared_terms=
-2026-037,Mitigating Energy Cost Burden,unclear,continuation,2025-057,Build Clean Energy Zones,theme=unclear; shared_terms=energy
-2026-038,Modernizing Utility Regulation to Protect Consumers,unclear,new,,,
-2026-039,Helping Put Food on the Table,unclear,new,,,
-2026-040,Investing in Food Banks and Pantries,unclear,new,,,
-2026-041,Investing in New York PLATES,unclear,new,,,
-2026-042,Slashing Food Benefits Theft with Modern EBT Cards,unclear,continuation,2025-082,Expand Enforcement Power Following an Unpaid Wage Theft Judgment,theme=unclear; shared_terms=theft
-2026-043,Promoting SNAP to Students and Families,unclear,continuation,2025-015,Provide Universal School Meals,theme=unclear; shared_terms=
-2026-044,Expanding Free Summer Meal Sites,unclear,continuation,2025-017,Boost Literacy with Free Books from Dolly Parton's Imagination Library,theme=unclear; shared_terms=free
-2026-045,Supporting Rural Summer Meals,food_access_agriculture,continuation,2025-067,Supporting Agriculture,theme=food_access_agriculture; shared_terms=supporting
-2026-046,Promoting Summer EBT Across Agencies,digital_government,new,,,
-2026-047,Stopping Illegal Homegrown Guns,unclear,new,,,
-2026-048,Cracking Down on 3D-Printed Firearms,gun_violence,new,,,
-2026-049,Taking Aim at DIY Machine Guns,unclear,new,,,
-2026-050,Protecting Our Neighbors' Rights,unclear,continuation,2025-049,"Protecting Pedestrians, Workers, Drivers, and Cyclists",theme=unclear; shared_terms=protecting
-2026-051,Establishing a Right to Sue Federal Officers for Constitutional Violations,unclear,continuation,2025-003,Fight for Federal Tax Relief,theme=unclear; shared_terms=federal
-2026-052,Protecting New Yorkers in Sensitive Locations,child_care_access,continuation,2025-002,Vastly Expand New York's Child Tax Credit,theme=child_care_access; shared_terms=
-2026-053,Protecting Safe Access to Worship and Healthcare,unclear,continuation,2025-037,Support Safe and Vibrant Communities,theme=unclear; shared_terms=safe
-2026-054,Safeguarding Our Roads,unclear,continuation,2025-126,Invest in New York Roads and Statewide Transit,theme=unclear; shared_terms=roads
-2026-055,Launching the Next Phase of the Autonomous Vehicle Pilot Program,state_police_capacity,continuation,2025-034,Strengthen the State's Response Against Transnational Criminal Networks,theme=state_police_capacity; shared_terms=
-2026-056,Stopping New York City's Super Speeders through Intelligent Speed Assistance,street_safety,new,,,
-2026-057,Ensuring Safety First in Work Zones,unclear,continuation,2025-053,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,theme=unclear; shared_terms=
-2026-058,Strengthening Motorcycle Licensing Standards for New and Inexperienced Riders,unclear,continuation,2025-053,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,theme=unclear; shared_terms=
-2026-059,Prioritizing Safety on the Subway,unclear,continuation,2025-052,Improve Safety at New York City's Elementary School Intersections,theme=unclear; shared_terms=safety
-2026-060,Sustaining Record Lows in Subway Crime by Putting Police on Platforms,unclear,continuation,2025-039,Ensure Child Victims of Crime Are Maximally Supported,theme=unclear; shared_terms=crime
-2026-061,Expanding SCOUT Teams in the Subway System,mental_health_supportive_housing,continuation,2025-147,Expand Intensive and Sustained Engagement Teams,theme=mental_health_supportive_housing; shared_terms=teams
-2026-062,Protecting Riders with Platform Edge Barriers,unclear,continuation,2025-053,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,theme=unclear; shared_terms=
-2026-063,Combating Crime and Ensuring Justice,unclear,continuation,2025-037,Support Safe and Vibrant Communities,theme=unclear; shared_terms=
-2026-064,Expanding Crime Analysis Centers Statewide,unclear,continuation,2025-139,Expand Statewide Targeted Reductions in Intimate Partner Violence,theme=unclear; shared_terms=statewide
-2026-065,Solving Crimes by Investing in Crime Labs,unclear,continuation,2025-037,Support Safe and Vibrant Communities,theme=unclear; shared_terms=
-2026-066,Improving Police Training Academies,unclear,continuation,2025-076,Facilitate New Training Pathways into High-Demand Occupations,theme=unclear; shared_terms=training
-2026-067,Supporting State Police after Critical Incidents,state_police_capacity,new,,,
-2026-068,Extending Orders of Protection,unclear,new,,,
-2026-069,Supporting At-Risk and Survivor-Led Victim Assistance Programs,unclear,continuation,2025-041,Supporting our First Responders,theme=unclear; shared_terms=supporting
-2026-070,Streamlining and Promoting Access to Victim Compensation,unclear,continuation,2025-038,Expand Victim Support Services to Protect Vulnerable Populations,theme=unclear; shared_terms=victim
-2026-071,Reforming Sexual Offense Evidence Collection Kit Procedures,unclear,continuation,2025-030,Outlaw Artificial Intelligence-Generated Child Sexual Abuse Material,theme=unclear; shared_terms=sexual
-2026-072,Streamlining Justice by Reducing Costs and Delays in Grand Jury Proceedings,state_police_capacity,new,,,
-2026-073,Improving Emergency and Disaster Response,unclear,new,,,
-2026-074,Enhancing Readiness for Mass Violence Events,unclear,continuation,2025-025,Invest in Playgrounds,theme=unclear; shared_terms=
-2026-075,Strengthening Statewide Urban Search and Rescue Capacity,cyber_emergency_response,continuation,2025-100,Bolster the Security of Networks Statewide,theme=cyber_emergency_response; shared_terms=statewide
-2026-076,Partnering with Canada to Strengthen Disaster Response,cyber_emergency_response,new,,,
-2026-077,Developing a Comprehensive Plan for Drones,state_police_capacity,continuation,2025-034,Strengthen the State's Response Against Transnational Criminal Networks,theme=state_police_capacity; shared_terms=
-2026-078,Supporting First Responders' Behavioral Health Needs,college_workforce_pathways,continuation,2025-042,Launch First Responder Counseling Scholarship Program,theme=college_workforce_pathways; shared_terms=first
-2026-079,Building More Housing,unclear,continuation,2025-113,Double New York State Low Income Housing Credits,theme=unclear; shared_terms=housing
-2026-080,Investing an Additional $250 Million to Accelerate Affordable Housing,mental_health_supportive_housing,expansion,2025-119,Expand Capital to Maintain and Improve Supportive Housing,theme=mental_health_supportive_housing; shared_terms=housing
-2026-081,Embracing Innovative Approaches to Build Homes More Quickly and at Lower Costs,aging_long_term_care,new,,,
-2026-082,Expanding the Number of Land Banks Permitted,unclear,continuation,2025-114,Unlock Historic Tax Credits by Decoupling and Expanding Eligibility,theme=unclear; shared_terms=expanding
-2026-083,Creating the Manufactured Homes Park Improvement Revolving Loan Fund,unclear,continuation,2025-112,Launch New York State's First Mixed-Income Revolving Loan Fund,"theme=unclear; shared_terms=fund, loan, revolving"
-2026-084,Delivering Clean and Safe Water,aging_long_term_care,continuation,2025-104,Provide Starter Home Innovation Funding,theme=aging_long_term_care; shared_terms=
-2026-085,Tapping Into Growth: Expanding Water Resources to Unlock New Housing Development,housing_supply,continuation,2025-109,Create a Pro-Housing Supply Infrastructure Fund,theme=housing_supply; shared_terms=housing
-2026-086,Addressing Contamination from Landfills to Protect Water Quality,recycling_waste,continuation,2025-095,Embrace a Circular Economy at the Empire State Plaza,theme=recycling_waste; shared_terms=
-2026-087,Getting the Lead Out,unclear,continuation,2025-028,Get More Kids Swimming and Prevent Child Drowning,theme=unclear; shared_terms=
-2026-088,Upgrading Our Parks,unclear,continuation,2025-028,Get More Kids Swimming and Prevent Child Drowning,theme=unclear; shared_terms=
-2026-089,Investing in Rochester's First State Park: High Falls State Park,unclear,continuation,2025-053,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,theme=unclear; shared_terms=
-2026-090,Restoring Riverbank's Role as a Community Hub for Harlem and Beyond,aging_long_term_care,new,,,
-2026-091,Exploring the Niagara Gorge,unclear,continuation,2025-028,Get More Kids Swimming and Prevent Child Drowning,theme=unclear; shared_terms=
-2026-092,Strengthening Our Communities,unclear,continuation,2025-037,Support Safe and Vibrant Communities,theme=unclear; shared_terms=communities
-2026-093,Launching NY Kicks: A World Cup Legacy Investment Fund,unclear,continuation,2025-025,Invest in Playgrounds,theme=unclear; shared_terms=
-2026-094,Building Community Centers to Foster Connections and Well-Being,unclear,continuation,2025-026,"Launch Get Offline, Get Outside 2.0",theme=unclear; shared_terms=
-2026-095,Preserving Performing Art Spaces,unclear,continuation,2025-105,Support First-Time Homebuyers' Down Payment Assistance,theme=unclear; shared_terms=
-2026-096,Improving Infrastructure at County Fairs,unclear,new,,,
-2026-097,Improving Commutes and Travel,unclear,new,,,
-2026-098,Reimagining Jamaica Station for the Millions of Commuters Who Depend on It,digital_government,new,,,
-2026-099,Advancing the Second Avenue Subway Crosstown Expansion Project to Improve Commutes,mta_service_and_finance,follow_on,2025-124,Advance Second Avenue Subway and Other Major Transit Improvements,"theme=mta_service_and_finance; shared_terms=avenue, second, subway"
-2026-100,Launching the Let Them Build Agenda,housing_supply,continuation,2025-109,Create a Pro-Housing Supply Infrastructure Fund,theme=housing_supply; shared_terms=
-2026-101,Helping Our Communities Build Housing We Need,unclear,continuation,2025-115,Empower Communities to Redevelop Vacant Properties into Housing,"theme=unclear; shared_terms=communities, housing"
-2026-102,Accelerating Critical Infrastructure Projects,water_quality,new,,,
-2026-103,Delivering Faster Decisions for Local Communities through Clear Timelines and Accountability,unclear,continuation,2025-037,Support Safe and Vibrant Communities,theme=unclear; shared_terms=communities
-2026-104,Streamlining Environmental Impact Statements to Cut Down Review Timelines,unclear,continuation,2025-111,Streamline Environmental Review for Modest Housing Development,"theme=unclear; shared_terms=environmental, review"
-2026-105,Modernizing Permitting Processes to Save Time and Money for Localities,unclear,continuation,2025-028,Get More Kids Swimming and Prevent Child Drowning,theme=unclear; shared_terms=
-2026-106,Expediting Major State Infrastructure Projects,unclear,continuation,2025-053,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,theme=unclear; shared_terms=
-2026-107,Supporting Local Communities Through a Permitting Academy,unclear,continuation,2025-055,Driving Economic Development,theme=unclear; shared_terms=
-2026-108,Driving Economic Growth by Activating Underutilized Sites in the North Country,unclear,continuation,2025-055,Driving Economic Development,"theme=unclear; shared_terms=driving, economic"
-2026-109,Making Government Work Better,unclear,continuation,2025-014,Fostering Better Educational Opportunities,theme=unclear; shared_terms=better
-2026-110,Making Every New Yorker Count,medicaid_coverage,continuation,2025-009,Expand Lactation Support Services,theme=medicaid_coverage; shared_terms=
-2026-111,Tackling Outdated and Burdensome Regulations that Stand in the Way of Delivering,unclear,continuation,2025-105,Support First-Time Homebuyers' Down Payment Assistance,theme=unclear; shared_terms=
-2026-112,Streamlining Public Procurement,unclear,continuation,2025-142,Improve Access to Public Assistance for Survivors of Gender-Based Violence,theme=unclear; shared_terms=public
-2026-113,Delivering More with Smart Technology,unclear,continuation,2025-031,Make Artificial Intelligence Companion Technology Safer,theme=unclear; shared_terms=technology
-2026-114,"Creating a New Office of Digital Innovation, Governance, Integrity, and Trust (DIGIT)",unclear,continuation,2025-025,Invest in Playgrounds,theme=unclear; shared_terms=
-2026-115,Protecting Our Private Data,unclear,continuation,2025-053,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,theme=unclear; shared_terms=
-2026-116,Requiring Labeling for AI-Generated Content,unclear,continuation,2025-030,Outlaw Artificial Intelligence-Generated Child Sexual Abuse Material,theme=unclear; shared_terms=generated
-2026-117,Protecting Elections from Misleading or Deceptive AI Content,unclear,continuation,2025-049,"Protecting Pedestrians, Workers, Drivers, and Cyclists",theme=unclear; shared_terms=protecting
-2026-118,Prohibiting Misleading “Discounts” in Online Sales,unclear,new,,,
-2026-119,Ending Taxes on Tips,unclear,continuation,2025-118,Reduce Shelter Rent Taxes for Mitchell-Lama Residents,theme=unclear; shared_terms=taxes
-2026-120,Fighting Workers' Compensation Fraud,unclear,continuation,2025-085,Expand Access to Medical Care in the Workers' Compensation System,"theme=unclear; shared_terms=compensation, workers"
-2026-121,Combating Wage Theft,minimum_wage,new,,,
-2026-122,Improving Disclosures for Student Loan Refinancing,unclear,continuation,2025-015,Provide Universal School Meals,theme=unclear; shared_terms=
-2026-123,Setting Cosigner Standards for Student Loans,unclear,continuation,2025-015,Provide Universal School Meals,theme=unclear; shared_terms=
-2026-124,Enhancing Illegal Vape Enforcement,unclear,continuation,2025-047,Secure Additional Funding for Law Enforcement Technology,theme=unclear; shared_terms=enforcement
-2026-125,Promoting Tech and Biotech,economic_development_general,new,,,
-2026-126,Making New York State “Chips Country” via a Downstate Semiconductor Chip Design Center,semiconductor_economic_development,continuation,2025-058,Grow the Semiconductor Industry and Build the Semiconductor Supply Chain,theme=semiconductor_economic_development; shared_terms=semiconductor
-2026-127,Building Our Quantum Edge through Quantum Technology Commercialization Hubs,college_workforce_pathways,continuation,2025-022,Invest in Cutting-Edge Research by Funding a New York State Innovation Fund,theme=college_workforce_pathways; shared_terms=edge
-2026-128,Launching Empire AI Beta and Creating the First Independent AI Research Center at SUNY Binghamton,college_workforce_pathways,continuation,2025-060,Lead on Innovation Through Empire AI,theme=college_workforce_pathways; shared_terms=empire
-2026-129,Bolstering Biotechnology Statewide,technology_innovation_economic_development,new,,,
-2026-130,Supporting Farmers and Manufacturers,economic_development_general,new,,,
-2026-131,Modernizing Manufacturing in Tough Times,economic_development_general,new,,,
-2026-132,Supporting Dairy Farmers to Modernize the Industry,aging_long_term_care,new,,,
-2026-133,Protecting Farmers from the Disruption of Federal Tariffs,food_access_agriculture,new,,,
-2026-134,Developing the Industrial Hemp Pipeline,economic_development_general,new,,,
-2026-135,Investing in Equity Across the Cannabis Supply Chain,college_workforce_pathways,new,,,
-2026-136,Investing in Communities,economic_development_general,new,,,
-2026-137,Establishing New York as the Nation's Hard Cider Capital,economic_development_general,new,,,
-2026-138,Modernizing the Alcoholic Beverage Control Law,economic_development_general,new,,,
-2026-139,Eliminating Outdated Restrictions on Dancing,economic_development_general,new,,,
-2026-140,Enhancing the Downtown Revitalization Initiative and New York Forward,economic_development_general,new,,,
-2026-141,Expanding the County Infrastructure Grant Program,economic_development_general,new,,,
-2026-142,Enhancing Local Economic Development Project Tracking,economic_development_general,new,,,
-2026-143,Back to Basics in Math: Transforming Math Learning through Quality Instruction and Professional Learning,college_workforce_pathways,continuation,2025-019,Launch College in High School Opportunity Fund,theme=college_workforce_pathways; shared_terms=
-2026-144,Building on Back to Basics Literacy Through Support for In-Service Teachers,college_workforce_pathways,continuation,2025-019,Launch College in High School Opportunity Fund,theme=college_workforce_pathways; shared_terms=
-2026-145,Accelerating Learning with High-Impact Tutoring,tutoring_learning_loss,new,,,
-2026-146,Creating a Sustainable Teacher Pipeline,child_care_access,continuation,2025-002,Vastly Expand New York's Child Tax Credit,theme=child_care_access; shared_terms=
-2026-147,Establishing the Empire AI Student Challenge,college_workforce_pathways,continuation,2025-021,Invest in Student Success at the State University of New York,theme=college_workforce_pathways; shared_terms=student
-2026-148,Increasing Our Understanding of Our School System and Programs to Support our Students,education_general,new,,,
-2026-149,Getting Offline and Outside with Cooler Schoolyards,education_general,new,,,
-2026-150,"Ensuring Indigenous Youth Have Access to Relevant, Quality Civics Instruction",education_general,new,,,
-2026-151,Elevating Excellence: Strengthening Mentoring Programs for Black and Latina Girls,education_general,new,,,
-2026-152,Holding the Line on Costs and Promoting College Affordability at SUNY and CUNY,college_workforce_pathways,continuation,2025-075,Fund Free Community College in High-Demand Occupations,theme=college_workforce_pathways; shared_terms=college
-2026-153,Enhancing Affordability by Expanding SUNY and CUNY Reconnect for High-Demand Jobs,college_workforce_pathways,continuation,2025-075,Fund Free Community College in High-Demand Occupations,"theme=college_workforce_pathways; shared_terms=demand, high"
-2026-154,New York Career Connect Initiative: Better Preparing College Students for the Workforce across New York's Higher Education Systems,college_workforce_pathways,continuation,2025-022,Invest in Cutting-Edge Research by Funding a New York State Innovation Fund,theme=college_workforce_pathways; shared_terms=
-2026-155,Enhancing Student Borrower Support,education_general,new,,,
-2026-156,Creating Emergency Aid Funds at All SUNY and CUNY Campuses to Keep Students Enrolled,college_workforce_pathways,new,,,
-2026-157,Supporting Former Foster Students to Attain a Degree through the Reconnect for Foster Scholars Program,college_workforce_pathways,continuation,2025-042,Launch First Responder Counseling Scholarship Program,theme=college_workforce_pathways; shared_terms=program
-2026-158,Promoting Fairness and Affordability for Students by Reforming Tuition Refund Policies at SUNY,college_workforce_pathways,continuation,2025-019,Launch College in High School Opportunity Fund,theme=college_workforce_pathways; shared_terms=
-2026-159,Reducing Burden in the Certificate of Residency Process for SUNY Community College and Early College Students,college_workforce_pathways,continuation,2025-019,Launch College in High School Opportunity Fund,theme=college_workforce_pathways; shared_terms=college
-2026-160,Promoting Youth Mental Health,mental_health_youth,continuation,2025-152,Support Youth Mental Health in After-School Programs,"theme=mental_health_youth; shared_terms=health, mental, youth"
-2026-161,Equipping an Entire Generation with Mental Health First Aid Training,education_general,new,,,
-2026-162,Supporting Youth Mental Health for LGBTQ+ New Yorkers,mental_health_youth,continuation,2025-152,Support Youth Mental Health in After-School Programs,"theme=mental_health_youth; shared_terms=health, mental, youth"
-2026-163,Expanding Youth Safe Spaces by Designating Two Additional Community Organizations,education_general,new,,,
-2026-164,Recognizing Schools Providing Strong Mental Health Supports,education_general,new,,,
-2026-165,Hosting a Youth-Led Substance Use Prevention Symposium,education_general,new,,,
-2026-166,Ensuring All Child-Serving Clinicians in New York's Office of Mental Health Settings Are Trained in Evidence-Based Practices,mental_health_youth,continuation,2025-152,Support Youth Mental Health in After-School Programs,"theme=mental_health_youth; shared_terms=health, mental"
-2026-167,Opening up to 15 New Youth Clubhouses to Support Community-Based Recovery for Young People Suffering from a Substance Use Disorder,education_general,new,,,
-2026-168,Establishing a Young Adult Recovery Residence for Individuals Recovering from Opioid Addiction,opioid_response,new,,,
-2026-169,Scaling Mental Health Supports for Indigenous Youth,mental_health_insurance,continuation,2025-154,Hold Health Insurance Companies Accountable,theme=mental_health_insurance; shared_terms=health
-2026-170,Safeguarding Kids Online,education_general,new,,,
-2026-171,Safe By Design: Creating Safer Digital Environments for Kids,mental_health_youth,continuation,2025-016,Take Action to Ensure Distraction-Free Learning,theme=mental_health_youth; shared_terms=
-2026-172,Ensuring Fair Play in Online Betting and Limiting Access for Young People,education_general,new,,,
-2026-173,Promoting Responsible Digital Citizenship: Supporting Distraction-Free Schools and Student Mental Health,education_general,new,,,
-2026-174,Strengthening the Healthcare Delivery System,health_care_general,continuation,2025-168,Strengthen Reporting Requirements for Healthcare Investors,theme=health_care_general; shared_terms=healthcare
-2026-175,Expanding the Safety Net Transformation Program,health_care_general,continuation,2025-163,Extend the Safety Net Transformation Program,"theme=health_care_general; shared_terms=net, program, safety, transformation"
-2026-176,Expanding the Use of Artificial Intelligence Technology in Healthcare Safely and Equitably,medicaid_coverage,continuation,2025-170,Remove Unnecessary Restrictions on Healthcare Workers,theme=medicaid_coverage; shared_terms=healthcare
-2026-177,Strengthening Oversight of Healthcare Transactions,health_care_general,continuation,2025-146,Streamline County Oversight and Enhance Funding,theme=health_care_general; shared_terms=oversight
-2026-178,Enabling Transformation of the Healthcare Delivery System,health_care_general,continuation,2025-163,Extend the Safety Net Transformation Program,theme=health_care_general; shared_terms=transformation
-2026-179,Empowering the Healthcare Workforce,health_care_general,continuation,2025-168,Strengthen Reporting Requirements for Healthcare Investors,theme=health_care_general; shared_terms=healthcare
-2026-180,Removing Unnecessary Restrictions on Healthcare Workers,health_care_general,continuation,2025-168,Strengthen Reporting Requirements for Healthcare Investors,theme=health_care_general; shared_terms=healthcare
-2026-181,Reducing Reliance on Temporary Staff to Stabilize the Healthcare Workforce,health_care_general,continuation,2025-168,Strengthen Reporting Requirements for Healthcare Investors,theme=health_care_general; shared_terms=healthcare
-2026-182,Expanding Healthcare Access through Workforce Investments,medicaid_coverage,continuation,2025-080,"Leverage Federal Support to Expand Health, Behavioral, and Social Care Workforce",theme=medicaid_coverage; shared_terms=workforce
-2026-183,"Improving Healthcare Coverage, Access, and Affordability",health_care_general,continuation,2025-162,Improving the Health of All New Yorkers,theme=health_care_general; shared_terms=improving
-2026-184,"Protecting and Expanding Access to Quality, Affordable Health Coverage",medicaid_coverage,continuation,2025-164,Expand Access to Infertility Treatments,theme=medicaid_coverage; shared_terms=access
-2026-185,Leveraging New York's Purchasing Power to Drive Down Drug Costs,medicaid_coverage,continuation,2025-009,Expand Lactation Support Services,theme=medicaid_coverage; shared_terms=
-2026-186,Reforming Prior Authorizations to Improve Patient Care,public_education_funding,new,,,
-2026-187,Increasing Access to Medical Care for Injured Workers,primary_care_and_ems,continuation,2025-166,Ensure Access to Emergency Medical Services,"theme=primary_care_and_ems; shared_terms=access, medical"
-2026-188,Investing in Older Adults,health_care_general,new,,,
-2026-189,Assisting Older Adults to Age in Place,aging_long_term_care,continuation,2025-104,Provide Starter Home Innovation Funding,theme=aging_long_term_care; shared_terms=
-2026-190,Improving Access to End-of-Life Care,psychiatric_capacity,new,,,
-2026-191,"Protecting Older Adults from Abuse, Scams, and Fraud",aging_long_term_care,new,,,
-2026-192,Creating a One-Stop Shop for Benefits for Older New Yorkers,aging_long_term_care,new,,,
-2026-193,Improving Equity in Public Health,health_care_general,continuation,2025-162,Improving the Health of All New Yorkers,"theme=health_care_general; shared_terms=health, improving"
-2026-194,Protecting Immunization Access,health_care_general,continuation,2025-167,Expand Access to Dental Care,theme=health_care_general; shared_terms=access
-2026-195,Improving Vital Records Access,aging_long_term_care,new,,,
-2026-196,Strengthening Cardiac Emergency Readiness across New York State,health_care_general,new,,,
-2026-197,Modernizing Pain Management Guidance and Care,opioid_response,new,,,
-2026-198,Protecting Summer Campers from Extreme Weather Threats,health_care_general,new,,,
-2026-199,Establishing a Nuclear Reliability Backbone for a Zero-Emission Grid,unclear,continuation,2025-056,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,theme=unclear; shared_terms=
-2026-200,Ensuring New York's Nuclear Power Future is Built By and For New Yorkers,unclear,continuation,2025-056,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,theme=unclear; shared_terms=
+2026-026,Enhancing Penalties to Protect Rent-Regulated Tenants from Pervasive Harassment,unclear,continuation,2025-121,Extend Security Deposit Protections to Rent-Regulated Tenants,"theme=unclear; shared_terms=regulated, rent, tenants"
+2026-027,Reforming J-51 to Preserve More Rent-Regulated Housing,unclear,continuation,2025-121,Extend Security Deposit Protections to Rent-Regulated Tenants,"theme=unclear; shared_terms=regulated, rent"
+2026-028,Expanding a Critical Rent Freeze Program for Seniors and People with Disabilities,disability_inclusion,new,,,
+2026-029,Tackling Utility Costs,unclear,continuation,2025-122,Help Affordable Housing Access Captive Insurance to Lower Costs,theme=unclear; shared_terms=costs
+2026-030,Improving Fairness for Ratepayers Through Affordable Utilities Omnibus Legislation,unclear,continuation,2025-056,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,theme=unclear; shared_terms=
+2026-031,Revitalizing EmPower+ to Upgrade Homes,unclear,continuation,2025-056,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,theme=unclear; shared_terms=
+2026-032,Excelsior Power: Cheaper Utility Bills for a More Flexible and Affordable Grid,unclear,continuation,2025-056,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,theme=unclear; shared_terms=
+2026-033,Increasing Uptake of Energy Assistance Programs,unclear,continuation,2025-057,Build Clean Energy Zones,theme=unclear; shared_terms=energy
+2026-034,Requiring Data Centers to Pay Their Fair Share and Streamlining Interconnections for Job-Creating Businesses,unclear,continuation,2025-056,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,theme=unclear; shared_terms=
+2026-035,Protecting Tenants from Unfair Utility Shutoffs,unclear,continuation,2025-028,Get More Kids Swimming and Prevent Child Drowning,theme=unclear; shared_terms=
+2026-036,Mitigating Energy Cost Burden,unclear,continuation,2025-057,Build Clean Energy Zones,theme=unclear; shared_terms=energy
+2026-037,Modernizing Utility Regulation to Protect Consumers,unclear,new,,,
+2026-038,Helping Put Food on the Table,unclear,new,,,
+2026-039,Investing in Food Banks and Pantries,unclear,new,,,
+2026-040,Investing in New York PLATES,unclear,new,,,
+2026-041,Slashing Food Benefits Theft with Modern EBT Cards,unclear,continuation,2025-082,Expand Enforcement Power Following an Unpaid Wage Theft Judgment,theme=unclear; shared_terms=theft
+2026-042,Promoting SNAP to Students and Families,unclear,continuation,2025-015,Provide Universal School Meals,theme=unclear; shared_terms=
+2026-043,Expanding Free Summer Meal Sites,unclear,continuation,2025-017,Boost Literacy with Free Books from Dolly Parton's Imagination Library,theme=unclear; shared_terms=free
+2026-044,Supporting Rural Summer Meals,food_access_agriculture,continuation,2025-067,Supporting Agriculture,theme=food_access_agriculture; shared_terms=supporting
+2026-045,Promoting Summer EBT Across Agencies,digital_government,new,,,
+2026-046,Stopping Illegal Homegrown Guns,unclear,new,,,
+2026-047,Cracking Down on 3D-Printed Firearms,gun_violence,new,,,
+2026-048,Taking Aim at DIY Machine Guns,unclear,new,,,
+2026-049,Protecting Our Neighbors' Rights,unclear,continuation,2025-049,"Protecting Pedestrians, Workers, Drivers, and Cyclists",theme=unclear; shared_terms=protecting
+2026-050,Establishing a Right to Sue Federal Officers for Constitutional Violations,unclear,continuation,2025-003,Fight for Federal Tax Relief,theme=unclear; shared_terms=federal
+2026-051,Protecting New Yorkers in Sensitive Locations,child_care_access,continuation,2025-002,Vastly Expand New York's Child Tax Credit,theme=child_care_access; shared_terms=
+2026-052,Protecting Safe Access to Worship and Healthcare,unclear,continuation,2025-037,Support Safe and Vibrant Communities,theme=unclear; shared_terms=safe
+2026-053,Safeguarding Our Roads,unclear,continuation,2025-126,Invest in New York Roads and Statewide Transit,theme=unclear; shared_terms=roads
+2026-054,Launching the Next Phase of the Autonomous Vehicle Pilot Program,state_police_capacity,continuation,2025-034,Strengthen the State's Response Against Transnational Criminal Networks,theme=state_police_capacity; shared_terms=
+2026-055,Stopping New York City's Super Speeders through Intelligent Speed Assistance,street_safety,new,,,
+2026-056,Ensuring Safety First in Work Zones,unclear,continuation,2025-053,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,theme=unclear; shared_terms=
+2026-057,Strengthening Motorcycle Licensing Standards for New and Inexperienced Riders,unclear,continuation,2025-053,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,theme=unclear; shared_terms=
+2026-058,Prioritizing Safety on the Subway,unclear,continuation,2025-052,Improve Safety at New York City's Elementary School Intersections,theme=unclear; shared_terms=safety
+2026-059,Sustaining Record Lows in Subway Crime by Putting Police on Platforms,unclear,continuation,2025-039,Ensure Child Victims of Crime Are Maximally Supported,theme=unclear; shared_terms=crime
+2026-060,Expanding SCOUT Teams in the Subway System,mental_health_supportive_housing,continuation,2025-147,Expand Intensive and Sustained Engagement Teams,theme=mental_health_supportive_housing; shared_terms=teams
+2026-061,Protecting Riders with Platform Edge Barriers,unclear,continuation,2025-053,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,theme=unclear; shared_terms=
+2026-062,Combating Crime and Ensuring Justice,unclear,continuation,2025-037,Support Safe and Vibrant Communities,theme=unclear; shared_terms=
+2026-063,Expanding Crime Analysis Centers Statewide,unclear,continuation,2025-139,Expand Statewide Targeted Reductions in Intimate Partner Violence,theme=unclear; shared_terms=statewide
+2026-064,Solving Crimes by Investing in Crime Labs,unclear,continuation,2025-037,Support Safe and Vibrant Communities,theme=unclear; shared_terms=
+2026-065,Improving Police Training Academies,unclear,continuation,2025-076,Facilitate New Training Pathways into High-Demand Occupations,theme=unclear; shared_terms=training
+2026-066,Supporting State Police after Critical Incidents,state_police_capacity,new,,,
+2026-067,Extending Orders of Protection,unclear,new,,,
+2026-068,Supporting At-Risk and Survivor-Led Victim Assistance Programs,unclear,continuation,2025-041,Supporting our First Responders,theme=unclear; shared_terms=supporting
+2026-069,Streamlining and Promoting Access to Victim Compensation,unclear,continuation,2025-038,Expand Victim Support Services to Protect Vulnerable Populations,theme=unclear; shared_terms=victim
+2026-070,Reforming Sexual Offense Evidence Collection Kit Procedures,unclear,continuation,2025-030,Outlaw Artificial Intelligence-Generated Child Sexual Abuse Material,theme=unclear; shared_terms=sexual
+2026-071,Streamlining Justice by Reducing Costs and Delays in Grand Jury Proceedings,state_police_capacity,new,,,
+2026-072,Improving Emergency and Disaster Response,unclear,new,,,
+2026-073,Enhancing Readiness for Mass Violence Events,unclear,continuation,2025-025,Invest in Playgrounds,theme=unclear; shared_terms=
+2026-074,Strengthening Statewide Urban Search and Rescue Capacity,cyber_emergency_response,continuation,2025-100,Bolster the Security of Networks Statewide,theme=cyber_emergency_response; shared_terms=statewide
+2026-075,Partnering with Canada to Strengthen Disaster Response,cyber_emergency_response,new,,,
+2026-076,Developing a Comprehensive Plan for Drones,state_police_capacity,continuation,2025-034,Strengthen the State's Response Against Transnational Criminal Networks,theme=state_police_capacity; shared_terms=
+2026-077,Supporting First Responders' Behavioral Health Needs,college_workforce_pathways,continuation,2025-042,Launch First Responder Counseling Scholarship Program,theme=college_workforce_pathways; shared_terms=first
+2026-078,Investing an Additional $250 Million to Accelerate Affordable Housing,mental_health_supportive_housing,expansion,2025-119,Expand Capital to Maintain and Improve Supportive Housing,theme=mental_health_supportive_housing; shared_terms=housing
+2026-079,Embracing Innovative Approaches to Build Homes More Quickly and at Lower Costs,aging_long_term_care,new,,,
+2026-080,Expanding the Number of Land Banks Permitted,unclear,continuation,2025-114,Unlock Historic Tax Credits by Decoupling and Expanding Eligibility,theme=unclear; shared_terms=expanding
+2026-081,Creating the Manufactured Homes Park Improvement Revolving Loan Fund,unclear,continuation,2025-112,Launch New York State's First Mixed-Income Revolving Loan Fund,"theme=unclear; shared_terms=fund, loan, revolving"
+2026-082,Delivering Clean and Safe Water,aging_long_term_care,continuation,2025-104,Provide Starter Home Innovation Funding,theme=aging_long_term_care; shared_terms=
+2026-083,Tapping Into Growth: Expanding Water Resources to Unlock New Housing Development,housing_supply,continuation,2025-109,Create a Pro-Housing Supply Infrastructure Fund,theme=housing_supply; shared_terms=housing
+2026-084,Addressing Contamination from Landfills to Protect Water Quality,recycling_waste,continuation,2025-095,Embrace a Circular Economy at the Empire State Plaza,theme=recycling_waste; shared_terms=
+2026-085,Getting the Lead Out,unclear,continuation,2025-028,Get More Kids Swimming and Prevent Child Drowning,theme=unclear; shared_terms=
+2026-086,Upgrading Our Parks,unclear,continuation,2025-028,Get More Kids Swimming and Prevent Child Drowning,theme=unclear; shared_terms=
+2026-087,Investing in Rochester's First State Park: High Falls State Park,unclear,continuation,2025-053,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,theme=unclear; shared_terms=
+2026-088,Restoring Riverbank's Role as a Community Hub for Harlem and Beyond,aging_long_term_care,new,,,
+2026-089,Exploring the Niagara Gorge,unclear,continuation,2025-028,Get More Kids Swimming and Prevent Child Drowning,theme=unclear; shared_terms=
+2026-090,Strengthening Our Communities,unclear,continuation,2025-037,Support Safe and Vibrant Communities,theme=unclear; shared_terms=communities
+2026-091,Launching NY Kicks: A World Cup Legacy Investment Fund,unclear,continuation,2025-025,Invest in Playgrounds,theme=unclear; shared_terms=
+2026-092,Building Community Centers to Foster Connections and Well-Being,unclear,continuation,2025-026,"Launch Get Offline, Get Outside 2.0",theme=unclear; shared_terms=
+2026-093,Preserving Performing Art Spaces,unclear,continuation,2025-105,Support First-Time Homebuyers' Down Payment Assistance,theme=unclear; shared_terms=
+2026-094,Improving Infrastructure at County Fairs,unclear,new,,,
+2026-095,Improving Commutes and Travel,unclear,new,,,
+2026-096,Reimagining Jamaica Station for the Millions of Commuters Who Depend on It,digital_government,new,,,
+2026-097,Advancing the Second Avenue Subway Crosstown Expansion Project to Improve Commutes,mta_service_and_finance,follow_on,2025-124,Advance Second Avenue Subway and Other Major Transit Improvements,"theme=mta_service_and_finance; shared_terms=avenue, second, subway"
+2026-098,Launching the Let Them Build Agenda,housing_supply,continuation,2025-109,Create a Pro-Housing Supply Infrastructure Fund,theme=housing_supply; shared_terms=
+2026-099,Helping Our Communities Build Housing We Need,unclear,continuation,2025-115,Empower Communities to Redevelop Vacant Properties into Housing,"theme=unclear; shared_terms=communities, housing"
+2026-100,Accelerating Critical Infrastructure Projects,water_quality,new,,,
+2026-101,Delivering Faster Decisions for Local Communities through Clear Timelines and Accountability,unclear,continuation,2025-037,Support Safe and Vibrant Communities,theme=unclear; shared_terms=communities
+2026-102,Streamlining Environmental Impact Statements to Cut Down Review Timelines,unclear,continuation,2025-111,Streamline Environmental Review for Modest Housing Development,"theme=unclear; shared_terms=environmental, review"
+2026-103,Modernizing Permitting Processes to Save Time and Money for Localities,unclear,continuation,2025-028,Get More Kids Swimming and Prevent Child Drowning,theme=unclear; shared_terms=
+2026-104,Expediting Major State Infrastructure Projects,unclear,continuation,2025-053,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,theme=unclear; shared_terms=
+2026-105,Supporting Local Communities Through a Permitting Academy,unclear,continuation,2025-055,Driving Economic Development,theme=unclear; shared_terms=
+2026-106,Driving Economic Growth by Activating Underutilized Sites in the North Country,unclear,continuation,2025-055,Driving Economic Development,"theme=unclear; shared_terms=driving, economic"
+2026-107,Making Government Work Better,unclear,continuation,2025-014,Fostering Better Educational Opportunities,theme=unclear; shared_terms=better
+2026-108,Making Every New Yorker Count,medicaid_coverage,continuation,2025-009,Expand Lactation Support Services,theme=medicaid_coverage; shared_terms=
+2026-109,Tackling Outdated and Burdensome Regulations that Stand in the Way of Delivering,unclear,continuation,2025-105,Support First-Time Homebuyers' Down Payment Assistance,theme=unclear; shared_terms=
+2026-110,Streamlining Public Procurement,unclear,continuation,2025-142,Improve Access to Public Assistance for Survivors of Gender-Based Violence,theme=unclear; shared_terms=public
+2026-111,Delivering More with Smart Technology,unclear,continuation,2025-031,Make Artificial Intelligence Companion Technology Safer,theme=unclear; shared_terms=technology
+2026-112,"Creating a New Office of Digital Innovation, Governance, Integrity, and Trust (DIGIT)",unclear,continuation,2025-025,Invest in Playgrounds,theme=unclear; shared_terms=
+2026-113,Protecting Our Private Data,unclear,continuation,2025-053,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,theme=unclear; shared_terms=
+2026-114,Requiring Labeling for AI-Generated Content,unclear,continuation,2025-030,Outlaw Artificial Intelligence-Generated Child Sexual Abuse Material,theme=unclear; shared_terms=generated
+2026-115,Protecting Elections from Misleading or Deceptive AI Content,unclear,continuation,2025-049,"Protecting Pedestrians, Workers, Drivers, and Cyclists",theme=unclear; shared_terms=protecting
+2026-116,Prohibiting Misleading “Discounts” in Online Sales,unclear,new,,,
+2026-117,Ending Taxes on Tips,unclear,continuation,2025-118,Reduce Shelter Rent Taxes for Mitchell-Lama Residents,theme=unclear; shared_terms=taxes
+2026-118,Fighting Workers' Compensation Fraud,unclear,continuation,2025-085,Expand Access to Medical Care in the Workers' Compensation System,"theme=unclear; shared_terms=compensation, workers"
+2026-119,Combating Wage Theft,minimum_wage,new,,,
+2026-120,Improving Disclosures for Student Loan Refinancing,unclear,continuation,2025-015,Provide Universal School Meals,theme=unclear; shared_terms=
+2026-121,Setting Cosigner Standards for Student Loans,unclear,continuation,2025-015,Provide Universal School Meals,theme=unclear; shared_terms=
+2026-122,Enhancing Illegal Vape Enforcement,unclear,continuation,2025-047,Secure Additional Funding for Law Enforcement Technology,theme=unclear; shared_terms=enforcement
+2026-123,Promoting Tech and Biotech,economic_development_general,new,,,
+2026-124,Making New York State “Chips Country” via a Downstate Semiconductor Chip Design Center,semiconductor_economic_development,continuation,2025-058,Grow the Semiconductor Industry and Build the Semiconductor Supply Chain,theme=semiconductor_economic_development; shared_terms=semiconductor
+2026-125,Building Our Quantum Edge through Quantum Technology Commercialization Hubs,college_workforce_pathways,continuation,2025-022,Invest in Cutting-Edge Research by Funding a New York State Innovation Fund,theme=college_workforce_pathways; shared_terms=edge
+2026-126,Launching Empire AI Beta and Creating the First Independent AI Research Center at SUNY Binghamton,college_workforce_pathways,continuation,2025-060,Lead on Innovation Through Empire AI,theme=college_workforce_pathways; shared_terms=empire
+2026-127,Bolstering Biotechnology Statewide,technology_innovation_economic_development,new,,,
+2026-128,Supporting Farmers and Manufacturers,economic_development_general,new,,,
+2026-129,Modernizing Manufacturing in Tough Times,economic_development_general,new,,,
+2026-130,Supporting Dairy Farmers to Modernize the Industry,aging_long_term_care,new,,,
+2026-131,Protecting Farmers from the Disruption of Federal Tariffs,food_access_agriculture,new,,,
+2026-132,Developing the Industrial Hemp Pipeline,economic_development_general,new,,,
+2026-133,Investing in Equity Across the Cannabis Supply Chain,college_workforce_pathways,new,,,
+2026-134,Investing in Communities,economic_development_general,new,,,
+2026-135,Establishing New York as the Nation's Hard Cider Capital,economic_development_general,new,,,
+2026-136,Modernizing the Alcoholic Beverage Control Law,economic_development_general,new,,,
+2026-137,Eliminating Outdated Restrictions on Dancing,economic_development_general,new,,,
+2026-138,Enhancing the Downtown Revitalization Initiative and New York Forward,economic_development_general,new,,,
+2026-139,Expanding the County Infrastructure Grant Program,economic_development_general,new,,,
+2026-140,Enhancing Local Economic Development Project Tracking,economic_development_general,new,,,
+2026-141,Back to Basics in Math: Transforming Math Learning through Quality Instruction and Professional Learning,college_workforce_pathways,continuation,2025-019,Launch College in High School Opportunity Fund,theme=college_workforce_pathways; shared_terms=
+2026-142,Building on Back to Basics Literacy Through Support for In-Service Teachers,college_workforce_pathways,continuation,2025-019,Launch College in High School Opportunity Fund,theme=college_workforce_pathways; shared_terms=
+2026-143,Accelerating Learning with High-Impact Tutoring,tutoring_learning_loss,new,,,
+2026-144,Creating a Sustainable Teacher Pipeline,child_care_access,continuation,2025-002,Vastly Expand New York's Child Tax Credit,theme=child_care_access; shared_terms=
+2026-145,Establishing the Empire AI Student Challenge,college_workforce_pathways,continuation,2025-021,Invest in Student Success at the State University of New York,theme=college_workforce_pathways; shared_terms=student
+2026-146,Increasing Our Understanding of Our School System and Programs to Support our Students,education_general,new,,,
+2026-147,Getting Offline and Outside with Cooler Schoolyards,education_general,new,,,
+2026-148,"Ensuring Indigenous Youth Have Access to Relevant, Quality Civics Instruction",education_general,new,,,
+2026-149,Elevating Excellence: Strengthening Mentoring Programs for Black and Latina Girls,education_general,new,,,
+2026-150,Holding the Line on Costs and Promoting College Affordability at SUNY and CUNY,college_workforce_pathways,continuation,2025-075,Fund Free Community College in High-Demand Occupations,theme=college_workforce_pathways; shared_terms=college
+2026-151,Enhancing Affordability by Expanding SUNY and CUNY Reconnect for High-Demand Jobs,college_workforce_pathways,continuation,2025-075,Fund Free Community College in High-Demand Occupations,"theme=college_workforce_pathways; shared_terms=demand, high"
+2026-152,New York Career Connect Initiative: Better Preparing College Students for the Workforce across New York's Higher Education Systems,college_workforce_pathways,continuation,2025-022,Invest in Cutting-Edge Research by Funding a New York State Innovation Fund,theme=college_workforce_pathways; shared_terms=
+2026-153,Enhancing Student Borrower Support,education_general,new,,,
+2026-154,Creating Emergency Aid Funds at All SUNY and CUNY Campuses to Keep Students Enrolled,college_workforce_pathways,new,,,
+2026-155,Supporting Former Foster Students to Attain a Degree through the Reconnect for Foster Scholars Program,college_workforce_pathways,continuation,2025-042,Launch First Responder Counseling Scholarship Program,theme=college_workforce_pathways; shared_terms=program
+2026-156,Promoting Fairness and Affordability for Students by Reforming Tuition Refund Policies at SUNY,college_workforce_pathways,continuation,2025-019,Launch College in High School Opportunity Fund,theme=college_workforce_pathways; shared_terms=
+2026-157,Reducing Burden in the Certificate of Residency Process for SUNY Community College and Early College Students,college_workforce_pathways,continuation,2025-019,Launch College in High School Opportunity Fund,theme=college_workforce_pathways; shared_terms=college
+2026-158,Equipping an Entire Generation with Mental Health First Aid Training,education_general,new,,,
+2026-159,Supporting Youth Mental Health for LGBTQ+ New Yorkers,mental_health_youth,continuation,2025-152,Support Youth Mental Health in After-School Programs,"theme=mental_health_youth; shared_terms=health, mental, youth"
+2026-160,Expanding Youth Safe Spaces by Designating Two Additional Community Organizations,education_general,new,,,
+2026-161,Recognizing Schools Providing Strong Mental Health Supports,education_general,new,,,
+2026-162,Hosting a Youth-Led Substance Use Prevention Symposium,education_general,new,,,
+2026-163,Ensuring All Child-Serving Clinicians in New York's Office of Mental Health Settings Are Trained in Evidence-Based Practices,mental_health_youth,continuation,2025-152,Support Youth Mental Health in After-School Programs,"theme=mental_health_youth; shared_terms=health, mental"
+2026-164,Opening up to 15 New Youth Clubhouses to Support Community-Based Recovery for Young People Suffering from a Substance Use Disorder,education_general,new,,,
+2026-165,Establishing a Young Adult Recovery Residence for Individuals Recovering from Opioid Addiction,opioid_response,new,,,
+2026-166,Scaling Mental Health Supports for Indigenous Youth,mental_health_insurance,continuation,2025-154,Hold Health Insurance Companies Accountable,theme=mental_health_insurance; shared_terms=health
+2026-167,Safeguarding Kids Online,education_general,new,,,
+2026-168,Safe By Design: Creating Safer Digital Environments for Kids,mental_health_youth,continuation,2025-016,Take Action to Ensure Distraction-Free Learning,theme=mental_health_youth; shared_terms=
+2026-169,Ensuring Fair Play in Online Betting and Limiting Access for Young People,education_general,new,,,
+2026-170,Promoting Responsible Digital Citizenship: Supporting Distraction-Free Schools and Student Mental Health,education_general,new,,,
+2026-171,Strengthening the Healthcare Delivery System,health_care_general,continuation,2025-168,Strengthen Reporting Requirements for Healthcare Investors,theme=health_care_general; shared_terms=healthcare
+2026-172,Expanding the Safety Net Transformation Program,health_care_general,continuation,2025-163,Extend the Safety Net Transformation Program,"theme=health_care_general; shared_terms=net, program, safety, transformation"
+2026-173,Expanding the Use of Artificial Intelligence Technology in Healthcare Safely and Equitably,medicaid_coverage,continuation,2025-170,Remove Unnecessary Restrictions on Healthcare Workers,theme=medicaid_coverage; shared_terms=healthcare
+2026-174,Strengthening Oversight of Healthcare Transactions,health_care_general,continuation,2025-146,Streamline County Oversight and Enhance Funding,theme=health_care_general; shared_terms=oversight
+2026-175,Enabling Transformation of the Healthcare Delivery System,health_care_general,continuation,2025-163,Extend the Safety Net Transformation Program,theme=health_care_general; shared_terms=transformation
+2026-176,Empowering the Healthcare Workforce,health_care_general,continuation,2025-168,Strengthen Reporting Requirements for Healthcare Investors,theme=health_care_general; shared_terms=healthcare
+2026-177,Removing Unnecessary Restrictions on Healthcare Workers,health_care_general,continuation,2025-168,Strengthen Reporting Requirements for Healthcare Investors,theme=health_care_general; shared_terms=healthcare
+2026-178,Reducing Reliance on Temporary Staff to Stabilize the Healthcare Workforce,health_care_general,continuation,2025-168,Strengthen Reporting Requirements for Healthcare Investors,theme=health_care_general; shared_terms=healthcare
+2026-179,Expanding Healthcare Access through Workforce Investments,medicaid_coverage,continuation,2025-080,"Leverage Federal Support to Expand Health, Behavioral, and Social Care Workforce",theme=medicaid_coverage; shared_terms=workforce
+2026-180,"Protecting and Expanding Access to Quality, Affordable Health Coverage",medicaid_coverage,continuation,2025-164,Expand Access to Infertility Treatments,theme=medicaid_coverage; shared_terms=access
+2026-181,Leveraging New York's Purchasing Power to Drive Down Drug Costs,medicaid_coverage,continuation,2025-009,Expand Lactation Support Services,theme=medicaid_coverage; shared_terms=
+2026-182,Reforming Prior Authorizations to Improve Patient Care,public_education_funding,new,,,
+2026-183,Increasing Access to Medical Care for Injured Workers,primary_care_and_ems,continuation,2025-166,Ensure Access to Emergency Medical Services,"theme=primary_care_and_ems; shared_terms=access, medical"
+2026-184,Investing in Older Adults,health_care_general,new,,,
+2026-185,Assisting Older Adults to Age in Place,aging_long_term_care,continuation,2025-104,Provide Starter Home Innovation Funding,theme=aging_long_term_care; shared_terms=
+2026-186,Improving Access to End-of-Life Care,psychiatric_capacity,new,,,
+2026-187,"Protecting Older Adults from Abuse, Scams, and Fraud",aging_long_term_care,new,,,
+2026-188,Creating a One-Stop Shop for Benefits for Older New Yorkers,aging_long_term_care,new,,,
+2026-189,Protecting Immunization Access,health_care_general,continuation,2025-167,Expand Access to Dental Care,theme=health_care_general; shared_terms=access
+2026-190,Improving Vital Records Access,aging_long_term_care,new,,,
+2026-191,Strengthening Cardiac Emergency Readiness across New York State,health_care_general,new,,,
+2026-192,Modernizing Pain Management Guidance and Care,opioid_response,new,,,
+2026-193,Protecting Summer Campers from Extreme Weather Threats,health_care_general,new,,,
+2026-194,Establishing a Nuclear Reliability Backbone for a Zero-Emission Grid,unclear,continuation,2025-056,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,theme=unclear; shared_terms=
+2026-195,Ensuring New York's Nuclear Power Future is Built By and For New Yorkers,unclear,continuation,2025-056,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,theme=unclear; shared_terms=

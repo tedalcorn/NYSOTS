@@ -22,6 +22,36 @@ const state = {
   },
 };
 
+const AGENCY_LABELS = {
+  "DOH": "Department of Health (DOH)",
+  "OMH": "Office of Mental Health (OMH)",
+  "DFS": "Department of Financial Services (DFS)",
+  "DOT": "Department of Transportation (DOT)",
+  "MTA": "Metropolitan Transportation Authority (MTA)",
+  "DCJS": "Division of Criminal Justice Services (DCJS)",
+  "DOCCS": "Department of Corrections and Community Supervision (DOCCS)",
+  "HCR": "Homes and Community Renewal (HCR)",
+  "OCFS": "Office of Children and Family Services (OCFS)",
+  "SED": "State Education Department (SED)",
+  "SUNY": "State University of New York (SUNY)",
+  "CUNY": "City University of New York (CUNY)",
+  "DEC": "Department of Environmental Conservation (DEC)",
+  "DOL": "Department of Labor (DOL)",
+  "OASAS": "Office of Addiction Services and Supports (OASAS)",
+  "DMV": "Department of Motor Vehicles (DMV)",
+  "OTDA": "Office of Temporary and Disability Assistance (OTDA)",
+  "NYSERDA": "New York State Energy Research and Development Authority (NYSERDA)",
+  "ONA": "Office for New Americans (ONA)",
+  "Empire State Development": "Empire State Development (ESD)",
+  "Agriculture & Markets": "Department of Agriculture and Markets",
+  "NYS Office for the Aging": "New York State Office for the Aging",
+  "Public Service Commission / DPS": "Public Service Commission / Department of Public Service",
+  "New York State Police": "New York State Police",
+  "Division of Homeland Security and Emergency Services": "Division of Homeland Security and Emergency Services (DHSES)",
+  "Office for the Prevention of Domestic Violence": "Office for the Prevention of Domestic Violence (OPDV)",
+  "Department of Taxation and Finance": "Department of Taxation and Finance",
+};
+
 const sidebarEl = document.getElementById("sidebar");
 const contentEl = document.getElementById("content");
 const detailEl = document.getElementById("detail-panel");
@@ -118,7 +148,7 @@ function renderSidebar() {
       <label for="agency-filter">Agency</label>
       <select id="agency-filter">
         <option value="all">All agencies</option>
-        ${agencies.map((agency) => `<option value="${escapeAttr(agency)}" ${agency === state.filters.agency ? "selected" : ""}>${escapeHtml(agency)}</option>`).join("")}
+        ${agencies.map((agency) => `<option value="${escapeAttr(agency)}" ${agency === state.filters.agency ? "selected" : ""}>${escapeHtml(formatAgencyLabel(agency))}</option>`).join("")}
       </select>
     </div>
     <div class="filter-group">
@@ -244,7 +274,7 @@ function renderCommitmentRow(item) {
     <button class="dense-row dense-button ${item.id === state.selectedCommitmentId ? "is-selected" : ""}" type="button" data-commitment-id="${item.id}">
       <div>${item.year}</div>
       <div class="dense-title" title="${escapeAttr(item.title)}">${escapeHtml(item.title)}</div>
-      <div title="${escapeAttr(primaryAgency)}">${escapeHtml(primaryAgency)}</div>
+      <div title="${escapeAttr(formatAgencyList(primaryAgency))}">${escapeHtml(formatAgencyList(primaryAgency))}</div>
       <div title="${escapeAttr(item.theme_labels[0] || "")}">${escapeHtml(item.theme_labels[0] || "")}</div>
       <div>${escapeHtml(formatConfidence(item.text_capture_confidence))}</div>
     </button>
@@ -271,7 +301,7 @@ function renderAgenciesView() {
       </div>
       ${agencies.map((agency) => `
         <button class="dense-row dense-button ${agency.name === state.selectedAgencyName ? "is-selected" : ""}" type="button" data-open-agency="${escapeAttr(agency.name)}">
-          <div class="dense-title" title="${escapeAttr(agency.name)}">${escapeHtml(agency.name)}</div>
+          <div class="dense-title" title="${escapeAttr(formatAgencyLabel(agency.name))}">${escapeHtml(formatAgencyLabel(agency.name))}</div>
           <div>${agency.commitment_count}</div>
         </button>
       `).join("")}
@@ -635,7 +665,7 @@ function renderModalToolbar() {
 function renderAgencyLinks(agencies) {
   if (!agencies.length) return "";
   return agencies
-    .map((agency) => `<button class="inline-link" type="button" data-open-agency-link="${escapeAttr(agency)}">${escapeHtml(agency)}</button>`)
+    .map((agency) => `<button class="inline-link" type="button" data-open-agency-link="${escapeAttr(agency)}">${escapeHtml(formatAgencyLabel(agency))}</button>`)
     .join(", ");
 }
 
@@ -728,6 +758,17 @@ function formatConfidence(value) {
   if (value === "high") return "High";
   if (value === "medium") return "Medium";
   return "Missing";
+}
+
+function formatAgencyLabel(value) {
+  return AGENCY_LABELS[value] || value;
+}
+
+function formatAgencyList(value) {
+  return String(value)
+    .split(",")
+    .map((item) => formatAgencyLabel(item.trim()))
+    .join(", ");
 }
 
 function sortAgencies(items, sort) {
