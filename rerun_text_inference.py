@@ -30,6 +30,16 @@ def main():
         for row in rows:
             bao.infer_agencies_with_text(row)
             row["overlap_theme"] = bao.infer_theme(row)
+            override = bao.MANUAL_ROW_OVERRIDES.get(row["proposal_title"])
+            if override:
+                if "lead_agency" in override:
+                    row["lead_agency"] = override["lead_agency"]
+                    row["lead_agency_standardized"] = bao.standardize_agencies(row["lead_agency"])
+                if "supporting_agencies" in override:
+                    row["supporting_agencies"] = override["supporting_agencies"]
+                    row["supporting_agencies_standardized"] = bao.standardize_agencies(row["supporting_agencies"])
+                if "overlap_theme" in override:
+                    row["overlap_theme"] = override["overlap_theme"]
         enriched_by_year[year] = rows
         title_maps[year] = {row["proposal_title"]: row for row in rows}
 

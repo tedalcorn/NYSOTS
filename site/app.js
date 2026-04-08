@@ -8,6 +8,7 @@ const state = {
   modalHistory: [],
   filters: {
     query: "",
+    includeFullText: false,
     years: [],
     agency: "all",
     theme: "all",
@@ -131,7 +132,11 @@ function renderSidebar() {
   sidebarEl.innerHTML = `
     <div class="filter-group">
       <label for="query">Search by keyword</label>
-      <input id="query" type="search" value="${escapeHtml(state.filters.query)}" placeholder="Search goals, agencies, themes">
+      <input id="query" type="search" value="${escapeHtml(state.filters.query)}" placeholder="Search commitment titles">
+      <label class="inline-check">
+        <input id="include-fulltext" type="checkbox" ${state.filters.includeFullText ? "checked" : ""}>
+        <span>Include full text</span>
+      </label>
     </div>
     <div class="filter-group">
       <label>Years</label>
@@ -166,7 +171,7 @@ function renderSidebar() {
       </select>
     </div>
     <div class="filter-group">
-      <label for="text-capture-filter">Text capture</label>
+      <label for="text-capture-filter">Confidence in text capture?</label>
       <select id="text-capture-filter">
         <option value="all">All</option>
         <option value="high" ${state.filters.textCapture === "high" ? "selected" : ""}>High</option>
@@ -186,6 +191,10 @@ function bindSidebarEvents() {
   sidebarEl.querySelector("#query").addEventListener("input", (event) => {
     state.filters.query = event.target.value;
     renderWithPreservedQuery(event.target);
+  });
+  sidebarEl.querySelector("#include-fulltext").addEventListener("change", (event) => {
+    state.filters.includeFullText = event.target.checked;
+    render();
   });
   sidebarEl.querySelectorAll("[data-year-check]").forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
@@ -213,7 +222,7 @@ function bindSidebarEvents() {
     render();
   });
   sidebarEl.querySelector("#reset-filters").addEventListener("click", () => {
-    state.filters = { query: "", years: [], agency: "all", theme: "all", commitmentType: "all", textCapture: "all" };
+    state.filters = { query: "", includeFullText: false, years: [], agency: "all", theme: "all", commitmentType: "all", textCapture: "all" };
     render();
   });
 }
@@ -225,9 +234,6 @@ function renderContent() {
       break;
     case "themes":
       renderThemesView();
-      break;
-    case "analysis":
-      renderAnalysisView();
       break;
     default:
       renderCommitmentsView();
@@ -261,6 +267,7 @@ function renderCommitmentTable(commitments) {
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="title">${renderSortLabel("Commitment", "commitments", "title")}</button>
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="agency">${renderSortLabel("Primary Agency", "commitments", "agency")}</button>
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="theme">${renderSortLabel("Theme", "commitments", "theme")}</button>
+        <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="subgoals">${renderSortLabel("Subgoals?", "commitments", "subgoals")}</button>
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="text">${renderSortLabel("Text", "commitments", "text")}</button>
       </div>
       ${commitments.map(renderCommitmentRow).join("")}
@@ -276,6 +283,7 @@ function renderCommitmentRow(item) {
       <div class="dense-title" title="${escapeAttr(item.title)}">${escapeHtml(item.title)}</div>
       <div title="${escapeAttr(formatAgencyListFull(primaryAgency))}">${escapeHtml(formatAgencyListCompact(primaryAgency))}</div>
       <div title="${escapeAttr(item.theme_labels[0] || "")}">${escapeHtml(item.theme_labels[0] || "")}</div>
+      <div>${item.subgoals?.length ? "Y" : "N"}</div>
       <div>${escapeHtml(formatConfidence(item.text_capture_confidence))}</div>
     </button>
   `;
@@ -428,7 +436,7 @@ function renderDetail() {
     ${renderModalToolbar()}
     <div class="meta-line">
       <span class="meta-pill blue">${item.year}</span>
-      <span class="meta-pill">${escapeHtml(formatLabel(item.commitment_type))}</span>
+      <span class="meta-pill">${escapeHtml(item.theme_labels[0] || "Not yet identified")}</span>
     </div>
     <h2 class="detail-title" id="detail-modal-title">Commitment: ${escapeHtml(item.title)}</h2>
     ${item.commitment_text ? `<div class="detail-block"><div class="blurb-text">${renderParagraphs(item.commitment_text)}</div></div>` : ""}
@@ -457,9 +465,9 @@ function renderDetail() {
     ${item.subgoals?.length ? `
     <div class="detail-block">
       <h3>Possible Sub-Goals</h3>
-      <ul class="subgoal-list">
+      <ol class="subgoal-list">
         ${item.subgoals.map((goal) => `<li>${escapeHtml(goal)}</li>`).join("")}
-      </ul>
+      </ol>
     </div>` : ""}
 
     <div class="detail-block">
@@ -593,7 +601,14 @@ function getFilteredCommitments() {
   const query = state.filters.query.trim().toLowerCase();
 
   if (state.filters.years.length) items = items.filter((item) => state.filters.years.includes(String(item.year)));
-  if (state.filters.agency !== "all") items = items.filter((item) => item.all_agencies.includes(state.filters.agency));
+  if (state.filters.agency !== "all") {
+    items = items.filter((item) => {
+      if (state.filters.agency === "Not yet identified") {
+        return !item.all_agencies.length;
+      }
+      return item.all_agencies.includes(state.filters.agency);
+    });
+  }
   if (state.filters.theme !== "all") items = items.filter((item) => item.theme_labels.includes(state.filters.theme));
   if (state.filters.commitmentType !== "all") items = items.filter((item) => item.commitment_type === state.filters.commitmentType);
   if (state.filters.textCapture !== "all") items = items.filter((item) => (item.text_capture_confidence || "missing") === state.filters.textCapture);
@@ -601,7 +616,6 @@ function getFilteredCommitments() {
     items = items.filter((item) => {
       const haystack = [
         item.title,
-        item.commitment_text,
         item.section_bucket,
         item.subsection,
         item.commitment_type,
@@ -611,7 +625,8 @@ function getFilteredCommitments() {
         ...item.all_agencies,
         ...item.theme_labels,
       ].join(" ").toLowerCase();
-      return haystack.includes(query);
+      const withFullText = `${haystack} ${item.commitment_text}`.toLowerCase();
+      return (state.filters.includeFullText ? withFullText : haystack).includes(query);
     });
   }
 
@@ -734,6 +749,9 @@ function sortCommitments(items, sort) {
     } else if (sort.key === "theme") {
       left = (a.theme_labels[0] || "").toLowerCase();
       right = (b.theme_labels[0] || "").toLowerCase();
+    } else if (sort.key === "subgoals") {
+      left = a.subgoals?.length ? 1 : 0;
+      right = b.subgoals?.length ? 1 : 0;
     } else if (sort.key === "text") {
       left = confidenceRank(a.text_capture_confidence);
       right = confidenceRank(b.text_capture_confidence);

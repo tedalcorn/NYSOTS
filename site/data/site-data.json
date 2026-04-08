@@ -36,8 +36,8 @@
         "landing_url": "https://www.governor.ny.gov/keywords/2026-state-state"
       }
     ],
-    "generated_at_iso": "2026-04-08T13:01:12-04:00",
-    "generated_at_label": "4/8/26 1:01pm"
+    "generated_at_iso": "2026-04-08T13:37:07-04:00",
+    "generated_at_label": "4/8/26 1:37pm"
   },
   "commitments": [
     {
@@ -19588,13 +19588,13 @@
       "binary_evaluable": "no",
       "binary_unit": "",
       "lead_agencies": [
-        "SUNY"
+        "SED"
       ],
       "supporting_agencies": [
         "CUNY"
       ],
       "all_agencies": [
-        "SUNY",
+        "SED",
         "CUNY"
       ],
       "theme_keys": [
@@ -19604,8 +19604,8 @@
         "College and Workforce Pathways"
       ],
       "continuity_to_prior_year": "continuation",
-      "matched_prior_commitment_id": "2023-074",
-      "matched_prior_title": "Provide for Reasonable Tuition Flexibility Throughout CUNY and SUNY",
+      "matched_prior_commitment_id": "2023-072",
+      "matched_prior_title": "Directly Admit All New York Students to Their Local Community Colleges",
       "status_evidence_needed": "agency report or official implementation evidence",
       "source_quality": "first_pass_toc",
       "notes": "First-pass coding from 2024 SOTS table of contents.",
@@ -26135,21 +26135,23 @@
       "binary_evaluable": "no",
       "binary_unit": "",
       "lead_agencies": [
-        "OASAS"
+        "HCR",
+        "OMH"
       ],
       "supporting_agencies": [],
       "all_agencies": [
-        "OASAS"
+        "HCR",
+        "OMH"
       ],
       "theme_keys": [
-        "mental_health_supportive_housing"
+        "mental_health_general"
       ],
       "theme_labels": [
-        "Mental Health Supportive Housing"
+        "Mental Health"
       ],
-      "continuity_to_prior_year": "expansion",
-      "matched_prior_commitment_id": "2023-022",
-      "matched_prior_title": "Create 3,500 New Housing Units for Individuals with Mental Illness",
+      "continuity_to_prior_year": "new",
+      "matched_prior_commitment_id": "",
+      "matched_prior_title": "",
       "status_evidence_needed": "implementation metrics, agency reports, or budget plus rollout evidence",
       "source_quality": "first_pass_toc",
       "notes": "First-pass coding from 2024 SOTS table of contents.",
@@ -28704,25 +28706,18 @@
       "metric_or_target": "",
       "binary_evaluable": "no",
       "binary_unit": "",
-      "lead_agencies": [
-        "Empire State Development"
-      ],
-      "supporting_agencies": [
-        "DMV"
-      ],
-      "all_agencies": [
-        "Empire State Development",
-        "DMV"
-      ],
+      "lead_agencies": [],
+      "supporting_agencies": [],
+      "all_agencies": [],
       "theme_keys": [
-        "economic_development_general"
+        "unclear"
       ],
       "theme_labels": [
-        "Economic Development"
+        "Not yet identified"
       ],
-      "continuity_to_prior_year": "continuation",
-      "matched_prior_commitment_id": "2023-082",
-      "matched_prior_title": "Establish Minority and Women\u2019s Business Enterprises Certification Reciprocity",
+      "continuity_to_prior_year": "new",
+      "matched_prior_commitment_id": "",
+      "matched_prior_title": "",
       "status_evidence_needed": "budget appropriation, program awards, or fiscal documents",
       "source_quality": "first_pass_toc",
       "notes": "First-pass coding from 2024 SOTS table of contents.",
@@ -35299,8 +35294,8 @@
         "Mental Health Supportive Housing"
       ],
       "continuity_to_prior_year": "expansion",
-      "matched_prior_commitment_id": "2024-007",
-      "matched_prior_title": "Increase Transitional Housing for Individuals Referred Through Court System",
+      "matched_prior_commitment_id": "2024-010",
+      "matched_prior_title": "Fund Specialized Housing for People with Serious Mental Illness and Criminal History",
       "status_evidence_needed": "implementation metrics, agency reports, or budget plus rollout evidence",
       "source_quality": "first_pass_toc",
       "notes": "First-pass coding from 2025 SOTS table of contents.",
@@ -35412,8 +35407,8 @@
         "College and Workforce Pathways"
       ],
       "continuity_to_prior_year": "expansion",
-      "matched_prior_commitment_id": "2024-084",
-      "matched_prior_title": "Automatically Admit Top Students to SUNY and CUNY Campuses",
+      "matched_prior_commitment_id": "2024-098",
+      "matched_prior_title": "Make SUNY Pools Community Anchors",
       "status_evidence_needed": "implementation metrics, agency reports, or budget plus rollout evidence",
       "source_quality": "first_pass_toc",
       "notes": "First-pass coding from 2025 SOTS table of contents.",
@@ -37297,8 +37292,8 @@
         "Mental Health Supportive Housing"
       ],
       "continuity_to_prior_year": "expansion",
-      "matched_prior_commitment_id": "2024-007",
-      "matched_prior_title": "Increase Transitional Housing for Individuals Referred Through Court System",
+      "matched_prior_commitment_id": "2024-022",
+      "matched_prior_title": "Expand Insurance Coverage and Hold Insurers Accountable",
       "status_evidence_needed": "budget appropriation, program awards, or fiscal documents",
       "source_quality": "first_pass_toc",
       "notes": "First-pass coding from 2025 SOTS table of contents.",
@@ -37504,26 +37499,21 @@
       "binary_evaluable": "no",
       "binary_unit": "",
       "lead_agencies": [
-        "OMH",
-        "OCFS"
+        "DEC"
       ],
-      "supporting_agencies": [
-        "NYS Office for the Aging"
-      ],
+      "supporting_agencies": [],
       "all_agencies": [
-        "OMH",
-        "OCFS",
-        "NYS Office for the Aging"
+        "DEC"
       ],
       "theme_keys": [
-        "child_care_access"
+        "climate_general"
       ],
       "theme_labels": [
-        "Child Care Access"
+        "Climate and Environment"
       ],
       "continuity_to_prior_year": "continuation",
-      "matched_prior_commitment_id": "2024-189",
-      "matched_prior_title": "Expand Early Childhood Mental Health Consultations",
+      "matched_prior_commitment_id": "2024-089",
+      "matched_prior_title": "Invest In Swimming Infrastructure",
       "status_evidence_needed": "agency report or official implementation evidence",
       "source_quality": "first_pass_toc",
       "notes": "First-pass coding from 2025 SOTS table of contents.",
@@ -37998,9 +37988,9 @@
       "theme_labels": [
         "Not yet identified"
       ],
-      "continuity_to_prior_year": "new",
-      "matched_prior_commitment_id": "",
-      "matched_prior_title": "",
+      "continuity_to_prior_year": "continuation",
+      "matched_prior_commitment_id": "2024-147",
+      "matched_prior_title": "Promote Economic Growth Through Investment in the Arts",
       "status_evidence_needed": "executive order, agency launch, or official announcement",
       "source_quality": "first_pass_toc",
       "notes": "First-pass coding from 2025 SOTS table of contents.",
@@ -49508,20 +49498,20 @@
       "binary_evaluable": "no",
       "binary_unit": "",
       "lead_agencies": [
-        "SED"
+        "DOT"
       ],
       "supporting_agencies": [
         "MTA"
       ],
       "all_agencies": [
-        "SED",
+        "DOT",
         "MTA"
       ],
       "theme_keys": [
-        "digital_government"
+        "transportation_general"
       ],
       "theme_labels": [
-        "Digital Government"
+        "Transportation"
       ],
       "continuity_to_prior_year": "new",
       "matched_prior_commitment_id": "",
@@ -51843,15 +51833,194 @@
   ],
   "agencies": [
     {
+      "id": "not-yet-identified",
+      "name": "Not yet identified",
+      "commitment_count": 137,
+      "lead_count": 0,
+      "support_count": 0,
+      "years": {
+        "2022": 12,
+        "2023": 11,
+        "2024": 23,
+        "2025": 45,
+        "2026": 46
+      },
+      "top_themes": [
+        {
+          "label": "Not yet identified",
+          "count": 61
+        },
+        {
+          "label": "Equity and Inclusion",
+          "count": 12
+        },
+        {
+          "label": "Government Operations",
+          "count": 12
+        },
+        {
+          "label": "Health Care",
+          "count": 9
+        },
+        {
+          "label": "Digital Government",
+          "count": 7
+        },
+        {
+          "label": "Reproductive Rights",
+          "count": 7
+        }
+      ],
+      "commitment_ids": [
+        "2022-049",
+        "2022-213",
+        "2022-107",
+        "2022-100",
+        "2022-050",
+        "2022-111",
+        "2022-220",
+        "2022-206",
+        "2022-215",
+        "2022-112",
+        "2022-214",
+        "2022-106",
+        "2023-137",
+        "2023-097",
+        "2023-094",
+        "2023-136",
+        "2023-130",
+        "2023-106",
+        "2023-103",
+        "2023-099",
+        "2023-095",
+        "2023-134",
+        "2023-104",
+        "2024-195",
+        "2024-191",
+        "2024-201",
+        "2024-138",
+        "2024-218",
+        "2024-219",
+        "2024-215",
+        "2024-204",
+        "2024-211",
+        "2024-196",
+        "2024-205",
+        "2024-147",
+        "2024-152",
+        "2024-194",
+        "2024-217",
+        "2024-216",
+        "2024-209",
+        "2024-203",
+        "2024-206",
+        "2024-198",
+        "2024-185",
+        "2024-182",
+        "2024-199",
+        "2025-086",
+        "2025-141",
+        "2025-094",
+        "2025-027",
+        "2025-143",
+        "2025-089",
+        "2025-068",
+        "2025-131",
+        "2025-166",
+        "2025-156",
+        "2025-167",
+        "2025-090",
+        "2025-102",
+        "2025-073",
+        "2025-159",
+        "2025-129",
+        "2025-003",
+        "2025-014",
+        "2025-001",
+        "2025-142",
+        "2025-093",
+        "2025-162",
+        "2025-065",
+        "2025-070",
+        "2025-074",
+        "2025-031",
+        "2025-098",
+        "2025-069",
+        "2025-161",
+        "2025-049",
+        "2025-128",
+        "2025-096",
+        "2025-099",
+        "2025-032",
+        "2025-130",
+        "2025-036",
+        "2025-051",
+        "2025-168",
+        "2025-132",
+        "2025-062",
+        "2025-041",
+        "2025-157",
+        "2025-136",
+        "2025-061",
+        "2025-176",
+        "2026-101",
+        "2026-111",
+        "2026-149",
+        "2026-175",
+        "2026-117",
+        "2026-122",
+        "2026-169",
+        "2026-050",
+        "2026-172",
+        "2026-067",
+        "2026-118",
+        "2026-038",
+        "2026-186",
+        "2026-095",
+        "2026-072",
+        "2026-094",
+        "2026-065",
+        "2026-190",
+        "2026-183",
+        "2026-039",
+        "2026-040",
+        "2026-107",
+        "2026-037",
+        "2026-075",
+        "2026-058",
+        "2026-116",
+        "2026-045",
+        "2026-115",
+        "2026-049",
+        "2026-052",
+        "2026-070",
+        "2026-114",
+        "2026-167",
+        "2026-053",
+        "2026-041",
+        "2026-046",
+        "2026-055",
+        "2026-110",
+        "2026-191",
+        "2026-090",
+        "2026-174",
+        "2026-074",
+        "2026-171",
+        "2026-068",
+        "2026-029",
+        "2026-048"
+      ]
+    },
+    {
       "id": "hcr",
       "name": "HCR",
-      "commitment_count": 123,
-      "lead_count": 123,
+      "commitment_count": 124,
+      "lead_count": 124,
       "support_count": 0,
       "years": {
         "2022": 27,
         "2023": 26,
-        "2024": 26,
+        "2024": 27,
         "2025": 23,
         "2026": 21
       },
@@ -51950,6 +52119,7 @@
         "2024-062",
         "2024-162",
         "2024-087",
+        "2024-007",
         "2024-213",
         "2024-101",
         "2024-059",
@@ -52042,8 +52212,8 @@
           "count": 4
         },
         {
-          "label": "Climate and Environment",
-          "count": 3
+          "label": "Transportation",
+          "count": 4
         }
       ],
       "commitment_ids": [
@@ -52295,8 +52465,8 @@
       "years": {
         "2022": 10,
         "2023": 6,
-        "2024": 42,
-        "2025": 21,
+        "2024": 43,
+        "2025": 20,
         "2026": 12
       },
       "top_themes": [
@@ -52309,11 +52479,11 @@
           "count": 11
         },
         {
-          "label": "Youth Mental Health",
-          "count": 10
+          "label": "Mental Health",
+          "count": 11
         },
         {
-          "label": "Mental Health",
+          "label": "Youth Mental Health",
           "count": 10
         },
         {
@@ -52368,6 +52538,7 @@
         "2024-001",
         "2024-171",
         "2024-027",
+        "2024-007",
         "2024-156",
         "2024-048",
         "2024-019",
@@ -52393,7 +52564,6 @@
         "2025-147",
         "2025-150",
         "2025-153",
-        "2025-024",
         "2025-025",
         "2025-042",
         "2025-080",
@@ -52428,14 +52598,14 @@
       "years": {
         "2022": 29,
         "2023": 13,
-        "2024": 12,
+        "2024": 13,
         "2025": 11,
-        "2026": 15
+        "2026": 14
       },
       "top_themes": [
         {
           "label": "College and Workforce Pathways",
-          "count": 32
+          "count": 33
         },
         {
           "label": "Not yet identified",
@@ -52501,6 +52671,7 @@
         "2023-077",
         "2023-088",
         "2023-085",
+        "2024-084",
         "2024-145",
         "2024-081",
         "2024-119",
@@ -52537,27 +52708,26 @@
         "2026-156",
         "2026-042",
         "2026-157",
-        "2026-096",
         "2026-121"
       ]
     },
     {
       "id": "ocfs",
       "name": "OCFS",
-      "commitment_count": 67,
-      "lead_count": 67,
+      "commitment_count": 66,
+      "lead_count": 66,
       "support_count": 0,
       "years": {
         "2022": 8,
         "2023": 12,
         "2024": 14,
-        "2025": 16,
+        "2025": 15,
         "2026": 17
       },
       "top_themes": [
         {
           "label": "Child Care Access",
-          "count": 34
+          "count": 33
         },
         {
           "label": "Not yet identified",
@@ -52624,7 +52794,6 @@
         "2025-150",
         "2025-163",
         "2025-097",
-        "2025-024",
         "2025-026",
         "2025-013",
         "2025-011",
@@ -52653,15 +52822,15 @@
     {
       "id": "dot",
       "name": "DOT",
-      "commitment_count": 63,
-      "lead_count": 63,
+      "commitment_count": 64,
+      "lead_count": 64,
       "support_count": 0,
       "years": {
         "2022": 22,
         "2023": 12,
         "2024": 12,
         "2025": 9,
-        "2026": 8
+        "2026": 9
       },
       "top_themes": [
         {
@@ -52681,11 +52850,11 @@
           "count": 4
         },
         {
-          "label": "Climate and Environment",
-          "count": 3
+          "label": "Transportation",
+          "count": 4
         },
         {
-          "label": "Transportation",
+          "label": "Climate and Environment",
           "count": 3
         }
       ],
@@ -52752,6 +52921,7 @@
         "2026-087",
         "2026-113",
         "2026-061",
+        "2026-096",
         "2026-057"
       ]
     },
@@ -52965,20 +53135,20 @@
     {
       "id": "empire-state-development",
       "name": "Empire State Development",
-      "commitment_count": 60,
-      "lead_count": 60,
+      "commitment_count": 59,
+      "lead_count": 59,
       "support_count": 0,
       "years": {
         "2022": 22,
         "2023": 7,
-        "2024": 6,
+        "2024": 5,
         "2025": 5,
         "2026": 20
       },
       "top_themes": [
         {
           "label": "Economic Development",
-          "count": 23
+          "count": 22
         },
         {
           "label": "Not yet identified",
@@ -53035,7 +53205,6 @@
         "2024-034",
         "2024-056",
         "2024-139",
-        "2024-147",
         "2024-052",
         "2025-055",
         "2025-087",
@@ -53317,19 +53486,19 @@
     {
       "id": "dec",
       "name": "DEC",
-      "commitment_count": 32,
-      "lead_count": 32,
+      "commitment_count": 33,
+      "lead_count": 33,
       "support_count": 0,
       "years": {
         "2022": 2,
         "2024": 19,
-        "2025": 3,
+        "2025": 4,
         "2026": 8
       },
       "top_themes": [
         {
           "label": "Climate and Environment",
-          "count": 15
+          "count": 16
         },
         {
           "label": "Not yet identified",
@@ -53376,6 +53545,7 @@
         "2024-108",
         "2025-095",
         "2025-028",
+        "2025-024",
         "2025-101",
         "2026-084",
         "2026-022",
@@ -53390,20 +53560,20 @@
     {
       "id": "oasas",
       "name": "OASAS",
-      "commitment_count": 31,
-      "lead_count": 31,
+      "commitment_count": 30,
+      "lead_count": 30,
       "support_count": 0,
       "years": {
         "2022": 9,
         "2023": 3,
-        "2024": 8,
+        "2024": 7,
         "2025": 3,
         "2026": 8
       },
       "top_themes": [
         {
           "label": "Mental Health Supportive Housing",
-          "count": 8
+          "count": 7
         },
         {
           "label": "Mental Health Insurance",
@@ -53444,7 +53614,6 @@
         "2024-004",
         "2024-175",
         "2024-025",
-        "2024-007",
         "2024-026",
         "2024-177",
         "2025-154",
@@ -53463,20 +53632,20 @@
     {
       "id": "suny",
       "name": "SUNY",
-      "commitment_count": 30,
-      "lead_count": 16,
+      "commitment_count": 29,
+      "lead_count": 15,
       "support_count": 14,
       "years": {
         "2022": 8,
         "2023": 3,
-        "2024": 6,
+        "2024": 5,
         "2025": 5,
         "2026": 8
       },
       "top_themes": [
         {
           "label": "College and Workforce Pathways",
-          "count": 25
+          "count": 24
         },
         {
           "label": "Cyber and Emergency Response",
@@ -53503,7 +53672,6 @@
         "2023-072",
         "2023-076",
         "2023-074",
-        "2024-084",
         "2024-086",
         "2024-232",
         "2024-057",
@@ -53522,69 +53690,6 @@
         "2026-152",
         "2026-157",
         "2026-010"
-      ]
-    },
-    {
-      "id": "nys-office-for-the-aging",
-      "name": "NYS Office for the Aging",
-      "commitment_count": 25,
-      "lead_count": 0,
-      "support_count": 25,
-      "years": {
-        "2022": 7,
-        "2023": 2,
-        "2024": 5,
-        "2025": 4,
-        "2026": 7
-      },
-      "top_themes": [
-        {
-          "label": "Aging and Long-Term Care",
-          "count": 20
-        },
-        {
-          "label": "Aging Master Plan",
-          "count": 2
-        },
-        {
-          "label": "Child Care Access",
-          "count": 1
-        },
-        {
-          "label": "Not yet identified",
-          "count": 1
-        },
-        {
-          "label": "Health Care",
-          "count": 1
-        }
-      ],
-      "commitment_ids": [
-        "2022-130",
-        "2022-027",
-        "2022-023",
-        "2022-025",
-        "2022-024",
-        "2022-028",
-        "2022-010",
-        "2023-105",
-        "2023-050",
-        "2024-166",
-        "2024-235",
-        "2024-169",
-        "2024-162",
-        "2024-156",
-        "2025-175",
-        "2025-135",
-        "2025-024",
-        "2025-104",
-        "2026-185",
-        "2026-092",
-        "2026-188",
-        "2026-079",
-        "2026-184",
-        "2026-187",
-        "2026-088"
       ]
     },
     {
@@ -53653,6 +53758,64 @@
       ]
     },
     {
+      "id": "nys-office-for-the-aging",
+      "name": "NYS Office for the Aging",
+      "commitment_count": 24,
+      "lead_count": 0,
+      "support_count": 24,
+      "years": {
+        "2022": 7,
+        "2023": 2,
+        "2024": 5,
+        "2025": 3,
+        "2026": 7
+      },
+      "top_themes": [
+        {
+          "label": "Aging and Long-Term Care",
+          "count": 20
+        },
+        {
+          "label": "Aging Master Plan",
+          "count": 2
+        },
+        {
+          "label": "Not yet identified",
+          "count": 1
+        },
+        {
+          "label": "Health Care",
+          "count": 1
+        }
+      ],
+      "commitment_ids": [
+        "2022-130",
+        "2022-027",
+        "2022-023",
+        "2022-025",
+        "2022-024",
+        "2022-028",
+        "2022-010",
+        "2023-105",
+        "2023-050",
+        "2024-166",
+        "2024-235",
+        "2024-169",
+        "2024-162",
+        "2024-156",
+        "2025-175",
+        "2025-135",
+        "2025-104",
+        "2026-185",
+        "2026-092",
+        "2026-188",
+        "2026-079",
+        "2026-184",
+        "2026-187",
+        "2026-088"
+      ]
+    },
+    {
       "id": "new-york-state-police",
       "name": "New York State Police",
       "commitment_count": 24,
@@ -53709,13 +53872,13 @@
     {
       "id": "dmv",
       "name": "DMV",
-      "commitment_count": 16,
+      "commitment_count": 15,
       "lead_count": 0,
-      "support_count": 16,
+      "support_count": 15,
       "years": {
         "2022": 4,
         "2023": 2,
-        "2024": 5,
+        "2024": 4,
         "2025": 1,
         "2026": 4
       },
@@ -53755,7 +53918,6 @@
         "2024-136",
         "2024-179",
         "2024-243",
-        "2024-147",
         "2024-177",
         "2025-053",
         "2026-056",
@@ -53801,14 +53963,18 @@
     {
       "id": "unclear",
       "label": "Not yet identified",
-      "commitment_count": 195,
+      "commitment_count": 196,
       "years": {
         "2022": 22,
-        "2024": 12,
+        "2024": 13,
         "2025": 75,
         "2026": 86
       },
       "top_agencies": [
+        {
+          "name": "Not yet identified",
+          "count": 61
+        },
         {
           "name": "HCR",
           "count": 29
@@ -53828,10 +53994,6 @@
         {
           "name": "NYSERDA",
           "count": 13
-        },
-        {
-          "name": "MTA",
-          "count": 12
         }
       ],
       "commitment_ids": [
@@ -53865,6 +54027,7 @@
         "2024-154",
         "2024-149",
         "2024-151",
+        "2024-147",
         "2024-152",
         "2024-155",
         "2024-146",
@@ -54046,7 +54209,7 @@
       "top_agencies": [
         {
           "name": "SED",
-          "count": 32
+          "count": 33
         },
         {
           "name": "CUNY",
@@ -54054,7 +54217,7 @@
         },
         {
           "name": "SUNY",
-          "count": 25
+          "count": 24
         },
         {
           "name": "Empire State Development",
@@ -54139,10 +54302,11 @@
     {
       "id": "climate_general",
       "label": "Climate and Environment",
-      "commitment_count": 56,
+      "commitment_count": 57,
       "years": {
         "2022": 19,
-        "2024": 37
+        "2024": 37,
+        "2025": 1
       },
       "top_agencies": [
         {
@@ -54151,7 +54315,7 @@
         },
         {
           "name": "DEC",
-          "count": 15
+          "count": 16
         },
         {
           "name": "HCR",
@@ -54226,7 +54390,8 @@
         "2024-106",
         "2024-124",
         "2024-108",
-        "2024-103"
+        "2024-103",
+        "2025-024"
       ]
     },
     {
@@ -54246,6 +54411,10 @@
           "count": 16
         },
         {
+          "name": "Not yet identified",
+          "count": 9
+        },
+        {
           "name": "DOL",
           "count": 8
         },
@@ -54260,10 +54429,6 @@
         {
           "name": "OASAS",
           "count": 2
-        },
-        {
-          "name": "SED",
-          "count": 1
         }
       ],
       "commitment_ids": [
@@ -54319,17 +54484,17 @@
     {
       "id": "economic_development_general",
       "label": "Economic Development",
-      "commitment_count": 46,
+      "commitment_count": 45,
       "years": {
         "2022": 31,
         "2023": 1,
-        "2024": 3,
+        "2024": 2,
         "2026": 11
       },
       "top_agencies": [
         {
           "name": "Empire State Development",
-          "count": 23
+          "count": 22
         },
         {
           "name": "MTA",
@@ -54340,15 +54505,15 @@
           "count": 15
         },
         {
+          "name": "Not yet identified",
+          "count": 5
+        },
+        {
           "name": "DOH",
           "count": 1
         },
         {
           "name": "DOCCS",
-          "count": 1
-        },
-        {
-          "name": "NYSERDA",
           "count": 1
         }
       ],
@@ -54387,7 +54552,6 @@
         "2023-082",
         "2024-142",
         "2024-059",
-        "2024-147",
         "2026-132",
         "2026-137",
         "2026-140",
@@ -54486,26 +54650,22 @@
     {
       "id": "child_care_access",
       "label": "Child Care Access",
-      "commitment_count": 38,
+      "commitment_count": 37,
       "years": {
         "2022": 1,
         "2023": 9,
         "2024": 6,
-        "2025": 11,
+        "2025": 10,
         "2026": 11
       },
       "top_agencies": [
         {
           "name": "OCFS",
-          "count": 34
+          "count": 33
         },
         {
           "name": "DOH",
           "count": 6
-        },
-        {
-          "name": "OMH",
-          "count": 2
         },
         {
           "name": "Empire State Development",
@@ -54513,6 +54673,10 @@
         },
         {
           "name": "HCR",
+          "count": 1
+        },
+        {
+          "name": "OMH",
           "count": 1
         },
         {
@@ -54544,7 +54708,6 @@
         "2025-006",
         "2025-097",
         "2025-007",
-        "2025-024",
         "2025-013",
         "2025-011",
         "2025-002",
@@ -54713,6 +54876,10 @@
       },
       "top_agencies": [
         {
+          "name": "Not yet identified",
+          "count": 12
+        },
+        {
           "name": "HCR",
           "count": 3
         },
@@ -54730,10 +54897,6 @@
         },
         {
           "name": "DCJS",
-          "count": 1
-        },
-        {
-          "name": "Empire State Development",
           "count": 1
         }
       ],
@@ -54769,11 +54932,11 @@
     {
       "id": "mental_health_supportive_housing",
       "label": "Mental Health Supportive Housing",
-      "commitment_count": 24,
+      "commitment_count": 23,
       "years": {
         "2022": 5,
         "2023": 4,
-        "2024": 7,
+        "2024": 6,
         "2025": 6,
         "2026": 2
       },
@@ -54788,7 +54951,7 @@
         },
         {
           "name": "OASAS",
-          "count": 8
+          "count": 7
         },
         {
           "name": "OCFS",
@@ -54818,7 +54981,6 @@
         "2024-008",
         "2024-010",
         "2024-001",
-        "2024-007",
         "2024-002",
         "2025-148",
         "2025-119",
@@ -54898,6 +55060,10 @@
       },
       "top_agencies": [
         {
+          "name": "Not yet identified",
+          "count": 12
+        },
+        {
           "name": "DOL",
           "count": 2
         },
@@ -54915,10 +55081,6 @@
         },
         {
           "name": "Empire State Development",
-          "count": 1
-        },
-        {
-          "name": "DEC",
           "count": 1
         }
       ],
@@ -54978,7 +55140,7 @@
           "count": 1
         },
         {
-          "name": "MTA",
+          "name": "Not yet identified",
           "count": 1
         }
       ],
@@ -55025,6 +55187,10 @@
         },
         {
           "name": "OMH",
+          "count": 3
+        },
+        {
+          "name": "Not yet identified",
           "count": 3
         },
         {
@@ -55300,15 +55466,15 @@
           "count": 3
         },
         {
+          "name": "Not yet identified",
+          "count": 3
+        },
+        {
           "name": "DOL",
           "count": 2
         },
         {
           "name": "HCR",
-          "count": 1
-        },
-        {
-          "name": "OCFS",
           "count": 1
         }
       ],
@@ -55348,6 +55514,10 @@
           "count": 5
         },
         {
+          "name": "Not yet identified",
+          "count": 4
+        },
+        {
           "name": "MTA",
           "count": 3
         },
@@ -55361,10 +55531,6 @@
         },
         {
           "name": "OMH",
-          "count": 1
-        },
-        {
-          "name": "SED",
           "count": 1
         }
       ],
@@ -55398,6 +55564,10 @@
       },
       "top_agencies": [
         {
+          "name": "Not yet identified",
+          "count": 5
+        },
+        {
           "name": "Empire State Development",
           "count": 3
         },
@@ -55415,10 +55585,6 @@
         },
         {
           "name": "DOT",
-          "count": 1
-        },
-        {
-          "name": "DOH",
           "count": 1
         }
       ],
@@ -55487,6 +55653,10 @@
         "2025": 6
       },
       "top_agencies": [
+        {
+          "name": "Not yet identified",
+          "count": 7
+        },
         {
           "name": "DOH",
           "count": 3
@@ -55567,57 +55737,21 @@
       ]
     },
     {
-      "id": "digital_government",
-      "label": "Digital Government",
-      "commitment_count": 10,
-      "years": {
-        "2023": 6,
-        "2024": 2,
-        "2026": 2
-      },
-      "top_agencies": [
-        {
-          "name": "SED",
-          "count": 2
-        },
-        {
-          "name": "DMV",
-          "count": 1
-        },
-        {
-          "name": "MTA",
-          "count": 1
-        }
-      ],
-      "commitment_ids": [
-        "2023-137",
-        "2023-136",
-        "2023-135",
-        "2023-130",
-        "2023-133",
-        "2023-134",
-        "2024-218",
-        "2024-215",
-        "2026-045",
-        "2026-096"
-      ]
-    },
-    {
       "id": "mental_health_general",
       "label": "Mental Health",
-      "commitment_count": 10,
+      "commitment_count": 11,
       "years": {
         "2023": 1,
-        "2024": 9
+        "2024": 10
       },
       "top_agencies": [
         {
           "name": "OMH",
-          "count": 10
+          "count": 11
         },
         {
           "name": "HCR",
-          "count": 2
+          "count": 3
         },
         {
           "name": "OCFS",
@@ -55641,6 +55775,7 @@
         "2024-018",
         "2024-006",
         "2024-017",
+        "2024-007",
         "2024-009",
         "2024-023"
       ]
@@ -55676,6 +55811,41 @@
         "2026-163",
         "2026-168",
         "2026-159"
+      ]
+    },
+    {
+      "id": "digital_government",
+      "label": "Digital Government",
+      "commitment_count": 9,
+      "years": {
+        "2023": 6,
+        "2024": 2,
+        "2026": 1
+      },
+      "top_agencies": [
+        {
+          "name": "Not yet identified",
+          "count": 7
+        },
+        {
+          "name": "DMV",
+          "count": 1
+        },
+        {
+          "name": "SED",
+          "count": 1
+        }
+      ],
+      "commitment_ids": [
+        "2023-137",
+        "2023-136",
+        "2023-135",
+        "2023-130",
+        "2023-133",
+        "2023-134",
+        "2024-218",
+        "2024-215",
+        "2026-045"
       ]
     },
     {
@@ -55779,6 +55949,10 @@
       },
       "top_agencies": [
         {
+          "name": "Not yet identified",
+          "count": 2
+        },
+        {
           "name": "OMH",
           "count": 1
         },
@@ -55796,10 +55970,6 @@
         },
         {
           "name": "OASAS",
-          "count": 1
-        },
-        {
-          "name": "DFS",
           "count": 1
         }
       ],
@@ -55875,6 +56045,10 @@
         {
           "name": "DMV",
           "count": 1
+        },
+        {
+          "name": "Not yet identified",
+          "count": 1
         }
       ],
       "commitment_ids": [
@@ -55898,6 +56072,10 @@
         {
           "name": "DOL",
           "count": 3
+        },
+        {
+          "name": "Not yet identified",
+          "count": 2
         }
       ],
       "commitment_ids": [
@@ -55960,6 +56138,10 @@
         },
         {
           "name": "DOH",
+          "count": 1
+        },
+        {
+          "name": "Not yet identified",
           "count": 1
         }
       ],
@@ -56117,6 +56299,31 @@
       ]
     },
     {
+      "id": "transportation_general",
+      "label": "Transportation",
+      "commitment_count": 4,
+      "years": {
+        "2024": 3,
+        "2026": 1
+      },
+      "top_agencies": [
+        {
+          "name": "DOT",
+          "count": 4
+        },
+        {
+          "name": "MTA",
+          "count": 4
+        }
+      ],
+      "commitment_ids": [
+        "2024-239",
+        "2024-242",
+        "2024-236",
+        "2026-096"
+      ]
+    },
+    {
       "id": "transport_electrification",
       "label": "Transportation Electrification",
       "commitment_count": 4,
@@ -56190,29 +56397,6 @@
         "2023-042",
         "2023-043",
         "2023-041"
-      ]
-    },
-    {
-      "id": "transportation_general",
-      "label": "Transportation",
-      "commitment_count": 3,
-      "years": {
-        "2024": 3
-      },
-      "top_agencies": [
-        {
-          "name": "DOT",
-          "count": 3
-        },
-        {
-          "name": "MTA",
-          "count": 3
-        }
-      ],
-      "commitment_ids": [
-        "2024-239",
-        "2024-242",
-        "2024-236"
       ]
     },
     {
@@ -57010,7 +57194,7 @@
       "top_agencies": [
         {
           "name": "OMH",
-          "count": 42
+          "count": 43
         },
         {
           "name": "DOH",
@@ -57018,19 +57202,19 @@
         },
         {
           "name": "HCR",
-          "count": 26
+          "count": 27
         },
         {
           "name": "NYSERDA",
           "count": 24
         },
         {
-          "name": "DEC",
-          "count": 19
+          "name": "Not yet identified",
+          "count": 23
         },
         {
-          "name": "MTA",
-          "count": 18
+          "name": "DEC",
+          "count": 19
         }
       ],
       "top_themes": [
@@ -57051,12 +57235,12 @@
           "count": 14
         },
         {
-          "label": "Equity and Inclusion",
+          "label": "Not yet identified",
           "count": 13
         },
         {
-          "label": "Not yet identified",
-          "count": 12
+          "label": "Equity and Inclusion",
+          "count": 13
         }
       ],
       "types": {
@@ -57320,12 +57504,16 @@
       "binary_share": 0.102,
       "top_agencies": [
         {
+          "name": "Not yet identified",
+          "count": 45
+        },
+        {
           "name": "HCR",
           "count": 23
         },
         {
           "name": "OMH",
-          "count": 21
+          "count": 20
         },
         {
           "name": "DOH",
@@ -57333,15 +57521,11 @@
         },
         {
           "name": "OCFS",
-          "count": 16
+          "count": 15
         },
         {
           "name": "MTA",
           "count": 14
-        },
-        {
-          "name": "SED",
-          "count": 11
         }
       ],
       "top_themes": [
@@ -57354,15 +57538,15 @@
           "count": 12
         },
         {
-          "label": "Child Care Access",
-          "count": 11
-        },
-        {
           "label": "Health Care",
           "count": 10
         },
         {
           "label": "Medicaid and Coverage",
+          "count": 10
+        },
+        {
+          "label": "Child Care Access",
           "count": 10
         },
         {
@@ -57564,6 +57748,10 @@
       "binary_share": 0.056,
       "top_agencies": [
         {
+          "name": "Not yet identified",
+          "count": 46
+        },
+        {
           "name": "HCR",
           "count": 21
         },
@@ -57578,10 +57766,6 @@
         {
           "name": "MTA",
           "count": 17
-        },
-        {
-          "name": "SED",
-          "count": 15
         },
         {
           "name": "DFS",
@@ -57824,7 +58008,7 @@
     "totals": {
       "commitments": 973,
       "years": 5,
-      "agencies": 21,
+      "agencies": 22,
       "themes": 59
     },
     "type_counts": {
@@ -57844,9 +58028,9 @@
     },
     "continuity_counts": {
       "base_year": 220,
-      "new": 314,
+      "new": 315,
       "continuation": 345,
-      "expansion": 66,
+      "expansion": 65,
       "follow_on": 28
     },
     "progress_counts": {

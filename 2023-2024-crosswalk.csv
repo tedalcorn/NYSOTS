@@ -5,7 +5,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2024-004,Improve Mental Health Admission and Discharge Decisions by Hospitals,psychiatric_capacity,new,,,
 2024-005,Create New Mental Health Courts and Expand Existing Courts,mental_health_general,expansion,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
 2024-006,Fund Court-Based Mental Health Navigators,mental_health_general,new,,,
-2024-007,Increase Transitional Housing for Individuals Referred Through Court System,mental_health_supportive_housing,expansion,2023-022,"Create 3,500 New Housing Units for Individuals with Mental Illness","theme=mental_health_supportive_housing; shared_terms=housing, individuals"
+2024-007,Increase Transitional Housing for Individuals Referred Through Court System,mental_health_general,new,,,
 2024-008,Fund New Community-Based Mental Health Teams,mental_health_supportive_housing,continuation,2023-044,Expand Medicaid Coverage of Preventative Health Services,theme=mental_health_supportive_housing; shared_terms=health
 2024-009,Provide More Intensive Supervision of Individuals on Parole,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
 2024-010,Fund Specialized Housing for People with Serious Mental Illness and Criminal History,mental_health_supportive_housing,continuation,2023-022,"Create 3,500 New Housing Units for Individuals with Mental Illness","theme=mental_health_supportive_housing; shared_terms=housing, illness, mental"
@@ -82,7 +82,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2024-081,Ensure Instructional Best Practices in Districts Around the State,education_general,new,,,
 2024-082,"Fund Training for 20,000 Teachers in Effective Reading Instruction",education_general,new,,,
 2024-083,Expand Access to Science of Reading Instruction Credentials at SUNY and CUNY,college_workforce_pathways,expansion,2023-073,Initiate a Cascading Admissions Pilot to Ensure That Every Student Has a Place at SUNY,theme=college_workforce_pathways; shared_terms=suny
-2024-084,Automatically Admit Top Students to SUNY and CUNY Campuses,college_workforce_pathways,continuation,2023-074,Provide for Reasonable Tuition Flexibility Throughout CUNY and SUNY,"theme=college_workforce_pathways; shared_terms=cuny, suny"
+2024-084,Automatically Admit Top Students to SUNY and CUNY Campuses,college_workforce_pathways,continuation,2023-072,Directly Admit All New York Students to Their Local Community Colleges,"theme=college_workforce_pathways; shared_terms=admit, students"
 2024-085,Make FAFSA Completion Universal,college_workforce_pathways,continuation,2023-070,Create New Early College High School and P-TECH Programs,theme=college_workforce_pathways; shared_terms=
 2024-086,Broaden SNAP Enrollment Outreach at CUNY and SUNY,mental_health_insurance,new,,,
 2024-087,Increase Campus Voter Participation,college_workforce_pathways,new,,,
@@ -145,7 +145,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2024-144,Help Small Businesses Navigate Environmental Regulations,recycling_waste,new,,,
 2024-145,Create New Avenues for Immigrant Entrepreneurs,college_workforce_pathways,continuation,2023-070,Create New Early College High School and P-TECH Programs,theme=college_workforce_pathways; shared_terms=
 2024-146,Require Paid Breaks for Breast Milk Expression in the Workplace,unclear,new,,,
-2024-147,Promote Economic Growth Through Investment in the Arts,economic_development_general,continuation,2023-082,Establish Minority and Women’s Business Enterprises Certification Reciprocity,theme=economic_development_general; shared_terms=
+2024-147,Promote Economic Growth Through Investment in the Arts,unclear,new,,,
 2024-148,Bolster Workforce Development,unclear,new,,,
 2024-149,Expand State Apprenticeships to Youth and Public Service Workers,unclear,new,,,
 2024-150,Establish an Office of Workforce Data and Research,unclear,new,,,

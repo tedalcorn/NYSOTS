@@ -22,7 +22,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2025-021,Invest in Student Success at the State University of New York,college_workforce_pathways,continuation,2024-083,Expand Access to Science of Reading Instruction Credentials at SUNY and CUNY,theme=college_workforce_pathways; shared_terms=
 2025-022,Invest in Cutting-Edge Research by Funding a New York State Innovation Fund,college_workforce_pathways,continuation,2024-056,Establish Empire AI Consortium to Drive Research and Innovation,"theme=college_workforce_pathways; shared_terms=innovation, research"
 2025-023,Unplug and Play,mental_health_youth,continuation,2024-014,Expand Peer-to-Peer Support Programs,theme=mental_health_youth; shared_terms=
-2025-024,Invest in New York State's Recreation Infrastructure,child_care_access,continuation,2024-189,Expand Early Childhood Mental Health Consultations,theme=child_care_access; shared_terms=
+2025-024,Invest in New York State's Recreation Infrastructure,climate_general,continuation,2024-089,Invest In Swimming Infrastructure,"theme=climate_general; shared_terms=infrastructure, invest"
 2025-025,Invest in Playgrounds,unclear,new,,,
 2025-026,"Launch Get Offline, Get Outside 2.0",unclear,new,,,
 2025-027,Double Down on NY SWIMS,unclear,new,,,
@@ -42,7 +42,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2025-041,Supporting our First Responders,unclear,new,,,
 2025-042,Launch First Responder Counseling Scholarship Program,college_workforce_pathways,new,,,
 2025-043,Eliminate Outdated Barriers in Public Safety Recruitment,state_police_capacity,continuation,2024-028,Expand the List of Crimes Eligible for Prosecution as a Hate Crime,theme=state_police_capacity; shared_terms=
-2025-044,Expand Educational Pathways to Public Service Careers,college_workforce_pathways,expansion,2024-084,Automatically Admit Top Students to SUNY and CUNY Campuses,theme=college_workforce_pathways; shared_terms=
+2025-044,Expand Educational Pathways to Public Service Careers,college_workforce_pathways,expansion,2024-098,Make SUNY Pools Community Anchors,theme=college_workforce_pathways; shared_terms=
 2025-045,Secure Additional Funding for Volunteer Fire Infrastructure and Response Equipment Grant Program,aging_long_term_care,new,,,
 2025-046,Keep Our Firefighters Safe with Better Protective Gear,unclear,new,,,
 2025-047,Secure Additional Funding for Law Enforcement Technology,unclear,new,,,
@@ -68,7 +68,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2025-067,Supporting Agriculture,food_access_agriculture,continuation,2024-228,Innovate in Agriculture,theme=food_access_agriculture; shared_terms=agriculture
 2025-068,Enhance Local Food Supply Chains,food_access_agriculture,continuation,2024-230,Launch New York's Blue Food Transformation,theme=food_access_agriculture; shared_terms=food
 2025-069,Position New York as a Regional Leader in Fiber Production,unclear,new,,,
-2025-070,Launch a Maple Industry Growth Strategy,unclear,new,,,
+2025-070,Launch a Maple Industry Growth Strategy,unclear,continuation,2024-147,Promote Economic Growth Through Investment in the Arts,theme=unclear; shared_terms=growth
 2025-071,Expand Agriculture Education in the New York Schools,food_access_agriculture,expansion,2024-228,Innovate in Agriculture,theme=food_access_agriculture; shared_terms=agriculture
 2025-072,Advance the Sustainability of New York's Dairy Industry,unclear,continuation,2024-155,Protect Outdoor Workers from Extreme Weather Hazards,theme=unclear; shared_terms=
 2025-073,Facilitate Advanced Injury Detection for Thoroughbred Racing,unclear,new,,,
@@ -117,8 +117,8 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2025-116,Expand Affordable Farmworker Housing,aging_long_term_care,expansion,2024-162,Improve Access and Transparency for Assisted Living Residences,theme=aging_long_term_care; shared_terms=
 2025-117,Ban Collusion Using of Algorithm-Enabled Rent Price Fixing,unclear,continuation,2024-141,Transform Blighted Communities,theme=unclear; shared_terms=
 2025-118,Reduce Shelter Rent Taxes for Mitchell-Lama Residents,unclear,continuation,2024-141,Transform Blighted Communities,theme=unclear; shared_terms=
-2025-119,Expand Capital to Maintain and Improve Supportive Housing,mental_health_supportive_housing,expansion,2024-007,Increase Transitional Housing for Individuals Referred Through Court System,theme=mental_health_supportive_housing; shared_terms=housing
-2025-120,Increase Funding for Supportive Housing,mental_health_supportive_housing,expansion,2024-007,Increase Transitional Housing for Individuals Referred Through Court System,theme=mental_health_supportive_housing; shared_terms=housing
+2025-119,Expand Capital to Maintain and Improve Supportive Housing,mental_health_supportive_housing,expansion,2024-010,Fund Specialized Housing for People with Serious Mental Illness and Criminal History,theme=mental_health_supportive_housing; shared_terms=housing
+2025-120,Increase Funding for Supportive Housing,mental_health_supportive_housing,expansion,2024-022,Expand Insurance Coverage and Hold Insurers Accountable,theme=mental_health_supportive_housing; shared_terms=
 2025-121,Extend Security Deposit Protections to Rent-Regulated Tenants,unclear,continuation,2024-141,Transform Blighted Communities,theme=unclear; shared_terms=
 2025-122,Help Affordable Housing Access Captive Insurance to Lower Costs,unclear,continuation,2024-141,Transform Blighted Communities,theme=unclear; shared_terms=
 2025-123,Make the Biggest Capital Investment in New York's Transportation History,mta_service_and_finance,continuation,2024-237,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=

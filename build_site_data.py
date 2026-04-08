@@ -112,6 +112,8 @@ THEME_LABELS = {
     "unclear": "Unclear",
 }
 
+UNKNOWN_AGENCY = "Not yet identified"
+
 
 def split_multi(value):
     return [part.strip() for part in (value or "").split(";") if part.strip()]
@@ -233,7 +235,9 @@ def build_indexes(commitments):
         if commitment["binary_evaluable"] == "yes":
             year_info["binary_yes"] += 1
 
-        for agency in commitment["all_agencies"]:
+        agencies_for_index = commitment["all_agencies"] or [UNKNOWN_AGENCY]
+
+        for agency in agencies_for_index:
             agency_info = agency_index[agency]
             agency_info["id"] = agency.lower().replace(" ", "-").replace("/", "-").replace("&", "and")
             agency_info["name"] = agency
@@ -252,7 +256,7 @@ def build_indexes(commitments):
             theme_info["commitment_ids"].append(commitment["id"])
             theme_info["years"][year] += 1
             year_info["themes"][theme_label] += 1
-            for agency in commitment["all_agencies"]:
+            for agency in agencies_for_index:
                 theme_info["agencies"][agency] += 1
                 agency_index[agency]["themes"][theme_label] += 1
 

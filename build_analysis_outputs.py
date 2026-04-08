@@ -144,6 +144,19 @@ MANUAL_MATCHES = {
     },
 }
 
+MANUAL_ROW_OVERRIDES = {
+    "Reimagining Jamaica Station for the Millions of Commuters Who Depend on It": {
+        "lead_agency": "DOT",
+        "supporting_agencies": "MTA",
+        "overlap_theme": "transportation_general",
+    },
+    "Invest in New York State's Recreation Infrastructure": {
+        "lead_agency": "DEC",
+        "supporting_agencies": "",
+        "overlap_theme": "climate_general",
+    },
+}
+
 
 def read_csv(path):
     with path.open(newline="") as handle:
@@ -533,6 +546,16 @@ def enrich_rows(rows, year):
         out["matched_prior_commitment_id"] = ""
         out["matched_prior_title"] = ""
         out["match_basis"] = ""
+        override = MANUAL_ROW_OVERRIDES.get(out["proposal_title"])
+        if override:
+            if "lead_agency" in override:
+                out["lead_agency"] = override["lead_agency"]
+                out["lead_agency_standardized"] = standardize_agencies(out["lead_agency"])
+            if "supporting_agencies" in override:
+                out["supporting_agencies"] = override["supporting_agencies"]
+                out["supporting_agencies_standardized"] = standardize_agencies(out["supporting_agencies"])
+            if "overlap_theme" in override:
+                out["overlap_theme"] = override["overlap_theme"]
         enriched.append(out)
     return enriched
 
