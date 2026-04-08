@@ -16,6 +16,7 @@ const state = {
   sorts: {
     commitments: { key: "year", dir: "desc" },
     agencies: { key: "name", dir: "asc" },
+    themes: { key: "label", dir: "asc" },
     agencyCommitments: { key: "year", dir: "desc" },
   },
 };
@@ -80,8 +81,6 @@ function renderSiteNote() {
   siteNoteEl.innerHTML = `
     <span>Last updated</span>
     <strong>${escapeHtml(meta.generated_at_label || "")}</strong>
-    <span>·</span>
-    <span>${escapeHtml(meta.years_covered.join("–"))}</span>
   `;
 }
 
@@ -294,33 +293,28 @@ function renderAgenciesView() {
 }
 
 function renderThemesView() {
-  const themes = state.data.themes.filter((theme) => {
+  const themes = sortThemes(state.data.themes.filter((theme) => {
     const query = state.filters.query.trim().toLowerCase();
     if (!query) return true;
     return theme.label.toLowerCase().includes(query) || theme.top_agencies.some((agency) => agency.name.toLowerCase().includes(query));
-  });
+  }), state.sorts.themes);
 
   contentEl.innerHTML = `
     <div class="view-header">
       <div>
         <h2>Themes</h2>
-        <p>Themes cut across years and agencies, and they provide a better analytic layer than agency names alone.</p>
       </div>
     </div>
-    <div class="card-list">
+    <div class="dense-table dense-table-agencies">
+      <div class="dense-head dense-row">
+        <button class="sort-button" type="button" data-sort-table="themes" data-sort-key="label">${renderSortLabel("Theme", "themes", "label")}</button>
+        <button class="sort-button" type="button" data-sort-table="themes" data-sort-key="count">${renderSortLabel("Commitments", "themes", "count")}</button>
+      </div>
       ${themes.map((theme) => `
-        <article class="browse-card">
-          <h3>${escapeHtml(theme.label)}</h3>
-          <div class="meta-line">
-            <span class="meta-pill blue">${theme.commitment_count} commitments</span>
-          </div>
-          <div class="mini-chip-row">
-            ${theme.top_agencies.map((agency) => `<span class="mini-chip">${escapeHtml(agency.name)} (${agency.count})</span>`).join("")}
-          </div>
-          <div class="utility-row">
-            <button class="utility-button" data-open-theme="${escapeAttr(theme.label)}">Open commitments</button>
-          </div>
-        </article>
+        <button class="dense-row dense-button" type="button" data-open-theme="${escapeAttr(theme.label)}">
+          <div class="dense-title" title="${escapeAttr(theme.label)}">${escapeHtml(theme.label)}</div>
+          <div>${theme.commitment_count}</div>
+        </button>
       `).join("")}
     </div>
   `;
@@ -333,6 +327,7 @@ function renderThemesView() {
       render();
     });
   });
+  bindSortControls("themes");
 }
 
 function renderAnalysisView() {
@@ -417,6 +412,14 @@ function renderDetail() {
     return;
   }
   const linkedPriorLabel = item.matched_prior_title && item.year > 2022 ? `${item.year - 1}: ${item.matched_prior_title}` : "";
+  const progressFields = [
+    item.quantified ? `<dl><dt>Quantified</dt><dd>${escapeHtml(item.quantified)}</dd></dl>` : "",
+    item.progress.status !== "not_assessed" ? `<dl><dt>Status</dt><dd>${escapeHtml(item.progress.label)}</dd></dl>` : "",
+  ].filter(Boolean).join("");
+  const sourceParts = [
+    item.source.url ? `<a href="${escapeAttr(item.source.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.source.label)}</a>` : escapeHtml(item.source.label),
+    [item.section_bucket, item.subsection].filter(Boolean).map(escapeHtml).join(" · "),
+  ].filter(Boolean);
 
   detailEl.innerHTML = `
     ${renderModalToolbar()}
@@ -427,7 +430,6 @@ function renderDetail() {
     <h2 class="detail-title" id="detail-modal-title">Commitment: ${escapeHtml(item.title)}</h2>
 
     <div class="detail-block">
-      <h3>Overview</h3>
       <div class="detail-grid">
         <dl>
           <dt>Lead agencies</dt>
@@ -446,53 +448,20 @@ function renderDetail() {
           <dd>${escapeHtml(formatLabel(item.implementation_pathway))}</dd>
         </dl>
       </div>
-    </div>
-
-    <div class="detail-block">
-      <h3>Coding</h3>
-      <div class="detail-grid">
-        <dl>
-          <dt>Quantified</dt>
-          <dd>${renderBlankableText(item.quantified)}</dd>
-        </dl>
-        <dl>
-          <dt>Metric or target</dt>
-          <dd>${renderBlankableText(item.metric_or_target)}</dd>
-        </dl>
-        <dl>
-          <dt>Binary evaluable</dt>
-          <dd>${renderBlankableText(item.binary_evaluable ? `${item.binary_evaluable}${item.binary_unit ? ` · ${item.binary_unit}` : ""}` : "")}</dd>
-        </dl>
-        <dl>
-          <dt>Continuity to prior year</dt>
-          <dd>${renderBlankableText(item.continuity_to_prior_year)}</dd>
-        </dl>
-      </div>
       ${linkedPriorLabel ? `<p><strong>Linked prior commitment:</strong> ${escapeHtml(linkedPriorLabel)}</p>` : ""}
     </div>
 
+    ${progressFields ? `
     <div class="detail-block">
       <h3>Progress</h3>
       <div class="detail-grid">
-        <dl>
-          <dt>Status</dt>
-          <dd>${renderBlankableText(item.progress.status === "not_assessed" ? "" : item.progress.label)}</dd>
-        </dl>
-        <dl>
-          <dt>Evidence needed</dt>
-          <dd>${renderBlankableText(item.status_evidence_needed)}</dd>
-        </dl>
+        ${progressFields}
       </div>
-    </div>
+    </div>` : ""}
 
     <div class="detail-block">
       <h3>Source</h3>
-      <dl class="detail-list">
-        <dt>Document</dt>
-        <dd>${item.source.url ? `<a href="${escapeAttr(item.source.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.source.label)}</a>` : escapeHtml(item.source.label)}</dd>
-        <dt>Section</dt>
-        <dd>${renderBlankableText(item.section_bucket)}${item.subsection ? ` · ${escapeHtml(item.subsection)}` : ""}</dd>
-      </dl>
+      <p class="source-line">${sourceParts.map((part) => `<span>${part}</span>`).join(`<span class="source-sep">·</span>`)}</p>
     </div>
   `;
 
@@ -518,12 +487,6 @@ function renderAgencyDetail() {
       <span class="meta-pill">Support on ${agency.support_count}</span>
     </div>
     <h2 class="detail-title" id="detail-modal-title">${escapeHtml(agency.name)}</h2>
-    <div class="detail-block">
-      <h3>Top Themes</h3>
-      <div class="mini-chip-row">
-        ${agency.top_themes.map((theme) => `<span class="mini-chip">${escapeHtml(theme.label)} (${theme.count})</span>`).join("")}
-      </div>
-    </div>
     <div class="detail-block">
       <h3>Commitments</h3>
       <div class="dense-table dense-table-modal">
@@ -670,7 +633,7 @@ function bindDetailEvents() {
 function renderModalToolbar() {
   return `
     <div class="modal-toolbar">
-      ${state.modalHistory.length ? `<button class="back-button" type="button" data-go-back="true">Back</button>` : `<span></span>`}
+      ${state.modalHistory.length ? `<button class="back-button" type="button" data-go-back="true" aria-label="Go back">←</button>` : `<span></span>`}
     </div>
   `;
 }
@@ -742,6 +705,18 @@ function sortAgencies(items, sort) {
     if (left < right) return sort.dir === "asc" ? -1 : 1;
     if (left > right) return sort.dir === "asc" ? 1 : -1;
     return a.name.localeCompare(b.name);
+  });
+  return sorted;
+}
+
+function sortThemes(items, sort) {
+  const sorted = [...items];
+  sorted.sort((a, b) => {
+    const left = sort.key === "count" ? a.commitment_count : a.label.toLowerCase();
+    const right = sort.key === "count" ? b.commitment_count : b.label.toLowerCase();
+    if (left < right) return sort.dir === "asc" ? -1 : 1;
+    if (left > right) return sort.dir === "asc" ? 1 : -1;
+    return a.label.localeCompare(b.label);
   });
   return sorted;
 }
