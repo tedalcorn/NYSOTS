@@ -133,10 +133,12 @@ function renderSidebar() {
     <div class="filter-group">
       <label for="query">Search by keyword</label>
       <input id="query" type="search" value="${escapeHtml(state.filters.query)}" placeholder="Search commitment titles">
-      <label class="inline-check">
-        <input id="include-fulltext" type="checkbox" ${state.filters.includeFullText ? "checked" : ""}>
-        <span>Include full text</span>
-      </label>
+      <div class="search-inline">
+        <label class="inline-check">
+          <input id="include-fulltext" type="checkbox" ${state.filters.includeFullText ? "checked" : ""}>
+          <span>Include full text</span>
+        </label>
+      </div>
     </div>
     <div class="filter-group">
       <label>Years</label>
@@ -247,7 +249,7 @@ function renderCommitmentsView() {
   contentEl.innerHTML = `
     <div class="view-header">
       <div>
-        <h2>Commitments</h2>
+        <h2>Commitments <span class="view-count">${commitments.length}</span></h2>
       </div>
     </div>
     ${commitments.length ? renderCommitmentTable(commitments) : `<div class="empty-state">No commitments match the current filters.</div>`}

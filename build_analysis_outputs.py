@@ -65,6 +65,7 @@ AGENCY_FIXES = {
 }
 
 THEME_RULES = [
+    ("labor_affordability_general", ["inflation rebate", "inflation rebates", "inflation refund", "salt deduction", "federal tax relief", "child tax credit", "tips", "student loan refinancing", "student loans", "wage theft", "workers' compensation fraud"]),
     ("aging_master_plan", ["master plan for aging"]),
     ("aging_long_term_care", ["aging services", "long-term care", "older new yorkers", "age with dignity", "aging"]),
     ("transit_oriented_housing", ["near transit", "transit-oriented"]),
@@ -97,22 +98,30 @@ THEME_RULES = [
     ("recycling_waste", ["recycling", "waste", "toxics in packaging"]),
     ("water_quality", ["water quality", "clean water"]),
     ("minimum_wage", ["minimum wage"]),
-    ("public_education_funding", ["public education", "prekindergarten", "foundation aid"]),
+    ("public_education_funding", ["public education", "prekindergarten", "foundation aid", "universal school meals", "school meals", "free breakfast and lunch"]),
     ("tutoring_learning_loss", ["tutoring", "learning loss"]),
-    ("college_workforce_pathways", ["early college", "p-tech", "community colleges", "high school-college-workforce", "suny"]),
+    ("college_workforce_pathways", ["early college", "p-tech", "community colleges", "high school-college-workforce", "suny", "tuition assistance program", "tap eligibility", "state longitudinal data system", "education and workforce outcomes", "apprenticeships", "pre-apprenticeships", "high-demand occupations"]),
     ("semiconductor_economic_development", ["semiconductor"]),
-    ("technology_innovation_economic_development", ["technology innovation", "cell and gene therapy", "supply chain resiliency"]),
-    ("food_access_agriculture", ["food access", "urban agriculture", "school food", "agriculture"]),
+    ("technology_innovation_economic_development", ["technology innovation", "cell and gene therapy", "supply chain resiliency", "artificial intelligence technical assistance", "artificial intelligence pipeline", "startups", "underrepresented startups"]),
+    ("food_access_agriculture", ["food access", "urban agriculture", "school food", "agriculture", "food banks", "pantries", "snap", "summer meal", "maple industry", "dairy industry", "fiber production"]),
     ("reproductive_rights", ["reproductive", "abortion", "contraception", "equal rights amendment"]),
     ("disability_inclusion", ["disabilities", "deaf", "deafblind", "hard of hearing"]),
     ("immigrant_support", ["new americans", "refugee", "immigrants"]),
     ("older_lgbtq_housing", ["older lgbtq"]),
     ("veterans_services", ["veterans", "military cultural competency"]),
-    ("child_care_access", ["child care", "early childhood", "child and dependent care tax credit", "early education"]),
-    ("mta_service_and_finance", ["mta", "city ticket", "interborough express"]),
-    ("street_safety", ["speed limit", "high risk drivers", "dangerous vehicles", "secondary crashes", "dwi"]),
-    ("digital_government", ["customer experience", "benefits participation", "e-signature", "one id", "call wait times", "digital and design teams"]),
+    ("child_care_access", ["child care", "early childhood", "child and dependent care tax credit", "early education", "playgrounds", "get offline get outside", "ny swims", "learn-to-swim", "child drowning", "books from dolly parton", "imagination library"]),
+    ("mta_service_and_finance", ["mta", "city ticket", "interborough express", "subway", "platform edge barriers", "police on platforms"]),
+    ("street_safety", ["speed limit", "high risk drivers", "dangerous vehicles", "secondary crashes", "dwi", "drugged driving", "bike lanes", "e-bikes", "crosswalks", "school intersections", "work zones", "motorcycle licensing"]),
+    ("digital_government", ["customer experience", "benefits participation", "e-signature", "one id", "call wait times", "digital and design teams", "digital innovation", "smart technology", "ai-generated content", "private data", "elections from misleading or deceptive ai content"]),
+    ("public_safety_general", ["law enforcement technology", "crime analysis centers", "crime labs", "police training academies", "mass violence events", "violent crime", "victim compensation", "orders of protection", "child victims of crime", "child advocacy centers", "first responders", "firefighters", "protective gear", "justice system", "community-led violence prevention"]),
+    ("equity_general", ["sexual assault", "gender-based violence", "survivor-led victim assistance", "safe access to worship", "safe access to healthcare", "constitutional violations", "federal officers"]),
+    ("tenant_protection", ["rent-regulated tenants", "rent-regulated housing", "home appraisal discrimination", "institutional investor", "security deposit protections", "algorithm-enabled rent price fixing", "captive insurance", "mitchell-lama", "elder financial exploitation"]),
+    ("housing_supply", ["down payment assistance", "homebuyer tax incentive", "pro-housing", "mixed-income revolving loan fund", "low income housing credits", "historic tax credits", "vacant properties into housing", "land banks", "manufactured homes park", "let them build", "build housing we need", "underutilized sites"]),
+    ("building_decarbonization", ["empower+", "weatherization assistance program", "energy efficiency", "upgrade homes", "utilities omnibus", "utility regulation", "ratepayers", "energy affordability program", "electric grid", "data centers", "interconnections", "utility shutoffs", "energy cost burden", "utility bills"]),
+    ("climate_general", ["parks", "high falls state park", "niagara gorge", "world cup legacy investment fund", "community centers", "lead out"]),
     ("economic_development_general", ["local economic development", "downtown revitalization", "new york forward", "authorities budget office", "idas"]),
+    ("government_operations_general", ["critical infrastructure projects", "faster decisions", "clear timelines", "environmental impact statements", "review timelines", "permitting processes", "permitting academy", "government work better", "outdated and burdensome regulations", "streamlining public procurement", "expediting major state infrastructure projects", "making every new yorker count"]),
+    ("government_general", ["algorithmic price discrimination", "returns and refunds", "buy now pay later", "subscription cancellation", "subscription renewal", "overdraft", "non-sufficient funds fees", "energy service companies", "misleading discounts", "misleading discount", "illegal vape enforcement"]),
 ]
 
 STOPWORDS = {
@@ -154,6 +163,111 @@ MANUAL_ROW_OVERRIDES = {
         "lead_agency": "DEC",
         "supporting_agencies": "",
         "overlap_theme": "climate_general",
+    },
+    "Provide $100 Million of Relief for 195,000 Small Businesses": {
+        "overlap_theme": "economic_development_general",
+    },
+    "Accelerate $1.2 Billion in Middle-Class Tax Cuts for 6 Million New Yorkers": {
+        "overlap_theme": "labor_affordability_general",
+    },
+    "Deliver a $1 Billion Property Tax Rebate for More Than 2 Million New York Families": {
+        "overlap_theme": "labor_affordability_general",
+    },
+    "Expand the State’s Technology Talent Pipeline": {
+        "overlap_theme": "technology_innovation_economic_development",
+    },
+    "Refocus Parole Officers on Career Planning and Job Placement": {
+        "overlap_theme": "alternatives_reentry",
+    },
+    "Enable Voluntary, Private-Sector, In-Prison Employment Opportunities that Pay a Good Wage": {
+        "overlap_theme": "alternatives_reentry",
+    },
+    "Expand Vocational, Job Readiness, and Re-Entry Programs": {
+        "overlap_theme": "alternatives_reentry",
+    },
+    "Allow for Educational Release as an Earned, Re-Entry Opportunity": {
+        "overlap_theme": "alternatives_reentry",
+    },
+    "Pass the Clean Slate Act": {
+        "overlap_theme": "alternatives_reentry",
+    },
+    "Pilot a New Approach to Transitional Housing for Post-Incarceration Individuals": {
+        "overlap_theme": "alternatives_reentry",
+    },
+    "Eliminate Outdated Supervision Fees to Reduce Barriers for Individuals Returning to Society After Incarceration": {
+        "overlap_theme": "alternatives_reentry",
+    },
+    "Fully Staff the Parole Board and Prohibit Outside Employment for Board Members": {
+        "overlap_theme": "alternatives_reentry",
+    },
+    "Facilitate Access to ID Cards and Other Vital Records to Enhance Opportunities for Released Persons": {
+        "overlap_theme": "alternatives_reentry",
+    },
+    "Automate Debt Forgiveness for State Employees": {
+        "overlap_theme": "labor_affordability_general",
+    },
+    "Protect Consumers from Healthcare Provider Misinformation": {
+        "overlap_theme": "health_care_general",
+    },
+    "Create the Pharmacy Benefits Bureau to Lower the Cost of Prescription Drugs": {
+        "overlap_theme": "health_care_general",
+    },
+    "Strengthen the Statewide Office of Financial Inclusion and Empowerment": {
+        "overlap_theme": "government_general",
+    },
+    "Enhance the UI Benefit Banking Program to Help New Yorkers Receive Their Unemployment Insurance Benefits": {
+        "overlap_theme": "labor_affordability_general",
+    },
+    "Create the Conditions to Attract and Grow Businesses": {
+        "overlap_theme": "economic_development_general",
+    },
+    "Invest in Shovel-Ready Sites to Attract Businesses": {
+        "overlap_theme": "economic_development_general",
+    },
+    "Create One Network for Regional Advanced Manufacturing Partnerships (ON-RAMP)": {
+        "overlap_theme": "college_workforce_pathways",
+    },
+    "Transform Blighted Communities": {
+        "overlap_theme": "economic_development_general",
+    },
+    "Expand Localities' Access to DASNY Construction Services": {
+        "overlap_theme": "government_operations_general",
+    },
+    "Empower Small Business": {
+        "overlap_theme": "economic_development_general",
+    },
+    "Help Small Businesses Navigate Environmental Regulations": {
+        "overlap_theme": "economic_development_general",
+    },
+    "Create New Avenues for Immigrant Entrepreneurs": {
+        "overlap_theme": "immigrant_support",
+    },
+    "Require Paid Breaks for Breast Milk Expression in the Workplace": {
+        "overlap_theme": "labor_affordability_general",
+    },
+    "Promote Economic Growth Through Investment in the Arts": {
+        "overlap_theme": "economic_development_general",
+    },
+    "Bolster Workforce Development": {
+        "overlap_theme": "college_workforce_pathways",
+    },
+    "Establish an Office of Workforce Data and Research": {
+        "overlap_theme": "college_workforce_pathways",
+    },
+    "Expand the Teacher Ambassador Program": {
+        "overlap_theme": "education_general",
+    },
+    "Protect New York's Workers": {
+        "overlap_theme": "labor_affordability_general",
+    },
+    "Create and Distribute a Youth Workers Bill of Rights": {
+        "overlap_theme": "labor_affordability_general",
+    },
+    "Expand Recovery of Stolen Wages": {
+        "overlap_theme": "labor_affordability_general",
+    },
+    "Protect Outdoor Workers from Extreme Weather Hazards": {
+        "overlap_theme": "labor_affordability_general",
     },
 }
 
@@ -334,6 +448,28 @@ def infer_theme(row):
         return "health_care_general"
     if "government" in section_lower or "capital project delivery" in section_lower:
         return "government_operations_general"
+    if "making new york more affordable" in section_lower:
+        return "labor_affordability_general"
+    if "helping our children thrive" in section_lower:
+        return "education_general"
+    if "investing in safety" in section_lower or "keeping new yorkers safe" in section_lower:
+        return "public_safety_general"
+    if "bringing jobs to new york" in section_lower or "building an economy that works for all" in section_lower:
+        return "economic_development_general"
+    if "growing housing to drive affordability" in section_lower:
+        return "housing_general"
+    if "cutting commutes" in section_lower:
+        return "transportation_general"
+    if "critical infrastructure" in section_lower:
+        return "transportation_general"
+    if "protecting consumers and workers" in section_lower:
+        return "labor_affordability_general"
+    if "protecting new york's consumers and workers" in section_lower:
+        return "labor_affordability_general"
+    if "supporting survivors" in section_lower:
+        return "equity_general"
+    if "energy future" in section_lower:
+        return "energy_affordability"
     return "unclear"
 
 

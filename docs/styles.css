@@ -219,8 +219,13 @@ h1 {
   border-color: var(--ny-blue);
 }
 
+.search-inline {
+  display: flex;
+  align-items: center;
+  margin-top: 0.3rem;
+}
+
 .inline-check {
-  margin-top: 0.45rem;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -322,6 +327,14 @@ h1 {
 .view-header h2 {
   margin: 0;
   font-size: 1.5rem;
+}
+
+.view-count {
+  margin-left: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--muted);
+  vertical-align: middle;
 }
 
 .view-header p {
