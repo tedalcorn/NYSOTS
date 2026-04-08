@@ -7,11 +7,20 @@ from pathlib import Path
 
 
 ROOT = Path("/Users/tedalcorn/Desktop/codex-projects/NYSOTS")
-INPUT_2022 = ROOT / "2022-first-pass-inventory.csv"
-INPUT_2023 = ROOT / "2023-first-pass-inventory.csv"
-OUTPUT_2022 = ROOT / "2022-enriched-inventory.csv"
-OUTPUT_2023 = ROOT / "2023-cleaned-enriched-inventory.csv"
-OUTPUT_CROSSWALK = ROOT / "2022-2023-crosswalk.csv"
+INPUT_FILES = {
+    "2022": ROOT / "2022-first-pass-inventory.csv",
+    "2023": ROOT / "2023-first-pass-inventory.csv",
+    "2024": ROOT / "2024-first-pass-inventory.csv",
+    "2025": ROOT / "2025-first-pass-inventory.csv",
+    "2026": ROOT / "2026-first-pass-inventory.csv",
+}
+OUTPUT_FILES = {
+    "2022": ROOT / "2022-enriched-inventory.csv",
+    "2023": ROOT / "2023-cleaned-enriched-inventory.csv",
+    "2024": ROOT / "2024-cleaned-enriched-inventory.csv",
+    "2025": ROOT / "2025-cleaned-enriched-inventory.csv",
+    "2026": ROOT / "2026-cleaned-enriched-inventory.csv",
+}
 OUTPUT_MEMO = ROOT / "analysis-update.txt"
 
 HEADERISH_2023 = {
@@ -163,6 +172,104 @@ def clean_2023_rows(rows):
     return cleaned, dropped
 
 
+def clean_later_year_rows(rows, year):
+    cleaned = []
+    dropped = []
+    headingish_starts = (
+        "Supporting ",
+        "Protecting ",
+        "Building ",
+        "Improving ",
+        "Increasing ",
+        "Ensuring ",
+        "Strengthening ",
+        "Unlocking ",
+        "Promoting ",
+        "Investing in ",
+        "Fostering ",
+        "Charting ",
+        "Driving ",
+        "Providing Universal ",
+        "Connecting Higher Education",
+        "Combating Crime and Ensuring Justice",
+        "Helping Put Food on the Table",
+        "Tackling Utility Costs",
+        "Tackling Rising Home Insurance Costs",
+        "Supporting Our Farmers",
+        "Supporting Our Farmers’ Families and Children",
+        "Improving the Health of All New Yorkers",
+        "Increase the Resiliency of the Healthcare System",
+        "Strengthen the Healthcare Workforce",
+        "Increase Affordability and Accessibility",
+        "Improve Public Health for All New Yorkers",
+        "Protect Our Homes",
+        "Protect Our Communities",
+        "Protect Our Most Vulnerable",
+        "Protect New York's Infrastructure",
+        "Safeguard New York’s Clean Water",
+        "Make New York Greener",
+        "Create the Conditions to Attract and Grow Businesses",
+        "Bolster Workforce Development",
+        "Protect New York’s Workers",
+        "Improve Access to Benefits and Services",
+        "Expedite Processing Times for Services",
+        "Build a Stronger Public Sector Workforce",
+        "Help our Farmers",
+        "Innovate in Agriculture",
+        "Build Cyber Resilience",
+        "Invest in Infrastructure",
+        "Getting Around Safely and Equitably",
+        "Standing up for New Yorkers",
+        "Increasing Speed, Equity, and Efficiency in Capital Project Delivery",
+        "Improving Efficiency of Government Processes",
+        "Strengthening Our Digital Infrastructure",
+        "Building Opportunities for Homeownership",
+        "Unlocking Local Development",
+        "Strengthening Investment in Communities",
+        "Protecting Housing Affordability",
+        "Supporting the Youngest New Yorkers and their Families",
+        "Charting a Brighter Future for Child Care",
+        "Fostering Better Educational Opportunities",
+        "Unplug and Play",
+        "Restoring Trust and Confidence in the Legitimacy of the Justice System",
+        "Supporting our First Responders",
+        "Protecting Pedestrians, Workers, Drivers, and Cyclists",
+        "Driving Economic Development",
+        "Supporting Agriculture",
+        "Protecting Workers",
+        "Launching ASCENT NY",
+        "Building Stronger Communities for a Changing Climate",
+        "Protecting Our Land, Water, and Air",
+        "Making It Easier to Provide Child Care",
+        "Supporting the Workforce through Early Childhood Educator Preparation",
+        "Supporting Former Foster Students",
+        "Promoting Youth Mental Health",
+        "Safeguarding Kids Online",
+        "Strengthening the Healthcare Delivery System",
+        "Empowering the Healthcare Workforce",
+        "Improving Healthcare Coverage, Access, and Affordability",
+        "Investing in Older Adults",
+        "Improving Equity in Public Health",
+        "Promoting Tech and Biotech",
+        "Supporting Farmers and Manufacturers",
+        "Investing in Communities",
+        "Advancing Student Learning and Supports",
+        "Connecting Higher Education and Opportunity",
+        "Strengthening Our Supports",
+        "Building a More Inclusive State",
+    )
+    for row in rows:
+        title = normalize_whitespace(row["proposal_title"])
+        row = dict(row)
+        row["proposal_title"] = title
+        row["subsection"] = normalize_whitespace(row["subsection"])
+        if title.startswith(headingish_starts):
+            dropped.append((title, f"{year} subsection header"))
+            continue
+        cleaned.append(row)
+    return cleaned, dropped
+
+
 def standardize_agencies(value):
     agencies = []
     for part in (value or "").split(";"):
@@ -235,6 +342,8 @@ def infer_theme(row):
         "Government / democracy": "government_general",
         "Transportation / infrastructure": "transportation_general",
         "Government operations / customer experience": "government_operations_general",
+        "Communities / infrastructure": "transportation_general",
+        "Parks / recreation": "climate_general",
     }
     return fallback.get(section, "unclear")
 
@@ -261,8 +370,8 @@ def tokenize(title):
     return {w for w in words if w not in STOPWORDS and len(w) > 2}
 
 
-def choose_best_match(row_2023, rows_2022):
-    theme = row_2023["overlap_theme"]
+def choose_best_match(current_row, prior_rows):
+    theme = current_row["overlap_theme"]
     related_themes = {
         "aging_long_term_care": {"aging_long_term_care", "aging_master_plan"},
         "office_conversion": {"office_conversion", "housing_general"},
@@ -270,7 +379,7 @@ def choose_best_match(row_2023, rows_2022):
         "mental_health_supportive_housing": {"mental_health_supportive_housing", "housing_supply"},
     }
     candidates = [
-        r for r in rows_2022 if r["overlap_theme"] in related_themes.get(theme, {theme})
+        r for r in prior_rows if r["overlap_theme"] in related_themes.get(theme, {theme})
     ]
     if not candidates:
         section_pairs = {
@@ -287,12 +396,14 @@ def choose_best_match(row_2023, rows_2022):
             "Government / democracy": {"Government reform", "People / workforce / reentry / food systems"},
             "Transportation / infrastructure": {"Communities / infrastructure / economic development", "Climate / energy / environment"},
             "Government operations / customer experience": {"Government reform", "People / workforce / reentry / food systems"},
+            "Communities / infrastructure": {"Communities / infrastructure / economic development", "Transportation / infrastructure", "Housing / homelessness"},
+            "Parks / recreation": {"Communities / infrastructure / economic development", "Climate / energy / environment"},
         }
         candidates = [
-            r for r in rows_2022 if r["section_bucket"] in section_pairs.get(row_2023["section_bucket"], set())
+            r for r in prior_rows if r["section_bucket"] in section_pairs.get(current_row["section_bucket"], set())
         ]
 
-    title_tokens = tokenize(row_2023["proposal_title"])
+    title_tokens = tokenize(current_row["proposal_title"])
     best = None
     best_score = 0.0
     for candidate in candidates:
@@ -302,7 +413,7 @@ def choose_best_match(row_2023, rows_2022):
         score = len(title_tokens & candidate_tokens) / len(title_tokens | candidate_tokens)
         if candidate["overlap_theme"] == theme:
             score += 0.35
-        if row_2023["lead_agency_standardized"] and row_2023["lead_agency_standardized"] == candidate["lead_agency_standardized"]:
+        if current_row["lead_agency_standardized"] and current_row["lead_agency_standardized"] == candidate["lead_agency_standardized"]:
             score += 0.15
         if score > best_score:
             best = candidate
@@ -314,7 +425,7 @@ def choose_best_match(row_2023, rows_2022):
         return None, "", ""
 
     relation = "continuation"
-    lowered = row_2023["proposal_title"].lower()
+    lowered = current_row["proposal_title"].lower()
     if any(token in lowered for token in ["double ", "triple ", "increase ", "expand ", "provide $", "250 million"]):
         relation = "expansion"
     elif any(token in lowered for token in ["ensure access", "improve ", "modernize ", "secure the mta", "move forward"]):
@@ -354,75 +465,54 @@ def write_csv(path, rows):
         writer.writerows(rows)
 
 
-def write_crosswalk(path, rows_2023):
+def write_crosswalk(path, rows):
     fieldnames = [
-        "commitment_id_2023",
-        "proposal_title_2023",
+        "commitment_id",
+        "proposal_title",
         "overlap_theme",
         "continuity_to_prior_year",
-        "matched_commitment_id_2022",
-        "matched_title_2022",
+        "matched_prior_commitment_id",
+        "matched_prior_title",
         "match_basis",
     ]
     with path.open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
-        for row in rows_2023:
+        for row in rows:
             writer.writerow(
                 {
-                    "commitment_id_2023": row["commitment_id"],
-                    "proposal_title_2023": row["proposal_title"],
+                    "commitment_id": row["commitment_id"],
+                    "proposal_title": row["proposal_title"],
                     "overlap_theme": row["overlap_theme"],
                     "continuity_to_prior_year": row["continuity_to_prior_year"],
-                    "matched_commitment_id_2022": row["matched_prior_commitment_id"],
-                    "matched_title_2022": row["matched_prior_title"],
+                    "matched_prior_commitment_id": row["matched_prior_commitment_id"],
+                    "matched_prior_title": row["matched_prior_title"],
                     "match_basis": row["match_basis"],
                 }
             )
 
 
-def write_memo(path, dropped_rows, rows_2022, rows_2023):
-    relation_counts = defaultdict(int)
-    binary_counts = defaultdict(int)
-    for row in rows_2023:
-        relation_counts[row["continuity_to_prior_year"] or "blank"] += 1
-        binary_counts[row["binary_evaluable"]] += 1
-
+def write_memo(path, dropped_by_year, enriched_by_year):
     lines = [
         "Analysis update",
         "",
         "Outputs created:",
-        f"- {OUTPUT_2022.name}",
-        f"- {OUTPUT_2023.name}",
-        f"- {OUTPUT_CROSSWALK.name}",
-        "",
-        "2023 cleanup summary:",
-        f"- Started from {len(read_csv(INPUT_2023))} rows.",
-        f"- Dropped {len(dropped_rows)} obvious non-commitment rows.",
-        f"- Cleaned output now has {len(rows_2023)} rows.",
-        "",
-        "Rows dropped from 2023:",
     ]
-    for title, reason in dropped_rows:
-        lines.append(f"- {title} [{reason}]")
-
+    for year in sorted(OUTPUT_FILES):
+        lines.append(f"- {OUTPUT_FILES[year].name}")
+    for year in ["2023", "2024", "2025", "2026"]:
+        lines.append(f"- {year}-crosswalk.csv")
+    lines.extend(["", "Year summaries:"])
+    for year in sorted(enriched_by_year):
+        rows = enriched_by_year[year]
+        raw_count = len(read_csv(INPUT_FILES[year]))
+        lines.append(f"- {year}: {raw_count} raw rows, {len(dropped_by_year[year])} dropped, {len(rows)} kept")
     lines.extend(
         [
             "",
-            "2023 binary evaluability:",
-            f"- yes: {binary_counts['yes']}",
-            f"- mixed: {binary_counts['mixed']}",
-            f"- no: {binary_counts['no']}",
-            "",
-            "2023 continuity to 2022:",
-            f"- continuation: {relation_counts['continuation']}",
-            f"- expansion: {relation_counts['expansion']}",
-            f"- follow_on: {relation_counts['follow_on']}",
-            f"- new: {relation_counts['new']}",
-            "",
             "Important caution:",
-            "- The continuity crosswalk is a structured first pass based on theme and title overlap.",
-            "- It is useful for review and triage, but some rows will still need manual confirmation.",
+            "- 2024-2026 imports are first-pass TOC extractions and still include some subgroup noise.",
+            "- Continuity links beyond 2023 are structured first passes and will need manual review.",
         ]
     )
 
@@ -430,43 +520,56 @@ def write_memo(path, dropped_rows, rows_2022, rows_2023):
 
 
 def main():
-    rows_2022 = read_csv(INPUT_2022)
-    rows_2023_raw = read_csv(INPUT_2023)
-    rows_2023, dropped_rows = clean_2023_rows(rows_2023_raw)
+    dropped_by_year = defaultdict(list)
+    cleaned_rows = {}
+    enriched_by_year = {}
+    title_maps = {}
 
-    enriched_2022 = enrich_rows(rows_2022, "2022")
-    enriched_2023 = enrich_rows(rows_2023, "2023")
-    title_to_2022 = {row["proposal_title"]: row for row in enriched_2022}
+    for year, path in INPUT_FILES.items():
+        raw_rows = read_csv(path)
+        if year == "2023":
+            cleaned, dropped = clean_2023_rows(raw_rows)
+        elif year in {"2024", "2025", "2026"}:
+            cleaned, dropped = clean_later_year_rows(raw_rows, year)
+        else:
+            cleaned, dropped = raw_rows, []
+        cleaned_rows[year] = cleaned
+        dropped_by_year[year] = dropped
+        enriched_by_year[year] = enrich_rows(cleaned, year)
+        title_maps[year] = {row["proposal_title"]: row for row in enriched_by_year[year]}
 
-    by_theme_2022 = defaultdict(list)
-    for row in enriched_2022:
-        by_theme_2022[row["overlap_theme"]].append(row)
-
-    for row in enriched_2023:
-        manual = MANUAL_MATCHES.get(row["proposal_title"])
-        if manual:
-            match = title_to_2022.get(manual["prior_title"])
-            if match:
-                row["continuity_to_prior_year"] = manual["relation"]
-                row["matched_prior_commitment_id"] = match["commitment_id"]
-                row["matched_prior_title"] = match["proposal_title"]
-                row["match_basis"] = manual["basis"]
-                continue
-        match, relation, basis = choose_best_match(row, enriched_2022)
-        if match is None:
-            row["continuity_to_prior_year"] = "new"
+    ordered_years = sorted(enriched_by_year)
+    for year in ordered_years[1:]:
+        prior_year = str(int(year) - 1)
+        if prior_year not in enriched_by_year:
             continue
-        row["continuity_to_prior_year"] = relation
-        row["matched_prior_commitment_id"] = match["commitment_id"]
-        row["matched_prior_title"] = match["proposal_title"]
-        row["match_basis"] = basis
+        for row in enriched_by_year[year]:
+            manual = MANUAL_MATCHES.get(row["proposal_title"])
+            if manual:
+                match = title_maps[prior_year].get(manual["prior_title"])
+                if match:
+                    row["continuity_to_prior_year"] = manual["relation"]
+                    row["matched_prior_commitment_id"] = match["commitment_id"]
+                    row["matched_prior_title"] = match["proposal_title"]
+                    row["match_basis"] = manual["basis"]
+                    continue
+            match, relation, basis = choose_best_match(row, enriched_by_year[prior_year])
+            if match is None:
+                row["continuity_to_prior_year"] = "new"
+                continue
+            row["continuity_to_prior_year"] = relation
+            row["matched_prior_commitment_id"] = match["commitment_id"]
+            row["matched_prior_title"] = match["proposal_title"]
+            row["match_basis"] = basis
 
-    write_csv(OUTPUT_2022, enriched_2022)
-    write_csv(OUTPUT_2023, enriched_2023)
-    write_crosswalk(OUTPUT_CROSSWALK, enriched_2023)
-    write_memo(OUTPUT_MEMO, dropped_rows, enriched_2022, enriched_2023)
+    for year, rows in enriched_by_year.items():
+        write_csv(OUTPUT_FILES[year], rows)
+    for year in ordered_years[1:]:
+        crosswalk_path = ROOT / f"{int(year)-1}-{year}-crosswalk.csv"
+        write_crosswalk(crosswalk_path, enriched_by_year[year])
+    write_memo(OUTPUT_MEMO, dropped_by_year, enriched_by_year)
 
-    print(f"Wrote {OUTPUT_2022.name}, {OUTPUT_2023.name}, {OUTPUT_CROSSWALK.name}, and {OUTPUT_MEMO.name}")
+    print("Wrote enriched inventories and pairwise crosswalks for 2022-2026")
 
 
 if __name__ == "__main__":

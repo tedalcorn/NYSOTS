@@ -14,6 +14,9 @@ DATA_DIR = SITE_ROOT / "data"
 INPUTS = [
     ROOT / "2022-enriched-inventory.csv",
     ROOT / "2023-cleaned-enriched-inventory.csv",
+    ROOT / "2024-cleaned-enriched-inventory.csv",
+    ROOT / "2025-cleaned-enriched-inventory.csv",
+    ROOT / "2026-cleaned-enriched-inventory.csv",
 ]
 
 SOURCE_MAP = {
@@ -26,6 +29,21 @@ SOURCE_MAP = {
         "label": "2023 State of the State Book",
         "url": "https://www.governor.ny.gov/sites/default/files/2023-01/2023SOTSBook.pdf",
         "landing_url": "https://www.governor.ny.gov/programs/2023-state-state",
+    },
+    "2024-SOTS-Book-Online.pdf": {
+        "label": "2024 State of the State Book",
+        "url": "https://www.governor.ny.gov/sites/default/files/2024-01/2024-SOTS-Book-Online.pdf",
+        "landing_url": "https://www.governor.ny.gov/programs/2024-state-state",
+    },
+    "2025StateoftheStateBook.pdf": {
+        "label": "2025 State of the State Book",
+        "url": "https://www.governor.ny.gov/sites/default/files/2025-01/2025StateoftheStateBook.pdf",
+        "landing_url": "https://www.governor.ny.gov/programs/2025-state-state",
+    },
+    "2026StateoftheStateBook.pdf": {
+        "label": "2026 State of the State Book",
+        "url": "https://www.governor.ny.gov/sites/default/files/2026-01/2026StateoftheStateBook.pdf",
+        "landing_url": "https://www.governor.ny.gov/keywords/2026-state-state",
     },
 }
 

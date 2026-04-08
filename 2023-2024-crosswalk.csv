@@ -1,0 +1,235 @@
+commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prior_commitment_id,matched_prior_title,match_basis
+2024-001,2024 State of the State FOREWORD...........................................................................................................................,unclear,new,,,
+2024-002,Improve Public Safety By Addressing Serious Mental Illness,mental_health_supportive_housing,follow_on,2023-022,"Create 3,500 New Housing Units for Individuals with Mental Illness","theme=mental_health_supportive_housing; shared_terms=illness, mental"
+2024-003,Open 200 New Psychiatric Inpatient Beds,psychiatric_capacity,continuation,2023-019,"Increase Operational Capacity for Inpatient Psychiatric Treatment by 1,000 Beds","theme=psychiatric_capacity; shared_terms=beds, inpatient, psychiatric"
+2024-004,Establish a Law Enforcement and Mental Health Coordination Team,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-005,Improve Mental Health Admission and Discharge Decisions by Hospitals,mental_health_general,follow_on,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=discharge
+2024-006,Create New Mental Health Courts and Expand Existing Courts,mental_health_general,expansion,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-007,Fund Court-Based Mental Health Navigators,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-008,Increase Transitional Housing for Individuals Referred Through Court System,mental_health_general,new,,,
+2024-009,Fund New Community-Based Mental Health Teams,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-010,Provide More Intensive Supervision of Individuals on Parole,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-011,Fund Specialized Housing for People with Serious Mental Illness and Criminal History,mental_health_supportive_housing,continuation,2023-022,"Create 3,500 New Housing Units for Individuals with Mental Illness","theme=mental_health_supportive_housing; shared_terms=housing, illness, mental"
+2024-012,Provide Crisis Intervention Team Training for Law Enforcement,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-013,Provide Critical Care to Young People,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-014,Establish a School-Based Mental Health Clinic in Any School That Wants One,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-015,Expand Peer-to-Peer Support Programs,mental_health_general,expansion,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-016,Establish New Youth ACT Teams Statewide,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-017,Expand Access to the Partial Hospitalization and Children's Day Treatment Programs,mental_health_general,expansion,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-018,Fund Programming for High-Need Transition-Age Youth,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-019,Expand Loan Repayment Program for Children's Mental Health Practitioners,mental_health_general,expansion,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-020,Limit Social Media Features Harmful to Youth Mental Health,mental_health_youth,continuation,2023-018,Expand Mental Health Services for School-Aged Children,"theme=mental_health_youth; shared_terms=health, mental"
+2024-021,Develop Social Media Resources for Youth and Caregivers,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-022,Convene Youth Mental Health Advisory Boards,mental_health_youth,continuation,2023-018,Expand Mental Health Services for School-Aged Children,"theme=mental_health_youth; shared_terms=health, mental"
+2024-023,Expand Insurance Coverage and Hold Insurers Accountable,mental_health_general,expansion,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-024,Strengthen Mental Health Parity Enforcement,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-025,Require Increased Commercial Insurance Reimbursement Rates for Mental Health Services,mental_health_insurance,continuation,2023-017,Expand Insurance Coverage for Mental Health Services,"theme=mental_health_insurance; shared_terms=health, insurance, mental, services"
+2024-026,Increase Access to Care Through Network Adequacy Regulations,mental_health_general,expansion,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-027,Issue Guidance on Free Mental Health Screenings,mental_health_general,continuation,2023-020,Improve Admissions and Discharge Planning and Establish Systemic Accountability,theme=mental_health_general; shared_terms=
+2024-028,Increase Medicaid Reimbursement for Mental Health Services in DOH Facilities and Private Practices,mental_health_insurance,expansion,2023-017,Expand Insurance Coverage for Mental Health Services,"theme=mental_health_insurance; shared_terms=health, mental, services"
+2024-029,Expand the List of Crimes Eligible for Prosecution as a Hate Crime,public_safety_general,expansion,2023-030,Expand the Work of Crime Analysis Centers and Include New York City,theme=public_safety_general; shared_terms=crime
+2024-030,Combat Unlicensed Sale of Cannabis,public_safety_general,continuation,2023-035,Combat the Flow of Fentanyl Into Our Communities,theme=public_safety_general; shared_terms=combat
+2024-031,Stop Organized Retail Theft,public_safety_general,continuation,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-032,Launch New York State Police Efforts to Build Cases,state_police_capacity,continuation,2023-027,Launch an Unprecedented Four New State Police Academy Classes,theme=state_police_capacity; shared_terms=police
+2024-033,"2024 State of the State Establish Federal, State, and Local Law Enforcement Joint Operation",public_safety_general,continuation,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-034,Fund Dedicated Retail Theft Teams in District Attorneys' Offices,public_safety_general,continuation,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-035,Fund Local Law Enforcement and Expand Evidence Collection to Combat Retail Theft,public_safety_general,expansion,2023-035,Combat the Flow of Fentanyl Into Our Communities,theme=public_safety_general; shared_terms=combat
+2024-036,Establish Commercial Security Tax Credit,public_safety_general,continuation,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-037,Make it Illegal to Facilitate Sales of Stolen Goods Online,public_safety_general,continuation,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-038,Increase Criminal Penalties for Assault of a Retail Worker,public_safety_general,expansion,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-039,Eliminate the Cap on State Supreme Court Judges,public_safety_general,continuation,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-040,Prevent and Prosecute Domestic Violence,public_safety_general,continuation,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-041,"Expand ""DV Stat"" to District Attorneys Around the State",public_safety_general,expansion,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-042,Fund Domestic Violence Risk Assessment and Improve Reporting,public_safety_general,follow_on,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-043,Fund GIVE Jurisdictions to Stop Cycles of Domestic Violence,public_safety_general,continuation,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-044,Expand the Supervision Against Violent Engagement Program to Focus on Domestic Violence,public_safety_general,expansion,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-045,Establish SAFE Fund to Support Survivors in Immediate Crisis,public_safety_general,continuation,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-046,Fund Intensive Case Management and Programming for Youth,public_safety_general,continuation,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-047,Support Re-Entry and Reduce Recidivism,public_safety_general,continuation,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-048,Expand College Programming to All State Prisons,public_safety_general,expansion,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-049,Expand Transitional Housing Opportunities,public_safety_general,new,,,
+2024-050,Launch Suicide Prevention Initiative,public_safety_general,continuation,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-051,Reduce Fatal Fires,public_safety_general,continuation,2023-028,Expand Community Stabilization Units to As Many As 25 Communities,theme=public_safety_general; shared_terms=
+2024-052,Support First Responders with Mental Health Services,mental_health_insurance,continuation,2023-017,Expand Insurance Coverage for Mental Health Services,"theme=mental_health_insurance; shared_terms=health, mental, services"
+2024-053,Prohibit Unfair Business Practices,labor_affordability_general,new,,,
+2024-054,"Regulate “Buy Now, Pay Later” Loans",labor_affordability_general,new,,,
+2024-055,Ensure New Yorkers Don't Get Buried by Medical Debt,labor_affordability_general,new,,,
+2024-056,Increase Paid Medical and Disability Leave Benefits,labor_affordability_general,new,,,
+2024-057,Eliminate Co-Pays for Insulin,labor_affordability_general,new,,,
+2024-058,Establish Empire AI Consortium to Drive Research and Innovation,economic_development_general,continuation,2023-077,Modernize and Streamline the State’s Training and Employment Infrastructure,theme=economic_development_general; shared_terms=
+2024-059,Lead by Example with Responsible AI Governance,economic_development_general,continuation,2023-077,Modernize and Streamline the State’s Training and Employment Infrastructure,theme=economic_development_general; shared_terms=
+2024-060,Unlock Potential for New Housing,housing_supply,continuation,2023-010,Offer Critical Incentives to Build and Rehabilitate Housing,theme=housing_supply; shared_terms=housing
+2024-061,Make Pro-Housing Designation a Requirement of Key State Funding Programs,housing_general,continuation,2023-002,Facilitate Housing Approval When Localities Do Not Meet Goals,theme=housing_general; shared_terms=housing
+2024-062,"Unlock the Potential for Up to 15,000 Units of Housing on State-Owned Sites",housing_general,continuation,2023-002,Facilitate Housing Approval When Localities Do Not Meet Goals,theme=housing_general; shared_terms=housing
+2024-063,Enact a Tax Abatement for New Rental and Affordable Housing in New York City,housing_general,continuation,2023-002,Facilitate Housing Approval When Localities Do Not Meet Goals,theme=housing_general; shared_terms=housing
+2024-064,Give the City of New York the Flexibility to Increase Residential Capacity,housing_supply,expansion,2023-007,Give the City of New York the Flexibility to Increase Residential Capacity,"theme=housing_supply; shared_terms=capacity, city, flexibility, give, residential"
+2024-065,Provide an Incentive for Below-Market Housing in Office Conversions,office_conversion,continuation,2023-008,Create Greater Opportunities to Convert Office Spaces to Residential Housing,"theme=office_conversion; shared_terms=housing, office"
+2024-066,Streamline Regulatory Processes to Increase Housing Production,housing_general,expansion,2023-002,Facilitate Housing Approval When Localities Do Not Meet Goals,theme=housing_general; shared_terms=housing
+2024-067,Stand Up for Tenants and Homeowners,housing_general,continuation,2023-012,Support Homeowners in High-Need Communities of Color,theme=housing_general; shared_terms=homeowners
+2024-068,Authorize the City of New York to Create a Path for Legalization of Basement Apartments,basement_apartments,continuation,2023-009,Authorize the City of New York to Legalize Basement Apartments,"theme=basement_apartments; shared_terms=apartments, authorize, basement, city"
+2024-069,2024 State of the State Protect Section 8 Tenants from Voucher Discrimination,housing_general,continuation,2023-002,Facilitate Housing Approval When Localities Do Not Meet Goals,theme=housing_general; shared_terms=
+2024-070,Prohibit Insurance Companies from Refusing to Cover Affordable Housing,housing_general,continuation,2023-002,Facilitate Housing Approval When Localities Do Not Meet Goals,theme=housing_general; shared_terms=housing
+2024-071,Increase Access to Pre-Natal Care,health_care_general,expansion,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-072,Establish First-in-Nation Statewide Paid Pre-Natal Leave,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-073,Require Informed Consent to Drug Test in Pregnancy or Postpartum,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-074,Create Conditions for Better Outcomes,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-075,Issue a Standing Order to Increase Access to Doula Services,health_care_general,expansion,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-076,Establish New Oversight Mechanisms to Avoid Unnecessary C-Sections,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-077,Reduce Barrier Costs for Pregnant Patients,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=costs
+2024-078,Reduce the Risk of Sudden Unexpected Infant Deaths (SUID),health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-079,Develop Data-Driven Interventions to Improve Birth Equity,health_care_general,follow_on,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-080,Improve Maternal Mental Health,health_care_general,follow_on,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-081,Expand Mental Health Screenings,health_care_general,expansion,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-082,Strengthen 988 Counseling for Pregnant New Yorkers and New Parents,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=yorkers
+2024-083,Train Providers to Recognize and Treat Mental Health Conditions,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-084,Ensure Instructional Best Practices in Districts Around the State,education_general,continuation,2023-075,Establish a State Matching Fund for Endowment Contributions,theme=education_general; shared_terms=
+2024-085,"Fund Training for 20,000 Teachers in Effective Reading Instruction",education_general,continuation,2023-075,Establish a State Matching Fund for Endowment Contributions,theme=education_general; shared_terms=fund
+2024-086,Expand Access to Science of Reading Instruction Credentials at SUNY and CUNY,college_workforce_pathways,expansion,2023-074,Provide for Reasonable Tuition Flexibility Throughout CUNY and SUNY,"theme=college_workforce_pathways; shared_terms=cuny, suny"
+2024-087,Automatically Admit Top Students to SUNY and CUNY Campuses,college_workforce_pathways,continuation,2023-074,Provide for Reasonable Tuition Flexibility Throughout CUNY and SUNY,"theme=college_workforce_pathways; shared_terms=cuny, suny"
+2024-088,Make FAFSA Completion Universal,education_general,continuation,2023-075,Establish a State Matching Fund for Endowment Contributions,theme=education_general; shared_terms=
+2024-089,Broaden SNAP Enrollment Outreach at CUNY and SUNY,college_workforce_pathways,continuation,2023-074,Provide for Reasonable Tuition Flexibility Throughout CUNY and SUNY,"theme=college_workforce_pathways; shared_terms=cuny, suny"
+2024-090,Increase Campus Voter Participation,education_general,expansion,2023-075,Establish a State Matching Fund for Endowment Contributions,theme=education_general; shared_terms=
+2024-091,Create a Statewide Service Initiative Under the Leadership of the Lieutenant Governor,government_general,continuation,2023-112,Raise Eligibility to the Maximum Allowed Under Federal Law,theme=government_general; shared_terms=under
+2024-092,Invest In Swimming Infrastructure,climate_general,new,,,
+2024-093,Build Municipal Pools in High Needs Areas,climate_general,new,,,
+2024-094,Connect New Yorkers to Our Rivers and Lakes,climate_general,new,,,
+2024-095,Fund Pop-Up Pools in Response to Extreme Heat,climate_general,new,,,
+2024-096,Make Waves for the Parks Centennial: New York's Swim-Tennial Celebration,climate_general,new,,,
+2024-097,Improve Safety in the Water,climate_general,new,,,
+2024-098,Provide More Lifeguards and Swimming Instruction,climate_general,new,,,
+2024-099,Double State Parks Water-Safety Instruction Sites,climate_general,new,,,
+2024-100,Getting Kids to the Pool,climate_general,new,,,
+2024-101,Make SUNY Pools Community Anchors,college_workforce_pathways,continuation,2023-076,Provide Funding for SUNY’s Transformation,theme=college_workforce_pathways; shared_terms=suny
+2024-102,Increase Amenities at Pools and Beaches by Providing Free Sunscreen,climate_general,new,,,
+2024-103,2024 State of the State,climate_general,new,,,
+2024-104,Launch the Resilient and Ready Program to Fortify and Repair Homes at Risk,climate_general,continuation,2023-064,"Clean Up ""Forever Chemicals""",theme=climate_general; shared_terms=
+2024-105,Advance the Blue Buffers Voluntary Homeowner Buyout Program,climate_general,new,,,
+2024-106,"Update Codes and Standards for Better, Safer Buildings",climate_general,new,,,
+2024-107,Develop a Comprehensive Adaptation and Resilience Plan,climate_general,continuation,2023-064,"Clean Up ""Forever Chemicals""",theme=climate_general; shared_terms=
+2024-108,Release Cutting Edge Climate Projections to Identify Risk,climate_general,new,,,
+2024-109,Bolster Disaster Response,climate_general,new,,,
+2024-110,Update Coastal Erosion Hazard Area Maps,climate_general,continuation,2023-064,"Clean Up ""Forever Chemicals""",theme=climate_general; shared_terms=
+2024-111,"Prepare, Respond, and Prevent Flooding in the Mohawk and Oswego River Basin",climate_general,continuation,2023-064,"Clean Up ""Forever Chemicals""",theme=climate_general; shared_terms=
+2024-112,Give the Public Tools to Understand and Act on Climate Risk,climate_general,new,,,
+2024-113,Fund Green Resiliency Grants,climate_general,continuation,2023-064,"Clean Up ""Forever Chemicals""",theme=climate_general; shared_terms=
+2024-114,Make State Agencies More Sustainable and Climate-Resilient,climate_general,continuation,2023-064,"Clean Up ""Forever Chemicals""",theme=climate_general; shared_terms=
+2024-115,Repair Aging Flood Control Projects,aging_long_term_care,continuation,2023-050,Ensure Access to Aging Services and High-Quality Long-Term Care,theme=aging_long_term_care; shared_terms=aging
+2024-116,Reduce Risk by Restoring or Removing Hazardous Dams,climate_general,continuation,2023-064,"Clean Up ""Forever Chemicals""",theme=climate_general; shared_terms=
+2024-117,Expand Climate Smart Community Grants,climate_general,new,,,
+2024-118,Update Water Regulations to Promote Resiliency,climate_general,continuation,2023-064,"Clean Up ""Forever Chemicals""",theme=climate_general; shared_terms=
+2024-119,"Expand Access to Healthy, Efficient Cooling for Vulnerable Populations",climate_general,new,,,
+2024-120,Deploy Air Conditioners to the Medically Vulnerable,climate_general,new,,,
+2024-121,Accelerate Clean Energy Infrastructure Buildout,climate_general,continuation,2023-064,"Clean Up ""Forever Chemicals""",theme=climate_general; shared_terms=clean
+2024-122,Deliver Savings on Utility Bills,climate_general,new,,,
+2024-123,Launch Statewide Solar for All,climate_general,new,,,
+2024-124,Responsibly Reduce Energy Infrastructure Costs,climate_general,new,,,
+2024-125,Launch the Smart Energy Savings Initiative,climate_general,new,,,
+2024-126,Initiate New York Grid of the Future Proceeding,climate_general,new,,,
+2024-127,Safeguard New York's Clean Water,water_quality,continuation,2023-063,Invest in Critical Water Quality Infrastructure,theme=water_quality; shared_terms=water
+2024-128,Deliver Support for Rural Communities,climate_general,new,,,
+2024-129,Expand Community Resources to Ensure Equitable Access to Funding Opportunities,climate_general,new,,,
+2024-130,Protect Drinking Water,climate_general,continuation,2023-064,"Clean Up ""Forever Chemicals""",theme=climate_general; shared_terms=
+2024-131,Prioritize PFAS Track Down and Source Control Efforts,climate_general,new,,,
+2024-132,Introduce New Guidance to Reduce Harmful Algae Blooms,climate_general,new,,,
+2024-133,Protect Our Lakes,climate_general,new,,,
+2024-134,Plant 25 Million Trees in the Next Decade,climate_general,new,,,
+2024-135,Establish the Erie Canal Bicentennial Commission,climate_general,new,,,
+2024-136,Launch the Clean Transportation Standard Study,climate_general,continuation,2023-064,"Clean Up ""Forever Chemicals""",theme=climate_general; shared_terms=clean
+2024-137,2024 State of the State,climate_general,new,,,
+2024-138,WORK AND DO BUSINESS,unclear,new,,,
+2024-139,Invest in Shovel-Ready Sites to Attract Businesses,unclear,new,,,
+2024-140,Create One Network for Regional Advanced Manufacturing Partnerships (ON-RAMP),unclear,new,,,
+2024-141,Transform Blighted Communities,unclear,new,,,
+2024-142,Expand Localities' Access to DASNY Construction Services,unclear,new,,,
+2024-143,Empower Small Business,unclear,new,,,
+2024-144,Help Small Businesses Navigate Environmental Regulations,unclear,new,,,
+2024-145,Create New Avenues for Immigrant Entrepreneurs,unclear,new,,,
+2024-146,Require Paid Breaks for Breast Milk Expression in the Workplace,unclear,new,,,
+2024-147,Promote Economic Growth Through Investment in the Arts,unclear,new,,,
+2024-148,Expand State Apprenticeships to Youth and Public Service Workers,unclear,new,,,
+2024-149,Establish an Office of Workforce Data and Research,unclear,new,,,
+2024-150,Expand the Teacher Ambassador Program,unclear,new,,,
+2024-151,Protect New York's Workers,unclear,new,,,
+2024-152,Create and Distribute a Youth Workers Bill of Rights,unclear,new,,,
+2024-153,Expand Recovery of Stolen Wages,unclear,new,,,
+2024-154,Protect Outdoor Workers from Extreme Weather Hazards,unclear,new,,,
+2024-155,Launch a Healthcare Safety Net Transformation Program,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-156,Streamline and Modernize New York's Healthcare Approval Program,health_care_general,follow_on,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-157,Strengthen Hospital Cyber Resilience,cyber_emergency_response,continuation,2023-037,Counter Cyber Threats,theme=cyber_emergency_response; shared_terms=cyber
+2024-158,Modernize Emergency Medical Services,primary_care_and_ems,follow_on,2023-049,Revitalize Emergency Medical Services and Medical Transportation,"theme=primary_care_and_ems; shared_terms=emergency, medical, services"
+2024-159,Encourage New Care Models Closer to Home,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-160,Improve Access and Transparency for Assisted Living Residences,health_care_general,follow_on,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-161,Sustain and Retain Healthcare Workers,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-162,Support New Yorkers Entering the Healthcare Workforce,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=yorkers
+2024-163,Allow Healthcare Providers to Do More,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-164,Improve Transparency of Home Care Services,health_care_general,follow_on,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-165,Expand Coverage for Health-Related Social Needs,health_care_general,expansion,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-166,Expand Access to Quality Dental Care,health_care_general,expansion,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-167,Increase Children's Access to Healthcare,health_care_general,expansion,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-168,Expand Access to Primary Care,primary_care_and_ems,expansion,2023-048,Expand Access to Primary Care,"theme=primary_care_and_ems; shared_terms=access, care, primary"
+2024-169,Increase the Affordability of New York State of Health Insurance Options,health_care_general,expansion,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-170,Appoint a Director of Patient Advocacy,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-171,End Preventable Epidemics,health_care_general,continuation,2023-053,End Preventable Epidemics,"theme=health_care_general; shared_terms=end, epidemics, preventable"
+2024-172,Protect New Yorkers from Opioid Overdose,opioid_response,continuation,2023-052,Save Lives Through Treatment of Opioid Addiction,theme=opioid_response; shared_terms=opioid
+2024-173,2024 State of the State Reduce Gun Violence Through a Public Health Approach,gun_violence,continuation,2023-034,Reduce Gun Violence and Violent Crime Amongst Individuals Under Parole Supervision,"theme=gun_violence; shared_terms=gun, reduce, violence"
+2024-174,Modernize Vital Records to Meet the Needs of New Yorkers,health_care_general,follow_on,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=yorkers
+2024-175,Alleviate Burden and Data Privacy Concerns for Abortion Providers,reproductive_rights,continuation,2023-095,Safeguard Abortion Access through Data Privacy Protections,"theme=reproductive_rights; shared_terms=abortion, data, privacy"
+2024-176,Invest in Clinical Care and Research for Rare Diseases,health_care_general,continuation,2023-047,Protect New Yorkers from Medical Debt and Other Burdensome Medical Costs,theme=health_care_general; shared_terms=
+2024-177,Support Lower-Income New Yorkers,equity_general,continuation,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=yorkers
+2024-178,Expand Summer Meals Program to Reduce Hunger,equity_general,expansion,2023-110,Expand Fresh Connect Program to Fight Food Insecurity,theme=equity_general; shared_terms=program
+2024-179,Provide More Intensive Support to Families in Need,equity_general,continuation,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=
+2024-180,Support Anti-Poverty Efforts in Upstate Cities,equity_general,continuation,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=
+2024-181,Continue Commitment to Child Care Access,child_care_access,continuation,2023-015,Include Child Care in New Residential Construction,"theme=child_care_access; shared_terms=care, child"
+2024-182,Provide Grants to Sustain Child Care Programs,child_care_access,continuation,2023-015,Include Child Care in New Residential Construction,"theme=child_care_access; shared_terms=care, child"
+2024-183,Pilot Family Child Care Networks,child_care_access,continuation,2023-116,Pilot a New York State Employer-Supported Child Care Program,"theme=child_care_access; shared_terms=care, child, pilot"
+2024-184,Expand Early Childhood Mental Health Consultations,equity_general,expansion,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=
+2024-185,Reimburse Child Care Providers for Quality Improvement,child_care_access,continuation,2023-015,Include Child Care in New Residential Construction,"theme=child_care_access; shared_terms=care, child"
+2024-186,Commit to Indigenous Nations,equity_general,continuation,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=
+2024-187,Strengthen Stability of Indigenous Families,equity_general,continuation,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=
+2024-188,Fund Dental Care for First Nations,equity_general,continuation,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=
+2024-189,Respond to Offensive Representations of Indigenous Peoples,equity_general,continuation,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=
+2024-190,Commit to All New Yorkers with Disabilities,disability_inclusion,continuation,2023-100,Connect People with Disabilities to Inclusive Internships,theme=disability_inclusion; shared_terms=disabilities
+2024-191,Issue Olmstead Plan for All People with Disabilities,disability_inclusion,continuation,2023-100,Connect People with Disabilities to Inclusive Internships,"theme=disability_inclusion; shared_terms=disabilities, people"
+2024-192,Support Access to Employment,equity_general,continuation,2023-107,Increase Access to Education for Public Assistance Recipients,theme=equity_general; shared_terms=access
+2024-193,Support Access to More Independent Living Settings,equity_general,continuation,2023-107,Increase Access to Education for Public Assistance Recipients,theme=equity_general; shared_terms=access
+2024-194,Support New York Veterans,veterans_services,continuation,2023-108,Launch Mobile Veterans Service Centers,theme=veterans_services; shared_terms=veterans
+2024-195,Develop Pocket Card for Providers Serving Veterans,veterans_services,continuation,2023-108,Launch Mobile Veterans Service Centers,theme=veterans_services; shared_terms=veterans
+2024-196,Create Statewide Women Veterans History Trail,veterans_services,continuation,2023-108,Launch Mobile Veterans Service Centers,theme=veterans_services; shared_terms=veterans
+2024-197,Support Mental Health of Women Veterans,veterans_services,continuation,2023-108,Launch Mobile Veterans Service Centers,theme=veterans_services; shared_terms=veterans
+2024-198,Strengthen New York's Response to Discrimination and Hate,equity_general,continuation,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=
+2024-199,Expedite Resolutions to Discrimination Complaints,equity_general,continuation,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=
+2024-200,Launch Youth Anti-Hate and -Bias Initiative,equity_general,continuation,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=
+2024-201,Strengthen Services for LGBTQ+ New Yorkers,equity_general,continuation,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=yorkers
+2024-202,Expand Funding for Workforce Development and Training for TGNCNB New Yorkers,equity_general,expansion,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=yorkers
+2024-203,Enhance Gender Affirming Care for TGNCNB New Yorkers,equity_general,continuation,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=yorkers
+2024-204,Strengthen LGBTQ+ Cultural Competency,equity_general,continuation,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=
+2024-205,Increase Chief Diversity Officers Across State Agencies,equity_general,expansion,2023-106,Protect New Yorkers from Predatory Banking Fees,theme=equity_general; shared_terms=
+2024-206,Use Data-Matching to Identify WIC-Eligible Families,government_operations_general,new,,,
+2024-207,Launch Modern Housing Search System,government_operations_general,new,,,
+2024-208,Pilot Language Access Certification Program,government_operations_general,new,,,
+2024-209,Streamline the Liquor Licensing and Application Processes,government_operations_general,new,,,
+2024-210,Simplify Process to Request Vital Records,government_operations_general,new,,,
+2024-211,2024 State of the State Establish Statewide Customer Experience Infrastructure,digital_government,continuation,2023-130,Make Customer Experience and Benefits Participation a State Priority,"theme=digital_government; shared_terms=customer, experience"
+2024-212,Develop Customer Data and Analytics Program,government_operations_general,new,,,
+2024-213,Establish a New York State Design System,government_operations_general,continuation,2023-132,"Improve the Client Experience of Food Benefits for Women, Infants and Children",theme=government_operations_general; shared_terms=
+2024-214,Hire More State Workers and Alleviate the Public Sector Staffing Crisis,government_operations_general,new,,,
+2024-215,Remove Educational Barriers to Employment in State Government,government_operations_general,new,,,
+2024-216,Bolster New York's Dairy Industry,food_access_agriculture,continuation,2023-085,Use State Purchasing Power to Bolster Demand for NY Agriculture,theme=food_access_agriculture; shared_terms=bolster
+2024-217,Create the Agricultural Workforce One-Stop Shop,food_access_agriculture,continuation,2023-085,Use State Purchasing Power to Bolster Demand for NY Agriculture,theme=food_access_agriculture; shared_terms=
+2024-218,Promote a One Health Approach as Part of New York's Agrifood System,food_access_agriculture,continuation,2023-085,Use State Purchasing Power to Bolster Demand for NY Agriculture,theme=food_access_agriculture; shared_terms=
+2024-219,Increase Youth Agricultural Leadership and Education Opportunities,food_access_agriculture,expansion,2023-085,Use State Purchasing Power to Bolster Demand for NY Agriculture,theme=food_access_agriculture; shared_terms=
+2024-220,Grow New York's Bioeconomy,food_access_agriculture,continuation,2023-085,Use State Purchasing Power to Bolster Demand for NY Agriculture,theme=food_access_agriculture; shared_terms=
+2024-221,Launch New York's Blue Food Transformation,food_access_agriculture,continuation,2023-090,Provide Grant Funding to Expand Food Access,theme=food_access_agriculture; shared_terms=food
+2024-222,Grow the New York State Joint Security Operations Center,cyber_emergency_response,new,,,
+2024-223,Expand Cybersecurity Shared Services,cyber_emergency_response,new,,,
+2024-224,Protect Vulnerable Populations from Cyber Crime,cyber_emergency_response,continuation,2023-037,Counter Cyber Threats,theme=cyber_emergency_response; shared_terms=cyber
+2024-225,Safeguard Teens from Online Sexual Exploitation,cyber_emergency_response,new,,,
+2024-226,Combat Elder Financial Exploitation,cyber_emergency_response,new,,,
+2024-227,Make it Possible to Extend the Second Avenue Subway West,transportation_general,continuation,2023-123,Improve Bus Reliability,theme=transportation_general; shared_terms=
+2024-228,Move the Interborough Express Forward,mta_service_and_finance,continuation,2023-121,Move Forward on Light Rail Option for the Interborough Express,"theme=mta_service_and_finance; shared_terms=express, forward, interborough, move"
+2024-229,Break Ground on New York's Largest Solar Carport,transportation_general,continuation,2023-123,Improve Bus Reliability,theme=transportation_general; shared_terms=
+2024-230,Connect Local Residents to Good Jobs on MTA Projects,mta_service_and_finance,continuation,2023-119,Secure the MTA’s Future,theme=mta_service_and_finance; shared_terms=mta
+2024-231,Launch “Infrastructure Hub” to Simplify Access to Funding Opportunities,transportation_general,continuation,2023-123,Improve Bus Reliability,theme=transportation_general; shared_terms=
+2024-232,Pass Sammy's Law to Save Lives,transportation_general,continuation,2023-123,Improve Bus Reliability,theme=transportation_general; shared_terms=
+2024-233,Improve Enforcement of Toll Violators and Implement a Balanced Approach to Fare Evasion,transportation_general,follow_on,2023-123,Improve Bus Reliability,theme=transportation_general; shared_terms=
+2024-234,END NOTES,transportation_general,continuation,2023-123,Improve Bus Reliability,theme=transportation_general; shared_terms=

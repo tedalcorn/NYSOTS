@@ -5,12 +5,18 @@ const state = {
   selectedAgencyName: null,
   modalOpen: false,
   modalType: "commitment",
+  modalHistory: [],
   filters: {
     query: "",
     year: "all",
     agency: "all",
     theme: "all",
     commitmentType: "all",
+  },
+  sorts: {
+    commitments: { key: "year", dir: "desc" },
+    agencies: { key: "name", dir: "asc" },
+    agencyCommitments: { key: "year", dir: "desc" },
   },
 };
 
@@ -38,6 +44,17 @@ modalShellEl.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
+  if (event.key === "Backspace" && state.modalOpen && state.modalHistory.length) {
+    const target = event.target;
+    const typing =
+      target instanceof HTMLInputElement ||
+      target instanceof HTMLTextAreaElement ||
+      target?.isContentEditable;
+    if (!typing) {
+      event.preventDefault();
+      goBackModal();
+    }
+  }
   if (event.key === "Escape" && state.modalOpen) {
     closeModal();
   }
@@ -55,26 +72,7 @@ async function init() {
 }
 
 function renderHeaderStats() {
-  const totals = state.data.analysis.totals;
-  const years = state.data.meta.years_covered.join(", ");
-  headerStatsEl.innerHTML = `
-    <div class="stat-tile">
-      <p class="kicker">Commitments</p>
-      <strong>${totals.commitments}</strong>
-    </div>
-    <div class="stat-tile">
-      <p class="kicker">Agencies</p>
-      <strong>${totals.agencies}</strong>
-    </div>
-    <div class="stat-tile">
-      <p class="kicker">Themes</p>
-      <strong>${totals.themes}</strong>
-    </div>
-    <div class="stat-tile">
-      <p class="kicker">Years Covered</p>
-      <strong>${years}</strong>
-    </div>
-  `;
+  headerStatsEl.innerHTML = "";
 }
 
 function renderSiteNote() {
@@ -141,11 +139,6 @@ function renderSidebar() {
     </div>
     <div class="utility-row">
       <button class="utility-button" id="reset-filters">Reset</button>
-    </div>
-    <div class="detail-block">
-      <h3>Result set</h3>
-      <p><strong>${commitments.length}</strong> commitments match the current filters.</p>
-      <p class="muted">Click any commitment to open a detailed record window.</p>
     </div>
   `;
 
@@ -222,33 +215,12 @@ function renderContent() {
 }
 
 function renderCommitmentsView() {
-  const commitments = getFilteredCommitments();
-  const years = [...new Set(commitments.map((item) => item.year))].sort();
-  const quantified = commitments.filter((item) => item.quantified === "yes").length;
-  const continuation = commitments.filter((item) => item.continuity_to_prior_year && item.continuity_to_prior_year !== "new").length;
+  const commitments = sortCommitments(getFilteredCommitments(), state.sorts.commitments);
 
   contentEl.innerHTML = `
     <div class="view-header">
       <div>
         <h2>Commitments</h2>
-      </div>
-    </div>
-    <div class="summary-strip">
-      <div class="summary-card">
-        <p>Results</p>
-        <strong>${commitments.length}</strong>
-      </div>
-      <div class="summary-card">
-        <p>Years in view</p>
-        <strong>${years.join(", ") || "None"}</strong>
-      </div>
-      <div class="summary-card">
-        <p>Quantified</p>
-        <strong>${quantified}</strong>
-      </div>
-      <div class="summary-card">
-        <p>Carryover items</p>
-        <strong>${continuation}</strong>
       </div>
     </div>
     ${commitments.length ? renderCommitmentTable(commitments) : `<div class="empty-state">No commitments match the current filters.</div>`}
@@ -257,16 +229,17 @@ function renderCommitmentsView() {
   contentEl.querySelectorAll("[data-commitment-id]").forEach((row) => {
     row.addEventListener("click", () => openCommitment(row.dataset.commitmentId));
   });
+  bindSortControls("commitments");
 }
 
 function renderCommitmentTable(commitments) {
   return `
     <div class="dense-table">
       <div class="dense-head dense-row">
-        <div>Year</div>
-        <div>Commitment</div>
-        <div>Primary Agency</div>
-        <div>Theme</div>
+        <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="year">${renderSortLabel("Year", "commitments", "year")}</button>
+        <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="title">${renderSortLabel("Commitment", "commitments", "title")}</button>
+        <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="agency">${renderSortLabel("Primary Agency", "commitments", "agency")}</button>
+        <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="theme">${renderSortLabel("Theme", "commitments", "theme")}</button>
       </div>
       ${commitments.map(renderCommitmentRow).join("")}
     </div>
@@ -286,11 +259,11 @@ function renderCommitmentRow(item) {
 }
 
 function renderAgenciesView() {
-  const agencies = state.data.agencies.filter((agency) => {
+  const agencies = sortAgencies(state.data.agencies.filter((agency) => {
     const query = state.filters.query.trim().toLowerCase();
     if (!query) return true;
     return agency.name.toLowerCase().includes(query) || agency.top_themes.some((theme) => theme.label.toLowerCase().includes(query));
-  });
+  }), state.sorts.agencies);
 
   contentEl.innerHTML = `
     <div class="view-header">
@@ -300,8 +273,8 @@ function renderAgenciesView() {
     </div>
     <div class="dense-table dense-table-agencies">
       <div class="dense-head dense-row">
-        <div>Agency</div>
-        <div>Commitments</div>
+        <button class="sort-button" type="button" data-sort-table="agencies" data-sort-key="name">${renderSortLabel("Agency", "agencies", "name")}</button>
+        <button class="sort-button" type="button" data-sort-table="agencies" data-sort-key="count">${renderSortLabel("Commitments", "agencies", "count")}</button>
       </div>
       ${agencies.map((agency) => `
         <button class="dense-row dense-button ${agency.name === state.selectedAgencyName ? "is-selected" : ""}" type="button" data-open-agency="${escapeAttr(agency.name)}">
@@ -317,6 +290,7 @@ function renderAgenciesView() {
       openAgency(button.dataset.openAgency);
     });
   });
+  bindSortControls("agencies");
 }
 
 function renderThemesView() {
@@ -442,30 +416,30 @@ function renderDetail() {
     detailEl.innerHTML = `<div class="detail-empty"><p>Select a commitment to inspect its coding, source links, and progress fields.</p></div>`;
     return;
   }
+  const linkedPriorLabel = item.matched_prior_title && item.year > 2022 ? `${item.year - 1}: ${item.matched_prior_title}` : "";
 
   detailEl.innerHTML = `
+    ${renderModalToolbar()}
     <div class="meta-line">
       <span class="meta-pill blue">${item.year}</span>
       <span class="meta-pill">${escapeHtml(formatLabel(item.commitment_type))}</span>
-      <span class="meta-pill gold">${escapeHtml(item.progress.label)}</span>
     </div>
-    <h2 class="detail-title" id="detail-modal-title">${escapeHtml(item.title)}</h2>
-    <p class="muted">${escapeHtml(item.section_bucket)}${item.subsection ? ` · ${escapeHtml(item.subsection)}` : ""}</p>
+    <h2 class="detail-title" id="detail-modal-title">Commitment: ${escapeHtml(item.title)}</h2>
 
     <div class="detail-block">
       <h3>Overview</h3>
       <div class="detail-grid">
         <dl>
           <dt>Lead agencies</dt>
-          <dd>${escapeHtml(item.lead_agencies.join(", ") || "Not yet coded")}</dd>
+          <dd>${renderAgencyLinks(item.lead_agencies)}</dd>
         </dl>
         <dl>
           <dt>Supporting agencies</dt>
-          <dd>${escapeHtml(item.supporting_agencies.join(", ") || "None listed")}</dd>
+          <dd>${renderAgencyLinks(item.supporting_agencies)}</dd>
         </dl>
         <dl>
           <dt>Theme</dt>
-          <dd>${escapeHtml(item.theme_labels.join(", "))}</dd>
+          <dd>${renderBlankableText(item.theme_labels.join(", "))}</dd>
         </dl>
         <dl>
           <dt>Implementation pathway</dt>
@@ -479,45 +453,50 @@ function renderDetail() {
       <div class="detail-grid">
         <dl>
           <dt>Quantified</dt>
-          <dd>${escapeHtml(item.quantified)}</dd>
+          <dd>${renderBlankableText(item.quantified)}</dd>
         </dl>
         <dl>
           <dt>Metric or target</dt>
-          <dd>${escapeHtml(item.metric_or_target || "Not specified in the current pass")}</dd>
+          <dd>${renderBlankableText(item.metric_or_target)}</dd>
         </dl>
         <dl>
           <dt>Binary evaluable</dt>
-          <dd>${escapeHtml(item.binary_evaluable)}${item.binary_unit ? ` · ${escapeHtml(item.binary_unit)}` : ""}</dd>
+          <dd>${renderBlankableText(item.binary_evaluable ? `${item.binary_evaluable}${item.binary_unit ? ` · ${item.binary_unit}` : ""}` : "")}</dd>
         </dl>
         <dl>
           <dt>Continuity to prior year</dt>
-          <dd>${escapeHtml(item.continuity_to_prior_year || "Base year / not yet linked")}</dd>
+          <dd>${renderBlankableText(item.continuity_to_prior_year)}</dd>
         </dl>
       </div>
-      ${item.matched_prior_title ? `<p><strong>Linked prior commitment:</strong> ${escapeHtml(item.matched_prior_title)}</p>` : ""}
-      <p><strong>Evidence still needed:</strong> ${escapeHtml(item.status_evidence_needed || "Not yet specified")}</p>
+      ${linkedPriorLabel ? `<p><strong>Linked prior commitment:</strong> ${escapeHtml(linkedPriorLabel)}</p>` : ""}
     </div>
 
     <div class="detail-block">
       <h3>Progress</h3>
-      <p><strong>Status:</strong> ${escapeHtml(item.progress.label)}</p>
-      <p class="muted">This first draft is ready for evidence records, but no implementation evidence has been added yet.</p>
+      <div class="detail-grid">
+        <dl>
+          <dt>Status</dt>
+          <dd>${renderBlankableText(item.progress.status === "not_assessed" ? "" : item.progress.label)}</dd>
+        </dl>
+        <dl>
+          <dt>Evidence needed</dt>
+          <dd>${renderBlankableText(item.status_evidence_needed)}</dd>
+        </dl>
+      </div>
     </div>
 
     <div class="detail-block">
       <h3>Source</h3>
       <dl class="detail-list">
         <dt>Document</dt>
-        <dd>${escapeHtml(item.source.label)}</dd>
-        <dt>Source PDF</dt>
-        <dd>${item.source.url ? `<a href="${escapeAttr(item.source.url)}" target="_blank" rel="noreferrer">Open official PDF</a>` : "Not available"}</dd>
-        <dt>Program page</dt>
-        <dd>${item.source.landing_url ? `<a href="${escapeAttr(item.source.landing_url)}" target="_blank" rel="noreferrer">Open official page</a>` : "Not available"}</dd>
-        <dt>Shareable link</dt>
-        <dd><a href="${escapeAttr(buildCommitmentHref(item.id))}">${escapeHtml(item.id)}</a></dd>
+        <dd>${item.source.url ? `<a href="${escapeAttr(item.source.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.source.label)}</a>` : escapeHtml(item.source.label)}</dd>
+        <dt>Section</dt>
+        <dd>${renderBlankableText(item.section_bucket)}${item.subsection ? ` · ${escapeHtml(item.subsection)}` : ""}</dd>
       </dl>
     </div>
   `;
+
+  bindDetailEvents();
 }
 
 function renderAgencyDetail() {
@@ -526,12 +505,13 @@ function renderAgencyDetail() {
     detailEl.innerHTML = `<div class="detail-empty"><p>Select an agency to inspect its commitments.</p></div>`;
     return;
   }
-  const commitments = agency.commitment_ids
+  const commitments = sortCommitments(agency.commitment_ids
     .map((id) => state.data.commitments.find((item) => item.id === id))
     .filter(Boolean)
-    .sort((a, b) => (a.year !== b.year ? b.year - a.year : a.title.localeCompare(b.title)));
+  , state.sorts.agencyCommitments);
 
   detailEl.innerHTML = `
+    ${renderModalToolbar()}
     <div class="meta-line">
       <span class="meta-pill blue">${agency.commitment_count} commitments</span>
       <span class="meta-pill">Lead on ${agency.lead_count}</span>
@@ -548,9 +528,9 @@ function renderAgencyDetail() {
       <h3>Commitments</h3>
       <div class="dense-table dense-table-modal">
         <div class="dense-head dense-row">
-          <div>Year</div>
-          <div>Commitment</div>
-          <div>Theme</div>
+          <button class="sort-button" type="button" data-sort-table="agencyCommitments" data-sort-key="year">${renderSortLabel("Year", "agencyCommitments", "year")}</button>
+          <button class="sort-button" type="button" data-sort-table="agencyCommitments" data-sort-key="title">${renderSortLabel("Commitment", "agencyCommitments", "title")}</button>
+          <button class="sort-button" type="button" data-sort-table="agencyCommitments" data-sort-key="theme">${renderSortLabel("Theme", "agencyCommitments", "theme")}</button>
         </div>
         ${commitments.map((item) => `
           <button class="dense-row dense-button" type="button" data-jump-commitment="${item.id}">
@@ -564,17 +544,21 @@ function renderAgencyDetail() {
   `;
 
   detailEl.querySelectorAll("[data-jump-commitment]").forEach((button) => {
-    button.addEventListener("click", () => openCommitment(button.dataset.jumpCommitment));
+    button.addEventListener("click", () => openCommitment(button.dataset.jumpCommitment, { preserve: true }));
   });
+  bindSortControls("agencyCommitments", detailEl);
+  bindDetailEvents();
 }
 
 function renderModalState() {
   modalShellEl.classList.toggle("is-open", state.modalOpen);
   modalShellEl.setAttribute("aria-hidden", state.modalOpen ? "false" : "true");
+  modalShellEl.querySelector(".detail-modal").classList.toggle("is-wide", state.modalType === "agency");
   document.body.style.overflow = state.modalOpen ? "hidden" : "";
 }
 
-function openCommitment(id) {
+function openCommitment(id, options = {}) {
+  pushModalHistory(options);
   state.selectedCommitmentId = id;
   state.modalType = "commitment";
   state.modalOpen = true;
@@ -584,7 +568,8 @@ function openCommitment(id) {
   renderModalState();
 }
 
-function openAgency(name) {
+function openAgency(name, options = {}) {
+  pushModalHistory(options);
   state.selectedAgencyName = name;
   state.modalType = "agency";
   state.modalOpen = true;
@@ -596,7 +581,21 @@ function openAgency(name) {
 
 function closeModal() {
   state.modalOpen = false;
+  state.modalHistory = [];
   updateUrl(null);
+  renderModalState();
+}
+
+function goBackModal() {
+  const previous = state.modalHistory.pop();
+  if (!previous) return;
+  state.modalType = previous.type;
+  state.selectedCommitmentId = previous.commitmentId;
+  state.selectedAgencyName = previous.agencyName;
+  state.modalOpen = true;
+  updateUrl(previous.type === "commitment" ? previous.commitmentId : null);
+  renderDetail();
+  renderContent();
   renderModalState();
 }
 
@@ -646,6 +645,105 @@ function getFilteredCommitments() {
     state.selectedCommitmentId = items[0].id;
   }
   return items;
+}
+
+function bindSortControls(tableName, root = contentEl) {
+  root.querySelectorAll(`[data-sort-table="${tableName}"]`).forEach((button) => {
+    button.addEventListener("click", () => {
+      toggleSort(tableName, button.dataset.sortKey);
+      if (tableName === "agencyCommitments") {
+        renderDetail();
+      } else {
+        renderContent();
+      }
+    });
+  });
+}
+
+function bindDetailEvents() {
+  detailEl.querySelector("[data-go-back]")?.addEventListener("click", goBackModal);
+  detailEl.querySelectorAll("[data-open-agency-link]").forEach((button) => {
+    button.addEventListener("click", () => openAgency(button.dataset.openAgencyLink, { preserve: true }));
+  });
+}
+
+function renderModalToolbar() {
+  return `
+    <div class="modal-toolbar">
+      ${state.modalHistory.length ? `<button class="back-button" type="button" data-go-back="true">Back</button>` : `<span></span>`}
+    </div>
+  `;
+}
+
+function renderAgencyLinks(agencies) {
+  if (!agencies.length) return "";
+  return agencies
+    .map((agency) => `<button class="inline-link" type="button" data-open-agency-link="${escapeAttr(agency)}">${escapeHtml(agency)}</button>`)
+    .join(", ");
+}
+
+function renderBlankableText(value) {
+  return value ? escapeHtml(String(value)) : "";
+}
+
+function pushModalHistory(options) {
+  if (!options.preserve || !state.modalOpen) return;
+  state.modalHistory.push({
+    type: state.modalType,
+    commitmentId: state.selectedCommitmentId,
+    agencyName: state.selectedAgencyName,
+  });
+}
+
+function toggleSort(tableName, key) {
+  const current = state.sorts[tableName];
+  state.sorts[tableName] = {
+    key,
+    dir: current.key === key && current.dir === "asc" ? "desc" : "asc",
+  };
+}
+
+function renderSortLabel(label, tableName, key) {
+  const sort = state.sorts[tableName];
+  if (sort.key !== key) return escapeHtml(label);
+  return `${escapeHtml(label)} ${sort.dir === "asc" ? "↑" : "↓"}`;
+}
+
+function sortCommitments(items, sort) {
+  const sorted = [...items];
+  sorted.sort((a, b) => {
+    let left = "";
+    let right = "";
+    if (sort.key === "year") {
+      left = a.year;
+      right = b.year;
+    } else if (sort.key === "agency") {
+      left = (a.lead_agencies.join(", ") || a.all_agencies.join(", ")).toLowerCase();
+      right = (b.lead_agencies.join(", ") || b.all_agencies.join(", ")).toLowerCase();
+    } else if (sort.key === "theme") {
+      left = (a.theme_labels[0] || "").toLowerCase();
+      right = (b.theme_labels[0] || "").toLowerCase();
+    } else {
+      left = a.title.toLowerCase();
+      right = b.title.toLowerCase();
+    }
+    if (left < right) return sort.dir === "asc" ? -1 : 1;
+    if (left > right) return sort.dir === "asc" ? 1 : -1;
+    return a.title.localeCompare(b.title);
+  });
+  return sorted;
+}
+
+function sortAgencies(items, sort) {
+  const sorted = [...items];
+  sorted.sort((a, b) => {
+    const left = sort.key === "count" ? a.commitment_count : a.name.toLowerCase();
+    const right = sort.key === "count" ? b.commitment_count : b.name.toLowerCase();
+    if (left < right) return sort.dir === "asc" ? -1 : 1;
+    if (left > right) return sort.dir === "asc" ? 1 : -1;
+    return a.name.localeCompare(b.name);
+  });
+  return sorted;
 }
 
 function syncNav(view) {

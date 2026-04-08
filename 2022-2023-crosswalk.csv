@@ -1,4 +1,4 @@
-commitment_id_2023,proposal_title_2023,overlap_theme,continuity_to_prior_year,matched_commitment_id_2022,matched_title_2022,match_basis
+commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prior_commitment_id,matched_prior_title,match_basis
 2023-001,Set Goals for New Home Construction Across the State,housing_supply,new,,,
 2023-002,Facilitate Housing Approval When Localities Do Not Meet Goals,housing_general,continuation,2022-130,Build and Preserve Senior Housing Across the State,theme=housing_general; shared_terms=housing
 2023-003,Encourage New Housing Near Transit,transit_oriented_housing,continuation,2022-136,Spur Transit-Oriented Development,theme=transit_oriented_housing; shared_terms=transit

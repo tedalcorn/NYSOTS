@@ -3,39 +3,21 @@ Analysis update
 Outputs created:
 - 2022-enriched-inventory.csv
 - 2023-cleaned-enriched-inventory.csv
-- 2022-2023-crosswalk.csv
+- 2024-cleaned-enriched-inventory.csv
+- 2025-cleaned-enriched-inventory.csv
+- 2026-cleaned-enriched-inventory.csv
+- 2023-crosswalk.csv
+- 2024-crosswalk.csv
+- 2025-crosswalk.csv
+- 2026-crosswalk.csv
 
-2023 cleanup summary:
-- Started from 150 rows.
-- Dropped 13 obvious non-commitment rows.
-- Cleaned output now has 137 rows.
-
-Rows dropped from 2023:
-- We will build a new world, and we will be courageous. We will do the hard things — the necessary things to lift up and support New Yorkers and clear a path for them to realize the New York Dream. That is my promise to the people of New York. Governor Kathy Hochul January 2023 FOREWORD [foreword/empty section]
-- THE NEW YORK HOUSING COMPACT [section header]
-- FOR MENTAL HEALTH [section header]
-- SYSTEM FOR NEW YORK’S FUTURE [section header]
-- deliver care [wrapped subsection fragment]
-- AND ENVIRONMENTAL FUTURE [section header]
-- WITH THE COST OF LIVING [section header]
-- EDUCATION [section header]
-- NEW YORK STATE BUSINESSES [section header]
-- AGRICULTURAL SECTOR [section header]
-- EQUITABLE CHILD CARE SYSTEM [section header]
-- TRANSPORTATION SAFETY, EQUITY, AND EFFICIENCY [section header]
-- GOVERNMENT: THE CUSTOMER EXPERIENCE [section header]
-
-2023 binary evaluability:
-- yes: 28
-- mixed: 3
-- no: 106
-
-2023 continuity to 2022:
-- continuation: 40
-- expansion: 13
-- follow_on: 6
-- new: 78
+Year summaries:
+- 2022: 220 raw rows, 0 dropped, 220 kept
+- 2023: 150 raw rows, 13 dropped, 137 kept
+- 2024: 253 raw rows, 19 dropped, 234 kept
+- 2025: 188 raw rows, 21 dropped, 167 kept
+- 2026: 205 raw rows, 80 dropped, 125 kept
 
 Important caution:
-- The continuity crosswalk is a structured first pass based on theme and title overlap.
-- It is useful for review and triage, but some rows will still need manual confirmation.
+- 2024-2026 imports are first-pass TOC extractions and still include some subgroup noise.
+- Continuity links beyond 2023 are structured first passes and will need manual review.
