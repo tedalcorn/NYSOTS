@@ -51,6 +51,10 @@ TITLE_FIXES_2023 = {
     "Clean Up “Forever Chemicals": "Clean Up \"Forever Chemicals\"",
 }
 
+TITLE_FIXES_LATER = {
+    "2024 State of the State Reduce Gun Violence Through a Public Health Approach": "Reduce Gun Violence Through a Public Health Approach",
+}
+
 AGENCY_FIXES = {
     "Department of Health": "DOH",
     "Department of Transportation": "DOT",
@@ -261,9 +265,9 @@ def clean_later_year_rows(rows, year):
     for row in rows:
         title = normalize_whitespace(row["proposal_title"])
         row = dict(row)
-        row["proposal_title"] = title
+        row["proposal_title"] = TITLE_FIXES_LATER.get(title, title)
         row["subsection"] = normalize_whitespace(row["subsection"])
-        if title.startswith(headingish_starts):
+        if row["proposal_title"].startswith(headingish_starts):
             dropped.append((title, f"{year} subsection header"))
             continue
         cleaned.append(row)

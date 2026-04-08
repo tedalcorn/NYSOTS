@@ -8,10 +8,11 @@ const state = {
   modalHistory: [],
   filters: {
     query: "",
-    year: "all",
+    years: [],
     agency: "all",
     theme: "all",
     commitmentType: "all",
+    textCapture: "all",
   },
   sorts: {
     commitments: { key: "year", dir: "desc" },
@@ -92,24 +93,26 @@ function render() {
 }
 
 function renderSidebar() {
-  const commitments = getFilteredCommitments();
   const years = [...new Set(state.data.commitments.map((item) => item.year))].sort();
   const agencies = state.data.agencies.map((item) => item.name);
   const themes = state.data.themes.map((item) => item.label);
   const commitmentTypes = [...new Set(state.data.commitments.map((item) => item.commitment_type))].sort();
 
   sidebarEl.innerHTML = `
-    <h2 class="panel-title">Browse</h2>
     <div class="filter-group">
-      <label for="query">Keyword</label>
+      <label for="query">Search by keyword</label>
       <input id="query" type="search" value="${escapeHtml(state.filters.query)}" placeholder="Search goals, agencies, themes">
     </div>
     <div class="filter-group">
-      <label for="year-filter">Year</label>
-      <select id="year-filter">
-        <option value="all">All years</option>
-        ${years.map((year) => `<option value="${year}" ${String(year) === state.filters.year ? "selected" : ""}>${year}</option>`).join("")}
-      </select>
+      <label>Years</label>
+      <div class="checkbox-row">
+        ${years.map((year) => `
+          <label class="year-check">
+            <input type="checkbox" data-year-check="${year}" ${state.filters.years.includes(String(year)) ? "checked" : ""}>
+            <span>${year}</span>
+          </label>
+        `).join("")}
+      </div>
     </div>
     <div class="filter-group">
       <label for="agency-filter">Agency</label>
@@ -133,8 +136,13 @@ function renderSidebar() {
       </select>
     </div>
     <div class="filter-group">
-      <label>Current selection</label>
-      <div class="chip-row">${activeFilterChips()}</div>
+      <label for="text-capture-filter">Text capture</label>
+      <select id="text-capture-filter">
+        <option value="all">All</option>
+        <option value="high" ${state.filters.textCapture === "high" ? "selected" : ""}>High</option>
+        <option value="medium" ${state.filters.textCapture === "medium" ? "selected" : ""}>Medium</option>
+        <option value="missing" ${state.filters.textCapture === "missing" ? "selected" : ""}>Missing</option>
+      </select>
     </div>
     <div class="utility-row">
       <button class="utility-button" id="reset-filters">Reset</button>
@@ -147,11 +155,16 @@ function renderSidebar() {
 function bindSidebarEvents() {
   sidebarEl.querySelector("#query").addEventListener("input", (event) => {
     state.filters.query = event.target.value;
-    render();
+    renderWithPreservedQuery(event.target);
   });
-  sidebarEl.querySelector("#year-filter").addEventListener("change", (event) => {
-    state.filters.year = event.target.value;
-    render();
+  sidebarEl.querySelectorAll("[data-year-check]").forEach((checkbox) => {
+    checkbox.addEventListener("change", (event) => {
+      const year = event.target.dataset.yearCheck;
+      state.filters.years = event.target.checked
+        ? [...new Set([...state.filters.years, year])].sort()
+        : state.filters.years.filter((item) => item !== year);
+      render();
+    });
   });
   sidebarEl.querySelector("#agency-filter").addEventListener("change", (event) => {
     state.filters.agency = event.target.value;
@@ -165,35 +178,14 @@ function bindSidebarEvents() {
     state.filters.commitmentType = event.target.value;
     render();
   });
-  sidebarEl.querySelector("#reset-filters").addEventListener("click", () => {
-    state.filters = { query: "", year: "all", agency: "all", theme: "all", commitmentType: "all" };
+  sidebarEl.querySelector("#text-capture-filter").addEventListener("change", (event) => {
+    state.filters.textCapture = event.target.value;
     render();
   });
-  sidebarEl.querySelectorAll("[data-clear-filter]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const key = button.dataset.clearFilter;
-      state.filters[key] = key === "query" ? "" : "all";
-      render();
-    });
+  sidebarEl.querySelector("#reset-filters").addEventListener("click", () => {
+    state.filters = { query: "", years: [], agency: "all", theme: "all", commitmentType: "all", textCapture: "all" };
+    render();
   });
-}
-
-function activeFilterChips() {
-  const entries = [
-    ["query", state.filters.query],
-    ["year", state.filters.year !== "all" ? state.filters.year : ""],
-    ["agency", state.filters.agency !== "all" ? state.filters.agency : ""],
-    ["theme", state.filters.theme !== "all" ? state.filters.theme : ""],
-    ["commitmentType", state.filters.commitmentType !== "all" ? formatLabel(state.filters.commitmentType) : ""],
-  ].filter(([, value]) => value);
-
-  if (!entries.length) {
-    return `<span class="mini-chip">No filters applied</span>`;
-  }
-
-  return entries
-    .map(([key, value]) => `<span class="chip">${escapeHtml(String(value))} <button type="button" data-clear-filter="${key}" aria-label="Clear ${escapeAttr(key)}">×</button></span>`)
-    .join("");
 }
 
 function renderContent() {
@@ -239,6 +231,7 @@ function renderCommitmentTable(commitments) {
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="title">${renderSortLabel("Commitment", "commitments", "title")}</button>
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="agency">${renderSortLabel("Primary Agency", "commitments", "agency")}</button>
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="theme">${renderSortLabel("Theme", "commitments", "theme")}</button>
+        <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="text">${renderSortLabel("Text", "commitments", "text")}</button>
       </div>
       ${commitments.map(renderCommitmentRow).join("")}
     </div>
@@ -253,6 +246,7 @@ function renderCommitmentRow(item) {
       <div class="dense-title" title="${escapeAttr(item.title)}">${escapeHtml(item.title)}</div>
       <div title="${escapeAttr(primaryAgency)}">${escapeHtml(primaryAgency)}</div>
       <div title="${escapeAttr(item.theme_labels[0] || "")}">${escapeHtml(item.theme_labels[0] || "")}</div>
+      <div>${escapeHtml(formatConfidence(item.text_capture_confidence))}</div>
     </button>
   `;
 }
@@ -397,6 +391,8 @@ function renderDetail() {
   const sourceParts = [
     item.source.url ? `<a href="${escapeAttr(item.source.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.source.label)}</a>` : escapeHtml(item.source.label),
     sourceSection ? escapeHtml(sourceSection) : "",
+    item.source_page ? `p. ${escapeHtml(item.source_page)}${item.source_page_end && item.source_page_end !== item.source_page ? `-${escapeHtml(item.source_page_end)}` : ""}` : "",
+    item.text_capture_confidence ? `text: ${escapeHtml(formatConfidence(item.text_capture_confidence))}` : "",
   ].filter(Boolean);
   const relatedPrior = item.matched_prior_title
     ? `<div class="detail-block">
@@ -567,14 +563,16 @@ function getFilteredCommitments() {
   let items = [...state.data.commitments];
   const query = state.filters.query.trim().toLowerCase();
 
-  if (state.filters.year !== "all") items = items.filter((item) => String(item.year) === state.filters.year);
+  if (state.filters.years.length) items = items.filter((item) => state.filters.years.includes(String(item.year)));
   if (state.filters.agency !== "all") items = items.filter((item) => item.all_agencies.includes(state.filters.agency));
   if (state.filters.theme !== "all") items = items.filter((item) => item.theme_labels.includes(state.filters.theme));
   if (state.filters.commitmentType !== "all") items = items.filter((item) => item.commitment_type === state.filters.commitmentType);
+  if (state.filters.textCapture !== "all") items = items.filter((item) => (item.text_capture_confidence || "missing") === state.filters.textCapture);
   if (query) {
     items = items.filter((item) => {
       const haystack = [
         item.title,
+        item.commitment_text,
         item.section_bucket,
         item.subsection,
         item.commitment_type,
@@ -687,6 +685,9 @@ function sortCommitments(items, sort) {
     } else if (sort.key === "theme") {
       left = (a.theme_labels[0] || "").toLowerCase();
       right = (b.theme_labels[0] || "").toLowerCase();
+    } else if (sort.key === "text") {
+      left = confidenceRank(a.text_capture_confidence);
+      right = confidenceRank(b.text_capture_confidence);
     } else {
       left = a.title.toLowerCase();
       right = b.title.toLowerCase();
@@ -696,6 +697,29 @@ function sortCommitments(items, sort) {
     return a.title.localeCompare(b.title);
   });
   return sorted;
+}
+
+function renderWithPreservedQuery(input) {
+  const value = input.value;
+  const start = input.selectionStart ?? value.length;
+  const end = input.selectionEnd ?? value.length;
+  render();
+  const next = sidebarEl.querySelector("#query");
+  if (!next) return;
+  next.focus();
+  next.setSelectionRange(start, end);
+}
+
+function confidenceRank(value) {
+  if (value === "high") return 3;
+  if (value === "medium") return 2;
+  return 1;
+}
+
+function formatConfidence(value) {
+  if (value === "high") return "High";
+  if (value === "medium") return "Medium";
+  return "Missing";
 }
 
 function sortAgencies(items, sort) {

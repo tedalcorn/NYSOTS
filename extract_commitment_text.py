@@ -61,6 +61,12 @@ def normalize_quotes(text):
     )
 
 
+def strip_footnote_markers(text):
+    text = re.sub(r"(?<=[A-Za-z%])\d{1,3}(?=[\s\.,;:])", "", text)
+    text = re.sub(r"(?<=[\.\)])\d{1,3}(?=\s)", "", text)
+    return normalize_space(text)
+
+
 def normalize_for_match(text):
     text = normalize_quotes(text).lower()
     text = re.sub(r"[^a-z0-9]+", " ", text)
@@ -101,12 +107,12 @@ def page_blocks(pdf_path, body_start):
                 current.append(line)
                 continue
             if current:
-                text_block = normalize_space(" ".join(current))
+                text_block = strip_footnote_markers(" ".join(current))
                 if text_block:
                     blocks.append({"page": page_number, "text": text_block, "match": normalize_for_match(text_block)})
                 current = []
         if current:
-            text_block = normalize_space(" ".join(current))
+            text_block = strip_footnote_markers(" ".join(current))
             if text_block:
                 blocks.append({"page": page_number, "text": text_block, "match": normalize_for_match(text_block)})
     return blocks
