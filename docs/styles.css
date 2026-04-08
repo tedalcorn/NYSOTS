@@ -222,22 +222,24 @@ h1 {
 .search-row {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.35rem;
   margin-top: 0.3rem;
 }
 
 .search-row input[type="search"] {
   flex: 1 1 auto;
   min-width: 0;
+  width: auto;
 }
 
 .inline-check {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
-  gap: 0.45rem;
+  gap: 0.3rem;
   font-size: 0.78rem;
   color: var(--muted);
+  margin: 0;
 }
 
 .inline-check input {
