@@ -132,8 +132,8 @@ function renderSidebar() {
   sidebarEl.innerHTML = `
     <div class="filter-group">
       <label for="query">Search by keyword</label>
-      <input id="query" type="search" value="${escapeHtml(state.filters.query)}" placeholder="Search commitment titles">
-      <div class="search-inline">
+      <div class="search-row">
+        <input id="query" type="search" value="${escapeHtml(state.filters.query)}" placeholder="Search commitment titles">
         <label class="inline-check">
           <input id="include-fulltext" type="checkbox" ${state.filters.includeFullText ? "checked" : ""}>
           <span>Include full text</span>

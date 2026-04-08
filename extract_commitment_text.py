@@ -39,6 +39,10 @@ YEAR_CONFIGS = {
 
 TITLE_MATCH_OVERRIDES = {
     "Automatically Admit Top Students to SUNY and CUNY Campuses": "Automatically Admit High Achieving Students from Top 10 Percent of High School Classes to SUNY and CUNY Campuses",
+    "Increase Transitional Housing for Individuals Referred Through Court System": "Increase Transitional Housing for Individuals Referred Through the Court System",
+    "Prevent and Prosecute Domestic Violence": "Prevent and Prosecute Assaults and Domestic Violence",
+    "Double State Parks Water-Safety Instruction Sites": "Double State Parks Water-Safety Instruction Opportunities",
+    "Promote Economic Growth Through Investment in the Arts": "Promote Economic Growth By Investing in the Arts",
 }
 
 HEADER_PATTERNS = (
