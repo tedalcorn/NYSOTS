@@ -10,7 +10,7 @@ SOURCE_PDF = Path(
     "/Users/tedalcorn/Documents/*Resumes/ -Job Applications/2026 01 Hochul Policy Shop/-SOTS/2023SOTSBook.pdf"
 )
 OUTPUT_CSV = Path(
-    "/Users/tedalcorn/Desktop/codex-projects/Hochul-SOTS-progress/2023-first-pass-inventory.csv"
+    "/Users/tedalcorn/Desktop/codex-projects/NYSOTS/2023-first-pass-inventory.csv"
 )
 
 

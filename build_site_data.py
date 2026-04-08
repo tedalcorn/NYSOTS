@@ -7,7 +7,7 @@ from datetime import datetime
 from pathlib import Path
 
 
-ROOT = Path("/Users/tedalcorn/Desktop/codex-projects/Hochul-SOTS-progress")
+ROOT = Path("/Users/tedalcorn/Desktop/codex-projects/NYSOTS")
 SITE_ROOT = ROOT / "site"
 DATA_DIR = SITE_ROOT / "data"
 

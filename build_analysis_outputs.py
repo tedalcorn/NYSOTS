@@ -6,7 +6,7 @@ from collections import defaultdict
 from pathlib import Path
 
 
-ROOT = Path("/Users/tedalcorn/Desktop/codex-projects/Hochul-SOTS-progress")
+ROOT = Path("/Users/tedalcorn/Desktop/codex-projects/NYSOTS")
 INPUT_2022 = ROOT / "2022-first-pass-inventory.csv"
 INPUT_2023 = ROOT / "2023-first-pass-inventory.csv"
 OUTPUT_2022 = ROOT / "2022-enriched-inventory.csv"
