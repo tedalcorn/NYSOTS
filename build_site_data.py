@@ -2,6 +2,7 @@
 
 import csv
 import json
+import re
 from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
@@ -128,6 +129,21 @@ def normalize_theme(theme):
     return THEME_LABELS.get(theme, theme.replace("_", " ").title())
 
 
+def extract_subgoals(text):
+    cleaned = re.sub(r"\s+", " ", text or "").strip()
+    if not cleaned:
+        return []
+    pattern = re.compile(
+        r"((?:Governor Hochul|New York State|The State|New York|OCFS|SED|SUNY|CUNY|DOH|OMH|DOL|DFS|DOT|DMV|DOCCS|NYSERDA|Empire State Development|The Governor)\s+will\s+.*?[.!?])"
+    )
+    seen = []
+    for match in pattern.findall(cleaned):
+        sentence = match.strip()
+        if sentence not in seen:
+            seen.append(sentence)
+    return seen[:8]
+
+
 def build_commitment(row):
     year = int(row["year"])
     source = SOURCE_MAP.get(row["source_document"], {"label": row["source_document"], "url": "", "landing_url": ""})
@@ -149,6 +165,7 @@ def build_commitment(row):
         "title": row["proposal_title"],
         "commitment_text": row.get("commitment_text", ""),
         "text_capture_confidence": row.get("text_capture_confidence", ""),
+        "subgoals": extract_subgoals(row.get("commitment_text", "")),
         "section_bucket": row["section_bucket"],
         "subsection": row["subsection"],
         "source_page": row.get("source_page", ""),

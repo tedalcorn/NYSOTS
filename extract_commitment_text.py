@@ -67,6 +67,23 @@ def strip_footnote_markers(text):
     return normalize_space(text)
 
 
+def looks_like_heading(text):
+    cleaned = normalize_space(text)
+    if not cleaned:
+        return False
+    if cleaned.startswith(("Part ", "SECTION ", "Chapter ")):
+        return True
+    if len(cleaned) > 140:
+        return False
+    if any(mark in cleaned for mark in [".", "?", "!", ";", ":"]) and not cleaned.startswith("Part "):
+        return False
+    words = cleaned.split()
+    if len(words) > 18:
+        return False
+    capitalized = sum(1 for word in words if word[:1].isupper() or word.isupper())
+    return capitalized >= max(2, int(len(words) * 0.7))
+
+
 def normalize_for_match(text):
     text = normalize_quotes(text).lower()
     text = re.sub(r"[^a-z0-9]+", " ", text)
@@ -109,12 +126,12 @@ def page_blocks(pdf_path, body_start):
             if current:
                 text_block = strip_footnote_markers(" ".join(current))
                 if text_block:
-                    blocks.append({"page": page_number, "text": text_block, "match": normalize_for_match(text_block)})
+                    blocks.append({"page": page_number, "text": text_block, "match": normalize_for_match(text_block), "is_heading": looks_like_heading(text_block)})
                 current = []
         if current:
             text_block = strip_footnote_markers(" ".join(current))
             if text_block:
-                blocks.append({"page": page_number, "text": text_block, "match": normalize_for_match(text_block)})
+                blocks.append({"page": page_number, "text": text_block, "match": normalize_for_match(text_block), "is_heading": looks_like_heading(text_block)})
     return blocks
 
 
@@ -176,6 +193,10 @@ def attach_text(rows, blocks):
 
         start = match_index + 1
         end = next_match if next_match is not None else len(blocks)
+        for idx in range(start, end):
+            if blocks[idx]["is_heading"]:
+                end = idx
+                break
         text_blocks = [block["text"] for block in blocks[start:end]]
         row["commitment_text"] = "\n\n".join(text_blocks).strip()
         row["source_page"] = str(blocks[match_index]["page"])

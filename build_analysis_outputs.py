@@ -108,10 +108,11 @@ THEME_RULES = [
     ("immigrant_support", ["new americans", "refugee", "immigrants"]),
     ("older_lgbtq_housing", ["older lgbtq"]),
     ("veterans_services", ["veterans", "military cultural competency"]),
-    ("child_care_access", ["child care"]),
+    ("child_care_access", ["child care", "early childhood", "child and dependent care tax credit", "early education"]),
     ("mta_service_and_finance", ["mta", "city ticket", "interborough express"]),
     ("street_safety", ["speed limit", "high risk drivers", "dangerous vehicles", "secondary crashes", "dwi"]),
     ("digital_government", ["customer experience", "benefits participation", "e-signature", "one id", "call wait times", "digital and design teams"]),
+    ("economic_development_general", ["local economic development", "downtown revitalization", "new york forward", "authorities budget office", "idas"]),
 ]
 
 STOPWORDS = {
@@ -179,96 +180,47 @@ def clean_2023_rows(rows):
 def clean_later_year_rows(rows, year):
     cleaned = []
     dropped = []
-    headingish_starts = (
-        "Supporting ",
-        "Protecting ",
-        "Building ",
-        "Improving ",
-        "Increasing ",
-        "Ensuring ",
-        "Strengthening ",
-        "Unlocking ",
-        "Promoting ",
-        "Investing in ",
-        "Fostering ",
-        "Charting ",
-        "Driving ",
-        "Providing Universal ",
-        "Connecting Higher Education",
-        "Combating Crime and Ensuring Justice",
-        "Helping Put Food on the Table",
-        "Tackling Utility Costs",
-        "Tackling Rising Home Insurance Costs",
-        "Supporting Our Farmers",
-        "Supporting Our Farmers’ Families and Children",
-        "Improving the Health of All New Yorkers",
-        "Increase the Resiliency of the Healthcare System",
-        "Strengthen the Healthcare Workforce",
-        "Increase Affordability and Accessibility",
-        "Improve Public Health for All New Yorkers",
-        "Protect Our Homes",
-        "Protect Our Communities",
-        "Protect Our Most Vulnerable",
-        "Protect New York's Infrastructure",
-        "Safeguard New York’s Clean Water",
-        "Make New York Greener",
-        "Create the Conditions to Attract and Grow Businesses",
-        "Bolster Workforce Development",
-        "Protect New York’s Workers",
-        "Improve Access to Benefits and Services",
-        "Expedite Processing Times for Services",
-        "Build a Stronger Public Sector Workforce",
-        "Help our Farmers",
-        "Innovate in Agriculture",
-        "Build Cyber Resilience",
-        "Invest in Infrastructure",
-        "Getting Around Safely and Equitably",
+    exact_heading_titles = {
         "Standing up for New Yorkers",
         "Increasing Speed, Equity, and Efficiency in Capital Project Delivery",
         "Improving Efficiency of Government Processes",
         "Strengthening Our Digital Infrastructure",
+        "Supporting the Youngest New Yorkers and their Families",
+        "Protecting Workers",
+        "Cutting Auto Insurance Costs",
+        "Tackling Rising Home Insurance Costs",
         "Building Opportunities for Homeownership",
         "Unlocking Local Development",
         "Strengthening Investment in Communities",
         "Protecting Housing Affordability",
-        "Supporting the Youngest New Yorkers and their Families",
-        "Charting a Brighter Future for Child Care",
-        "Fostering Better Educational Opportunities",
-        "Unplug and Play",
-        "Restoring Trust and Confidence in the Legitimacy of the Justice System",
-        "Supporting our First Responders",
-        "Protecting Pedestrians, Workers, Drivers, and Cyclists",
-        "Driving Economic Development",
-        "Supporting Agriculture",
-        "Protecting Workers",
-        "Launching ASCENT NY",
-        "Building Stronger Communities for a Changing Climate",
-        "Protecting Our Land, Water, and Air",
-        "Making It Easier to Provide Child Care",
-        "Supporting the Workforce through Early Childhood Educator Preparation",
-        "Supporting Former Foster Students",
-        "Promoting Youth Mental Health",
-        "Safeguarding Kids Online",
-        "Strengthening the Healthcare Delivery System",
-        "Empowering the Healthcare Workforce",
-        "Improving Healthcare Coverage, Access, and Affordability",
-        "Investing in Older Adults",
-        "Improving Equity in Public Health",
-        "Promoting Tech and Biotech",
-        "Supporting Farmers and Manufacturers",
-        "Investing in Communities",
         "Advancing Student Learning and Supports",
         "Connecting Higher Education and Opportunity",
         "Strengthening Our Supports",
         "Building a More Inclusive State",
-    )
+    }
     for row in rows:
         title = normalize_whitespace(row["proposal_title"])
         row = dict(row)
         row["proposal_title"] = TITLE_FIXES_LATER.get(title, title)
         row["subsection"] = normalize_whitespace(row["subsection"])
-        if row["proposal_title"].startswith(headingish_starts):
+        normalized_title = row["proposal_title"]
+        if not normalized_title:
+            dropped.append((title, f"{year} empty row"))
+            continue
+        if normalized_title.startswith(f"{year} State of the State"):
+            dropped.append((title, f"{year} source header"))
+            continue
+        if normalized_title.startswith("Chapter "):
+            dropped.append((title, f"{year} chapter heading"))
+            continue
+        if normalized_title in exact_heading_titles:
             dropped.append((title, f"{year} subsection header"))
+            continue
+        if len(normalized_title) > 450:
+            dropped.append((title, f"{year} foreword or intro spill"))
+            continue
+        if normalized_title.isupper() and len(normalized_title.split()) <= 8:
+            dropped.append((title, f"{year} all-caps heading"))
             continue
         cleaned.append(row)
     return cleaned, dropped
@@ -324,9 +276,10 @@ def infer_binary(title):
 def infer_theme(row):
     title = row["proposal_title"].lower()
     subsection = row["subsection"].lower()
-    joined = f"{title} {subsection}"
+    body = normalize_whitespace(row.get("commitment_text", "")).lower()
+    joined = f"{title} {subsection} {body}"
     for theme, needles in THEME_RULES:
-        if any(needle in joined for needle in needles):
+        if any(contains_phrase(joined, needle) for needle in needles):
             return theme
 
     section = row["section_bucket"]
@@ -349,7 +302,124 @@ def infer_theme(row):
         "Communities / infrastructure": "transportation_general",
         "Parks / recreation": "climate_general",
     }
-    return fallback.get(section, "unclear")
+    if section in fallback:
+        return fallback[section]
+    section_lower = section.lower()
+    if "economic development" in section_lower or "business" in section_lower:
+        return "economic_development_general"
+    if "student" in section_lower or "education" in section_lower or "learn and thrive" in section_lower:
+        return "education_general"
+    if "child care" in section_lower or "families" in section_lower:
+        return "child_care_access"
+    if "health" in section_lower:
+        return "health_care_general"
+    if "government" in section_lower or "capital project delivery" in section_lower:
+        return "government_operations_general"
+    return "unclear"
+
+
+def infer_agencies_with_text(row):
+    title = row["proposal_title"].lower()
+    subsection = row["subsection"].lower()
+    body = normalize_whitespace(row.get("commitment_text", "")).lower()
+    joined = f"{title} {subsection} {body}"
+    section_bucket = row["section_bucket"]
+
+    lead = []
+    support = []
+
+    def add(values, item):
+        if item and item not in values:
+            values.append(item)
+
+    if any(contains_phrase(joined, token) for token in ["housing", "tenant", "eviction", "voucher", "rent", "homeless", "basement apartment", "office conversion"]):
+        add(lead, "HCR")
+    if any(contains_phrase(joined, token) for token in ["mental health", "psychiatric", "behavioral health", "suicide"]):
+        add(lead, "OMH")
+    if any(contains_phrase(joined, token) for token in ["opioid", "substance use", "addiction", "recovery housing"]):
+        lead[:] = ["OASAS"]
+    if any(contains_phrase(joined, token) for token in ["medicaid", "health care", "hospital", "maternal", "public health", "ombudsman", "long-term care", "wic"]):
+        if not lead:
+            add(lead, "DOH")
+    if any(contains_phrase(joined, token) for token in ["older adults", "older new yorkers", "age in place", "master plan for aging", "long-term care"]):
+        add(support, "NYS Office for the Aging")
+    if any(contains_phrase(joined, token) for token in ["child care", "children and family", "parent partnership", "foster", "ocfs", "early childhood"]):
+        add(lead, "OCFS")
+    if any(contains_phrase(joined, token) for token in ["school", "teacher", "literacy", "math", "student", "education department", "educator"]):
+        if not lead:
+            add(lead, "SED")
+    if contains_phrase(joined, "suny"):
+        if "community college" in joined or "microcredential" in joined or "student challenge" in joined:
+            add(support, "SUNY")
+        elif not lead:
+            add(lead, "SUNY")
+    if contains_phrase(joined, "cuny"):
+        if not lead:
+            add(lead, "CUNY")
+        else:
+            add(support, "CUNY")
+    if any(contains_phrase(joined, token) for token in ["state police", "nysp"]):
+        add(lead, "New York State Police")
+    if any(contains_phrase(joined, token) for token in ["gun violence", "crime", "prosecutor", "district attorney", "violence prevention", "dcjs"]):
+        if not lead:
+            add(lead, "DCJS")
+    if any(contains_phrase(joined, token) for token in ["dmv", "driver", "motor vehicle", "non-driver id"]):
+        add(support, "DMV")
+    if any(contains_phrase(joined, token) for token in ["doccs", "parole", "released persons", "re-entry", "incarcerated"]):
+        add(support, "DOCCS")
+    if any(contains_phrase(joined, token) for token in ["transportation", "mta", "road", "highway", "traffic", "transit", "commute"]):
+        if not lead:
+            add(lead, "DOT")
+        add(support, "MTA")
+    if any(contains_phrase(joined, token) for token in ["climate", "energy", "emission", "electric", "decarbonization", "nyserda"]):
+        if not lead:
+            add(lead, "NYSERDA")
+    if any(contains_phrase(joined, token) for token in ["water", "recycling", "waste", "environment", "parks", "flood", "dec"]):
+        if not lead:
+            add(lead, "DEC")
+    if any(contains_phrase(joined, token) for token in ["labor", "worker", "wage", "apprenticeship", "employment", "workforce", "warn"]):
+        if not lead:
+            add(lead, "DOL")
+    if any(contains_phrase(joined, token) for token in ["insurance", "insurer", "fraud bureau", "workers compensation", "workers’ compensation"]):
+        add(support, "DFS")
+    if any(contains_phrase(joined, token) for token in ["economic development", "business", "downtown revitalization", "new york forward", "ida", "authorities budget office", "empire state development", "local economic development project tracking"]):
+        if section_bucket.lower().find("economic development") != -1:
+            lead[:] = ["Empire State Development"]
+        elif not lead:
+            add(lead, "Empire State Development")
+    if any(contains_phrase(joined, token) for token in ["agriculture", "farm", "food supply chain", "farmer"]):
+        if not lead:
+            add(lead, "Agriculture & Markets")
+
+    if not lead:
+        section_defaults = {
+            "Housing / homelessness": "HCR",
+            "Mental health": "OMH",
+            "Health care": "DOH",
+            "Public safety / justice": "DCJS",
+            "Public safety / gun violence": "DCJS",
+            "Schools / higher education": "SED",
+            "Economic development / business": "Empire State Development",
+            "Agriculture / food systems": "Agriculture & Markets",
+            "Labor / affordability": "DOL",
+            "Climate / energy / environment": "NYSERDA",
+            "Transportation / infrastructure": "DOT",
+            "Government operations / customer experience": "",
+            "Government workforce / operations": "",
+            "Parks / recreation": "DEC",
+        }
+        add(lead, section_defaults.get(section_bucket, ""))
+
+    row["lead_agency"] = "; ".join(lead)
+    row["supporting_agencies"] = "; ".join(support)
+    row["lead_agency_standardized"] = standardize_agencies(row["lead_agency"])
+    row["supporting_agencies_standardized"] = standardize_agencies(row["supporting_agencies"])
+    return row
+
+
+def contains_phrase(text, needle):
+    pattern = r"(?<![a-z0-9])" + re.escape(needle).replace(r"\ ", r"\s+") + r"(?![a-z0-9])"
+    return re.search(pattern, text) is not None
 
 
 def infer_status_evidence(row):

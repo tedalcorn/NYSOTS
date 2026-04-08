@@ -431,6 +431,14 @@ function renderDetail() {
       </div>
     </div>
 
+    ${item.subgoals?.length ? `
+    <div class="detail-block">
+      <h3>Possible Sub-Goals</h3>
+      <ul class="subgoal-list">
+        ${item.subgoals.map((goal) => `<li>${escapeHtml(goal)}</li>`).join("")}
+      </ul>
+    </div>` : ""}
+
     <div class="detail-block">
       <h3>Progress</h3>
       <div class="line-field"><span class="line-label">Quantified Goal?</span><span>${item.quantified === "yes" ? "Y" : item.quantified === "no" ? "N" : ""}</span></div>

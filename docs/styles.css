@@ -189,10 +189,34 @@ h1 {
 }
 
 .year-check {
+  position: relative;
+  display: inline-flex;
+}
+
+.year-check input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.year-check span {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  justify-content: center;
+  min-width: 4rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(18, 61, 111, 0.16);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ny-blue-deep);
   font-size: 0.84rem;
+  cursor: pointer;
+}
+
+.year-check input:checked + span {
+  background: var(--ny-blue);
+  color: var(--white);
+  border-color: var(--ny-blue);
 }
 
 .filter-group {
@@ -597,6 +621,20 @@ h1 {
 
 .line-label {
   color: var(--muted);
+}
+
+.subgoal-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.subgoal-list li {
+  margin-bottom: 0.55rem;
+  line-height: 1.4;
+}
+
+.subgoal-list li:last-child {
+  margin-bottom: 0;
 }
 
 .source-line {
