@@ -416,7 +416,6 @@ function renderDetail() {
     detailEl.innerHTML = `<div class="detail-empty"><p>Select a commitment to inspect its coding, source links, and progress fields.</p></div>`;
     return;
   }
-  const linkedPriorLabel = item.matched_prior_title && item.year > 2022 ? `${item.year - 1}: ${item.matched_prior_title}` : "";
   const sourceSection = item.subsection || item.section_bucket || "";
   const sourceParts = [
     item.source.url ? `<a href="${escapeAttr(item.source.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.source.label)}</a>` : escapeHtml(item.source.label),
@@ -424,12 +423,6 @@ function renderDetail() {
     item.source_page ? `p. ${escapeHtml(item.source_page)}${item.source_page_end && item.source_page_end !== item.source_page ? `-${escapeHtml(item.source_page_end)}` : ""}` : "",
     item.text_capture_confidence ? `text: ${escapeHtml(formatConfidence(item.text_capture_confidence))}` : "",
   ].filter(Boolean);
-  const relatedPrior = item.matched_prior_title
-    ? `<div class="detail-block">
-      <h3>Related Prior Commitment(s)</h3>
-      <p>${item.matched_prior_commitment_id ? `<button class="inline-link" type="button" data-jump-related="${escapeAttr(item.matched_prior_commitment_id)}">${escapeHtml(linkedPriorLabel)}</button>` : escapeHtml(linkedPriorLabel)}</p>
-    </div>`
-    : "";
 
   detailEl.innerHTML = `
     ${renderModalToolbar()}
@@ -475,8 +468,6 @@ function renderDetail() {
       <div class="line-field"><span class="line-label">Indicator:</span><span>${renderBlankableText(item.indicator)}</span></div>
       <div class="line-field"><span class="line-label">Progress report:</span><span></span></div>
     </div>
-
-    ${relatedPrior}
 
     <div class="detail-block">
       <h3>Source</h3>
@@ -649,9 +640,6 @@ function bindDetailEvents() {
   detailEl.querySelectorAll("[data-open-agency-link]").forEach((button) => {
     button.addEventListener("click", () => openAgency(button.dataset.openAgencyLink, { preserve: true }));
   });
-  detailEl.querySelectorAll("[data-jump-related]").forEach((button) => {
-    button.addEventListener("click", () => openCommitment(button.dataset.jumpRelated, { preserve: true }));
-  });
 }
 
 function renderModalToolbar() {
@@ -674,8 +662,7 @@ function renderBlankableText(value) {
 }
 
 function renderParagraphs(text) {
-  return text
-    .split(/\n{2,}/)
+  return mergeParagraphFragments(text)
     .map((paragraph) => normalizeParagraph(paragraph))
     .filter(Boolean)
     .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
@@ -684,6 +671,30 @@ function renderParagraphs(text) {
 
 function normalizeParagraph(text) {
   return text.replace(/\s+/g, " ").trim();
+}
+
+function mergeParagraphFragments(text) {
+  const parts = String(text)
+    .split(/\n{2,}/)
+    .map((part) => normalizeParagraph(part))
+    .filter(Boolean);
+  const merged = [];
+  for (const part of parts) {
+    const prev = merged[merged.length - 1];
+    if (prev && shouldMergeParagraphs(prev, part)) {
+      merged[merged.length - 1] = `${prev} ${part}`.replace(/\s+/g, " ").trim();
+    } else {
+      merged.push(part);
+    }
+  }
+  return merged;
+}
+
+function shouldMergeParagraphs(prev, next) {
+  const prevEndsSentence = /[.!?:"']$/.test(prev);
+  const nextStartsLower = /^[a-z(]/.test(next);
+  const nextIsShortFragment = next.split(/\s+/).length <= 8;
+  return !prevEndsSentence || nextStartsLower || nextIsShortFragment;
 }
 
 function pushModalHistory(options) {

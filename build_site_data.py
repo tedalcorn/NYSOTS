@@ -134,13 +134,24 @@ def extract_subgoals(text):
     if not cleaned:
         return []
     pattern = re.compile(
-        r"((?:Governor Hochul|New York State|The State|New York|OCFS|SED|SUNY|CUNY|DOH|OMH|DOL|DFS|DOT|DMV|DOCCS|NYSERDA|Empire State Development|The Governor)\s+will\s+.*?[.!?])"
+        r"((?:Governor Hochul|New York State|The State|New York|OCFS|SED|SUNY|CUNY|DOH|OMH|DOL|DFS|DOT|DMV|DOCCS|NYSERDA|Empire State Development|The Governor|Blue Buffers)\s+(?:will|is proposing to|proposes to)\s+.*?[.!?])",
+        flags=re.IGNORECASE,
     )
     seen = []
     for match in pattern.findall(cleaned):
-        sentence = match.strip()
+        sentence = re.sub(r"\s+", " ", match).strip()
+        sentence = sentence[0].upper() + sentence[1:] if sentence else sentence
         if sentence not in seen:
             seen.append(sentence)
+    if len(seen) < 8:
+        follow_up_pattern = re.compile(
+            r"((?:In its first year of operation|Initially|To launch the program|To improve|To address this|To bolster these efforts|To meet growing need)\b.*?[.!?])",
+            flags=re.IGNORECASE,
+        )
+        for match in follow_up_pattern.findall(cleaned):
+            sentence = re.sub(r"\s+", " ", match).strip()
+            if sentence not in seen:
+                seen.append(sentence)
     return seen[:8]
 
 
