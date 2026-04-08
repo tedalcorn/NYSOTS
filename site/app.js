@@ -2,7 +2,9 @@ const state = {
   data: null,
   view: "commitments",
   selectedCommitmentId: null,
+  selectedAgencyName: null,
   modalOpen: false,
+  modalType: "commitment",
   filters: {
     query: "",
     year: "all",
@@ -46,6 +48,7 @@ async function init() {
   state.data = await response.json();
   const initialId = new URLSearchParams(window.location.search).get("commitment");
   state.selectedCommitmentId = state.data.commitments.find((item) => item.id === initialId)?.id || state.data.commitments[0]?.id || null;
+  state.selectedAgencyName = state.data.agencies[0]?.name || null;
   renderHeaderStats();
   renderSiteNote();
   render();
@@ -228,7 +231,6 @@ function renderCommitmentsView() {
     <div class="view-header">
       <div>
         <h2>Commitments</h2>
-        <p>Search the goals directly, or narrow by year, agency, theme, and commitment type.</p>
       </div>
     </div>
     <div class="summary-strip">
@@ -249,39 +251,37 @@ function renderCommitmentsView() {
         <strong>${continuation}</strong>
       </div>
     </div>
-    ${commitments.length ? `<div class="commitment-list">${commitments.map(renderCommitmentCard).join("")}</div>` : `<div class="empty-state">No commitments match the current filters.</div>`}
+    ${commitments.length ? renderCommitmentTable(commitments) : `<div class="empty-state">No commitments match the current filters.</div>`}
   `;
 
-  contentEl.querySelectorAll(".commitment-card").forEach((card) => {
-    card.addEventListener("click", () => openCommitment(card.dataset.commitmentId));
-  });
-  contentEl.querySelectorAll("[data-theme-jump]").forEach((button) => {
-    button.addEventListener("click", (event) => {
-      event.stopPropagation();
-      state.filters.theme = button.dataset.themeJump;
-      render();
-    });
+  contentEl.querySelectorAll("[data-commitment-id]").forEach((row) => {
+    row.addEventListener("click", () => openCommitment(row.dataset.commitmentId));
   });
 }
 
-function renderCommitmentCard(item) {
+function renderCommitmentTable(commitments) {
   return `
-    <article class="commitment-card ${item.id === state.selectedCommitmentId ? "is-selected" : ""}" data-commitment-id="${item.id}">
-      <div class="meta-line">
-        <span class="meta-pill blue">${item.year}</span>
-        <span class="meta-pill">${escapeHtml(formatLabel(item.commitment_type))}</span>
-        <span class="meta-pill gold">${escapeHtml(item.progress.label)}</span>
+    <div class="dense-table">
+      <div class="dense-head dense-row">
+        <div>Year</div>
+        <div>Commitment</div>
+        <div>Primary Agency</div>
+        <div>Theme</div>
       </div>
-      <h3>${escapeHtml(item.title)}</h3>
-      <p class="muted">${escapeHtml(item.section_bucket)}${item.subsection ? ` · ${escapeHtml(item.subsection)}` : ""}</p>
-      <div class="mini-chip-row">
-        ${item.theme_labels.map((theme) => `<button class="chip-button" type="button" data-theme-jump="${escapeAttr(theme)}">${escapeHtml(theme)}</button>`).join("")}
-      </div>
-      <div class="detail-block">
-        <p><strong>Agencies:</strong> ${escapeHtml(item.all_agencies.join(", ") || "Not yet coded")}</p>
-        <p><strong>Quantified:</strong> ${item.quantified === "yes" ? escapeHtml(item.metric_or_target || "Yes") : "No"}</p>
-      </div>
-    </article>
+      ${commitments.map(renderCommitmentRow).join("")}
+    </div>
+  `;
+}
+
+function renderCommitmentRow(item) {
+  const primaryAgency = item.lead_agencies.join(", ") || item.all_agencies.join(", ") || "Not yet coded";
+  return `
+    <button class="dense-row dense-button ${item.id === state.selectedCommitmentId ? "is-selected" : ""}" type="button" data-commitment-id="${item.id}">
+      <div>${item.year}</div>
+      <div class="dense-title" title="${escapeAttr(item.title)}">${escapeHtml(item.title)}</div>
+      <div title="${escapeAttr(primaryAgency)}">${escapeHtml(primaryAgency)}</div>
+      <div title="${escapeAttr(item.theme_labels[0] || "")}">${escapeHtml(item.theme_labels[0] || "")}</div>
+    </button>
   `;
 }
 
@@ -296,35 +296,25 @@ function renderAgenciesView() {
     <div class="view-header">
       <div>
         <h2>Agencies</h2>
-        <p>See which agencies own the largest share of commitments and jump directly into their item lists.</p>
       </div>
     </div>
-    <div class="card-list">
+    <div class="dense-table dense-table-agencies">
+      <div class="dense-head dense-row">
+        <div>Agency</div>
+        <div>Commitments</div>
+      </div>
       ${agencies.map((agency) => `
-        <article class="browse-card">
-          <h3>${escapeHtml(agency.name)}</h3>
-          <div class="meta-line">
-            <span class="meta-pill blue">${agency.commitment_count} commitments</span>
-            <span class="meta-pill">Lead on ${agency.lead_count}</span>
-            <span class="meta-pill">Support on ${agency.support_count}</span>
-          </div>
-          <div class="mini-chip-row">
-            ${agency.top_themes.map((theme) => `<span class="mini-chip">${escapeHtml(theme.label)} (${theme.count})</span>`).join("")}
-          </div>
-          <div class="utility-row">
-            <button class="utility-button" data-open-agency="${escapeAttr(agency.name)}">Open commitments</button>
-          </div>
-        </article>
+        <button class="dense-row dense-button ${agency.name === state.selectedAgencyName ? "is-selected" : ""}" type="button" data-open-agency="${escapeAttr(agency.name)}">
+          <div class="dense-title" title="${escapeAttr(agency.name)}">${escapeHtml(agency.name)}</div>
+          <div>${agency.commitment_count}</div>
+        </button>
       `).join("")}
     </div>
   `;
 
   contentEl.querySelectorAll("[data-open-agency]").forEach((button) => {
     button.addEventListener("click", () => {
-      state.filters.agency = button.dataset.openAgency;
-      state.view = "commitments";
-      syncNav("commitments");
-      render();
+      openAgency(button.dataset.openAgency);
     });
   });
 }
@@ -443,6 +433,10 @@ function renderBarRow(label, value, max) {
 }
 
 function renderDetail() {
+  if (state.modalType === "agency") {
+    renderAgencyDetail();
+    return;
+  }
   const item = state.data.commitments.find((commitment) => commitment.id === state.selectedCommitmentId);
   if (!item) {
     detailEl.innerHTML = `<div class="detail-empty"><p>Select a commitment to inspect its coding, source links, and progress fields.</p></div>`;
@@ -526,6 +520,54 @@ function renderDetail() {
   `;
 }
 
+function renderAgencyDetail() {
+  const agency = state.data.agencies.find((item) => item.name === state.selectedAgencyName);
+  if (!agency) {
+    detailEl.innerHTML = `<div class="detail-empty"><p>Select an agency to inspect its commitments.</p></div>`;
+    return;
+  }
+  const commitments = agency.commitment_ids
+    .map((id) => state.data.commitments.find((item) => item.id === id))
+    .filter(Boolean)
+    .sort((a, b) => (a.year !== b.year ? b.year - a.year : a.title.localeCompare(b.title)));
+
+  detailEl.innerHTML = `
+    <div class="meta-line">
+      <span class="meta-pill blue">${agency.commitment_count} commitments</span>
+      <span class="meta-pill">Lead on ${agency.lead_count}</span>
+      <span class="meta-pill">Support on ${agency.support_count}</span>
+    </div>
+    <h2 class="detail-title" id="detail-modal-title">${escapeHtml(agency.name)}</h2>
+    <div class="detail-block">
+      <h3>Top Themes</h3>
+      <div class="mini-chip-row">
+        ${agency.top_themes.map((theme) => `<span class="mini-chip">${escapeHtml(theme.label)} (${theme.count})</span>`).join("")}
+      </div>
+    </div>
+    <div class="detail-block">
+      <h3>Commitments</h3>
+      <div class="dense-table dense-table-modal">
+        <div class="dense-head dense-row">
+          <div>Year</div>
+          <div>Commitment</div>
+          <div>Theme</div>
+        </div>
+        ${commitments.map((item) => `
+          <button class="dense-row dense-button" type="button" data-jump-commitment="${item.id}">
+            <div>${item.year}</div>
+            <div class="dense-title" title="${escapeAttr(item.title)}">${escapeHtml(item.title)}</div>
+            <div title="${escapeAttr(item.theme_labels[0] || "")}">${escapeHtml(item.theme_labels[0] || "")}</div>
+          </button>
+        `).join("")}
+      </div>
+    </div>
+  `;
+
+  detailEl.querySelectorAll("[data-jump-commitment]").forEach((button) => {
+    button.addEventListener("click", () => openCommitment(button.dataset.jumpCommitment));
+  });
+}
+
 function renderModalState() {
   modalShellEl.classList.toggle("is-open", state.modalOpen);
   modalShellEl.setAttribute("aria-hidden", state.modalOpen ? "false" : "true");
@@ -534,8 +576,19 @@ function renderModalState() {
 
 function openCommitment(id) {
   state.selectedCommitmentId = id;
+  state.modalType = "commitment";
   state.modalOpen = true;
   updateUrl(id);
+  renderDetail();
+  renderContent();
+  renderModalState();
+}
+
+function openAgency(name) {
+  state.selectedAgencyName = name;
+  state.modalType = "agency";
+  state.modalOpen = true;
+  updateUrl(null);
   renderDetail();
   renderContent();
   renderModalState();
