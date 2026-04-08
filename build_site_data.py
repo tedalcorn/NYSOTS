@@ -126,6 +126,8 @@ def read_rows():
 
 
 def normalize_theme(theme):
+    if theme == "unclear":
+        return "Not yet identified"
     return THEME_LABELS.get(theme, theme.replace("_", " ").title())
 
 

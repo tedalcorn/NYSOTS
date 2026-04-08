@@ -139,7 +139,7 @@ function renderSidebar() {
         ${years.map((year) => `
           <label class="year-check">
             <input type="checkbox" data-year-check="${year}" ${state.filters.years.includes(String(year)) ? "checked" : ""}>
-            <span>${year}</span>
+            <span>'${String(year).slice(-2)}</span>
           </label>
         `).join("")}
       </div>
@@ -269,12 +269,12 @@ function renderCommitmentTable(commitments) {
 }
 
 function renderCommitmentRow(item) {
-  const primaryAgency = item.lead_agencies.join(", ") || item.all_agencies.join(", ") || "Not yet coded";
+  const primaryAgency = item.lead_agencies.join(", ") || item.all_agencies.join(", ") || "Not yet identified";
   return `
     <button class="dense-row dense-button ${item.id === state.selectedCommitmentId ? "is-selected" : ""}" type="button" data-commitment-id="${item.id}">
       <div>${item.year}</div>
       <div class="dense-title" title="${escapeAttr(item.title)}">${escapeHtml(item.title)}</div>
-      <div title="${escapeAttr(formatAgencyList(primaryAgency))}">${escapeHtml(formatAgencyList(primaryAgency))}</div>
+      <div title="${escapeAttr(formatAgencyListFull(primaryAgency))}">${escapeHtml(formatAgencyListCompact(primaryAgency))}</div>
       <div title="${escapeAttr(item.theme_labels[0] || "")}">${escapeHtml(item.theme_labels[0] || "")}</div>
       <div>${escapeHtml(formatConfidence(item.text_capture_confidence))}</div>
     </button>
@@ -651,7 +651,7 @@ function renderModalToolbar() {
 }
 
 function renderAgencyLinks(agencies) {
-  if (!agencies.length) return "";
+  if (!agencies.length) return "Not yet identified";
   return agencies
     .map((agency) => `<button class="inline-link" type="button" data-open-agency-link="${escapeAttr(agency)}">${escapeHtml(formatAgencyLabel(agency))}</button>`)
     .join(", ");
@@ -775,11 +775,26 @@ function formatAgencyLabel(value) {
   return AGENCY_LABELS[value] || value;
 }
 
-function formatAgencyList(value) {
+function formatAgencyListFull(value) {
   return String(value)
     .split(",")
     .map((item) => formatAgencyLabel(item.trim()))
     .join(", ");
+}
+
+function formatAgencyListCompact(value) {
+  return String(value)
+    .split(",")
+    .map((item) => formatAgencyCompact(item.trim()))
+    .join(", ");
+}
+
+function formatAgencyCompact(value) {
+  if (!value || value === "Not yet identified") return "Not yet identified";
+  const full = AGENCY_LABELS[value];
+  if (!full) return value;
+  const match = full.match(/\(([A-Z0-9&\/-]+)\)$/);
+  return match ? match[1] : value;
 }
 
 function sortAgencies(items, sort) {
