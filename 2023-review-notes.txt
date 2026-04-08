@@ -1,0 +1,80 @@
+Hochul SOTS project: notes on 2023 review and proposed next steps
+
+File-format preference:
+- Going forward, if I make a reading memo for you, I will default to .txt rather than .md unless there is a reason not to.
+
+What "Homes and Community Renewal" is:
+- In New York State terms this is HCR, the main state housing/community-development umbrella.
+- In our current 2023 file it is also being used as a default inferred lead agency for most housing items.
+- That means some HCR assignments may be directionally right but still need item-level verification.
+
+What the 2023 file currently is:
+- It is a first-pass table-of-contents extraction, not a cleaned commitment tracker yet.
+- It has 150 rows.
+- It appears to include about 11 rows that are really section headers rather than commitments.
+- It still has wrapped/truncated text issues and some overly generic coding values like "other" and "mixed."
+
+Why metrics/targets are sparse:
+- Most 2023 table-of-contents lines are not quantified at the title level.
+- In the current first pass, only 9 of 150 rows are tagged quantified = yes.
+- So blank metric_or_target is often a source limitation, not just a missed coding step.
+- Many metrics would need to be pulled from the body text, budget documents, or later implementation materials.
+
+Could some items be binary yes/no?
+- Yes. A separate field for "binary evaluable" would be useful.
+- Example values:
+  - binary_evaluable: yes / no / mixed
+  - binary_unit: established / issued / enacted / launched / funded / published / designated
+- Best use case: items whose core question is whether the state created, authorized, issued, or launched something.
+- Weak use case: items like "expand," "improve," "support," or "increase access," which usually need spectrum-based evaluation.
+
+Examples that look clearly binary from titles:
+- Establish a Commission on the Future of Health Care
+- Establish A New Health Care Technology Capital Program
+- Establish the Office of Semiconductor Expansion, Management and Integration
+- Establish Minority and Women's Business Enterprises Certification Reciprocity
+- Launch Mobile Veterans Service Centers
+- Launch "One ID for New York State" to Improve Digital Access
+- Authorize the City of New York to Legalize Basement Apartments
+- Allow New York City to Lower Its Speed Limit
+
+Aging-plan example:
+- 2022 includes: "Establish a State Master Plan for Aging."
+- The 2022 book says Hochul "will issue an Executive Order implementing a State Master Plan for Aging."
+- That makes the 2022 commitment strongly binary at the first layer: was the order issued / was the plan established?
+- The 2023 book refers back to it as already underway: "Last year, Governor Hochul directed the creation of the first-ever statewide Master Plan for Aging..."
+- So across years, this is exactly the kind of commitment that works well as both:
+  - a continuity tag, and
+  - a binary implementation-status field.
+
+Recommended next steps:
+1. Clean 2023 before doing strict 2022-2023 overlap work.
+2. Add a few new analytic fields rather than jumping straight to more years.
+3. Then compare 2022 and 2023 for continuity, expansion, and repetition.
+4. Only after that scale to later years.
+
+Recommended fields to add now:
+- item_type_clean
+- implementation_pathway_clean
+- binary_evaluable
+- binary_unit
+- continuity_to_prior_year
+- overlap_theme
+- status_evidence_needed
+- source_quality
+
+Practical sequence I would use:
+1. Clean the 2023 inventory.
+   Remove header rows, fix wrapped titles, standardize agency names, and reduce overuse of "other" and "mixed."
+2. Add analytic fields to both 2022 and 2023.
+   Especially binary_evaluable and continuity-related fields.
+3. Bring 2022 and 2023 into dialogue.
+   Tag each 2023 item as new, continuation, expansion, or follow-on to a 2022 item.
+4. Build a short crosswalk file.
+   One row per matched pair or cluster, so recurring priorities are easy to inspect.
+5. Then decide whether to deepen evidence for 2022-2023 or move on to 2024.
+
+My recommendation:
+- Do not jump to additional years yet.
+- First make 2022 and 2023 analytically stronger, because they will define the coding system for everything that follows.
+- The highest-value immediate move is: clean 2023 and add binary/continuity fields to both years.

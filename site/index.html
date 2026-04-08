@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hochul State of the State Tracker</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <p class="eyebrow">Governor Kathy Hochul</p>
+        <h1>State of the State Tracker</h1>
+        <p class="intro">
+          Browse commitments by year, agency, theme, and keyword, and inspect the coding attached to each one.
+        </p>
+      </div>
+      <div class="header-stats" id="header-stats"></div>
+    </div>
+  </header>
+
+  <nav class="top-nav" aria-label="Primary">
+    <button class="nav-link is-active" data-view="commitments">Commitments</button>
+    <button class="nav-link" data-view="agencies">Agencies</button>
+    <button class="nav-link" data-view="themes">Themes</button>
+    <button class="nav-link" data-view="analysis">Analysis</button>
+  </nav>
+
+  <main class="layout">
+    <aside class="sidebar" id="sidebar"></aside>
+    <section class="content" id="content"></section>
+  </main>
+
+  <div class="modal-shell" id="modal-shell" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal="true"></div>
+    <section class="detail-modal" id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close detail window">×</button>
+      <div class="detail-panel" id="detail-panel">
+        <div class="detail-empty">
+          <p>Select a commitment to inspect its coding, source links, and progress fields.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="site-note" id="site-note"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
