@@ -340,25 +340,6 @@ function renderAnalysisView() {
     <div class="view-header">
       <div>
         <h2>Analysis</h2>
-        <p>This is a first analytical layer over the coded commitments. Progress evidence can plug into the same structure later.</p>
-      </div>
-    </div>
-    <div class="summary-strip">
-      <div class="summary-card">
-        <p>Commitments</p>
-        <strong>${analysis.totals.commitments}</strong>
-      </div>
-      <div class="summary-card">
-        <p>Quantified share</p>
-        <strong>${percent(analysis.coded_shares.quantified_yes)}</strong>
-      </div>
-      <div class="summary-card">
-        <p>Binary-evaluable share</p>
-        <strong>${percent(analysis.coded_shares.binary_yes)}</strong>
-      </div>
-      <div class="summary-card">
-        <p>Progress reviewed</p>
-        <strong>${analysis.progress_counts.not_assessed ? "0%" : "n/a"}</strong>
       </div>
     </div>
     <div class="analysis-grid">
@@ -412,14 +393,17 @@ function renderDetail() {
     return;
   }
   const linkedPriorLabel = item.matched_prior_title && item.year > 2022 ? `${item.year - 1}: ${item.matched_prior_title}` : "";
-  const progressFields = [
-    item.quantified ? `<dl><dt>Quantified</dt><dd>${escapeHtml(item.quantified)}</dd></dl>` : "",
-    item.progress.status !== "not_assessed" ? `<dl><dt>Status</dt><dd>${escapeHtml(item.progress.label)}</dd></dl>` : "",
-  ].filter(Boolean).join("");
+  const sourceSection = item.subsection || item.section_bucket || "";
   const sourceParts = [
     item.source.url ? `<a href="${escapeAttr(item.source.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.source.label)}</a>` : escapeHtml(item.source.label),
-    [item.section_bucket, item.subsection].filter(Boolean).map(escapeHtml).join(" · "),
+    sourceSection ? escapeHtml(sourceSection) : "",
   ].filter(Boolean);
+  const relatedPrior = item.matched_prior_title
+    ? `<div class="detail-block">
+      <h3>Related Prior Commitment(s)</h3>
+      <p>${item.matched_prior_commitment_id ? `<button class="inline-link" type="button" data-jump-related="${escapeAttr(item.matched_prior_commitment_id)}">${escapeHtml(linkedPriorLabel)}</button>` : escapeHtml(linkedPriorLabel)}</p>
+    </div>`
+    : "";
 
   detailEl.innerHTML = `
     ${renderModalToolbar()}
@@ -428,6 +412,7 @@ function renderDetail() {
       <span class="meta-pill">${escapeHtml(formatLabel(item.commitment_type))}</span>
     </div>
     <h2 class="detail-title" id="detail-modal-title">Commitment: ${escapeHtml(item.title)}</h2>
+    ${item.commitment_text ? `<div class="detail-block"><div class="blurb-text">${renderParagraphs(item.commitment_text)}</div></div>` : ""}
 
     <div class="detail-block">
       <div class="detail-grid">
@@ -448,16 +433,16 @@ function renderDetail() {
           <dd>${escapeHtml(formatLabel(item.implementation_pathway))}</dd>
         </dl>
       </div>
-      ${linkedPriorLabel ? `<p><strong>Linked prior commitment:</strong> ${escapeHtml(linkedPriorLabel)}</p>` : ""}
     </div>
 
-    ${progressFields ? `
     <div class="detail-block">
       <h3>Progress</h3>
-      <div class="detail-grid">
-        ${progressFields}
-      </div>
-    </div>` : ""}
+      <div class="line-field"><span class="line-label">Quantified Goal?</span><span>${item.quantified === "yes" ? "Y" : item.quantified === "no" ? "N" : ""}</span></div>
+      <div class="line-field"><span class="line-label">Indicator:</span><span>${renderBlankableText(item.indicator)}</span></div>
+      <div class="line-field"><span class="line-label">Progress report:</span><span></span></div>
+    </div>
+
+    ${relatedPrior}
 
     <div class="detail-block">
       <h3>Source</h3>
@@ -628,6 +613,9 @@ function bindDetailEvents() {
   detailEl.querySelectorAll("[data-open-agency-link]").forEach((button) => {
     button.addEventListener("click", () => openAgency(button.dataset.openAgencyLink, { preserve: true }));
   });
+  detailEl.querySelectorAll("[data-jump-related]").forEach((button) => {
+    button.addEventListener("click", () => openCommitment(button.dataset.jumpRelated, { preserve: true }));
+  });
 }
 
 function renderModalToolbar() {
@@ -647,6 +635,19 @@ function renderAgencyLinks(agencies) {
 
 function renderBlankableText(value) {
   return value ? escapeHtml(String(value)) : "";
+}
+
+function renderParagraphs(text) {
+  return text
+    .split(/\n{2,}/)
+    .map((paragraph) => normalizeParagraph(paragraph))
+    .filter(Boolean)
+    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+    .join("");
+}
+
+function normalizeParagraph(text) {
+  return text.replace(/\s+/g, " ").trim();
 }
 
 function pushModalHistory(options) {

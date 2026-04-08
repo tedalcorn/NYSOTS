@@ -566,6 +566,26 @@ h1 {
   color: var(--ny-blue);
 }
 
+.blurb-text p {
+  margin: 0 0 0.9rem;
+  line-height: 1.45;
+}
+
+.blurb-text p:last-child {
+  margin-bottom: 0;
+}
+
+.line-field {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 0.65rem;
+  padding: 0.18rem 0;
+}
+
+.line-label {
+  color: var(--muted);
+}
+
 .source-line {
   margin: 0;
   display: flex;
@@ -712,6 +732,11 @@ h1 {
 
   .detail-grid {
     grid-template-columns: 1fr;
+  }
+
+  .line-field {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
   }
 
   .site-note {
