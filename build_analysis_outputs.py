@@ -249,10 +249,10 @@ MANUAL_ROW_OVERRIDES = {
         "overlap_theme": "economic_development_general",
     },
     "Bolster Workforce Development": {
-        "overlap_theme": "college_workforce_pathways",
+        "overlap_theme": "labor_affordability_general",
     },
     "Establish an Office of Workforce Data and Research": {
-        "overlap_theme": "college_workforce_pathways",
+        "overlap_theme": "labor_affordability_general",
     },
     "Expand the Teacher Ambassador Program": {
         "overlap_theme": "education_general",
@@ -298,6 +298,27 @@ MANUAL_ROW_OVERRIDES = {
         "lead_agency": "Division of Human Rights",
         "supporting_agencies": "",
         "overlap_theme": "reproductive_rights",
+    },
+    "Recruit the Next Generation of Public Servants": {
+        "overlap_theme": "government_operations_general",
+    },
+    "Invest in Effective Student Debt Assistance Programs": {
+        "overlap_theme": "education_general",
+    },
+    "Help More New Yorkers Move Between Education and Career": {
+        "overlap_theme": "labor_affordability_general",
+    },
+    "Overhaul the State’s Workforce Development Efforts to Focus on Region-Specific Employment Needs": {
+        "overlap_theme": "labor_affordability_general",
+    },
+    "Increase Existing Tax Credits and Create a New Credit to Support Food Production": {
+        "overlap_theme": "food_access_agriculture",
+    },
+    "Make New York State Higher Education Services Corporation Loan Forgiveness Awards Tax Exempt": {
+        "overlap_theme": "education_general",
+    },
+    "Protect and Strengthen Workers’ Rights": {
+        "overlap_theme": "labor_affordability_general",
     },
 }
 
@@ -542,37 +563,43 @@ def infer_agencies_with_text(row):
         add(lead, "OMH")
     if any(contains_phrase(joined, token) for token in ["department of health", "(doh)", " doh "]):
         add(lead, "DOH")
+    if any(contains_phrase(joined, token) for token in ["department of labor", "(dol)", " dol "]):
+        add(lead, "DOL")
+    if any(contains_phrase(joined, token) for token in ["department of environmental conservation", "(dec)", " dec "]):
+        add(lead, "DEC")
+    if any(contains_phrase(joined, token) for token in ["department of financial services", "(dfs)", " dfs "]):
+        add(lead, "DFS")
+    if any(contains_phrase(joined, token) for token in ["division of criminal justice services", "(dcjs)", " dcjs "]):
+        add(lead, "DCJS")
+    if any(contains_phrase(joined, token) for token in ["department of corrections and community supervision", "(doccs)", " doccs "]):
+        add(lead, "DOCCS")
+    if any(contains_phrase(joined, token) for token in ["department of taxation and finance", "taxation and finance"]):
+        add(lead, "Department of Taxation and Finance")
+    if any(contains_phrase(joined, token) for token in ["department of agriculture and markets", "agriculture & markets", "agriculture and markets"]):
+        add(lead, "Agriculture & Markets")
+    if any(contains_phrase(joined, token) for token in ["empire state development", "(esd)", " esd "]):
+        add(lead, "Empire State Development")
     if any(contains_phrase(joined, token) for token in ["office of children and family services", "(ocfs)", " ocfs "]):
         add(lead, "OCFS")
     if any(contains_phrase(joined, token) for token in ["state education department", "(sed)", " sed "]):
         add(lead, "SED")
+    if any(contains_phrase(joined, token) for token in ["higher education services corporation", "(hesc)", " hesc "]):
+        add(lead, "Higher Education Services Corporation")
     if any(contains_phrase(joined, token) for token in ["department of transportation", "nysdot", "(dot)", " dot "]):
         add(lead, "DOT")
     if any(contains_phrase(joined, token) for token in ["mta police", "metropolitan transportation authority", "(mta)", " mta ", "long island rail road", " lirr ", "nyc transit", "airtrain"]):
         add(lead, "MTA")
     if any(contains_phrase(joined, token) for token in ["department of public service", "public service commission", " dps ", "(dps)", "dps will", "dps is"]):
         add(lead, "Public Service Commission / DPS")
+    if any(contains_phrase(joined, token) for token in ["office for temporary and disability assistance", "(otda)", " otda "]):
+        add(lead, "OTDA")
+    if any(contains_phrase(joined, token) for token in ["office of addiction services and supports", "(oasas)", " oasas "]):
+        add(lead, "OASAS")
+    if any(contains_phrase(joined, token) for token in ["office for the aging", "nys office for the aging"]):
+        add(lead, "NYS Office for the Aging")
     if any(contains_phrase(joined, token) for token in ["nyc department of homeless services", "department of homeless services"]):
         add(support, "NYC Department of Homeless Services")
 
-    has_explicit = bool(lead or support)
-
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["housing", "tenant", "eviction", "voucher", "rent", "homeless", "basement apartment", "office conversion"]):
-        add(lead, "HCR")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["mental health", "psychiatric", "behavioral health", "suicide"]):
-        add(lead, "OMH")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["opioid", "substance use", "addiction", "recovery housing"]):
-        lead[:] = ["OASAS"]
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["medicaid", "health care", "hospital", "maternal", "public health", "ombudsman", "long-term care", "wic"]):
-        if not lead:
-            add(lead, "DOH")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["older adults", "older new yorkers", "age in place", "master plan for aging", "long-term care"]):
-        add(support, "NYS Office for the Aging")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["child care", "children and family", "parent partnership", "foster", "early childhood"]):
-        add(lead, "OCFS")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["teacher", "literacy", "math", "education department", "educator", "school district", "curriculum", "reading instruction"]):
-        if not lead:
-            add(lead, "SED")
     if not lead and contains_phrase(joined, "suny"):
         if "community college" in joined or "microcredential" in joined or "student challenge" in joined:
             add(support, "SUNY")
@@ -583,60 +610,6 @@ def infer_agencies_with_text(row):
             add(lead, "CUNY")
         else:
             add(support, "CUNY")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["state police", "nysp"]):
-        add(lead, "New York State Police")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["gun violence", "crime", "prosecutor", "district attorney", "violence prevention", "dcjs"]):
-        if not lead:
-            add(lead, "DCJS")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["dmv", "motor vehicle", "non-driver id", "drivers license", "driver's license", "high risk drivers", "drugged driving", "dwi", "dangerous vehicles", "moped", "vehicle registration"]):
-        add(support, "DMV")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["doccs", "parole", "released persons", "re-entry", "incarcerated"]):
-        add(support, "DOCCS")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["highway", "route ", "interstate", "bridge", "bridges", "roadway", "roads"]):
-        if not lead:
-            add(lead, "DOT")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["climate", "energy", "emission", "electric", "decarbonization", "nyserda"]):
-        if not lead:
-            add(lead, "NYSERDA")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["water", "recycling", "waste", "environment", "parks", "flood", "dec"]):
-        if not lead:
-            add(lead, "DEC")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["labor", "worker", "wage", "apprenticeship", "employment", "workforce", "warn"]):
-        if not lead:
-            add(lead, "DOL")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["tax credit", "tax credits", "tax relief", "tax cut", "tax cuts", "property tax rebate", "rebate", "taxation and finance"]):
-        if not lead:
-            add(lead, "Department of Taxation and Finance")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["insurance", "insurer", "fraud bureau", "workers compensation", "workers’ compensation"]):
-        add(support, "DFS")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["economic development", "small business", "small businesses", "businesses", "downtown revitalization", "new york forward", "ida", "authorities budget office", "empire state development", "local economic development project tracking", "startup", "startups", "manufacturing partnership", "shovel-ready sites", "mwbe", "site development"]):
-        if section_bucket.lower().find("economic development") != -1:
-            lead[:] = ["Empire State Development"]
-        elif not lead:
-            add(lead, "Empire State Development")
-    if not has_explicit and any(contains_phrase(focus, token) for token in ["agriculture", "farm", "food supply chain", "farmer"]):
-        if not lead:
-            add(lead, "Agriculture & Markets")
-
-    if not lead:
-        section_defaults = {
-            "Housing / homelessness": "HCR",
-            "Mental health": "OMH",
-            "Health care": "DOH",
-            "Public safety / justice": "DCJS",
-            "Public safety / gun violence": "DCJS",
-            "Schools / higher education": "SED",
-            "Economic development / business": "Empire State Development",
-            "Agriculture / food systems": "Agriculture & Markets",
-            "Labor / affordability": "DOL",
-            "Climate / energy / environment": "NYSERDA",
-            "Transportation / infrastructure": "DOT",
-            "Government operations / customer experience": "",
-            "Government workforce / operations": "",
-            "Parks / recreation": "DEC",
-        }
-        add(lead, section_defaults.get(section_bucket, ""))
-
     row["lead_agency"] = "; ".join(lead)
     row["supporting_agencies"] = "; ".join(support)
     row["lead_agency_standardized"] = standardize_agencies(row["lead_agency"])

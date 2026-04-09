@@ -8,7 +8,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2026007,Supporting Our Farmers' Families and Children,child_care_access,continuation,2025006,Expand Access to Vital Nutrition Programs for Mothers and Children,theme=child_care_access; shared_terms=children
 2026008,Making It Easier to Provide Child Care,child_care_access,continuation,2025012,Create the New York Coalition for Child Care,"theme=child_care_access; shared_terms=care, child"
 2026009,Engaging with Employers as Partners,child_care_access,new,,,
-2026010,Supporting the Workforce through Early Childhood Educator Preparation,college_workforce_pathways,continuation,2025017,Build a Statewide Data System to Improve Education and Workforce Outcomes,theme=college_workforce_pathways; shared_terms=workforce
+2026010,Supporting the Workforce through Early Childhood Educator Preparation,college_workforce_pathways,continuation,2025072,Fund Free Community College in High-Demand Occupations,theme=college_workforce_pathways; shared_terms=
 2026011,Boosting Awareness of the Child Tax Credit (CTC),labor_affordability_general,continuation,2025002,Vastly Expand New York's Child Tax Credit,"theme=labor_affordability_general; shared_terms=child, credit, tax"
 2026012,Lowering Rates by Cracking Down on Fraud,state_police_capacity,new,,,
 2026013,Strengthening Insurer Anti-Fraud Programs,labor_affordability_general,new,,,
@@ -59,7 +59,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2026058,Sustaining Record Lows in Subway Crime by Putting Police on Platforms,mta_service_and_finance,continuation,2025121,Advance Second Avenue Subway and Other Major Transit Improvements,theme=mta_service_and_finance; shared_terms=subway
 2026059,Expanding SCOUT Teams in the Subway System,mental_health_supportive_housing,continuation,2025143,Expand Intensive and Sustained Engagement Teams,theme=mental_health_supportive_housing; shared_terms=teams
 2026060,Protecting Riders with Platform Edge Barriers,mta_service_and_finance,new,,,
-2026061,Combating Crime and Ensuring Justice,public_safety_general,continuation,2025038,Ensure Child Victims of Crime Are Maximally Supported,theme=public_safety_general; shared_terms=crime
+2026061,Combating Crime and Ensuring Justice,public_safety_general,continuation,2025031,Restoring Trust and Confidence in the Legitimacy of the Justice System,theme=public_safety_general; shared_terms=justice
 2026062,Expanding Crime Analysis Centers Statewide,public_safety_general,continuation,2025038,Ensure Child Victims of Crime Are Maximally Supported,theme=public_safety_general; shared_terms=crime
 2026063,Solving Crimes by Investing in Crime Labs,public_safety_general,continuation,2025038,Ensure Child Victims of Crime Are Maximally Supported,theme=public_safety_general; shared_terms=crime
 2026064,Improving Police Training Academies,public_safety_general,new,,,
@@ -83,7 +83,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2026082,Tapping Into Growth: Expanding Water Resources to Unlock New Housing Development,housing_supply,continuation,2025111,Unlock Historic Tax Credits by Decoupling and Expanding Eligibility,"theme=housing_supply; shared_terms=expanding, unlock"
 2026083,Addressing Contamination from Landfills to Protect Water Quality,recycling_waste,new,,,
 2026084,Getting the Lead Out,climate_general,new,,,
-2026085,Upgrading Our Parks,climate_general,continuation,2025023,Invest in New York State's Recreation Infrastructure,theme=climate_general; shared_terms=
+2026085,Upgrading Our Parks,climate_general,new,,,
 2026086,Investing in Rochester's First State Park: High Falls State Park,climate_general,new,,,
 2026087,Restoring Riverbank's Role as a Community Hub for Harlem and Beyond,aging_long_term_care,new,,,
 2026088,Exploring the Niagara Gorge,climate_general,new,,,
@@ -120,28 +120,28 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2026119,Improving Disclosures for Student Loan Refinancing,labor_affordability_general,new,,,
 2026120,Setting Cosigner Standards for Student Loans,labor_affordability_general,new,,,
 2026121,Enhancing Illegal Vape Enforcement,government_general,new,,,
-2026122,Promoting Tech and Biotech,economic_development_general,continuation,2025052,Driving Economic Development,theme=economic_development_general; shared_terms=
-2026123,Making New York State “Chips Country” via a Downstate Semiconductor Chip Design Center,semiconductor_economic_development,continuation,2025056,Double Down on Shovel-Ready Sites for Modern Manufacturing,theme=semiconductor_economic_development; shared_terms=
+2026122,Promoting Tech and Biotech,economic_development_general,new,,,
+2026123,Making New York State “Chips Country” via a Downstate Semiconductor Chip Design Center,semiconductor_economic_development,continuation,2025055,Grow the Semiconductor Industry and Build the Semiconductor Supply Chain,theme=semiconductor_economic_development; shared_terms=semiconductor
 2026124,Building Our Quantum Edge through Quantum Technology Commercialization Hubs,college_workforce_pathways,continuation,2025021,Invest in Cutting-Edge Research by Funding a New York State Innovation Fund,theme=college_workforce_pathways; shared_terms=edge
 2026125,Launching Empire AI Beta and Creating the First Independent AI Research Center at SUNY Binghamton,college_workforce_pathways,continuation,2025057,Lead on Innovation Through Empire AI,theme=college_workforce_pathways; shared_terms=empire
-2026126,Bolstering Biotechnology Statewide,technology_innovation_economic_development,continuation,2025058,Turbocharge Hiring by Startups,theme=technology_innovation_economic_development; shared_terms=
-2026127,Supporting Farmers and Manufacturers,economic_development_general,continuation,2025052,Driving Economic Development,theme=economic_development_general; shared_terms=
-2026128,Modernizing Manufacturing in Tough Times,economic_development_general,continuation,2025052,Driving Economic Development,theme=economic_development_general; shared_terms=
+2026126,Bolstering Biotechnology Statewide,technology_innovation_economic_development,new,,,
+2026127,Supporting Farmers and Manufacturers,economic_development_general,new,,,
+2026128,Modernizing Manufacturing in Tough Times,economic_development_general,continuation,2025085,Increase Opportunities for Minority- and Women-Owned Business Enterprises in State Procurement,theme=economic_development_general; shared_terms=
 2026129,Supporting Dairy Farmers to Modernize the Industry,aging_long_term_care,new,,,
-2026130,Protecting Farmers from the Disruption of Federal Tariffs,food_access_agriculture,continuation,2025064,Supporting Agriculture,theme=food_access_agriculture; shared_terms=
-2026131,Developing the Industrial Hemp Pipeline,economic_development_general,continuation,2025052,Driving Economic Development,theme=economic_development_general; shared_terms=
-2026132,Investing in Equity Across the Cannabis Supply Chain,college_workforce_pathways,new,,,
-2026133,Investing in Communities,economic_development_general,continuation,2025052,Driving Economic Development,theme=economic_development_general; shared_terms=
+2026130,Protecting Farmers from the Disruption of Federal Tariffs,food_access_agriculture,new,,,
+2026131,Developing the Industrial Hemp Pipeline,economic_development_general,new,,,
+2026132,Investing in Equity Across the Cannabis Supply Chain,college_workforce_pathways,continuation,2025020,Invest in Student Success at the State University of New York,theme=college_workforce_pathways; shared_terms=
+2026133,Investing in Communities,economic_development_general,new,,,
 2026134,Establishing New York as the Nation's Hard Cider Capital,economic_development_general,continuation,2025059,Support Small Businesses with Low INterest Capital,theme=economic_development_general; shared_terms=capital
-2026135,Modernizing the Alcoholic Beverage Control Law,economic_development_general,continuation,2025052,Driving Economic Development,theme=economic_development_general; shared_terms=
-2026136,Eliminating Outdated Restrictions on Dancing,economic_development_general,continuation,2025052,Driving Economic Development,theme=economic_development_general; shared_terms=
-2026137,Enhancing the Downtown Revitalization Initiative and New York Forward,economic_development_general,continuation,2025052,Driving Economic Development,theme=economic_development_general; shared_terms=
-2026138,Expanding the County Infrastructure Grant Program,economic_development_general,continuation,2025052,Driving Economic Development,theme=economic_development_general; shared_terms=
+2026135,Modernizing the Alcoholic Beverage Control Law,economic_development_general,continuation,2025080,Align Child Labor Law Penalties with Severity of Violation,theme=economic_development_general; shared_terms=law
+2026136,Eliminating Outdated Restrictions on Dancing,economic_development_general,new,,,
+2026137,Enhancing the Downtown Revitalization Initiative and New York Forward,economic_development_general,new,,,
+2026138,Expanding the County Infrastructure Grant Program,economic_development_general,new,,,
 2026139,Enhancing Local Economic Development Project Tracking,economic_development_general,continuation,2025052,Driving Economic Development,"theme=economic_development_general; shared_terms=development, economic"
 2026140,Back to Basics in Math: Transforming Math Learning through Quality Instruction and Professional Learning,college_workforce_pathways,new,,,
-2026141,Building on Back to Basics Literacy Through Support for In-Service Teachers,college_workforce_pathways,continuation,2025042,Expand Educational Pathways to Public Service Careers,theme=college_workforce_pathways; shared_terms=service
+2026141,Building on Back to Basics Literacy Through Support for In-Service Teachers,college_workforce_pathways,continuation,2025072,Fund Free Community College in High-Demand Occupations,theme=college_workforce_pathways; shared_terms=
 2026142,Accelerating Learning with High-Impact Tutoring,tutoring_learning_loss,new,,,
-2026143,Creating a Sustainable Teacher Pipeline,child_care_access,continuation,2025016,Boost Literacy with Free Books from Dolly Parton's Imagination Library,theme=child_care_access; shared_terms=
+2026143,Creating a Sustainable Teacher Pipeline,child_care_access,new,,,
 2026144,Establishing the Empire AI Student Challenge,college_workforce_pathways,continuation,2025057,Lead on Innovation Through Empire AI,theme=college_workforce_pathways; shared_terms=empire
 2026145,Increasing Our Understanding of Our School System and Programs to Support our Students,education_general,new,,,
 2026146,Getting Offline and Outside with Cooler Schoolyards,child_care_access,new,,,
@@ -175,7 +175,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2026174,Empowering the Healthcare Workforce,health_care_general,continuation,2025164,Strengthen Reporting Requirements for Healthcare Investors,theme=health_care_general; shared_terms=healthcare
 2026175,Removing Unnecessary Restrictions on Healthcare Workers,health_care_general,continuation,2025164,Strengthen Reporting Requirements for Healthcare Investors,theme=health_care_general; shared_terms=healthcare
 2026176,Reducing Reliance on Temporary Staff to Stabilize the Healthcare Workforce,health_care_general,continuation,2025164,Strengthen Reporting Requirements for Healthcare Investors,theme=health_care_general; shared_terms=healthcare
-2026177,Expanding Healthcare Access through Workforce Investments,medicaid_coverage,continuation,2025077,"Leverage Federal Support to Expand Health, Behavioral, and Social Care Workforce",theme=medicaid_coverage; shared_terms=workforce
+2026177,Expanding Healthcare Access through Workforce Investments,medicaid_coverage,continuation,2025160,Expand Access to Infertility Treatments,theme=medicaid_coverage; shared_terms=access
 2026178,"Protecting and Expanding Access to Quality, Affordable Health Coverage",medicaid_coverage,continuation,2025161,Increase Access to Lifesaving Obesity Drugs,theme=medicaid_coverage; shared_terms=access
 2026179,Leveraging New York's Purchasing Power to Drive Down Drug Costs,medicaid_coverage,new,,,
 2026180,Reforming Prior Authorizations to Improve Patient Care,public_education_funding,new,,,
