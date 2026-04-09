@@ -185,6 +185,23 @@ def normalize_subgoal_sentence(sentence):
     return sentence
 
 
+def extract_bullet_subgoals(text):
+    if "•" not in text:
+        return []
+    parts = [normalize_subgoal_sentence(part) for part in re.split(r"\s*•\s*", text) if part.strip()]
+    bullets = []
+    for part in parts[1:]:
+        candidate = part.split("\n\n", 1)[0].strip()
+        candidate = re.sub(r"\s*More information on each of these initiatives.*$", "", candidate, flags=re.IGNORECASE)
+        if not candidate:
+            continue
+        if not re.match(r"^(?:Expand|Provide|Develop|Establish|Incentivize|Create|Launch|Support|Increase|Protect|Implement|Allow)\b", candidate):
+            continue
+        if candidate not in bullets:
+            bullets.append(candidate)
+    return bullets
+
+
 def looks_like_commitment_sentence(sentence):
     sentence = normalize_subgoal_sentence(sentence)
     lowered = sentence.lower()
@@ -210,8 +227,14 @@ def looks_like_commitment_sentence(sentence):
 
 def extract_subgoals(text):
     seen = []
+    bullet_goals = extract_bullet_subgoals(text)
+    for bullet in bullet_goals:
+        if bullet not in seen:
+            seen.append(bullet)
     for sentence in split_sentences(text):
         normalized = normalize_subgoal_sentence(sentence)
+        if bullet_goals and re.search(r"\bimplement a plan\b|\bcomponents of this plan include\b", normalized, flags=re.IGNORECASE):
+            continue
         if normalized and looks_like_commitment_sentence(normalized) and normalized not in seen:
             seen.append(normalized)
     return seen[:10]
@@ -246,8 +269,8 @@ def build_commitment(row):
         "commitment_type": row.get("item_type_clean") or row.get("commitment_type"),
         "implementation_pathway": row.get("implementation_pathway_clean") or row.get("implementation_pathway"),
         "quantified": row["quantified"],
-        "indicator": row["metric_or_target"],
-        "metric_or_target": row["metric_or_target"],
+        "indicator": "",
+        "metric_or_target": "",
         "binary_evaluable": row["binary_evaluable"],
         "binary_unit": row["binary_unit"],
         "lead_agencies": lead,
