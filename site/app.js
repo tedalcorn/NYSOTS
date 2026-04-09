@@ -150,7 +150,7 @@ function renderSidebar() {
       </div>
     </div>
     <div class="filter-group">
-      <label for="agency-filter">Agency</label>
+      <label for="agency-filter">Agency (Inferred)</label>
       <select id="agency-filter">
         <option value="all">All agencies</option>
         ${agencies.map((agency) => `<option value="${escapeAttr(agency)}" ${agency === state.filters.agency ? "selected" : ""}>${escapeHtml(formatAgencyLabel(agency))}</option>`).join("")}
@@ -273,7 +273,7 @@ function renderAgenciesView() {
   contentEl.innerHTML = `
     <div class="view-header">
       <div>
-        <h2>Agencies</h2>
+        <h2>Agencies <span class="view-count">(inferred)</span></h2>
       </div>
     </div>
     <div class="dense-table dense-table-agencies">

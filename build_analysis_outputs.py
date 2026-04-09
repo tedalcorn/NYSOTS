@@ -159,11 +159,6 @@ MANUAL_MATCHES = {
 }
 
 MANUAL_ROW_OVERRIDES = {
-    "Reimagining Jamaica Station for the Millions of Commuters Who Depend on It": {
-        "lead_agency": "DOT",
-        "supporting_agencies": "MTA",
-        "overlap_theme": "transportation_general",
-    },
     "Invest in New York State's Recreation Infrastructure": {
         "lead_agency": "DEC",
         "supporting_agencies": "",
@@ -531,6 +526,7 @@ def infer_agencies_with_text(row):
     subsection = row["subsection"].lower()
     body = normalize_whitespace(row.get("commitment_text", "")).lower()
     joined = f"{title} {subsection} {body}"
+    focus = f"{title} {subsection}"
     section_bucket = row["section_bucket"]
 
     lead = []
@@ -540,23 +536,44 @@ def infer_agencies_with_text(row):
         if item and item not in values:
             values.append(item)
 
-    if any(contains_phrase(joined, token) for token in ["housing", "tenant", "eviction", "voucher", "rent", "homeless", "basement apartment", "office conversion"]):
+    if any(contains_phrase(joined, token) for token in ["homes and community renewal", "(hcr)", " hcr "]):
         add(lead, "HCR")
-    if any(contains_phrase(joined, token) for token in ["mental health", "psychiatric", "behavioral health", "suicide"]):
+    if any(contains_phrase(joined, token) for token in ["office of mental health", "(omh)", " omh "]):
         add(lead, "OMH")
-    if any(contains_phrase(joined, token) for token in ["opioid", "substance use", "addiction", "recovery housing"]):
+    if any(contains_phrase(joined, token) for token in ["department of health", "(doh)", " doh "]):
+        add(lead, "DOH")
+    if any(contains_phrase(joined, token) for token in ["office of children and family services", "(ocfs)", " ocfs "]):
+        add(lead, "OCFS")
+    if any(contains_phrase(joined, token) for token in ["state education department", "(sed)", " sed "]):
+        add(lead, "SED")
+    if any(contains_phrase(joined, token) for token in ["department of transportation", "nysdot", "(dot)", " dot "]):
+        add(lead, "DOT")
+    if any(contains_phrase(joined, token) for token in ["mta police", "metropolitan transportation authority", "(mta)", " mta ", "long island rail road", " lirr ", "nyc transit", "airtrain"]):
+        add(lead, "MTA")
+    if any(contains_phrase(joined, token) for token in ["department of public service", "public service commission", " dps ", "(dps)", "dps will", "dps is"]):
+        add(lead, "Public Service Commission / DPS")
+    if any(contains_phrase(joined, token) for token in ["nyc department of homeless services", "department of homeless services"]):
+        add(support, "NYC Department of Homeless Services")
+
+    has_explicit = bool(lead or support)
+
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["housing", "tenant", "eviction", "voucher", "rent", "homeless", "basement apartment", "office conversion"]):
+        add(lead, "HCR")
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["mental health", "psychiatric", "behavioral health", "suicide"]):
+        add(lead, "OMH")
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["opioid", "substance use", "addiction", "recovery housing"]):
         lead[:] = ["OASAS"]
-    if any(contains_phrase(joined, token) for token in ["medicaid", "health care", "hospital", "maternal", "public health", "ombudsman", "long-term care", "wic"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["medicaid", "health care", "hospital", "maternal", "public health", "ombudsman", "long-term care", "wic"]):
         if not lead:
             add(lead, "DOH")
-    if any(contains_phrase(joined, token) for token in ["older adults", "older new yorkers", "age in place", "master plan for aging", "long-term care"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["older adults", "older new yorkers", "age in place", "master plan for aging", "long-term care"]):
         add(support, "NYS Office for the Aging")
-    if any(contains_phrase(joined, token) for token in ["child care", "children and family", "parent partnership", "foster", "ocfs", "early childhood"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["child care", "children and family", "parent partnership", "foster", "early childhood"]):
         add(lead, "OCFS")
-    if any(contains_phrase(joined, token) for token in ["school", "teacher", "literacy", "math", "student", "education department", "educator"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["teacher", "literacy", "math", "education department", "educator", "school district", "curriculum", "reading instruction"]):
         if not lead:
             add(lead, "SED")
-    if contains_phrase(joined, "suny"):
+    if not lead and contains_phrase(joined, "suny"):
         if "community college" in joined or "microcredential" in joined or "student challenge" in joined:
             add(support, "SUNY")
         elif not lead:
@@ -566,39 +583,38 @@ def infer_agencies_with_text(row):
             add(lead, "CUNY")
         else:
             add(support, "CUNY")
-    if any(contains_phrase(joined, token) for token in ["state police", "nysp"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["state police", "nysp"]):
         add(lead, "New York State Police")
-    if any(contains_phrase(joined, token) for token in ["gun violence", "crime", "prosecutor", "district attorney", "violence prevention", "dcjs"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["gun violence", "crime", "prosecutor", "district attorney", "violence prevention", "dcjs"]):
         if not lead:
             add(lead, "DCJS")
-    if any(contains_phrase(joined, token) for token in ["dmv", "motor vehicle", "non-driver id", "drivers license", "driver's license", "high risk drivers", "drugged driving", "dwi", "dangerous vehicles", "moped", "vehicle registration", "vehicle"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["dmv", "motor vehicle", "non-driver id", "drivers license", "driver's license", "high risk drivers", "drugged driving", "dwi", "dangerous vehicles", "moped", "vehicle registration"]):
         add(support, "DMV")
-    if any(contains_phrase(joined, token) for token in ["doccs", "parole", "released persons", "re-entry", "incarcerated"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["doccs", "parole", "released persons", "re-entry", "incarcerated"]):
         add(support, "DOCCS")
-    if any(contains_phrase(joined, token) for token in ["transportation", "mta", "road", "highway", "traffic", "transit", "commute"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["highway", "route ", "interstate", "bridge", "bridges", "roadway", "roads"]):
         if not lead:
             add(lead, "DOT")
-        add(support, "MTA")
-    if any(contains_phrase(joined, token) for token in ["climate", "energy", "emission", "electric", "decarbonization", "nyserda"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["climate", "energy", "emission", "electric", "decarbonization", "nyserda"]):
         if not lead:
             add(lead, "NYSERDA")
-    if any(contains_phrase(joined, token) for token in ["water", "recycling", "waste", "environment", "parks", "flood", "dec"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["water", "recycling", "waste", "environment", "parks", "flood", "dec"]):
         if not lead:
             add(lead, "DEC")
-    if any(contains_phrase(joined, token) for token in ["labor", "worker", "wage", "apprenticeship", "employment", "workforce", "warn"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["labor", "worker", "wage", "apprenticeship", "employment", "workforce", "warn"]):
         if not lead:
             add(lead, "DOL")
-    if any(contains_phrase(joined, token) for token in ["tax credit", "tax credits", "tax relief", "tax cut", "tax cuts", "property tax rebate", "rebate", "taxation and finance"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["tax credit", "tax credits", "tax relief", "tax cut", "tax cuts", "property tax rebate", "rebate", "taxation and finance"]):
         if not lead:
             add(lead, "Department of Taxation and Finance")
-    if any(contains_phrase(joined, token) for token in ["insurance", "insurer", "fraud bureau", "workers compensation", "workers’ compensation"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["insurance", "insurer", "fraud bureau", "workers compensation", "workers’ compensation"]):
         add(support, "DFS")
-    if any(contains_phrase(joined, token) for token in ["economic development", "small business", "small businesses", "businesses", "downtown revitalization", "new york forward", "ida", "authorities budget office", "empire state development", "local economic development project tracking", "startup", "startups", "manufacturing partnership", "shovel-ready sites", "mwbe", "site development"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["economic development", "small business", "small businesses", "businesses", "downtown revitalization", "new york forward", "ida", "authorities budget office", "empire state development", "local economic development project tracking", "startup", "startups", "manufacturing partnership", "shovel-ready sites", "mwbe", "site development"]):
         if section_bucket.lower().find("economic development") != -1:
             lead[:] = ["Empire State Development"]
         elif not lead:
             add(lead, "Empire State Development")
-    if any(contains_phrase(joined, token) for token in ["agriculture", "farm", "food supply chain", "farmer"]):
+    if not has_explicit and any(contains_phrase(focus, token) for token in ["agriculture", "farm", "food supply chain", "farmer"]):
         if not lead:
             add(lead, "Agriculture & Markets")
 
