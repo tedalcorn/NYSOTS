@@ -37,6 +37,11 @@ HEADERISH_2023 = {
     "GOVERNMENT: THE CUSTOMER EXPERIENCE",
 }
 
+TITLE_FIXES_2022 = {
+    "Deliver the LIRR Third Track Project Under Budget and On-Schedule by the End of 2022 New Transportation and Infrastructure Priorities": "Deliver the LIRR Third Track Project Under Budget and On-Schedule by the End of 2022",
+    "Create a World-Class Battery Research and Manufacturing Center at Binghamton University 103": "Create a World-Class Battery Research and Manufacturing Center at Binghamton University",
+}
+
 TITLE_FIXES_2023 = {
     "Create Greater Opportunities toConvert Office Spaces to Residential Housing": "Create Greater Opportunities to Convert Office Spaces to Residential Housing",
     "IncreaseOperationalCapacityforInpatient Psychiatric Treatment By 1,000 Beds": "Increase Operational Capacity for Inpatient Psychiatric Treatment by 1,000 Beds",
@@ -334,6 +339,18 @@ def clean_2023_rows(rows):
     return cleaned, dropped
 
 
+def clean_2022_rows(rows):
+    cleaned = []
+    dropped = []
+    for row in rows:
+        title = normalize_whitespace(row["proposal_title"])
+        row = dict(row)
+        row["proposal_title"] = TITLE_FIXES_2022.get(title, title)
+        row["subsection"] = normalize_whitespace(row["subsection"])
+        cleaned.append(row)
+    return cleaned, dropped
+
+
 def clean_later_year_rows(rows, year):
     cleaned = []
     dropped = []
@@ -361,6 +378,11 @@ def clean_later_year_rows(rows, year):
         "Improving Healthcare Coverage, Access, and Affordability",
         "Improving Equity in Public Health",
         "Trafficking",
+        "Fostering Better Educational Opportunities",
+        "Supporting our First Responders",
+        "Protecting Pedestrians, Workers, Drivers, and Cyclists",
+        "Tackling Utility Costs",
+        "Strengthening the Healthcare Delivery System",
     }
     for row in rows:
         title = normalize_whitespace(row["proposal_title"])
@@ -800,7 +822,9 @@ def main():
 
     for year, path in INPUT_FILES.items():
         raw_rows = read_csv(path)
-        if year == "2023":
+        if year == "2022":
+            cleaned, dropped = clean_2022_rows(raw_rows)
+        elif year == "2023":
             cleaned, dropped = clean_2023_rows(raw_rows)
         elif year in {"2024", "2025", "2026"}:
             cleaned, dropped = clean_later_year_rows(raw_rows, year)

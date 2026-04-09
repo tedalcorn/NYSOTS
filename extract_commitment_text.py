@@ -38,12 +38,16 @@ YEAR_CONFIGS = {
 }
 
 TITLE_MATCH_OVERRIDES = {
+    "Accelerate $1.2 Billion in Middle-Class Tax Cuts for 6 Million New Yorkers": "Accelerate $1. Billion in Middle-Class Tax Cuts for 6 Million New Yorkers",
     "Automatically Admit Top Students to SUNY and CUNY Campuses": "Automatically Admit High Achieving Students from Top 10 Percent of High School Classes to SUNY and CUNY Campuses",
     "Build First-Rate Digital and Design Teams": "Building First-Rate Digital and Design Teams",
     "Increase Transitional Housing for Individuals Referred Through Court System": "Increase Transitional Housing for Individuals Referred Through the Court System",
     "Prevent and Prosecute Domestic Violence": "Prevent and Prosecute Assaults and Domestic Violence",
     "Double State Parks Water-Safety Instruction Sites": "Double State Parks Water-Safety Instruction Opportunities",
     "Promote Economic Growth Through Investment in the Arts": "Promote Economic Growth By Investing in the Arts",
+    "Use Data-Matching to Identify WIC-Eligible Families": "Use Data-Matching to Identify Women, Infants, and Children Program (WIC) Eligible Families",
+    "Make SUNY Pools Community Anchors": "Making SUNY Pools Community Anchors",
+    "Prepare, Respond, and Prevent Flooding in the Mohawk and Oswego River Basin": "Prepare, Respond, and Prevent Flooding in the Mohawk and Oswego River Basins",
 }
 
 HEADER_PATTERNS = (
@@ -197,6 +201,16 @@ def is_soft_match(title_norm, block_norm):
     return title_norm in block_norm or block_norm in title_norm
 
 
+def strip_heading_prefix(block_text, title_text):
+    block_norm = normalize_for_match(block_text)
+    title_norm = normalize_for_match(title_text)
+    if not block_norm.startswith(title_norm):
+        return ""
+    heading_pattern = r"^\s*" + re.escape(normalize_quotes(title_text)) + r"(?:\s+|$)"
+    stripped = re.sub(heading_pattern, "", normalize_quotes(block_text), count=1, flags=re.IGNORECASE)
+    return stripped.strip()
+
+
 def attach_text(rows, blocks):
     title_norms = [normalize_for_match(TITLE_MATCH_OVERRIDES.get(row["proposal_title"], row["proposal_title"])) for row in rows]
     matched_indices = []
@@ -234,15 +248,19 @@ def attach_text(rows, blocks):
 
         start = match_index + 1
         end = next_match if next_match is not None else len(blocks)
+        leading_text = strip_heading_prefix(blocks[match_index]["text"], TITLE_MATCH_OVERRIDES.get(row["proposal_title"], row["proposal_title"]))
+        text_blocks = []
+        if leading_text:
+            text_blocks.append(leading_text)
         for idx in range(start, end):
             if blocks[idx]["is_heading"]:
                 end = idx
                 break
-        text_blocks = [block["text"] for block in blocks[start:end]]
+        text_blocks.extend(block["text"] for block in blocks[start:end])
         row["commitment_text"] = "\n\n".join(text_blocks).strip()
         row["source_page"] = str(blocks[match_index]["page"])
         row["source_page_end"] = str(blocks[end - 1]["page"]) if end > start else str(blocks[match_index]["page"])
-        row["text_capture_confidence"] = confidence
+        row["text_capture_confidence"] = "high" if leading_text else confidence
 
     return rows
 

@@ -13,7 +13,6 @@ const state = {
     agency: "all",
     theme: "all",
     commitmentType: "all",
-    textCapture: "all",
   },
   sorts: {
     commitments: { key: "year", dir: "desc" },
@@ -164,15 +163,6 @@ function renderSidebar() {
         ${themes.map((theme) => `<option value="${escapeAttr(theme)}" ${theme === state.filters.theme ? "selected" : ""}>${escapeHtml(theme)}</option>`).join("")}
       </select>
     </div>
-    <div class="filter-group">
-      <label for="text-capture-filter">Confidence in text capture?</label>
-      <select id="text-capture-filter">
-        <option value="all">All</option>
-        <option value="high" ${state.filters.textCapture === "high" ? "selected" : ""}>High</option>
-        <option value="medium" ${state.filters.textCapture === "medium" ? "selected" : ""}>Medium</option>
-        <option value="missing" ${state.filters.textCapture === "missing" ? "selected" : ""}>Missing</option>
-      </select>
-    </div>
     <div class="utility-row">
       <button class="utility-button" id="reset-filters">Reset</button>
     </div>
@@ -207,12 +197,8 @@ function bindSidebarEvents() {
     state.filters.theme = event.target.value;
     render();
   });
-  sidebarEl.querySelector("#text-capture-filter").addEventListener("change", (event) => {
-    state.filters.textCapture = event.target.value;
-    render();
-  });
   sidebarEl.querySelector("#reset-filters").addEventListener("click", () => {
-    state.filters = { query: "", includeFullText: false, years: [], agency: "all", theme: "all", commitmentType: "all", textCapture: "all" };
+    state.filters = { query: "", includeFullText: false, years: [], agency: "all", theme: "all", commitmentType: "all" };
     render();
   });
 }
@@ -255,10 +241,9 @@ function renderCommitmentTable(commitments) {
       <div class="dense-head dense-row">
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="year">${renderSortLabel("Year", "commitments", "year")}</button>
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="title">${renderSortLabel("Commitment", "commitments", "title")}</button>
-        <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="agency">${renderSortLabel("Primary Agency", "commitments", "agency")}</button>
+        <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="agency">${renderSortLabel("Lead agency", "commitments", "agency")}</button>
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="theme">${renderSortLabel("Theme", "commitments", "theme")}</button>
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="subgoals">${renderSortLabel("Subgoals", "commitments", "subgoals")}</button>
-        <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="text">${renderSortLabel("Text", "commitments", "text")}</button>
       </div>
       ${commitments.map(renderCommitmentRow).join("")}
     </div>
@@ -274,7 +259,6 @@ function renderCommitmentRow(item) {
       <div title="${escapeAttr(formatAgencyListFull(primaryAgency))}">${escapeHtml(formatAgencyListCompact(primaryAgency))}</div>
       <div title="${escapeAttr(item.theme_labels[0] || "")}">${escapeHtml(item.theme_labels[0] || "")}</div>
       <div>${item.subgoals?.length || 0}</div>
-      <div>${escapeHtml(formatConfidence(item.text_capture_confidence))}</div>
     </button>
   `;
 }
@@ -422,7 +406,6 @@ function renderDetail() {
     sourceUrl ? `<a href="${escapeAttr(sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(item.source.label)}</a>` : escapeHtml(item.source.label),
     sourceSection ? escapeHtml(sourceSection) : "",
     item.source_page ? `p. ${escapeHtml(item.source_page)}${item.source_page_end && item.source_page_end !== item.source_page ? `-${escapeHtml(item.source_page_end)}` : ""}` : "",
-    item.text_capture_confidence ? `text: ${escapeHtml(formatConfidence(item.text_capture_confidence))}` : "",
   ].filter(Boolean);
 
   detailEl.innerHTML = `
@@ -431,7 +414,7 @@ function renderDetail() {
       <span class="meta-pill blue">${item.year}</span>
       <span class="meta-pill">${escapeHtml(item.theme_labels[0] || "Not yet identified")}</span>
     </div>
-    <h2 class="detail-title" id="detail-modal-title">Commitment: ${escapeHtml(item.title)} <span class="detail-id">${escapeHtml(item.id)}</span></h2>
+    <h2 class="detail-title" id="detail-modal-title">Commitment: ${escapeHtml(item.title)} <span class="detail-id">ID#: ${escapeHtml(item.id)}</span></h2>
     ${item.commitment_text ? `<div class="detail-block"><div class="blurb-text">${renderParagraphs(item.commitment_text, item.subgoals || [])}</div></div>` : ""}
 
     <div class="detail-block">
@@ -599,7 +582,6 @@ function getFilteredCommitments() {
   }
   if (state.filters.theme !== "all") items = items.filter((item) => item.theme_labels.includes(state.filters.theme));
   if (state.filters.commitmentType !== "all") items = items.filter((item) => item.commitment_type === state.filters.commitmentType);
-  if (state.filters.textCapture !== "all") items = items.filter((item) => (item.text_capture_confidence || "missing") === state.filters.textCapture);
   if (query) {
     items = items.filter((item) => {
       const haystack = [

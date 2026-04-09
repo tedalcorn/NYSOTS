@@ -172,10 +172,15 @@ def looks_like_commitment_sentence(sentence):
     starters = (
         r"^(?:Governor Hochul|The Governor|New York State|New York|The State|State agencies|State Parks|NYSCA|NYPA|NYSERDA|SUNY|CUNY|SED|DOH|OMH|DOL|DFS|DOT|DMV|DOCCS|OCFS|Empire State Development|She)\s+"
     )
+    starter_with_clause = (
+        r"^(?:[A-Z][^.!?]{0,90},\s+)?(?:Governor Hochul|The Governor|New York State|New York|The State|State agencies|State Parks|NYSCA|NYPA|NYSERDA|SUNY|CUNY|SED|DOH|OMH|DOL|DFS|DOT|DMV|DOCCS|OCFS|Empire State Development|She)\s+"
+    )
     future_forms = (
         r"(?:will|will also|will continue to|will direct|will pursue|will propose|will propose to|is proposing to|proposes to|is launching|is also launching|is creating|is establishing)"
     )
     if re.search(starters + r".{0,60}\b" + future_forms + r"\b", sentence, flags=re.IGNORECASE):
+        return True
+    if re.search(starter_with_clause + r".{0,60}\b" + future_forms + r"\b", sentence, flags=re.IGNORECASE):
         return True
     if re.search(r"^(?:To address this|To improve|To help|To support|In its first year of operation|Initially)\b.{0,90}\b(?:will|would)\b", sentence, flags=re.IGNORECASE):
         return True
