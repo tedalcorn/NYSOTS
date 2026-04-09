@@ -269,6 +269,36 @@ MANUAL_ROW_OVERRIDES = {
     "Protect Outdoor Workers from Extreme Weather Hazards": {
         "overlap_theme": "labor_affordability_general",
     },
+    "Help Small Businesses Navigate Environmental Regulations": {
+        "lead_agency": "DEC",
+        "supporting_agencies": "Empire State Development",
+        "overlap_theme": "economic_development_general",
+    },
+    "Increase Opportunities for Minority- and Women-Owned Business Enterprises in State Procurement": {
+        "lead_agency": "Empire State Development",
+        "supporting_agencies": "",
+        "overlap_theme": "economic_development_general",
+    },
+    "Protecting Farmers from the Disruption of Federal Tariffs": {
+        "lead_agency": "Agriculture & Markets",
+        "supporting_agencies": "",
+        "overlap_theme": "food_access_agriculture",
+    },
+    "Ensure New Yorkers Don't Get Buried by Medical Debt": {
+        "lead_agency": "DOH",
+        "supporting_agencies": "DFS",
+        "overlap_theme": "health_care_general",
+    },
+    "Implement Over-The-Counter Contraception Access": {
+        "lead_agency": "DOH",
+        "supporting_agencies": "",
+        "overlap_theme": "reproductive_rights",
+    },
+    "Enact the Equal Rights Amendment": {
+        "lead_agency": "Division of Human Rights",
+        "supporting_agencies": "",
+        "overlap_theme": "reproductive_rights",
+    },
 }
 
 
@@ -330,6 +360,7 @@ def clean_later_year_rows(rows, year):
         "Promoting Youth Mental Health",
         "Improving Healthcare Coverage, Access, and Affordability",
         "Improving Equity in Public Health",
+        "Trafficking",
     }
     for row in rows:
         title = normalize_whitespace(row["proposal_title"])
@@ -518,7 +549,7 @@ def infer_agencies_with_text(row):
     if any(contains_phrase(joined, token) for token in ["gun violence", "crime", "prosecutor", "district attorney", "violence prevention", "dcjs"]):
         if not lead:
             add(lead, "DCJS")
-    if any(contains_phrase(joined, token) for token in ["dmv", "driver", "motor vehicle", "non-driver id"]):
+    if any(contains_phrase(joined, token) for token in ["dmv", "motor vehicle", "non-driver id", "drivers license", "driver's license", "high risk drivers", "drugged driving", "dwi", "dangerous vehicles", "moped", "vehicle registration", "vehicle"]):
         add(support, "DMV")
     if any(contains_phrase(joined, token) for token in ["doccs", "parole", "released persons", "re-entry", "incarcerated"]):
         add(support, "DOCCS")
@@ -535,9 +566,12 @@ def infer_agencies_with_text(row):
     if any(contains_phrase(joined, token) for token in ["labor", "worker", "wage", "apprenticeship", "employment", "workforce", "warn"]):
         if not lead:
             add(lead, "DOL")
+    if any(contains_phrase(joined, token) for token in ["tax credit", "tax credits", "tax relief", "tax cut", "tax cuts", "property tax rebate", "rebate", "taxation and finance"]):
+        if not lead:
+            add(lead, "Department of Taxation and Finance")
     if any(contains_phrase(joined, token) for token in ["insurance", "insurer", "fraud bureau", "workers compensation", "workers’ compensation"]):
         add(support, "DFS")
-    if any(contains_phrase(joined, token) for token in ["economic development", "business", "downtown revitalization", "new york forward", "ida", "authorities budget office", "empire state development", "local economic development project tracking"]):
+    if any(contains_phrase(joined, token) for token in ["economic development", "small business", "small businesses", "businesses", "downtown revitalization", "new york forward", "ida", "authorities budget office", "empire state development", "local economic development project tracking", "startup", "startups", "manufacturing partnership", "shovel-ready sites", "mwbe", "site development"]):
         if section_bucket.lower().find("economic development") != -1:
             lead[:] = ["Empire State Development"]
         elif not lead:
@@ -668,7 +702,7 @@ def enrich_rows(rows, year):
     enriched = []
     for index, row in enumerate(rows, start=1):
         out = dict(row)
-        out["commitment_id"] = f"{year}-{index:03d}"
+        out["commitment_id"] = f"{year}{index:03d}"
         out["proposal_title"] = normalize_whitespace(out["proposal_title"])
         out["lead_agency_standardized"] = standardize_agencies(out["lead_agency"])
         out["supporting_agencies_standardized"] = standardize_agencies(out["supporting_agencies"])

@@ -39,6 +39,7 @@ YEAR_CONFIGS = {
 
 TITLE_MATCH_OVERRIDES = {
     "Automatically Admit Top Students to SUNY and CUNY Campuses": "Automatically Admit High Achieving Students from Top 10 Percent of High School Classes to SUNY and CUNY Campuses",
+    "Build First-Rate Digital and Design Teams": "Building First-Rate Digital and Design Teams",
     "Increase Transitional Housing for Individuals Referred Through Court System": "Increase Transitional Housing for Individuals Referred Through the Court System",
     "Prevent and Prosecute Domestic Violence": "Prevent and Prosecute Assaults and Domestic Violence",
     "Double State Parks Water-Safety Instruction Sites": "Double State Parks Water-Safety Instruction Opportunities",
@@ -197,7 +198,7 @@ def is_soft_match(title_norm, block_norm):
 
 
 def attach_text(rows, blocks):
-    title_norms = [normalize_for_match(row["proposal_title"]) for row in rows]
+    title_norms = [normalize_for_match(TITLE_MATCH_OVERRIDES.get(row["proposal_title"], row["proposal_title"])) for row in rows]
     matched_indices = []
     cursor = 0
 

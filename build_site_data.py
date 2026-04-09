@@ -70,7 +70,7 @@ THEME_LABELS = {
     "health_system_planning": "Health System Planning",
     "health_care_capital": "Health Care Capital",
     "health_care_workforce_regulation": "Health Care Workforce and Regulation",
-    "medicaid_coverage": "Medicaid and Coverage",
+    "medicaid_coverage": "Medicaid and Insurance",
     "primary_care_and_ems": "Primary Care and EMS",
     "opioid_response": "Opioid Response",
     "public_health_readiness": "Public Health Readiness",
@@ -112,6 +112,23 @@ THEME_LABELS = {
     "unclear": "Unclear",
 }
 
+THEME_MERGES = {
+    "aging_master_plan": "aging_long_term_care",
+    "psychiatric_capacity": "mental_health_general",
+    "health_system_planning": "health_care_general",
+    "health_care_capital": "health_care_general",
+    "health_care_workforce_regulation": "health_care_general",
+    "primary_care_and_ems": "health_care_general",
+    "public_health_readiness": "health_care_general",
+    "basement_apartments": "housing_general",
+    "office_conversion": "housing_general",
+    "transit_oriented_housing": "housing_general",
+    "lead_remediation_housing": "housing_general",
+    "housing_planning_governance": "housing_general",
+    "minimum_wage": "labor_affordability_general",
+    "agriculture_general": "food_access_agriculture",
+}
+
 UNKNOWN_AGENCY = "Not yet identified"
 
 
@@ -128,35 +145,52 @@ def read_rows():
 
 
 def normalize_theme(theme):
+    theme = THEME_MERGES.get(theme, theme)
     if theme == "unclear":
         return "Not yet identified"
     return THEME_LABELS.get(theme, theme.replace("_", " ").title())
 
 
-def extract_subgoals(text):
+def split_sentences(text):
     cleaned = re.sub(r"\s+", " ", text or "").strip()
     if not cleaned:
         return []
-    pattern = re.compile(
-        r"((?:Governor Hochul|New York State|The State|New York|OCFS|SED|SUNY|CUNY|DOH|OMH|DOL|DFS|DOT|DMV|DOCCS|NYSERDA|Empire State Development|The Governor|Blue Buffers)\s+(?:will|is proposing to|proposes to)\s+.*?[.!?])",
-        flags=re.IGNORECASE,
+    return [sentence.strip() for sentence in re.split(r"(?<=[.!?])\s+(?=[A-Z\"“])", cleaned) if sentence.strip()]
+
+
+def normalize_subgoal_sentence(sentence):
+    sentence = re.sub(r"\s+", " ", sentence).strip()
+    sentence = re.sub(r"^(Finally|Additionally|Also|Meanwhile|This year|In addition),\s+", "", sentence, flags=re.IGNORECASE)
+    if sentence:
+        sentence = sentence[0].upper() + sentence[1:]
+    return sentence
+
+
+def looks_like_commitment_sentence(sentence):
+    sentence = normalize_subgoal_sentence(sentence)
+    lowered = sentence.lower()
+    starters = (
+        r"^(?:Governor Hochul|The Governor|New York State|New York|The State|State agencies|State Parks|NYSCA|NYPA|NYSERDA|SUNY|CUNY|SED|DOH|OMH|DOL|DFS|DOT|DMV|DOCCS|OCFS|Empire State Development|She)\s+"
     )
+    future_forms = (
+        r"(?:will|will also|will continue to|will direct|will pursue|will propose|will propose to|is proposing to|proposes to|is launching|is also launching|is creating|is establishing)"
+    )
+    if re.search(starters + r".{0,60}\b" + future_forms + r"\b", sentence, flags=re.IGNORECASE):
+        return True
+    if re.search(r"^(?:To address this|To improve|To help|To support|In its first year of operation|Initially)\b.{0,90}\b(?:will|would)\b", sentence, flags=re.IGNORECASE):
+        return True
+    if re.search(r"\bwill include\b", sentence, flags=re.IGNORECASE) and any(token in lowered for token in ["program", "initiative", "elements", "proposal", "agenda"]):
+        return True
+    return False
+
+
+def extract_subgoals(text):
     seen = []
-    for match in pattern.findall(cleaned):
-        sentence = re.sub(r"\s+", " ", match).strip()
-        sentence = sentence[0].upper() + sentence[1:] if sentence else sentence
-        if sentence not in seen:
-            seen.append(sentence)
-    if len(seen) < 8:
-        follow_up_pattern = re.compile(
-            r"((?:In its first year of operation|Initially|To launch the program|To improve|To address this|To bolster these efforts|To meet growing need)\b.*?[.!?])",
-            flags=re.IGNORECASE,
-        )
-        for match in follow_up_pattern.findall(cleaned):
-            sentence = re.sub(r"\s+", " ", match).strip()
-            if sentence not in seen:
-                seen.append(sentence)
-    return seen[:8]
+    for sentence in split_sentences(text):
+        normalized = normalize_subgoal_sentence(sentence)
+        if normalized and looks_like_commitment_sentence(normalized) and normalized not in seen:
+            seen.append(normalized)
+    return seen[:10]
 
 
 def build_commitment(row):
@@ -169,7 +203,7 @@ def build_commitment(row):
         if agency not in agencies:
             agencies.append(agency)
 
-    theme_key = row.get("overlap_theme", "unclear") or "unclear"
+    theme_key = THEME_MERGES.get(row.get("overlap_theme", "unclear") or "unclear", row.get("overlap_theme", "unclear") or "unclear")
     continuity = row.get("continuity_to_prior_year", "") if year > 2022 else ""
     progress_status = "not_assessed"
     progress_label = "Not yet assessed"

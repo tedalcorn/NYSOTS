@@ -1,0 +1,291 @@
+id,year,title,lead_agencies,text_capture_confidence,subgoal_count,reasons
+2022049,2022,Accelerate $1.2 Billion in Middle-Class Tax Cuts for 6 Million New Yorkers,Department of Taxation and Finance,medium,0,medium_text_match
+2022113,2022,Advance the Transformative “Interborough Express” to Enhance Regional Mobility and Serve Nearly 1 Million New Yorkers,Empire State Development,high,0,no_detected_commitment_language
+2022189,2022,Award Prior Learning Credit Across SUNY and CUNY,SED,high,0,no_detected_commitment_language
+2022004,2022,Award Prior Learning Credit across SUNY and CUNY,SED,high,0,no_detected_commitment_language
+2022192,2022,Become a Leader in Equity,SED,high,0,no_detected_commitment_language
+2022160,2022,Begin Construction on Major Retrofit Showcase Projects in 2022,HCR,high,0,no_detected_commitment_language
+2022196,2022,Build Bridges Between Education and Work,SED,high,0,no_detected_commitment_language
+2022114,2022,Build Phase 2 of the Second Avenue Subway for Residents of Upper Manhattan,DOT,high,0,no_detected_commitment_language
+2022090,2022,Complete the Albany Skyway,DOT,high,0,short_non_action_title; no_detected_commitment_language
+2022107,2022,Complete the Westchester RiverWalk,,high,0,short_non_action_title; no_detected_commitment_language
+2022098,2022,Convert the Existing Inner Loop North Freeway into a Community Boulevard in the City of Rochester,Empire State Development,high,0,no_detected_commitment_language
+2022100,2022,Cover Portions of the Cross-Bronx Expressway to Reconnect Neighborhoods and Increase Open Space,,high,0,no_detected_commitment_language
+2022159,2022,Create 3 Virtual Power Plants Using State Government Buildings as a Proving Ground,NYSERDA,high,0,no_detected_commitment_language
+2022154,2022,Create High-Quality Solar Jobs for More New Yorkers,NYSERDA,high,0,no_detected_commitment_language
+2022117,2022,Create a Commuter-First Penn Station and Revitalize the Surrounding Community,DOT,high,0,no_detected_commitment_language
+2022109,2022,Create a World-Class Battery Research and Manufacturing Center at Binghamton University 103,DOT,medium,0,medium_text_match
+2022141,2022,Create an Eviction Prevention Legal Assistance Program to Improve Housing Stability,HCR,high,0,no_detected_commitment_language
+2022013,2022,Create an Office of Healthcare Workforce Innovation,DOH,high,0,no_detected_commitment_language
+2022129,2022,"Create and Preserve 10,000 Supportive Housing Units",OASAS; OCFS,high,0,no_detected_commitment_language
+2022144,2022,"Create and Preserve 10,000 Supportive Housing Units",OASAS; OCFS,high,0,no_detected_commitment_language
+2022034,2022,Create the New York State Gender-Based Violence Training Institute,OASAS,high,0,no_detected_commitment_language
+2022091,2022,Deliver the LIRR Third Track Project Under Budget and On-Schedule by the End of 2022 New Transportation and Infrastructure Priorities,DOT,medium,0,medium_text_match; no_detected_commitment_language
+2022111,2022,Develop the AI Industry Through a Cold Spring Harbor Laboratory and Stony Brook University Partnership,,high,0,no_detected_commitment_language
+2022206,2022,"Establish a Faster, Dedicated MWBE Appeals Unit to Address the Backlog in Appeals",Empire State Development,high,0,no_detected_commitment_language
+2022112,2022,Expand the Masonic Medical Research Institute Laboratory in East Utica,,high,0,no_detected_commitment_language
+2022009,2022,Grow the Home and Community-Based Health Care Workforce Through Benefits and Skills Development,DOH,high,0,no_detected_commitment_language
+2022195,2022,Help Individual SUNY Campuses Establish Distinct Identities,SED,high,0,no_detected_commitment_language
+2022102,2022,Improve East Side Commercial and Residential Infrastructure in Buffalo,Empire State Development,high,0,no_detected_commitment_language
+2022011,2022,Improve Training and Coordination Between EMS Professionals Statewide,DOH; OCFS,high,0,no_detected_commitment_language
+2022134,2022,Improve the Housing Stock of Rural Rental Properties,HCR,high,0,no_detected_commitment_language
+2022104,2022,Improve the Utica Harbor Point Waterfront,Empire State Development,high,0,no_detected_commitment_language
+2022165,2022,"Increase Funding for the Clean Water, Clean Air and Green Jobs Environmental Bond Act to $4 Billion",NYSERDA,high,0,no_detected_commitment_language
+2022033,2022,Integrate Mental Health Services into Pediatric Primary Care,OASAS,high,0,no_detected_commitment_language
+2022081,2022,Make New York State Higher Education Services Corporation Loan Forgiveness Awards Tax Exempt,SED,high,0,no_detected_commitment_language
+2022122,2022,Make Strategic Shovel-Ready Investments for High-Growth Tech Sites,Empire State Development,high,0,no_detected_commitment_language
+2022089,2022,Modernize the Kew Gardens Interchange,DOT,high,0,no_detected_commitment_language
+2022115,2022,Open Four New Metro-North Stations in the Bronx to Expand Job Access,DOT,high,0,no_detected_commitment_language
+2022132,2022,Pilot a Program to Create Affordable Homeownership Projects That Prioritize Resident Control and Permanent Affordability,HCR,high,0,no_detected_commitment_language
+2022149,2022,"Power One-Third of New York City with Wind, Solar, and Hydro",NYSERDA,high,0,no_detected_commitment_language
+2022031,2022,Provide Individuals with Supportive Recovery Housing,OASAS,high,0,no_detected_commitment_language
+2022110,2022,Rebuild the Wadsworth Center in Albany into a World-Class Campus,DOH,high,0,no_detected_commitment_language
+2022101,2022,Reconnect Syracuse Neighborhoods Divided by I-81,HCR,high,0,no_detected_commitment_language
+2022099,2022,Reconnect and Restore Neighborhoods Across the Kensington Expressway in Buffalo,DOT,high,0,no_detected_commitment_language
+2022005,2022,Recruit Medical Professionals to Work in Underserved Areas,SUNY,high,0,no_detected_commitment_language
+2022194,2022,Redesign the 21st-Century College System,DOL,high,0,no_detected_commitment_language
+2022105,2022,Redevelop the Outer Harbor Along the Buffalo Waterfront,Empire State Development,high,0,no_detected_commitment_language
+2022108,2022,Reimagine New York's Statewide Canal System,Empire State Development,high,0,no_detected_commitment_language
+2022088,2022,Reimagine the Van Wyck Expressway into a Gateway Travel Corridor,DOT,high,0,no_detected_commitment_language
+2022093,2022,Replace the Livingston Avenue Railroad Bridge in Albany,DOT,high,0,no_detected_commitment_language
+2022087,2022,Revitalize the South Bronx by Reconstructing the Bruckner-Sheridan Interchange at Hunts Point,DOT,high,0,no_detected_commitment_language
+2022136,2022,Spur Transit-Oriented Development,HCR; OCFS,high,1,short_non_action_title
+2022193,2022,Streamline the Application and Financial Aid Process and Offer a Single Consolidated Application for Financial Aid,SED,high,0,no_detected_commitment_language
+2022106,2022,Strengthen Connections to the Niagara Falls Waterfront,,high,0,no_detected_commitment_language
+2022118,2022,Support Congestion Pricing in Manhattan to Reduce Traffic and Generate Funding for Transit,DOT,high,0,no_detected_commitment_language
+2022010,2022,Support More Career Flexibility for Direct Care Workers,DOH,high,0,no_detected_commitment_language
+2023124,2023,Allow New York City to Lower Its Speed Limit,DOT,high,0,no_detected_commitment_language
+2023137,2023,Build First-Rate Digital and Design Teams,Office of Information Technology Services,medium,0,medium_text_match; no_detected_commitment_language
+2023064,2023,"Clean Up ""Forever Chemicals""",DEC,high,1,short_non_action_title
+2023129,2023,Close the DWI Loophole,DOT,high,1,short_non_action_title
+2023100,2023,Connect People with Disabilities to Inclusive Internships,Office for People With Developmental Disabilities,high,0,no_detected_commitment_language
+2023037,2023,Counter Cyber Threats,DCJS,high,0,short_non_action_title; no_detected_commitment_language
+2023016,2023,Create a Housing Planning Office,HCR,high,0,no_detected_commitment_language
+2023023,2023,Double Investment in Alternatives to Incarceration,DOCCS,high,0,no_detected_commitment_language
+2023021,2023,Dramatically Expand Outpatient Services,OMH,high,0,short_non_action_title; no_detected_commitment_language
+2023003,2023,Encourage New Housing Near Transit,HCR,high,0,no_detected_commitment_language
+2023053,2023,End Preventable Epidemics,DOH,high,2,short_non_action_title
+2023080,2023,"Establish the Office of Semiconductor Expansion, Management and Integration",Empire State Development,high,0,no_detected_commitment_language
+2023017,2023,Expand Insurance Coverage for Mental Health Services,OMH,high,0,no_body_text; no_detected_commitment_language
+2023018,2023,Expand Mental Health Services for School-Aged Children,OMH,high,0,no_body_text; no_detected_commitment_language
+2023113,2023,Expedite Enrollment for Families Receiving Other Benefits,Executive Chamber / Legislature,high,0,no_detected_commitment_language
+2023002,2023,Facilitate Housing Approval When Localities Do Not Meet Goals,HCR,high,0,no_detected_commitment_language
+2023031,2023,Hire Hundreds of New Prosecutors Around the State,DCJS,high,0,no_detected_commitment_language
+2023020,2023,Improve Admissions and Discharge Planning and Establish Systemic Accountability,OMH,high,0,no_body_text; no_detected_commitment_language
+2023019,2023,"Increase Operational Capacity for Inpatient Psychiatric Treatment by 1,000 Beds",OMH,high,0,no_body_text; no_detected_commitment_language
+2023066,2023,Index the Minimum Wage,DOL,high,1,short_non_action_title
+2023027,2023,Launch an Unprecedented Four New State Police Academy Classes,New York State Police,high,0,no_detected_commitment_language
+2023059,2023,Make Buildings More Sustainable,NYSERDA,high,1,short_non_action_title
+2023058,2023,Make Energy More Affordable,NYSERDA,high,1,short_non_action_title
+2023065,2023,Make Our Parks Energy-Independent,DEC,high,0,short_non_action_title
+2023120,2023,Make the MTA’s “City Ticket” Available 24/7,DOT,high,0,no_detected_commitment_language
+2023121,2023,Move Forward on Light Rail Option for the Interborough Express,DOT,high,0,no_detected_commitment_language
+2023032,2023,Provide Continued Funding for Discovery Reform,DCJS,high,0,no_detected_commitment_language
+2023055,2023,Rebuild the Wadsworth Laboratories,DOH,high,2,short_non_action_title
+2023001,2023,Set Goals for New Home Construction Across the State,HCR,high,0,no_detected_commitment_language
+2023125,2023,Spur Transportation Innovation Upstate,DOT,high,1,short_non_action_title
+2023128,2023,Stop Secondary Crashes,DOT,high,1,short_non_action_title
+2023111,2023,Streamline and Centralize the Application for Child Care Assistance,Executive Chamber / Legislature,high,0,no_detected_commitment_language
+2023056,2023,Strengthen New York’s Public Health Emergency Readiness Capacity,DOH,high,0,no_detected_commitment_language
+2024174,2024,Appoint a Director of Patient Advocacy,DOH,high,0,no_detected_commitment_language
+2024084,2024,Automatically Admit Top Students to SUNY and CUNY Campuses,SUNY,medium,1,medium_text_match
+2024107,2024,Bolster Disaster Response,NYSERDA,high,1,short_non_action_title
+2024148,2024,Bolster Workforce Development,,high,0,short_non_action_title; no_detected_commitment_language
+2024239,2024,Break Ground on New York's Largest Solar Carport,DOT,high,0,no_detected_commitment_language
+2024086,2024,Broaden SNAP Enrollment Outreach at CUNY and SUNY,SUNY,high,0,no_detected_commitment_language
+2024231,2024,Build Cyber Resilience,Office of Information Technology Services,high,0,no_body_text; no_detected_commitment_language
+2024090,2024,Build Municipal Pools in High Needs Areas,"Office of Parks, Recreation and Historic Preservation",high,0,no_detected_commitment_language
+2024195,2024,Commit to All New Yorkers with Disabilities,Office for People With Developmental Disabilities,high,0,no_body_text; no_detected_commitment_language
+2024191,2024,Commit to Indigenous Nations,Executive Chamber / cross-agency,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2024240,2024,Connect Local Residents to Good Jobs on MTA Projects,DOT,high,0,no_detected_commitment_language
+2024186,2024,Continue Commitment to Child Care Access,Executive Chamber / cross-agency,high,0,no_body_text; no_detected_commitment_language
+2024021,2024,Convene Youth Mental Health Advisory Boards,OMH,high,0,no_detected_commitment_language
+2024071,2024,Create Conditions for Better Outcomes,DOH,high,0,no_body_text; no_detected_commitment_language
+2024201,2024,Create Statewide Women Veterans History Trail,Department of Veterans' Services,high,0,no_detected_commitment_language
+2024225,2024,Create the Agricultural Workforce One-Stop Shop,Agriculture & Markets,high,0,no_detected_commitment_language
+2024138,2024,Create the Conditions to Attract and Grow Businesses,,high,0,no_body_text; no_detected_commitment_language
+2024122,2024,Deliver Savings on Utility Bills,NYSERDA,high,0,no_detected_commitment_language
+2024128,2024,Deliver Support for Rural Communities,NYSERDA,high,0,no_detected_commitment_language
+2024120,2024,Deploy Air Conditioners to the Medically Vulnerable,NYSERDA,high,0,no_detected_commitment_language
+2024218,2024,Develop Customer Data and Analytics Program,Executive Chamber / cross-agency,high,0,no_detected_commitment_language
+2024076,2024,Develop Data-Driven Interventions to Improve Birth Equity,DOH,high,0,no_detected_commitment_language
+2024200,2024,Develop Pocket Card for Providers Serving Veterans,Department of Veterans' Services,high,0,no_detected_commitment_language
+2024096,2024,Double State Parks Water-Safety Instruction Sites,"Office of Parks, Recreation and Historic Preservation",medium,0,medium_text_match
+2024055,2024,Eliminate Co-Pays for Insulin,DOL,high,1,short_non_action_title
+2024143,2024,Empower Small Business,,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2024176,2024,End Preventable Epidemics,DOH,high,2,short_non_action_title
+2024073,2024,Establish New Oversight Mechanisms to Avoid Unnecessary C-Sections,DOH,high,0,no_detected_commitment_language
+2024219,2024,Establish a New York State Design System,Office of Information Technology Services,high,0,no_detected_commitment_language
+2024078,2024,Expand Mental Health Screenings,DOH,high,0,no_detected_commitment_language
+2024183,2024,Expand Summer Meals Program to Reduce Hunger,Executive Chamber / cross-agency,high,0,no_detected_commitment_language
+2024047,2024,Expand Transitional Housing Opportunities,HCR,high,0,no_detected_commitment_language
+2024215,2024,Expedite Processing Times for Services,Executive Chamber / cross-agency,high,0,no_detected_commitment_language
+2024041,2024,Fund GIVE Jurisdictions to Stop Cycles of Domestic Violence,DCJS,high,0,no_detected_commitment_language
+2024092,2024,Fund Pop-Up Pools in Response to Extreme Heat,"Office of Parks, Recreation and Historic Preservation",high,0,no_detected_commitment_language
+2024010,2024,Fund Specialized Housing for People with Serious Mental Illness and Criminal History,HCR,high,0,no_detected_commitment_language
+2024082,2024,"Fund Training for 20,000 Teachers in Effective Reading Instruction",SED,high,0,no_detected_commitment_language
+2024242,2024,Getting Around Safely and Equitably,DOT,high,0,no_body_text; no_detected_commitment_language
+2024062,2024,Give the City of New York the Flexibility to Increase Residential Capacity,HCR,high,0,no_detected_commitment_language
+2024229,2024,Grow New York's Bioeconomy,Agriculture & Markets,high,3,short_non_action_title
+2024232,2024,Grow the New York State Joint Security Operations Center,Executive Chamber / cross-agency,high,0,no_detected_commitment_language
+2024144,2024,Help Small Businesses Navigate Environmental Regulations,DEC,high,0,no_detected_commitment_language
+2024223,2024,Help our Farmers,Agriculture & Markets,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2024221,2024,Hire More State Workers and Alleviate the Public Sector Staffing Crisis,Executive Chamber / cross-agency,high,0,no_detected_commitment_language
+2024211,2024,Improve Access to Benefits and Services,Executive Chamber / cross-agency,high,0,no_body_text; no_detected_commitment_language
+2024077,2024,Improve Maternal Mental Health,DOH,high,0,no_body_text; no_detected_commitment_language
+2024004,2024,Improve Mental Health Admission and Discharge Decisions by Hospitals,OMH,high,0,no_detected_commitment_language
+2024175,2024,Improve Public Health for All New Yorkers,DOH,high,0,no_detected_commitment_language
+2024094,2024,Improve Safety in the Water,"Office of Parks, Recreation and Historic Preservation",high,0,no_body_text; no_detected_commitment_language
+2024167,2024,Improve Transparency of Home Care Services,DOH,high,0,no_detected_commitment_language
+2024025,2024,Increase Access to Care Through Network Adequacy Regulations,OMH,high,0,no_detected_commitment_language
+2024068,2024,Increase Access to Pre-Natal Care,DOH,high,0,no_body_text; no_detected_commitment_language
+2024168,2024,Increase Affordability and Accessibility,DOH,high,0,no_detected_commitment_language
+2024007,2024,Increase Transitional Housing for Individuals Referred Through Court System,HCR,medium,1,medium_text_match
+2024126,2024,Initiate New York Grid of the Future Proceeding,NYSERDA,high,0,no_detected_commitment_language
+2024228,2024,Innovate in Agriculture,Agriculture & Markets,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2024132,2024,Introduce New Guidance to Reduce Harmful Algae Blooms,NYSERDA,high,0,no_detected_commitment_language
+2024236,2024,Invest in Infrastructure,DOT,high,0,no_body_text; no_detected_commitment_language
+2024196,2024,Issue Olmstead Plan for All People with Disabilities,Office for People With Developmental Disabilities,high,0,no_detected_commitment_language
+2024213,2024,Launch Modern Housing Search System,HCR,high,0,no_detected_commitment_language
+2024048,2024,Launch Suicide Prevention Initiative,DCJS,high,0,no_detected_commitment_language
+2024205,2024,Launch Youth Anti-Hate and -Bias Initiative,Executive Chamber / cross-agency,high,0,no_detected_commitment_language
+2024137,2024,Launch the Clean Transportation Standard Study,NYSERDA,high,0,no_detected_commitment_language
+2024085,2024,Make FAFSA Completion Universal,SED,high,0,short_non_action_title
+2024134,2024,Make New York Greener,NYSERDA,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2024098,2024,Make SUNY Pools Community Anchors,"Office of Parks, Recreation and Historic Preservation",medium,2,medium_text_match
+2024237,2024,Make it Possible to Extend the Second Avenue Subway West,DOT,high,0,no_detected_commitment_language
+2024238,2024,Move the Interborough Express Forward,DOT,high,0,no_detected_commitment_language
+2024243,2024,Pass Sammy's Law to Save Lives,DOT,high,0,no_detected_commitment_language
+2024214,2024,Pilot Language Access Certification Program,Executive Chamber / cross-agency,high,0,no_detected_commitment_language
+2024109,2024,"Prepare, Respond, and Prevent Flooding in the Mohawk and Oswego River Basin",DEC,medium,0,medium_text_match; no_detected_commitment_language
+2024038,2024,Prevent and Prosecute Domestic Violence,DCJS,medium,0,medium_text_match
+2024051,2024,Prohibit Unfair Business Practices,DOL,high,1,short_non_action_title
+2024147,2024,Promote Economic Growth Through Investment in the Arts,,medium,3,medium_text_match
+2024111,2024,Protect New York's Infrastructure,NYSERDA,high,0,no_body_text; no_detected_commitment_language
+2024152,2024,Protect New York's Workers,,high,0,no_body_text; no_detected_commitment_language
+2024104,2024,Protect Our Communities,NYSERDA,high,0,no_detected_commitment_language
+2024100,2024,Protect Our Homes,NYSERDA,high,0,no_detected_commitment_language
+2024155,2024,Protect Outdoor Workers from Extreme Weather Hazards,,high,0,no_detected_commitment_language
+2024052,2024,"Regulate “Buy Now, Pay Later” Loans",DOL,high,0,no_detected_commitment_language
+2024190,2024,Reimburse Child Care Providers for Quality Improvement,Executive Chamber / cross-agency,high,0,no_detected_commitment_language
+2024217,2024,Simplify Process to Request Vital Records,Executive Chamber / cross-agency,high,0,no_detected_commitment_language
+2024065,2024,Stand Up for Tenants and Homeowners,HCR,high,0,no_body_text; no_detected_commitment_language
+2024030,2024,Stop Organized Retail Theft,DCJS,high,0,short_non_action_title
+2024064,2024,Streamline Regulatory Processes to Increase Housing Production,HCR,high,0,no_detected_commitment_language
+2024216,2024,Streamline the Liquor Licensing and Application Processes,Executive Chamber / cross-agency,high,0,no_detected_commitment_language
+2024079,2024,Strengthen 988 Counseling for Pregnant New Yorkers and New Parents,DOH,high,0,no_detected_commitment_language
+2024209,2024,Strengthen LGBTQ+ Cultural Competency,Executive Chamber / cross-agency,high,0,no_detected_commitment_language
+2024203,2024,Strengthen New York's Response to Discrimination and Hate,Executive Chamber / cross-agency,high,0,no_body_text; no_detected_commitment_language
+2024206,2024,Strengthen Services for LGBTQ+ New Yorkers,Executive Chamber / cross-agency,high,0,no_body_text; no_detected_commitment_language
+2024192,2024,Strengthen Stability of Indigenous Families,Executive Chamber / cross-agency,high,0,no_detected_commitment_language
+2024163,2024,Strengthen the Healthcare Workforce,DOH,high,0,no_detected_commitment_language
+2024182,2024,Support Lower-Income New Yorkers,Executive Chamber / cross-agency,high,0,no_body_text; no_detected_commitment_language
+2024202,2024,Support Mental Health of Women Veterans,Department of Veterans' Services,high,0,no_detected_commitment_language
+2024199,2024,Support New York Veterans,Department of Veterans' Services,high,0,no_body_text; no_detected_commitment_language
+2024165,2024,Support New Yorkers Entering the Healthcare Workforce,DOH,high,0,no_detected_commitment_language
+2024045,2024,Support Re-Entry and Reduce Recidivism,DCJS,high,0,no_body_text; no_detected_commitment_language
+2024080,2024,Train Providers to Recognize and Treat Mental Health Conditions,DOH,high,0,no_detected_commitment_language
+2024141,2024,Transform Blighted Communities,,high,0,short_non_action_title
+2024058,2024,Unlock Potential for New Housing,HCR,high,0,no_body_text; no_detected_commitment_language
+2024103,2024,"Update Codes and Standards for Better, Safer Buildings",NYSERDA,high,0,no_detected_commitment_language
+2024212,2024,Use Data-Matching to Identify WIC-Eligible Families,Executive Chamber / cross-agency,medium,0,medium_text_match; no_detected_commitment_language
+2025143,2025,Add Classification of Intellectual Disability as a Means of Trafficking,,high,0,no_detected_commitment_language
+2025172,2025,Address Social Needs to Improve Health Equity and Outcomes,,high,0,no_detected_commitment_language
+2025010,2025,Charting a Brighter Future for Child Care,,high,0,no_detected_commitment_language
+2025086,2025,Convene the Empire State Freedom Initiative,,high,0,no_detected_commitment_language
+2025077,2025,Create New Registered Apprenticeships and Pre-Apprenticeships in High-Demand Fields,,high,0,no_detected_commitment_language
+2025106,2025,Create an Affordable Homebuyer Tax Incentive,,high,0,no_detected_commitment_language
+2025092,2025,Digitize Youth Working Papers,,high,0,short_non_action_title
+2025079,2025,Diversify the Artificial Intelligence Pipeline with Artificial Intelligence Prep,,high,0,no_detected_commitment_language
+2025059,2025,Double Down on Shovel-Ready Sites for Modern Manufacturing,,high,0,no_detected_commitment_language
+2025055,2025,Driving Economic Development,,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2025095,2025,Embrace a Circular Economy at the Empire State Plaza,,high,0,no_detected_commitment_language
+2025131,2025,Enhance Oversight of Buy Now Pay Later Loans,,high,0,no_detected_commitment_language
+2025155,2025,Ensuring Access to Abortion,,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2025006,2025,Expand Access to Vital Nutrition Programs for Mothers and Children,,medium,0,medium_text_match
+2025116,2025,Expand Affordable Farmworker Housing,HCR,high,0,no_detected_commitment_language
+2025038,2025,Expand Victim Support Services to Protect Vulnerable Populations,,high,0,no_detected_commitment_language
+2025102,2025,Expand and Extend Public Broadband and Cell Service,,high,0,no_detected_commitment_language
+2025073,2025,Facilitate Advanced Injury Detection for Thoroughbred Racing,,high,0,no_detected_commitment_language
+2025003,2025,Fight for Federal Tax Relief,,high,0,no_detected_commitment_language
+2025014,2025,Fostering Better Educational Opportunities,,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2025001,2025,Give Back $3 Billion in Inflation Rebates to New Yorkers,,high,0,no_detected_commitment_language
+2025058,2025,Grow the Semiconductor Industry and Build the Semiconductor Supply Chain,,high,0,no_detected_commitment_language
+2025052,2025,Improve Safety at New York City's Elementary School Intersections,,high,0,no_detected_commitment_language
+2025161,2025,Improving the Health of All New Yorkers,,high,0,no_body_text; no_detected_commitment_language
+2025088,2025,Increase Opportunities for Minority- and Women-Owned Business Enterprises in State Procurement,Empire State Development,high,0,no_detected_commitment_language
+2025074,2025,Launching ASCENT NY,,high,0,no_body_text; no_detected_commitment_language
+2025060,2025,Lead on Innovation Through Empire AI,,high,0,no_detected_commitment_language
+2025123,2025,Make the Biggest Capital Investment in New York's Transportation History,,high,0,no_detected_commitment_language
+2025049,2025,"Protecting Pedestrians, Workers, Drivers, and Cyclists",,high,0,no_body_text; no_detected_commitment_language
+2025064,2025,Provide Artificial Intelligence Technical Assistance to Small Businesses,,high,0,no_detected_commitment_language
+2025015,2025,Provide Universal School Meals,,high,0,no_detected_commitment_language
+2025096,2025,Recruit New Talent and Modernize the Civil Service System,,high,0,no_detected_commitment_language
+2025066,2025,Renew our Commitment to Our State's Capital City,,high,0,no_detected_commitment_language
+2025032,2025,Restoring Trust and Confidence in the Legitimacy of the Justice System,,high,0,no_body_text; no_detected_commitment_language
+2025035,2025,Right-size the Connection between the Discovery Law and the Speedy Trial Act to Promote True Justice,,high,0,no_detected_commitment_language
+2025130,2025,Standardize Returns and Refunds,,high,1,short_non_action_title
+2025091,2025,Streamline Utility Relocations for Metropolitan Transportation Authority,,high,0,no_detected_commitment_language
+2025036,2025,Streamline and Clarify Discovery Requirements,,high,0,no_detected_commitment_language
+2025167,2025,Strengthen Reporting Requirements for Healthcare Investors,,high,0,no_detected_commitment_language
+2025084,2025,Support Workers Displaced By Artificial Intelligence,,high,0,no_detected_commitment_language
+2025067,2025,Supporting Agriculture,,high,1,very_short_title
+2025041,2025,Supporting our First Responders,,high,0,no_body_text; no_detected_commitment_language
+2025016,2025,Take Action to Ensure Distraction-Free Learning,,high,0,no_detected_commitment_language
+2025061,2025,Turbocharge Hiring by Startups,,high,0,short_non_action_title; no_detected_commitment_language
+2025023,2025,Unplug and Play,,high,0,short_non_action_title
+2025002,2025,Vastly Expand New York's Child Tax Credit,,high,0,no_detected_commitment_language
+2026100,2026,Accelerating Critical Infrastructure Projects,,high,3,short_non_action_title
+2026084,2026,Addressing Contamination from Landfills to Protect Water Quality,,high,0,no_detected_commitment_language
+2026127,2026,Bolstering Biotechnology Statewide,,high,0,short_non_action_title
+2026062,2026,Combating Crime and Ensuring Justice,,high,0,no_body_text; no_detected_commitment_language
+2026025,2026,Convening Stakeholders to Bring Down Home and Property Insurance Costs,,high,0,no_detected_commitment_language
+2026176,2026,Empowering the Healthcare Workforce,,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2026117,2026,Ending Taxes on Tips,,high,0,short_non_action_title
+2026009,2026,Engaging with Employers as Partners,,high,0,no_detected_commitment_language
+2026122,2026,Enhancing Illegal Vape Enforcement,,high,1,short_non_action_title
+2026140,2026,Enhancing Local Economic Development Project Tracking,,high,0,no_detected_commitment_language
+2026153,2026,Enhancing Student Borrower Support,,high,1,short_non_action_title
+2026023,2026,Expanding Automatic Discounts for Commercial Multifamily Properties,,high,0,no_detected_commitment_language
+2026179,2026,Expanding Healthcare Access through Workforce Investments,,high,0,no_detected_commitment_language
+2026089,2026,Exploring the Niagara Gorge,,high,0,short_non_action_title
+2026067,2026,Extending Orders of Protection,,high,1,short_non_action_title
+2026118,2026,Fighting Workers' Compensation Fraud,,high,0,short_non_action_title
+2026085,2026,Getting the Lead Out,,high,0,short_non_action_title
+2026038,2026,Helping Put Food on the Table,,high,0,no_body_text; no_detected_commitment_language
+2026150,2026,Holding the Line on Costs and Promoting College Affordability at SUNY and CUNY,,high,0,no_detected_commitment_language
+2026186,2026,Improving Access to End-of-Life Care,,high,0,no_detected_commitment_language
+2026095,2026,Improving Commutes and Travel,,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2026072,2026,Improving Emergency and Disaster Response,,high,0,no_body_text; no_detected_commitment_language
+2026065,2026,Improving Police Training Academies,,high,1,short_non_action_title
+2026190,2026,Improving Vital Records Access,,high,2,short_non_action_title
+2026021,2026,Increasing Property Insurance Transparency,,high,0,short_non_action_title; no_detected_commitment_language
+2026024,2026,Increasing Transparency for Policyholders in the Home Insurance Market,,high,0,no_detected_commitment_language
+2026134,2026,Investing in Communities,,high,0,no_body_text; no_detected_commitment_language
+2026039,2026,Investing in Food Banks and Pantries,,high,0,no_detected_commitment_language
+2026040,2026,Investing in New York PLATES,,high,0,no_detected_commitment_language
+2026184,2026,Investing in Older Adults,,high,0,no_body_text; no_detected_commitment_language
+2026087,2026,Investing in Rochester's First State Park: High Falls State Park,,high,0,no_detected_commitment_language
+2026098,2026,Launching the Let Them Build Agenda,,high,0,no_detected_commitment_language
+2026107,2026,Making Government Work Better,,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2026036,2026,Mitigating Energy Cost Burden,,high,1,short_non_action_title
+2026164,2026,Opening up to 15 New Youth Clubhouses to Support Community-Based Recovery for Young People Suffering from a Substance Use Disorder,,high,0,no_detected_commitment_language
+2026093,2026,Preserving Performing Art Spaces,,high,0,short_non_action_title
+2026058,2026,Prioritizing Safety on the Subway,,high,0,no_body_text; no_detected_commitment_language
+2026170,2026,Promoting Responsible Digital Citizenship: Supporting Distraction-Free Schools and Student Mental Health,,high,0,no_detected_commitment_language
+2026123,2026,Promoting Tech and Biotech,,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2026049,2026,Protecting Our Neighbors' Rights,,high,0,no_body_text; no_detected_commitment_language
+2026052,2026,Protecting Safe Access to Worship and Healthcare,,high,0,no_detected_commitment_language
+2026002,2026,Reaching Universal 3K Access within New York City,,high,0,no_detected_commitment_language
+2026096,2026,Reimagining Jamaica Station for the Millions of Commuters Who Depend on It,DOT,high,0,no_detected_commitment_language
+2026167,2026,Safeguarding Kids Online,,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2026053,2026,Safeguarding Our Roads,,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2026046,2026,Stopping Illegal Homegrown Guns,,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2026110,2026,Streamlining Public Procurement,,high,3,short_non_action_title
+2026013,2026,Strengthening Insurer Anti-Fraud Programs,,high,0,no_detected_commitment_language
+2026090,2026,Strengthening Our Communities,,high,0,no_body_text; no_detected_commitment_language
+2026171,2026,Strengthening the Healthcare Delivery System,,high,0,no_body_text; no_detected_commitment_language
+2026128,2026,Supporting Farmers and Manufacturers,,high,0,no_body_text; no_detected_commitment_language
+2026029,2026,Tackling Utility Costs,,high,0,no_body_text; short_non_action_title; no_detected_commitment_language
+2026020,2026,Tracking Home Insurer Profitability,,high,0,short_non_action_title
+2026086,2026,Upgrading Our Parks,,high,0,no_body_text; short_non_action_title; no_detected_commitment_language

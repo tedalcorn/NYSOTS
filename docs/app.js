@@ -127,7 +127,6 @@ function renderSidebar() {
   const years = [...new Set(state.data.commitments.map((item) => item.year))].sort();
   const agencies = state.data.agencies.map((item) => item.name);
   const themes = state.data.themes.map((item) => item.label);
-  const commitmentTypes = [...new Set(state.data.commitments.map((item) => item.commitment_type))].sort();
 
   sidebarEl.innerHTML = `
     <div class="filter-group">
@@ -163,13 +162,6 @@ function renderSidebar() {
       <select id="theme-filter">
         <option value="all">All themes</option>
         ${themes.map((theme) => `<option value="${escapeAttr(theme)}" ${theme === state.filters.theme ? "selected" : ""}>${escapeHtml(theme)}</option>`).join("")}
-      </select>
-    </div>
-    <div class="filter-group">
-      <label for="type-filter">Commitment Type</label>
-      <select id="type-filter">
-        <option value="all">All types</option>
-        ${commitmentTypes.map((type) => `<option value="${escapeAttr(type)}" ${type === state.filters.commitmentType ? "selected" : ""}>${formatLabel(type)}</option>`).join("")}
       </select>
     </div>
     <div class="filter-group">
@@ -213,10 +205,6 @@ function bindSidebarEvents() {
   });
   sidebarEl.querySelector("#theme-filter").addEventListener("change", (event) => {
     state.filters.theme = event.target.value;
-    render();
-  });
-  sidebarEl.querySelector("#type-filter").addEventListener("change", (event) => {
-    state.filters.commitmentType = event.target.value;
     render();
   });
   sidebarEl.querySelector("#text-capture-filter").addEventListener("change", (event) => {
@@ -269,7 +257,7 @@ function renderCommitmentTable(commitments) {
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="title">${renderSortLabel("Commitment", "commitments", "title")}</button>
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="agency">${renderSortLabel("Primary Agency", "commitments", "agency")}</button>
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="theme">${renderSortLabel("Theme", "commitments", "theme")}</button>
-        <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="subgoals">${renderSortLabel("Subgoals?", "commitments", "subgoals")}</button>
+        <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="subgoals">${renderSortLabel("Subgoals", "commitments", "subgoals")}</button>
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="text">${renderSortLabel("Text", "commitments", "text")}</button>
       </div>
       ${commitments.map(renderCommitmentRow).join("")}
@@ -285,7 +273,7 @@ function renderCommitmentRow(item) {
       <div class="dense-title" title="${escapeAttr(item.title)}">${escapeHtml(item.title)}</div>
       <div title="${escapeAttr(formatAgencyListFull(primaryAgency))}">${escapeHtml(formatAgencyListCompact(primaryAgency))}</div>
       <div title="${escapeAttr(item.theme_labels[0] || "")}">${escapeHtml(item.theme_labels[0] || "")}</div>
-      <div>${item.subgoals?.length ? "Y" : "N"}</div>
+      <div>${item.subgoals?.length || 0}</div>
       <div>${escapeHtml(formatConfidence(item.text_capture_confidence))}</div>
     </button>
   `;
@@ -427,8 +415,11 @@ function renderDetail() {
     return;
   }
   const sourceSection = item.subsection || item.section_bucket || "";
+  const sourceUrl = item.source.url
+    ? `${item.source.url}${item.source_page ? `#page=${encodeURIComponent(item.source_page)}` : ""}`
+    : "";
   const sourceParts = [
-    item.source.url ? `<a href="${escapeAttr(item.source.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.source.label)}</a>` : escapeHtml(item.source.label),
+    sourceUrl ? `<a href="${escapeAttr(sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(item.source.label)}</a>` : escapeHtml(item.source.label),
     sourceSection ? escapeHtml(sourceSection) : "",
     item.source_page ? `p. ${escapeHtml(item.source_page)}${item.source_page_end && item.source_page_end !== item.source_page ? `-${escapeHtml(item.source_page_end)}` : ""}` : "",
     item.text_capture_confidence ? `text: ${escapeHtml(formatConfidence(item.text_capture_confidence))}` : "",
@@ -440,13 +431,13 @@ function renderDetail() {
       <span class="meta-pill blue">${item.year}</span>
       <span class="meta-pill">${escapeHtml(item.theme_labels[0] || "Not yet identified")}</span>
     </div>
-    <h2 class="detail-title" id="detail-modal-title">Commitment: ${escapeHtml(item.title)}</h2>
-    ${item.commitment_text ? `<div class="detail-block"><div class="blurb-text">${renderParagraphs(item.commitment_text)}</div></div>` : ""}
+    <h2 class="detail-title" id="detail-modal-title">Commitment: ${escapeHtml(item.title)} <span class="detail-id">${escapeHtml(item.id)}</span></h2>
+    ${item.commitment_text ? `<div class="detail-block"><div class="blurb-text">${renderParagraphs(item.commitment_text, item.subgoals || [])}</div></div>` : ""}
 
     <div class="detail-block">
       <div class="detail-grid">
         <dl>
-          <dt>Lead agencies</dt>
+          <dt>Lead agency</dt>
           <dd>${renderAgencyLinks(item.lead_agencies)}</dd>
         </dl>
         <dl>
@@ -456,10 +447,6 @@ function renderDetail() {
         <dl>
           <dt>Theme</dt>
           <dd>${renderBlankableText(item.theme_labels.join(", "))}</dd>
-        </dl>
-        <dl>
-          <dt>Implementation pathway</dt>
-          <dd>${escapeHtml(formatLabel(item.implementation_pathway))}</dd>
         </dl>
       </div>
     </div>
@@ -474,7 +461,6 @@ function renderDetail() {
 
     <div class="detail-block">
       <h3>Progress</h3>
-      <div class="line-field"><span class="line-label">Quantified Goal?</span><span>${item.quantified === "yes" ? "Y" : item.quantified === "no" ? "N" : ""}</span></div>
       <div class="line-field"><span class="line-label">Indicator:</span><span>${renderBlankableText(item.indicator)}</span></div>
       <div class="line-field"><span class="line-label">Progress report:</span><span></span></div>
     </div>
@@ -678,11 +664,11 @@ function renderBlankableText(value) {
   return value ? escapeHtml(String(value)) : "";
 }
 
-function renderParagraphs(text) {
+function renderParagraphs(text, highlights = []) {
   return mergeParagraphFragments(text)
     .map((paragraph) => normalizeParagraph(paragraph))
     .filter(Boolean)
-    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+    .map((paragraph) => `<p>${highlightEscapedText(paragraph, highlights)}</p>`)
     .join("");
 }
 
@@ -752,8 +738,8 @@ function sortCommitments(items, sort) {
       left = (a.theme_labels[0] || "").toLowerCase();
       right = (b.theme_labels[0] || "").toLowerCase();
     } else if (sort.key === "subgoals") {
-      left = a.subgoals?.length ? 1 : 0;
-      right = b.subgoals?.length ? 1 : 0;
+      left = a.subgoals?.length || 0;
+      right = b.subgoals?.length || 0;
     } else if (sort.key === "text") {
       left = confidenceRank(a.text_capture_confidence);
       right = confidenceRank(b.text_capture_confidence);
@@ -869,6 +855,20 @@ function escapeHtml(value) {
 
 function escapeAttr(value) {
   return escapeHtml(value).replaceAll("'", "&#39;");
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function highlightEscapedText(text, highlights) {
+  let escaped = escapeHtml(text);
+  const uniqueHighlights = [...new Set((highlights || []).map((item) => normalizeParagraph(item)).filter(Boolean))].sort((a, b) => b.length - a.length);
+  for (const phrase of uniqueHighlights) {
+    const escapedPhrase = escapeHtml(phrase);
+    escaped = escaped.replace(new RegExp(escapeRegExp(escapedPhrase), "g"), `<mark>${escapedPhrase}</mark>`);
+  }
+  return escaped;
 }
 
 init().catch((error) => {

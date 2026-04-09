@@ -242,6 +242,11 @@ h1 {
   margin: 0;
 }
 
+.filter-group .inline-check {
+  display: inline-flex;
+  margin-bottom: 0;
+}
+
 .inline-check input {
   width: auto;
   margin: 0;
@@ -531,6 +536,16 @@ h1 {
   margin: 0 0 0.7rem;
   font-size: 1.45rem;
   line-height: 1.05;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.detail-id {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted);
 }
 
 .modal-toolbar {
@@ -646,6 +661,13 @@ h1 {
 
 .blurb-text p:last-child {
   margin-bottom: 0;
+}
+
+.blurb-text mark {
+  background: rgba(216, 161, 52, 0.28);
+  color: inherit;
+  padding: 0 0.08rem;
+  border-radius: 0.18rem;
 }
 
 .line-field {
