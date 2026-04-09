@@ -13,10 +13,10 @@ Outputs created:
 
 Year summaries:
 - 2022: 220 raw rows, 0 dropped, 220 kept
-- 2023: 150 raw rows, 13 dropped, 137 kept
-- 2024: 253 raw rows, 9 dropped, 244 kept
-- 2025: 188 raw rows, 15 dropped, 173 kept
-- 2026: 205 raw rows, 12 dropped, 193 kept
+- 2023: 150 raw rows, 17 dropped, 133 kept
+- 2024: 253 raw rows, 34 dropped, 219 kept
+- 2025: 188 raw rows, 20 dropped, 168 kept
+- 2026: 205 raw rows, 29 dropped, 176 kept
 
 Important caution:
 - 2024-2026 imports are first-pass TOC extractions and still include some subgroup noise.

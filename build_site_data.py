@@ -291,6 +291,8 @@ def build_commitment(row):
         "year": year,
         "title": row["proposal_title"],
         "commitment_text": row.get("commitment_text", ""),
+        "word_count": len((row.get("commitment_text", "") or "").split()),
+        "short_text_review": len((row.get("commitment_text", "") or "").split()) < 50,
         "text_capture_confidence": row.get("text_capture_confidence", ""),
         "subgoals": extract_subgoals(row.get("commitment_text", "")),
         "section_bucket": row["section_bucket"],

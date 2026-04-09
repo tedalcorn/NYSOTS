@@ -131,7 +131,7 @@ function renderSidebar() {
     <div class="filter-group">
       <label for="query">Search by keyword</label>
       <div class="search-row">
-        <input id="query" type="search" value="${escapeHtml(state.filters.query)}" placeholder="Search commitment titles">
+        <input id="query" type="search" value="${escapeHtml(state.filters.query)}" placeholder="">
         <label class="inline-check">
           <input id="include-fulltext" type="checkbox" ${state.filters.includeFullText ? "checked" : ""}>
           <span>Include full text</span>
@@ -244,6 +244,7 @@ function renderCommitmentTable(commitments) {
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="agency">${renderSortLabel("Lead agency", "commitments", "agency")}</button>
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="theme">${renderSortLabel("Theme", "commitments", "theme")}</button>
         <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="subgoals">${renderSortLabel("Subgoals", "commitments", "subgoals")}</button>
+        <button class="sort-button" type="button" data-sort-table="commitments" data-sort-key="words">${renderSortLabel("Words", "commitments", "words")}</button>
       </div>
       ${commitments.map(renderCommitmentRow).join("")}
     </div>
@@ -259,6 +260,7 @@ function renderCommitmentRow(item) {
       <div title="${escapeAttr(formatAgencyListFull(primaryAgency))}">${escapeHtml(formatAgencyListCompact(primaryAgency))}</div>
       <div title="${escapeAttr(item.theme_labels[0] || "")}">${escapeHtml(item.theme_labels[0] || "")}</div>
       <div>${item.subgoals?.length || 0}</div>
+      <div>${item.word_count || 0}</div>
     </button>
   `;
 }
@@ -722,6 +724,9 @@ function sortCommitments(items, sort) {
     } else if (sort.key === "subgoals") {
       left = a.subgoals?.length || 0;
       right = b.subgoals?.length || 0;
+    } else if (sort.key === "words") {
+      left = a.word_count || 0;
+      right = b.word_count || 0;
     } else if (sort.key === "text") {
       left = confidenceRank(a.text_capture_confidence);
       right = confidenceRank(b.text_capture_confidence);

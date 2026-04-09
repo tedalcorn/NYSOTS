@@ -4,171 +4,166 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2025003,Fight for Federal Tax Relief,labor_affordability_general,new,,,
 2025004,Establish the Birth Allowance for Beginning Year Benefit,child_care_access,new,,,
 2025005,Support Families When a Baby is Born,mental_health_insurance,new,,,
-2025006,Expand Access to Vital Nutrition Programs for Mothers and Children,child_care_access,expansion,2024186,Continue Commitment to Child Care Access,theme=child_care_access; shared_terms=access
+2025006,Expand Access to Vital Nutrition Programs for Mothers and Children,child_care_access,expansion,2024173,Provide Grants to Sustain Child Care Programs,theme=child_care_access; shared_terms=programs
 2025007,"Increase Dual Enrollment in Supplemental Nutrition Assistance Program and Special Supplemental Nutrition Program for Women, Infants, and Children",food_access_agriculture,new,,,
-2025008,Create The Parent Partnership Project,child_care_access,continuation,2024190,Reimburse Child Care Providers for Quality Improvement,theme=child_care_access; shared_terms=
-2025009,Expand Lactation Support Services,medicaid_coverage,expansion,2024167,Improve Transparency of Home Care Services,theme=medicaid_coverage; shared_terms=services
-2025010,Charting a Brighter Future for Child Care,child_care_access,continuation,2024186,Continue Commitment to Child Care Access,"theme=child_care_access; shared_terms=care, child"
-2025011,Provide Child Care Construction Grants,child_care_access,continuation,2024187,Provide Grants to Sustain Child Care Programs,"theme=child_care_access; shared_terms=care, child, grants"
-2025012,Create the New York Coalition for Child Care,child_care_access,continuation,2024186,Continue Commitment to Child Care Access,"theme=child_care_access; shared_terms=care, child"
-2025013,Launch a Child Care Substitute Pool,child_care_access,continuation,2024186,Continue Commitment to Child Care Access,"theme=child_care_access; shared_terms=care, child"
-2025014,Provide Universal School Meals,public_education_funding,continuation,2024183,Expand Summer Meals Program to Reduce Hunger,theme=public_education_funding; shared_terms=meals
+2025008,Create The Parent Partnership Project,child_care_access,continuation,2024176,Reimburse Child Care Providers for Quality Improvement,theme=child_care_access; shared_terms=
+2025009,Expand Lactation Support Services,medicaid_coverage,expansion,2024155,Improve Transparency of Home Care Services,theme=medicaid_coverage; shared_terms=services
+2025010,Charting a Brighter Future for Child Care,child_care_access,continuation,2024173,Provide Grants to Sustain Child Care Programs,"theme=child_care_access; shared_terms=care, child"
+2025011,Provide Child Care Construction Grants,child_care_access,continuation,2024173,Provide Grants to Sustain Child Care Programs,"theme=child_care_access; shared_terms=care, child, grants"
+2025012,Create the New York Coalition for Child Care,child_care_access,continuation,2024173,Provide Grants to Sustain Child Care Programs,"theme=child_care_access; shared_terms=care, child"
+2025013,Launch a Child Care Substitute Pool,child_care_access,continuation,2024173,Provide Grants to Sustain Child Care Programs,"theme=child_care_access; shared_terms=care, child"
+2025014,Provide Universal School Meals,public_education_funding,continuation,2024170,Expand Summer Meals Program to Reduce Hunger,theme=public_education_funding; shared_terms=meals
 2025015,Take Action to Ensure Distraction-Free Learning,mental_health_youth,new,,,
 2025016,Boost Literacy with Free Books from Dolly Parton's Imagination Library,child_care_access,new,,,
-2025017,Build a Statewide Data System to Improve Education and Workforce Outcomes,college_workforce_pathways,follow_on,2024226,Promote a One Health Approach as Part of New York's Agrifood System,theme=college_workforce_pathways; shared_terms=system
+2025017,Build a Statewide Data System to Improve Education and Workforce Outcomes,college_workforce_pathways,follow_on,2024205,Promote a One Health Approach as Part of New York's Agrifood System,theme=college_workforce_pathways; shared_terms=system
 2025018,Launch College in High School Opportunity Fund,college_workforce_pathways,new,,,
-2025019,Streamline the Part-Time Tuition Assistance Program,college_workforce_pathways,continuation,2024226,Promote a One Health Approach as Part of New York's Agrifood System,theme=college_workforce_pathways; shared_terms=part
-2025020,Invest in Student Success at the State University of New York,college_workforce_pathways,continuation,2024056,Establish Empire AI Consortium to Drive Research and Innovation,theme=college_workforce_pathways; shared_terms=
-2025021,Invest in Cutting-Edge Research by Funding a New York State Innovation Fund,college_workforce_pathways,continuation,2024056,Establish Empire AI Consortium to Drive Research and Innovation,"theme=college_workforce_pathways; shared_terms=innovation, research"
+2025019,Streamline the Part-Time Tuition Assistance Program,college_workforce_pathways,continuation,2024205,Promote a One Health Approach as Part of New York's Agrifood System,theme=college_workforce_pathways; shared_terms=part
+2025020,Invest in Student Success at the State University of New York,college_workforce_pathways,continuation,2024055,Establish Empire AI Consortium to Drive Research and Innovation,theme=college_workforce_pathways; shared_terms=
+2025021,Invest in Cutting-Edge Research by Funding a New York State Innovation Fund,college_workforce_pathways,continuation,2024055,Establish Empire AI Consortium to Drive Research and Innovation,"theme=college_workforce_pathways; shared_terms=innovation, research"
 2025022,Unplug and Play,mental_health_youth,new,,,
-2025023,Invest in New York State's Recreation Infrastructure,climate_general,continuation,2024089,Invest In Swimming Infrastructure,"theme=climate_general; shared_terms=infrastructure, invest"
+2025023,Invest in New York State's Recreation Infrastructure,climate_general,continuation,2024083,Invest In Swimming Infrastructure,"theme=climate_general; shared_terms=infrastructure, invest"
 2025024,Invest in Playgrounds,child_care_access,new,,,
 2025025,"Launch Get Offline, Get Outside 2.0",education_general,new,,,
 2025026,Double Down on NY SWIMS,child_care_access,new,,,
-2025027,Get More Kids Swimming and Prevent Child Drowning,child_care_access,continuation,2024186,Continue Commitment to Child Care Access,theme=child_care_access; shared_terms=child
+2025027,Get More Kids Swimming and Prevent Child Drowning,child_care_access,continuation,2024173,Provide Grants to Sustain Child Care Programs,theme=child_care_access; shared_terms=child
 2025028,Expand Media Literacy Effort to Combat Misinformation,public_education_funding,new,,,
 2025029,Outlaw Artificial Intelligence-Generated Child Sexual Abuse Material,education_general,new,,,
 2025030,Make Artificial Intelligence Companion Technology Safer,education_general,new,,,
-2025031,Restoring Trust and Confidence in the Legitimacy of the Justice System,public_safety_general,new,,,
-2025032,Expand Support for Intelligence Sharing and Agency Coordination,cyber_emergency_response,new,,,
-2025033,Strengthen the State's Response Against Transnational Criminal Networks,state_police_capacity,new,,,
-2025034,Right-size the Connection between the Discovery Law and the Speedy Trial Act to Promote True Justice,discovery_bail,new,,,
-2025035,Streamline and Clarify Discovery Requirements,state_police_capacity,new,,,
-2025036,Support Safe and Vibrant Communities,public_safety_general,continuation,2024040,Fund Domestic Violence Risk Assessment and Improve Reporting,theme=public_safety_general; shared_terms=
-2025037,Expand Victim Support Services to Protect Vulnerable Populations,public_safety_general,new,,,
-2025038,Ensure Child Victims of Crime Are Maximally Supported,public_safety_general,new,,,
-2025039,Reduce Reoffending Through Innovative Justice Initiatives,alternatives_reentry,new,,,
-2025040,Launch First Responder Counseling Scholarship Program,college_workforce_pathways,continuation,2024056,Establish Empire AI Consortium to Drive Research and Innovation,theme=college_workforce_pathways; shared_terms=
-2025041,Eliminate Outdated Barriers in Public Safety Recruitment,state_police_capacity,new,,,
-2025042,Expand Educational Pathways to Public Service Careers,college_workforce_pathways,expansion,2024149,Expand State Apprenticeships to Youth and Public Service Workers,"theme=college_workforce_pathways; shared_terms=public, service"
-2025043,Secure Additional Funding for Volunteer Fire Infrastructure and Response Equipment Grant Program,aging_long_term_care,new,,,
-2025044,Keep Our Firefighters Safe with Better Protective Gear,public_safety_general,continuation,2024043,Establish SAFE Fund to Support Survivors in Immediate Crisis,theme=public_safety_general; shared_terms=safe
-2025045,Secure Additional Funding for Law Enforcement Technology,public_safety_general,continuation,2024033,Fund Local Law Enforcement and Expand Evidence Collection to Combat Retail Theft,"theme=public_safety_general; shared_terms=enforcement, law"
-2025046,Establish a Mass Violence Crisis Response Team,mental_health_insurance,continuation,2024011,Provide Crisis Intervention Team Training for Law Enforcement,"theme=mental_health_insurance; shared_terms=crisis, team"
-2025047,Enhance Safety for Work Zones and Transportation Workers,mta_service_and_finance,new,,,
-2025048,Strengthen Drugged Driving Laws,street_safety,new,,,
-2025049,Improve Safety at New York City's Elementary School Intersections,street_safety,new,,,
-2025050,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,street_safety,new,,,
-2025051,Allow New York City to Lower Speed Limits in Bike Lanes,street_safety,new,,,
-2025052,Driving Economic Development,economic_development_general,continuation,2024147,Promote Economic Growth Through Investment in the Arts,theme=economic_development_general; shared_terms=economic
-2025053,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,economic_development_general,continuation,2024147,Promote Economic Growth Through Investment in the Arts,theme=economic_development_general; shared_terms=promote
-2025054,Build Clean Energy Zones,economic_development_general,new,,,
-2025055,Grow the Semiconductor Industry and Build the Semiconductor Supply Chain,semiconductor_economic_development,new,,,
-2025056,Double Down on Shovel-Ready Sites for Modern Manufacturing,semiconductor_economic_development,new,,,
-2025057,Lead on Innovation Through Empire AI,college_workforce_pathways,continuation,2024056,Establish Empire AI Consortium to Drive Research and Innovation,"theme=college_workforce_pathways; shared_terms=empire, innovation"
-2025058,Turbocharge Hiring by Startups,technology_innovation_economic_development,new,,,
-2025059,Support Small Businesses with Low INterest Capital,economic_development_general,continuation,2024144,Help Small Businesses Navigate Environmental Regulations,"theme=economic_development_general; shared_terms=businesses, small"
-2025060,Transform Regional Economic Development with High-Impact Projects,economic_development_general,continuation,2024141,Transform Blighted Communities,theme=economic_development_general; shared_terms=transform
-2025061,Provide Artificial Intelligence Technical Assistance to Small Businesses,technology_innovation_economic_development,new,,,
-2025062,Increase Capital Access for Underrepresented Startups,technology_innovation_economic_development,new,,,
-2025063,Renew our Commitment to Our State's Capital City,state_police_capacity,new,,,
-2025064,Supporting Agriculture,food_access_agriculture,continuation,2024228,Innovate in Agriculture,theme=food_access_agriculture; shared_terms=agriculture
-2025065,Enhance Local Food Supply Chains,food_access_agriculture,continuation,2024230,Launch New York's Blue Food Transformation,theme=food_access_agriculture; shared_terms=food
-2025066,Position New York as a Regional Leader in Fiber Production,food_access_agriculture,new,,,
-2025067,Launch a Maple Industry Growth Strategy,food_access_agriculture,new,,,
-2025068,Expand Agriculture Education in the New York Schools,food_access_agriculture,expansion,2024228,Innovate in Agriculture,theme=food_access_agriculture; shared_terms=agriculture
-2025069,Advance the Sustainability of New York's Dairy Industry,food_access_agriculture,new,,,
-2025070,Facilitate Advanced Injury Detection for Thoroughbred Racing,economic_development_general,new,,,
-2025071,Launching ASCENT NY,economic_development_general,new,,,
-2025072,Fund Free Community College in High-Demand Occupations,college_workforce_pathways,continuation,2024098,Make SUNY Pools Community Anchors,theme=college_workforce_pathways; shared_terms=community
-2025073,Facilitate New Training Pathways into High-Demand Occupations,college_workforce_pathways,new,,,
-2025074,Create New Registered Apprenticeships and Pre-Apprenticeships in High-Demand Fields,college_workforce_pathways,continuation,2024149,Expand State Apprenticeships to Youth and Public Service Workers,theme=college_workforce_pathways; shared_terms=apprenticeships
-2025075,Expand Cybersecurity Careers with Degree Reform and New Fellowships,cyber_emergency_response,new,,,
-2025076,Diversify the Artificial Intelligence Pipeline with Artificial Intelligence Prep,technology_innovation_economic_development,new,,,
-2025077,"Leverage Federal Support to Expand Health, Behavioral, and Social Care Workforce",medicaid_coverage,expansion,2024167,Improve Transparency of Home Care Services,theme=medicaid_coverage; shared_terms=care
-2025078,Deploy State Funding to Support Healthcare Training Programs,tutoring_learning_loss,new,,,
-2025079,Expand Enforcement Power Following an Unpaid Wage Theft Judgment,labor_affordability_general,new,,,
-2025080,Align Child Labor Law Penalties with Severity of Violation,economic_development_general,new,,,
-2025081,Support Workers Displaced By Artificial Intelligence,economic_development_general,new,,,
-2025082,Expand Access to Medical Care in the Workers' Compensation System,economic_development_general,new,,,
-2025083,Convene the Empire State Freedom Initiative,government_operations_general,new,,,
-2025084,Expand Alternative Project Delivery Methods,government_operations_general,new,,,
-2025085,Increase Opportunities for Minority- and Women-Owned Business Enterprises in State Procurement,economic_development_general,expansion,2024143,Empower Small Business,theme=economic_development_general; shared_terms=business
-2025086,Engage the Dormitory Authority to Speed Municipal Projects,government_operations_general,new,,,
-2025087,Expand Pre-Qualified List Authority,government_operations_general,new,,,
-2025088,Streamline Utility Relocations for Metropolitan Transportation Authority,mta_service_and_finance,new,,,
-2025089,Digitize Youth Working Papers,government_operations_general,new,,,
-2025090,Improve Tracking and Transparency for State Assets and Capital Projects,government_operations_general,new,,,
-2025091,Create a State Office of Innovation and Efficiency,government_operations_general,new,,,
-2025092,Embrace a Circular Economy at the Empire State Plaza,recycling_waste,new,,,
-2025093,Recruit New Talent and Modernize the Civil Service System,government_operations_general,follow_on,2024219,Establish a New York State Design System,theme=government_operations_general; shared_terms=system
-2025094,Increase Access to Government Services,food_access_agriculture,new,,,
-2025095,Mandate Reporting of Local Government Cyber Incidents,cyber_emergency_response,continuation,2024231,Build Cyber Resilience,theme=cyber_emergency_response; shared_terms=cyber
-2025096,Require Cybersecurity Awareness Training for Government Employees,government_operations_general,continuation,2024222,Remove Educational Barriers to Employment in State Government,theme=government_operations_general; shared_terms=government
-2025097,Bolster the Security of Networks Statewide,cyber_emergency_response,continuation,2024232,Grow the New York State Joint Security Operations Center,theme=cyber_emergency_response; shared_terms=security
-2025098,Safeguard New York's Water Infrastructure,government_operations_general,new,,,
-2025099,Expand and Extend Public Broadband and Cell Service,government_operations_general,expansion,2024221,Hire More State Workers and Alleviate the Public Sector Staffing Crisis,theme=government_operations_general; shared_terms=public
-2025100,Provide Artificial Intelligence Upskilling for State Workforce,government_operations_general,new,,,
-2025101,Provide Starter Home Innovation Funding,aging_long_term_care,new,,,
-2025102,Support First-Time Homebuyers' Down Payment Assistance,housing_supply,new,,,
-2025103,Create an Affordable Homebuyer Tax Incentive,housing_supply,continuation,2024061,Enact a Tax Abatement for New Rental and Affordable Housing in New York City,"theme=housing_supply; shared_terms=affordable, tax"
-2025104,Disincentivize Bulk Purchases of Homes by Institutional Investor,tenant_protection,new,,,
-2025105,Strengthen Laws and Policies to Combat Home Appraisal Discrimination,tenant_protection,new,,,
-2025106,Create a Pro-Housing Supply Infrastructure Fund,housing_supply,continuation,2024059,Make Pro-Housing Designation a Requirement of Key State Funding Programs,"theme=housing_supply; shared_terms=housing, pro"
-2025107,Provide Communities Technical Assistance to Be Pro-Housing,housing_supply,continuation,2024059,Make Pro-Housing Designation a Requirement of Key State Funding Programs,"theme=housing_supply; shared_terms=housing, pro"
-2025108,Streamline Environmental Review for Modest Housing Development,housing_general,continuation,2024064,Streamline Regulatory Processes to Increase Housing Production,"theme=housing_general; shared_terms=housing, streamline"
-2025109,Launch New York State's First Mixed-Income Revolving Loan Fund,housing_supply,new,,,
-2025110,Double New York State Low Income Housing Credits,housing_supply,expansion,2024058,Unlock Potential for New Housing,theme=housing_supply; shared_terms=housing
-2025111,Unlock Historic Tax Credits by Decoupling and Expanding Eligibility,housing_supply,continuation,2024058,Unlock Potential for New Housing,theme=housing_supply; shared_terms=unlock
-2025112,Empower Communities to Redevelop Vacant Properties into Housing,housing_supply,continuation,2024058,Unlock Potential for New Housing,theme=housing_supply; shared_terms=housing
-2025113,Expand Affordable Farmworker Housing,aging_long_term_care,new,,,
-2025114,Ban Collusion Using of Algorithm-Enabled Rent Price Fixing,tenant_protection,new,,,
-2025115,Reduce Shelter Rent Taxes for Mitchell-Lama Residents,tenant_protection,new,,,
-2025116,Expand Capital to Maintain and Improve Supportive Housing,mental_health_supportive_housing,expansion,2024007,Increase Transitional Housing for Individuals Referred Through Court System,theme=mental_health_supportive_housing; shared_terms=housing
-2025117,Increase Funding for Supportive Housing,mental_health_supportive_housing,expansion,2024007,Increase Transitional Housing for Individuals Referred Through Court System,theme=mental_health_supportive_housing; shared_terms=housing
-2025118,Extend Security Deposit Protections to Rent-Regulated Tenants,tenant_protection,new,,,
-2025119,Help Affordable Housing Access Captive Insurance to Lower Costs,tenant_protection,new,,,
-2025120,Make the Biggest Capital Investment in New York's Transportation History,mta_service_and_finance,new,,,
-2025121,Advance Second Avenue Subway and Other Major Transit Improvements,mta_service_and_finance,continuation,2024237,Make it Possible to Extend the Second Avenue Subway West,"theme=mta_service_and_finance; shared_terms=avenue, second, subway"
-2025122,Enhance Subway Safety with Expanded Security and Outreach Measures,mta_service_and_finance,continuation,2024237,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=subway
-2025123,Invest in New York Roads and Statewide Transit,transportation_general,continuation,2024236,Invest in Infrastructure,theme=transportation_general; shared_terms=invest
-2025124,"Modernize Rail Service for Faster, More Reliable Travel",mta_service_and_finance,new,,,
-2025125,Reconnect Communities in Albany and the Bronx,transportation_general,new,,,
-2025126,Fight Back Against Algorithmic Price Discrimination,government_general,new,,,
-2025127,Standardize Returns and Refunds,government_general,new,,,
-2025128,Enhance Oversight of Buy Now Pay Later Loans,government_general,continuation,2024052,"Regulate “Buy Now, Pay Later” Loans","theme=government_general; shared_terms=buy, later, loans, now, pay"
-2025129,Strengthen Subscription Cancellation and Renewal Protections,government_general,new,,,
-2025130,Bolster Protections Against Overdraft and Non-Sufficient Funds Fees,government_general,new,,,
-2025131,Hold Energy Service Companies Accountable for Revenue Return,government_general,new,,,
-2025132,Combat Elder Financial Exploitation,aging_long_term_care,continuation,2024235,Combat Elder Financial Exploitation,"theme=aging_long_term_care; shared_terms=combat, elder, exploitation, financial"
-2025133,Require Access to Trained Forensic Medical Examiners at All Hospitals,equity_general,new,,,
-2025134,Increase Funding for Rape Crisis Programs,equity_general,expansion,2024207,Expand Funding for Workforce Development and Training for TGNCNB New Yorkers,theme=equity_general; shared_terms=funding
-2025135,Expand Statewide Targeted Reductions in Intimate Partner Violence,equity_general,new,,,
-2025136,Dispossess Domestic Violence Abusers of Firearms,equity_general,new,,,
-2025137,Create Safer Workplaces for Survivors of Gender-Based Violence,equity_general,new,,,
-2025138,Improve Access to Public Assistance for Survivors of Gender-Based Violence,equity_general,new,,,
-2025139,Eliminate the Statute of Limitations for Sex Trafficking Cases,equity_general,new,,,
-2025140,Add Classification of Intellectual Disability as a Means of Trafficking,disability_inclusion,continuation,2024054,Increase Paid Medical and Disability Leave Benefits,theme=disability_inclusion; shared_terms=disability
-2025141,Modernize Mental Hygiene Law to Expand Access to Care,mental_health_supportive_housing,expansion,2024001,Improve Public Safety By Addressing Serious Mental Illness,theme=mental_health_supportive_housing; shared_terms=mental
-2025142,Streamline County Oversight and Enhance Funding,health_care_general,continuation,2024079,Strengthen 988 Counseling for Pregnant New Yorkers and New Parents,theme=health_care_general; shared_terms=
-2025143,Expand Intensive and Sustained Engagement Teams,mental_health_supportive_housing,expansion,2024015,Establish New Youth ACT Teams Statewide,theme=mental_health_supportive_housing; shared_terms=teams
-2025144,Create a Hospital-Based Peer Bridger Program,mental_health_supportive_housing,continuation,2024008,Fund New Community-Based Mental Health Teams,theme=mental_health_supportive_housing; shared_terms=based
-2025145,Add Street Medicine and Psychiatry to Safe Options Support Teams,health_care_general,new,,,
-2025146,Expand the Network of Clubhouse Programs and Youth Safe Spaces,mental_health_supportive_housing,expansion,2024015,Establish New Youth ACT Teams Statewide,theme=mental_health_supportive_housing; shared_terms=youth
-2025147,Provide High School Students with Teen Mental Health First Aid Training,health_care_general,continuation,2024077,Improve Maternal Mental Health,"theme=health_care_general; shared_terms=health, mental"
-2025148,Support Youth Mental Health in After-School Programs,mental_health_youth,continuation,2024021,Convene Youth Mental Health Advisory Boards,"theme=mental_health_youth; shared_terms=health, mental, youth"
-2025149,Improve Diagnoses for Children with Complex Clinical Needs,health_care_general,follow_on,2024179,Modernize Vital Records to Meet the Needs of New Yorkers,theme=health_care_general; shared_terms=needs
-2025150,Hold Health Insurance Companies Accountable,mental_health_insurance,continuation,2024024,Require Increased Commercial Insurance Reimbursement Rates for Mental Health Services,"theme=mental_health_insurance; shared_terms=health, insurance"
-2025151,Support Community-Determined Wellness in Historically Marginalized Neighborhoods,health_care_general,new,,,
-2025152,Ensuring Access to Abortion,reproductive_rights,new,,,
-2025153,Sustain the Reproductive Freedom and Equity Grant Fund,reproductive_rights,new,,,
-2025154,Strengthen Reproductive Healthcare Infrastructure,reproductive_rights,new,,,
-2025155,Fairly Reimburse Providers for Abortion Services,reproductive_rights,new,,,
-2025156,Safeguard Abortion as Emergency Medical Care,reproductive_rights,new,,,
-2025157,Protect the Identity of Medication Abortion Prescribers,reproductive_rights,new,,,
-2025158,Improving the Health of All New Yorkers,health_care_general,continuation,2024077,Improve Maternal Mental Health,theme=health_care_general; shared_terms=health
-2025159,Extend the Safety Net Transformation Program,health_care_general,continuation,2024157,Launch a Healthcare Safety Net Transformation Program,"theme=health_care_general; shared_terms=net, program, safety, transformation"
-2025160,Expand Access to Infertility Treatments,medicaid_coverage,expansion,2024170,Expand Access to Quality Dental Care,theme=medicaid_coverage; shared_terms=access
-2025161,Increase Access to Lifesaving Obesity Drugs,medicaid_coverage,expansion,2024073,Establish New Oversight Mechanisms to Avoid Unnecessary C-Sections,theme=medicaid_coverage; shared_terms=
-2025162,Ensure Access to Emergency Medical Services,primary_care_and_ems,follow_on,2024160,Modernize Emergency Medical Services,"theme=primary_care_and_ems; shared_terms=emergency, medical, services"
-2025163,Expand Access to Dental Care,health_care_general,expansion,2024068,Increase Access to Pre-Natal Care,"theme=health_care_general; shared_terms=access, care"
-2025164,Strengthen Reporting Requirements for Healthcare Investors,health_care_general,continuation,2024157,Launch a Healthcare Safety Net Transformation Program,theme=health_care_general; shared_terms=healthcare
-2025165,Build New Health Planning and Data Transparency Capacity,medicaid_coverage,continuation,2024167,Improve Transparency of Home Care Services,theme=medicaid_coverage; shared_terms=transparency
-2025166,Remove Unnecessary Restrictions on Healthcare Workers,medicaid_coverage,continuation,2024164,Sustain and Retain Healthcare Workers,"theme=medicaid_coverage; shared_terms=healthcare, workers"
-2025167,Expand Access to Air Conditioning Units for People with Chronic Conditions,medicaid_coverage,expansion,2024170,Expand Access to Quality Dental Care,theme=medicaid_coverage; shared_terms=access
-2025168,Advance Health Equity for Justice-Involved Youth,alternatives_reentry,new,,,
-2025169,Address Social Needs to Improve Health Equity and Outcomes,medicaid_coverage,follow_on,2024173,Increase the Affordability of New York State of Health Insurance Options,theme=medicaid_coverage; shared_terms=health
-2025170,Reduce Health Disparities Through Value-Based Payments,medicaid_coverage,continuation,2024173,Increase the Affordability of New York State of Health Insurance Options,theme=medicaid_coverage; shared_terms=health
-2025171,Advance Integrated Care for Better Health Outcomes,aging_long_term_care,continuation,2024169,Expand Coverage for Health-Related Social Needs,theme=aging_long_term_care; shared_terms=health
-2025172,Update and Improve Network Adequacy Requirements,health_care_general,new,,,
-2025173,Revamp and Improve Customer Experience on New York's Health Plan Marketplace,medicaid_coverage,follow_on,2024173,Increase the Affordability of New York State of Health Insurance Options,theme=medicaid_coverage; shared_terms=health
+2025031,Expand Support for Intelligence Sharing and Agency Coordination,cyber_emergency_response,new,,,
+2025032,Strengthen the State's Response Against Transnational Criminal Networks,state_police_capacity,new,,,
+2025033,Right-size the Connection between the Discovery Law and the Speedy Trial Act to Promote True Justice,discovery_bail,new,,,
+2025034,Streamline and Clarify Discovery Requirements,state_police_capacity,new,,,
+2025035,Support Safe and Vibrant Communities,public_safety_general,continuation,2024040,Fund Domestic Violence Risk Assessment and Improve Reporting,theme=public_safety_general; shared_terms=
+2025036,Expand Victim Support Services to Protect Vulnerable Populations,public_safety_general,new,,,
+2025037,Ensure Child Victims of Crime Are Maximally Supported,public_safety_general,new,,,
+2025038,Reduce Reoffending Through Innovative Justice Initiatives,alternatives_reentry,new,,,
+2025039,Launch First Responder Counseling Scholarship Program,college_workforce_pathways,continuation,2024055,Establish Empire AI Consortium to Drive Research and Innovation,theme=college_workforce_pathways; shared_terms=
+2025040,Eliminate Outdated Barriers in Public Safety Recruitment,state_police_capacity,new,,,
+2025041,Expand Educational Pathways to Public Service Careers,college_workforce_pathways,expansion,2024138,Expand State Apprenticeships to Youth and Public Service Workers,"theme=college_workforce_pathways; shared_terms=public, service"
+2025042,Secure Additional Funding for Volunteer Fire Infrastructure and Response Equipment Grant Program,aging_long_term_care,new,,,
+2025043,Keep Our Firefighters Safe with Better Protective Gear,public_safety_general,continuation,2024043,Establish SAFE Fund to Support Survivors in Immediate Crisis,theme=public_safety_general; shared_terms=safe
+2025044,Secure Additional Funding for Law Enforcement Technology,public_safety_general,continuation,2024033,Fund Local Law Enforcement and Expand Evidence Collection to Combat Retail Theft,"theme=public_safety_general; shared_terms=enforcement, law"
+2025045,Establish a Mass Violence Crisis Response Team,mental_health_insurance,continuation,2024011,Provide Crisis Intervention Team Training for Law Enforcement,"theme=mental_health_insurance; shared_terms=crisis, team"
+2025046,Enhance Safety for Work Zones and Transportation Workers,mta_service_and_finance,new,,,
+2025047,Strengthen Drugged Driving Laws,street_safety,new,,,
+2025048,Improve Safety at New York City's Elementary School Intersections,street_safety,new,,,
+2025049,Reclassify Ultra-Heavy Class 3 E-Bikes as Mopeds,street_safety,new,,,
+2025050,Allow New York City to Lower Speed Limits in Bike Lanes,street_safety,new,,,
+2025051,Promote Opportunity with Electric Readiness for Underdeveloped Properties Fund,economic_development_general,continuation,2024136,Promote Economic Growth Through Investment in the Arts,theme=economic_development_general; shared_terms=promote
+2025052,Build Clean Energy Zones,economic_development_general,new,,,
+2025053,Grow the Semiconductor Industry and Build the Semiconductor Supply Chain,semiconductor_economic_development,new,,,
+2025054,Double Down on Shovel-Ready Sites for Modern Manufacturing,semiconductor_economic_development,new,,,
+2025055,Lead on Innovation Through Empire AI,college_workforce_pathways,continuation,2024055,Establish Empire AI Consortium to Drive Research and Innovation,"theme=college_workforce_pathways; shared_terms=empire, innovation"
+2025056,Turbocharge Hiring by Startups,technology_innovation_economic_development,new,,,
+2025057,Support Small Businesses with Low INterest Capital,economic_development_general,continuation,2024133,Help Small Businesses Navigate Environmental Regulations,"theme=economic_development_general; shared_terms=businesses, small"
+2025058,Transform Regional Economic Development with High-Impact Projects,economic_development_general,continuation,2024131,Transform Blighted Communities,theme=economic_development_general; shared_terms=transform
+2025059,Provide Artificial Intelligence Technical Assistance to Small Businesses,technology_innovation_economic_development,new,,,
+2025060,Increase Capital Access for Underrepresented Startups,technology_innovation_economic_development,new,,,
+2025061,Renew our Commitment to Our State's Capital City,state_police_capacity,new,,,
+2025062,Supporting Agriculture,food_access_agriculture,new,,,
+2025063,Enhance Local Food Supply Chains,food_access_agriculture,continuation,2024208,Launch New York's Blue Food Transformation,theme=food_access_agriculture; shared_terms=food
+2025064,Position New York as a Regional Leader in Fiber Production,food_access_agriculture,new,,,
+2025065,Launch a Maple Industry Growth Strategy,food_access_agriculture,new,,,
+2025066,Expand Agriculture Education in the New York Schools,food_access_agriculture,expansion,2024206,Increase Youth Agricultural Leadership and Education Opportunities,theme=food_access_agriculture; shared_terms=education
+2025067,Advance the Sustainability of New York's Dairy Industry,food_access_agriculture,new,,,
+2025068,Facilitate Advanced Injury Detection for Thoroughbred Racing,economic_development_general,new,,,
+2025069,Fund Free Community College in High-Demand Occupations,college_workforce_pathways,continuation,2024091,Make SUNY Pools Community Anchors,theme=college_workforce_pathways; shared_terms=community
+2025070,Facilitate New Training Pathways into High-Demand Occupations,college_workforce_pathways,new,,,
+2025071,Create New Registered Apprenticeships and Pre-Apprenticeships in High-Demand Fields,college_workforce_pathways,continuation,2024138,Expand State Apprenticeships to Youth and Public Service Workers,theme=college_workforce_pathways; shared_terms=apprenticeships
+2025072,Expand Cybersecurity Careers with Degree Reform and New Fellowships,cyber_emergency_response,new,,,
+2025073,Diversify the Artificial Intelligence Pipeline with Artificial Intelligence Prep,technology_innovation_economic_development,new,,,
+2025074,"Leverage Federal Support to Expand Health, Behavioral, and Social Care Workforce",medicaid_coverage,expansion,2024155,Improve Transparency of Home Care Services,theme=medicaid_coverage; shared_terms=care
+2025075,Deploy State Funding to Support Healthcare Training Programs,tutoring_learning_loss,new,,,
+2025076,Expand Enforcement Power Following an Unpaid Wage Theft Judgment,labor_affordability_general,new,,,
+2025077,Align Child Labor Law Penalties with Severity of Violation,economic_development_general,new,,,
+2025078,Support Workers Displaced By Artificial Intelligence,economic_development_general,new,,,
+2025079,Expand Access to Medical Care in the Workers' Compensation System,economic_development_general,new,,,
+2025080,Convene the Empire State Freedom Initiative,government_operations_general,new,,,
+2025081,Expand Alternative Project Delivery Methods,government_operations_general,new,,,
+2025082,Increase Opportunities for Minority- and Women-Owned Business Enterprises in State Procurement,economic_development_general,new,,,
+2025083,Engage the Dormitory Authority to Speed Municipal Projects,government_operations_general,new,,,
+2025084,Expand Pre-Qualified List Authority,government_operations_general,new,,,
+2025085,Streamline Utility Relocations for Metropolitan Transportation Authority,mta_service_and_finance,new,,,
+2025086,Digitize Youth Working Papers,government_operations_general,new,,,
+2025087,Improve Tracking and Transparency for State Assets and Capital Projects,government_operations_general,new,,,
+2025088,Create a State Office of Innovation and Efficiency,government_operations_general,new,,,
+2025089,Embrace a Circular Economy at the Empire State Plaza,recycling_waste,new,,,
+2025090,Recruit New Talent and Modernize the Civil Service System,government_operations_general,follow_on,2024199,Establish a New York State Design System,theme=government_operations_general; shared_terms=system
+2025091,Increase Access to Government Services,food_access_agriculture,new,,,
+2025092,Mandate Reporting of Local Government Cyber Incidents,cyber_emergency_response,continuation,2024147,Strengthen Hospital Cyber Resilience,theme=cyber_emergency_response; shared_terms=cyber
+2025093,Require Cybersecurity Awareness Training for Government Employees,government_operations_general,continuation,2024202,Remove Educational Barriers to Employment in State Government,theme=government_operations_general; shared_terms=government
+2025094,Bolster the Security of Networks Statewide,cyber_emergency_response,continuation,2024209,Grow the New York State Joint Security Operations Center,theme=cyber_emergency_response; shared_terms=security
+2025095,Safeguard New York's Water Infrastructure,government_operations_general,new,,,
+2025096,Expand and Extend Public Broadband and Cell Service,government_operations_general,expansion,2024201,Hire More State Workers and Alleviate the Public Sector Staffing Crisis,theme=government_operations_general; shared_terms=public
+2025097,Provide Artificial Intelligence Upskilling for State Workforce,government_operations_general,new,,,
+2025098,Provide Starter Home Innovation Funding,aging_long_term_care,new,,,
+2025099,Support First-Time Homebuyers' Down Payment Assistance,housing_supply,new,,,
+2025100,Create an Affordable Homebuyer Tax Incentive,housing_supply,continuation,2024059,Enact a Tax Abatement for New Rental and Affordable Housing in New York City,"theme=housing_supply; shared_terms=affordable, tax"
+2025101,Disincentivize Bulk Purchases of Homes by Institutional Investor,tenant_protection,new,,,
+2025102,Strengthen Laws and Policies to Combat Home Appraisal Discrimination,tenant_protection,new,,,
+2025103,Create a Pro-Housing Supply Infrastructure Fund,housing_supply,continuation,2024057,Make Pro-Housing Designation a Requirement of Key State Funding Programs,"theme=housing_supply; shared_terms=housing, pro"
+2025104,Provide Communities Technical Assistance to Be Pro-Housing,housing_supply,continuation,2024057,Make Pro-Housing Designation a Requirement of Key State Funding Programs,"theme=housing_supply; shared_terms=housing, pro"
+2025105,Streamline Environmental Review for Modest Housing Development,housing_general,continuation,2024062,Streamline Regulatory Processes to Increase Housing Production,"theme=housing_general; shared_terms=housing, streamline"
+2025106,Launch New York State's First Mixed-Income Revolving Loan Fund,housing_supply,new,,,
+2025107,Double New York State Low Income Housing Credits,housing_supply,expansion,2024057,Make Pro-Housing Designation a Requirement of Key State Funding Programs,theme=housing_supply; shared_terms=housing
+2025108,Unlock Historic Tax Credits by Decoupling and Expanding Eligibility,housing_supply,continuation,2024059,Enact a Tax Abatement for New Rental and Affordable Housing in New York City,theme=housing_supply; shared_terms=tax
+2025109,Empower Communities to Redevelop Vacant Properties into Housing,housing_supply,continuation,2024057,Make Pro-Housing Designation a Requirement of Key State Funding Programs,theme=housing_supply; shared_terms=housing
+2025110,Expand Affordable Farmworker Housing,aging_long_term_care,new,,,
+2025111,Ban Collusion Using of Algorithm-Enabled Rent Price Fixing,tenant_protection,new,,,
+2025112,Reduce Shelter Rent Taxes for Mitchell-Lama Residents,tenant_protection,new,,,
+2025113,Expand Capital to Maintain and Improve Supportive Housing,mental_health_supportive_housing,expansion,2024007,Increase Transitional Housing for Individuals Referred Through Court System,theme=mental_health_supportive_housing; shared_terms=housing
+2025114,Increase Funding for Supportive Housing,mental_health_supportive_housing,expansion,2024007,Increase Transitional Housing for Individuals Referred Through Court System,theme=mental_health_supportive_housing; shared_terms=housing
+2025115,Extend Security Deposit Protections to Rent-Regulated Tenants,tenant_protection,new,,,
+2025116,Help Affordable Housing Access Captive Insurance to Lower Costs,tenant_protection,new,,,
+2025117,Make the Biggest Capital Investment in New York's Transportation History,mta_service_and_finance,new,,,
+2025118,Advance Second Avenue Subway and Other Major Transit Improvements,mta_service_and_finance,continuation,2024213,Make it Possible to Extend the Second Avenue Subway West,"theme=mta_service_and_finance; shared_terms=avenue, second, subway"
+2025119,Enhance Subway Safety with Expanded Security and Outreach Measures,mta_service_and_finance,continuation,2024213,Make it Possible to Extend the Second Avenue Subway West,theme=mta_service_and_finance; shared_terms=subway
+2025120,Invest in New York Roads and Statewide Transit,transportation_general,new,,,
+2025121,"Modernize Rail Service for Faster, More Reliable Travel",mta_service_and_finance,new,,,
+2025122,Reconnect Communities in Albany and the Bronx,transportation_general,new,,,
+2025123,Fight Back Against Algorithmic Price Discrimination,government_general,new,,,
+2025124,Standardize Returns and Refunds,government_general,new,,,
+2025125,Enhance Oversight of Buy Now Pay Later Loans,government_general,continuation,2024051,"Regulate “Buy Now, Pay Later” Loans","theme=government_general; shared_terms=buy, later, loans, now, pay"
+2025126,Strengthen Subscription Cancellation and Renewal Protections,government_general,new,,,
+2025127,Bolster Protections Against Overdraft and Non-Sufficient Funds Fees,government_general,new,,,
+2025128,Hold Energy Service Companies Accountable for Revenue Return,government_general,new,,,
+2025129,Combat Elder Financial Exploitation,aging_long_term_care,continuation,2024212,Combat Elder Financial Exploitation,"theme=aging_long_term_care; shared_terms=combat, elder, exploitation, financial"
+2025130,Require Access to Trained Forensic Medical Examiners at All Hospitals,equity_general,new,,,
+2025131,Increase Funding for Rape Crisis Programs,equity_general,expansion,2024188,Expand Funding for Workforce Development and Training for TGNCNB New Yorkers,theme=equity_general; shared_terms=funding
+2025132,Expand Statewide Targeted Reductions in Intimate Partner Violence,equity_general,new,,,
+2025133,Dispossess Domestic Violence Abusers of Firearms,equity_general,new,,,
+2025134,Create Safer Workplaces for Survivors of Gender-Based Violence,equity_general,new,,,
+2025135,Improve Access to Public Assistance for Survivors of Gender-Based Violence,equity_general,new,,,
+2025136,Eliminate the Statute of Limitations for Sex Trafficking Cases,equity_general,new,,,
+2025137,Add Classification of Intellectual Disability as a Means of Trafficking,disability_inclusion,continuation,2024053,Increase Paid Medical and Disability Leave Benefits,theme=disability_inclusion; shared_terms=disability
+2025138,Modernize Mental Hygiene Law to Expand Access to Care,mental_health_supportive_housing,expansion,2024001,Improve Public Safety By Addressing Serious Mental Illness,theme=mental_health_supportive_housing; shared_terms=mental
+2025139,Streamline County Oversight and Enhance Funding,health_care_general,continuation,2024073,Strengthen 988 Counseling for Pregnant New Yorkers and New Parents,theme=health_care_general; shared_terms=
+2025140,Expand Intensive and Sustained Engagement Teams,mental_health_supportive_housing,expansion,2024015,Establish New Youth ACT Teams Statewide,theme=mental_health_supportive_housing; shared_terms=teams
+2025141,Create a Hospital-Based Peer Bridger Program,mental_health_supportive_housing,continuation,2024008,Fund New Community-Based Mental Health Teams,theme=mental_health_supportive_housing; shared_terms=based
+2025142,Add Street Medicine and Psychiatry to Safe Options Support Teams,health_care_general,new,,,
+2025143,Expand the Network of Clubhouse Programs and Youth Safe Spaces,mental_health_supportive_housing,expansion,2024015,Establish New Youth ACT Teams Statewide,theme=mental_health_supportive_housing; shared_terms=youth
+2025144,Provide High School Students with Teen Mental Health First Aid Training,health_care_general,continuation,2024072,Expand Mental Health Screenings,"theme=health_care_general; shared_terms=health, mental"
+2025145,Support Youth Mental Health in After-School Programs,mental_health_youth,continuation,2024021,Convene Youth Mental Health Advisory Boards,"theme=mental_health_youth; shared_terms=health, mental, youth"
+2025146,Improve Diagnoses for Children with Complex Clinical Needs,health_care_general,follow_on,2024167,Modernize Vital Records to Meet the Needs of New Yorkers,theme=health_care_general; shared_terms=needs
+2025147,Hold Health Insurance Companies Accountable,mental_health_insurance,continuation,2024024,Require Increased Commercial Insurance Reimbursement Rates for Mental Health Services,"theme=mental_health_insurance; shared_terms=health, insurance"
+2025148,Support Community-Determined Wellness in Historically Marginalized Neighborhoods,health_care_general,new,,,
+2025149,Sustain the Reproductive Freedom and Equity Grant Fund,reproductive_rights,new,,,
+2025150,Strengthen Reproductive Healthcare Infrastructure,reproductive_rights,new,,,
+2025151,Fairly Reimburse Providers for Abortion Services,reproductive_rights,new,,,
+2025152,Safeguard Abortion as Emergency Medical Care,reproductive_rights,new,,,
+2025153,Protect the Identity of Medication Abortion Prescribers,reproductive_rights,new,,,
+2025154,Extend the Safety Net Transformation Program,health_care_general,continuation,2024145,Launch a Healthcare Safety Net Transformation Program,"theme=health_care_general; shared_terms=net, program, safety, transformation"
+2025155,Expand Access to Infertility Treatments,medicaid_coverage,expansion,2024158,Expand Access to Quality Dental Care,theme=medicaid_coverage; shared_terms=access
+2025156,Increase Access to Lifesaving Obesity Drugs,medicaid_coverage,expansion,2024068,Establish New Oversight Mechanisms to Avoid Unnecessary C-Sections,theme=medicaid_coverage; shared_terms=
+2025157,Ensure Access to Emergency Medical Services,primary_care_and_ems,follow_on,2024148,Modernize Emergency Medical Services,"theme=primary_care_and_ems; shared_terms=emergency, medical, services"
+2025158,Expand Access to Dental Care,health_care_general,expansion,2024169,Invest in Clinical Care and Research for Rare Diseases,theme=health_care_general; shared_terms=care
+2025159,Strengthen Reporting Requirements for Healthcare Investors,health_care_general,continuation,2024145,Launch a Healthcare Safety Net Transformation Program,theme=health_care_general; shared_terms=healthcare
+2025160,Build New Health Planning and Data Transparency Capacity,medicaid_coverage,continuation,2024155,Improve Transparency of Home Care Services,theme=medicaid_coverage; shared_terms=transparency
+2025161,Remove Unnecessary Restrictions on Healthcare Workers,medicaid_coverage,continuation,2024152,Sustain and Retain Healthcare Workers,"theme=medicaid_coverage; shared_terms=healthcare, workers"
+2025162,Expand Access to Air Conditioning Units for People with Chronic Conditions,medicaid_coverage,expansion,2024158,Expand Access to Quality Dental Care,theme=medicaid_coverage; shared_terms=access
+2025163,Advance Health Equity for Justice-Involved Youth,alternatives_reentry,new,,,
+2025164,Address Social Needs to Improve Health Equity and Outcomes,medicaid_coverage,follow_on,2024161,Increase the Affordability of New York State of Health Insurance Options,theme=medicaid_coverage; shared_terms=health
+2025165,Reduce Health Disparities Through Value-Based Payments,medicaid_coverage,continuation,2024161,Increase the Affordability of New York State of Health Insurance Options,theme=medicaid_coverage; shared_terms=health
+2025166,Advance Integrated Care for Better Health Outcomes,aging_long_term_care,continuation,2024157,Expand Coverage for Health-Related Social Needs,theme=aging_long_term_care; shared_terms=health
+2025167,Update and Improve Network Adequacy Requirements,health_care_general,new,,,
+2025168,Revamp and Improve Customer Experience on New York's Health Plan Marketplace,medicaid_coverage,follow_on,2024161,Increase the Affordability of New York State of Health Insurance Options,theme=medicaid_coverage; shared_terms=health
