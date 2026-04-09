@@ -205,6 +205,9 @@ def extract_bullet_subgoals(text):
 def looks_like_commitment_sentence(sentence):
     sentence = normalize_subgoal_sentence(sentence)
     lowered = sentence.lower()
+    action_verbs = (
+        r"(?:adopt|add|allow|award|begin|build|classify|commence|complete|create|deliver|develop|direct|establish|expand|fund|implement|improve|increase|invest|launch|make|modernize|open|overhaul|pilot|prepare|promote|protect|provide|rebuild|redevelop|reduce|reform|replace|require|screen|streamline|support|train|treat|update)"
+    )
     starters = (
         r"^(?:Governor Hochul|The Governor|New York State|New York|The State|State agencies|State Parks|NYSCA|NYPA|NYSERDA|SUNY|CUNY|SED|DOH|OMH|DOL|DFS|DOT|DMV|DOCCS|OCFS|Empire State Development|DPS|Public Service Commission|She)\s+"
     )
@@ -212,17 +215,31 @@ def looks_like_commitment_sentence(sentence):
         r"^(?:[A-Z][^.!?]{0,160},\s+)?(?:Governor Hochul|The Governor|New York State|New York|The State|State agencies|State Parks|NYSCA|NYPA|NYSERDA|SUNY|CUNY|SED|DOH|OMH|DOL|DFS|DOT|DMV|DOCCS|OCFS|Empire State Development|DPS|Public Service Commission|She)\s+"
     )
     future_forms = (
-        r"(?:will|will also|will continue to|will direct|will pursue|will propose|will propose to|proposes requiring|is proposing to|proposes to|is launching|is also launching|is creating|is establishing|is taking the next step to)"
+        r"(?:will|will also|will continue to|will direct|will pursue|will propose|will propose to|proposes requiring|is proposing to|proposes to|is launching|is also launching|is creating|is establishing|is taking the next step to|is directing)"
     )
-    if re.search(starters + r".{0,60}\b" + future_forms + r"\b", sentence, flags=re.IGNORECASE):
+    if re.search(starters + r".{0,60}\b" + future_forms + r"\b.{0,40}\b" + action_verbs + r"\b", sentence, flags=re.IGNORECASE):
         return True
-    if re.search(starter_with_clause + r".{0,60}\b" + future_forms + r"\b", sentence, flags=re.IGNORECASE):
+    if re.search(starter_with_clause + r".{0,60}\b" + future_forms + r"\b.{0,40}\b" + action_verbs + r"\b", sentence, flags=re.IGNORECASE):
         return True
     if re.search(r"^(?:To address this|To improve|To help|To support|In its first year of operation|Initially)\b.{0,90}\b(?:will|would)\b", sentence, flags=re.IGNORECASE):
         return True
     if re.search(r"\bwill include\b", sentence, flags=re.IGNORECASE) and any(token in lowered for token in ["program", "initiative", "elements", "proposal", "agenda"]):
         return True
+    if re.search(r"^[A-Z][^.!?]{0,200}\b(?:will|proposes adding|proposes requiring|proposes to|is proposing to|is taking the next step to)\b[^.!?]{0,50}\b" + action_verbs + r"\b", sentence, flags=re.IGNORECASE):
+        return True
     return False
+
+
+def score_action_sentence(sentence):
+    lowered = sentence.lower()
+    score = 0
+    if re.search(r"\b(?:will|proposes adding|proposes requiring|proposes to|is proposing to|is taking the next step to|is directing)\b", lowered):
+        score += 3
+    if re.search(r"\b(?:adopt|add|allow|award|begin|build|classify|complete|create|deliver|develop|direct|establish|expand|fund|implement|improve|increase|invest|launch|make|modernize|open|overhaul|pilot|prepare|promote|protect|provide|rebuild|redevelop|reduce|reform|replace|require|screen|streamline|support|train|treat|update)\b", lowered):
+        score += 1
+    if re.search(r"\b(?:governor hochul|new york state|new york|the state|department|office|division|authority|corporation|members|students|residents|homeowners|consumers)\b", lowered):
+        score += 2
+    return score
 
 
 def extract_subgoals(text):
@@ -233,10 +250,24 @@ def extract_subgoals(text):
             seen.append(bullet)
     for sentence in split_sentences(text):
         normalized = normalize_subgoal_sentence(sentence)
+        if normalized.startswith("Some core project benefits include"):
+            continue
         if bullet_goals and re.search(r"\bimplement a plan\b|\bcomponents of this plan include\b", normalized, flags=re.IGNORECASE):
             continue
         if normalized and looks_like_commitment_sentence(normalized) and normalized not in seen:
             seen.append(normalized)
+    if not seen:
+        scored = []
+        for sentence in split_sentences(text):
+            normalized = normalize_subgoal_sentence(sentence)
+            if normalized.startswith("Some core project benefits include"):
+                continue
+            score = score_action_sentence(normalized)
+            if score >= 4 and re.search(r"\b(?:will|proposes adding|proposes requiring|proposes to|is proposing to|is taking the next step to|is directing)\b", normalized, flags=re.IGNORECASE):
+                scored.append((score, normalized))
+        if scored:
+            scored.sort(key=lambda item: (-item[0], len(item[1])))
+            seen.append(scored[0][1])
     return seen[:10]
 
 
