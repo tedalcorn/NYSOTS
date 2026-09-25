@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 
-ROOT = Path("/Users/tedalcorn/Desktop/codex-projects/NYSOTS")
+ROOT = Path(__file__).resolve().parent
 SITE_DATA = ROOT / "site" / "data" / "site-data.json"
 HEADER_AUDIT = ROOT / "header-audit.csv"
 AGENCY_AUDIT = ROOT / "agency-plausibility-flags.csv"

@@ -6,7 +6,7 @@ import subprocess
 from pathlib import Path
 
 
-ROOT = Path("/Users/tedalcorn/Desktop/codex-projects/NYSOTS")
+ROOT = Path(__file__).resolve().parent
 SOURCE_ROOT = Path("/Users/tedalcorn/Documents/*Resumes/ -Job Applications/2026 01 Hochul Policy Shop/-SOTS")
 
 
@@ -43,7 +43,7 @@ YEAR_CONFIGS = {
         "source_pdf": SOURCE_ROOT / "2025StateoftheStateBook.pdf",
         "output_csv": ROOT / "2025-first-pass-inventory.csv",
         "toc_start": 5,
-        "toc_end": 12,
+        "toc_end": 14,
         "heading_mode": "chapter",
         "section_map": {
             "Chapter 1: Putting Money Back in New Yorkers’ Pockets": "Labor / affordability",
@@ -67,7 +67,7 @@ YEAR_CONFIGS = {
         "source_pdf": SOURCE_ROOT / "2026StateoftheStateBook.pdf",
         "output_csv": ROOT / "2026-first-pass-inventory.csv",
         "toc_start": 6,
-        "toc_end": 16,
+        "toc_end": 18,
         "heading_mode": "chapter",
         "section_map": {
             "Chapter 1: Making New York More Affordable": "Labor / affordability",

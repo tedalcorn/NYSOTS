@@ -26,7 +26,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2026025,Convening Stakeholders to Bring Down Home and Property Insurance Costs,labor_affordability_general,new,,,
 2026026,Enhancing Penalties to Protect Rent-Regulated Tenants from Pervasive Harassment,tenant_protection,continuation,2025115,Extend Security Deposit Protections to Rent-Regulated Tenants,"theme=tenant_protection; shared_terms=regulated, rent, tenants"
 2026027,Reforming J-51 to Preserve More Rent-Regulated Housing,tenant_protection,continuation,2025115,Extend Security Deposit Protections to Rent-Regulated Tenants,"theme=tenant_protection; shared_terms=regulated, rent"
-2026028,Expanding a Critical Rent Freeze Program for Seniors and People with Disabilities,disability_inclusion,new,,,
+2026028,Expanding a Critical Rent Freeze Program for Seniors and People with Disabilities,disability_inclusion,continuation,2025179,Supporting New Yorkers with Disabilities,theme=disability_inclusion; shared_terms=disabilities
 2026029,Improving Fairness for Ratepayers Through Affordable Utilities Omnibus Legislation,building_decarbonization,new,,,
 2026030,Revitalizing EmPower+ to Upgrade Homes,building_decarbonization,new,,,
 2026031,Excelsior Power: Cheaper Utility Bills for a More Flexible and Affordable Grid,building_decarbonization,new,,,
@@ -148,7 +148,7 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2026147,Hosting a Youth-Led Substance Use Prevention Symposium,education_general,new,,,
 2026148,Ensuring All Child-Serving Clinicians in New York's Office of Mental Health Settings Are Trained in Evidence-Based Practices,mental_health_youth,continuation,2025145,Support Youth Mental Health in After-School Programs,"theme=mental_health_youth; shared_terms=health, mental"
 2026149,Opening up to 15 New Youth Clubhouses to Support Community-Based Recovery for Young People Suffering from a Substance Use Disorder,education_general,new,,,
-2026150,Establishing a Young Adult Recovery Residence for Individuals Recovering from Opioid Addiction,opioid_response,new,,,
+2026150,Establishing a Young Adult Recovery Residence for Individuals Recovering from Opioid Addiction,opioid_response,continuation,2025170,Fighting the Opioid Crisis,theme=opioid_response; shared_terms=opioid
 2026151,Scaling Mental Health Supports for Indigenous Youth,mental_health_insurance,continuation,2025147,Hold Health Insurance Companies Accountable,theme=mental_health_insurance; shared_terms=health
 2026152,Safe By Design: Creating Safer Digital Environments for Kids,mental_health_youth,new,,,
 2026153,Ensuring Fair Play in Online Betting and Limiting Access for Young People,education_general,new,,,
@@ -175,3 +175,38 @@ commitment_id,proposal_title,overlap_theme,continuity_to_prior_year,matched_prio
 2026174,Protecting Summer Campers from Extreme Weather Threats,health_care_general,new,,,
 2026175,Establishing a Nuclear Reliability Backbone for a Zero-Emission Grid,building_decarbonization,new,,,
 2026176,Ensuring New York's Nuclear Power Future is Built By and For New Yorkers,energy_affordability,new,,,
+2026177,Supporting Solar Energy in Public Schools by Aligning State Building Aid with Climate Goals,energy_affordability,new,,,
+2026178,Establishing a Sales Tax Exemption for Electric Vehicle (EV) Charging Stations,transport_electrification,new,,,
+2026179,Supporting Farms through the Sun and Soil Program,food_access_agriculture,continuation,2025062,Supporting Agriculture,theme=food_access_agriculture; shared_terms=supporting
+2026180,Protecting Our Energy Grid from Cyber Threats,cyber_emergency_response,continuation,2025092,Mandate Reporting of Local Government Cyber Incidents,theme=cyber_emergency_response; shared_terms=cyber
+2026181,Investing in the Environmental Protection Fund to Safeguard Our Natural Resources,climate_general,new,,,
+2026182,"Continuing Our Commitment to Green, Resilient Communities",water_quality,new,,,
+2026183,Mitigating Flood Risk Through FloodSafe NY,unclear,new,,,
+2026184,Investing in Coastal Resiliency for Local Communities,water_quality,new,,,
+2026185,Enhancing Implementation of Waterfront Revitalization Plans,water_quality,new,,,
+2026186,Coordinating and Streamlining Resilience Resources for Local Communities,unclear,continuation,2025204,Building Stronger Communities for a Changing Climate,theme=unclear; shared_terms=communities
+2026187,"Supporting Resilient, Adaptive Communities",unclear,continuation,2025205,Expand and Strengthen the Resilient and Ready Programs,theme=unclear; shared_terms=resilient
+2026188,"Supporting Plugging Toxic, Abandoned Wells",unclear,new,,,
+2026189,Expanding Access to State Parks for All New Yorkers,climate_general,new,,,
+2026190,Promoting Civic and Community Engagement,unclear,new,,,
+2026191,Establishing the Governor's Medal to Recognize New Yorkers Who Make Exceptional Civic Contributions,unclear,new,,,
+2026192,Commemorating the 250th Anniversary of the American Revolution and the History of New York,climate_general,new,,,
+2026193,Establishing the New York State Parks Trades Corps,aging_long_term_care,new,,,
+2026194,Doubling Empire State Service Corps Opportunities for SUNY Students,tutoring_learning_loss,new,,,
+2026195,Supporting Not-for-Profits that Serve New Yorkers,digital_government,new,,,
+2026196,Safeguarding Tax-Deductible Charitable Donations,unclear,new,,,
+2026197,Establishing On-Campus Clinics Serving Student Veterans,tutoring_learning_loss,new,,,
+2026198,Building a Center of Excellence for Cannabis Care and Health Equity,unclear,continuation,2025191,Promote Kinship Care,theme=unclear; shared_terms=care
+2026199,Strengthening Suicide Prevention and Well-being for Vulnerable New Yorkers,veterans_services,new,,,
+2026200,Building Community with GRACE,unclear,continuation,2025204,Building Stronger Communities for a Changing Climate,theme=unclear; shared_terms=building
+2026201,Broadening Access to Private Adoptive Placements,unclear,new,,,
+2026202,Integrating Care for Mental Health and Substance Use Disorders,unclear,continuation,2025191,Promote Kinship Care,theme=unclear; shared_terms=care
+2026203,Curbing Gambling Addiction through Additional Prevention and Treatment,unclear,new,,,
+2026204,Increasing Resources for Behavioral Health Supportive Housing Programs,mental_health_supportive_housing,continuation,2025114,Increase Funding for Supportive Housing,"theme=mental_health_supportive_housing; shared_terms=housing, supportive"
+2026205,Supporting Families by Improving Reading and Language Acquisition Equality for Deaf Children,disability_inclusion,continuation,2025179,Supporting New Yorkers with Disabilities,theme=disability_inclusion; shared_terms=supporting
+2026206,"Establishing ""These Lands are for Everyone"" to Expand Access to State Lands for All New Yorkers",disability_inclusion,expansion,2025179,Supporting New Yorkers with Disabilities,theme=disability_inclusion; shared_terms=yorkers
+2026207,Launching Inclusive SUNY and CUNY: Changes to Ensure Access for Students with Disabilities,college_workforce_pathways,new,,,
+2026208,Establishing an Assistive Technology Innovation Center,technology_innovation_economic_development,continuation,2025073,Diversify the Artificial Intelligence Pipeline with Artificial Intelligence Prep,theme=technology_innovation_economic_development; shared_terms=
+2026209,Expanding Governor Hochul's Fashion Innovation Center to Advance Adaptive Clothing for People with Disabilities,disability_inclusion,continuation,2025179,Supporting New Yorkers with Disabilities,theme=disability_inclusion; shared_terms=disabilities
+2026210,Streamlining Access to American Sign Language (ASL) Translation,disability_inclusion,new,,,
+2026211,Ensuring Health Equity for New Yorkers with Disabilities,disability_inclusion,continuation,2025179,Supporting New Yorkers with Disabilities,"theme=disability_inclusion; shared_terms=disabilities, yorkers"

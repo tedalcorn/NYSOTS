@@ -6,7 +6,7 @@ from pathlib import Path
 import build_analysis_outputs as bao
 
 
-ROOT = Path("/Users/tedalcorn/Desktop/codex-projects/NYSOTS")
+ROOT = Path(__file__).resolve().parent
 FILES = {
     "2022": ROOT / "2022-enriched-inventory.csv",
     "2023": ROOT / "2023-cleaned-enriched-inventory.csv",

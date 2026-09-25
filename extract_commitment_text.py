@@ -6,7 +6,7 @@ import subprocess
 from pathlib import Path
 
 
-ROOT = Path("/Users/tedalcorn/Desktop/codex-projects/NYSOTS")
+ROOT = Path(__file__).resolve().parent
 SOURCE_ROOT = Path("/Users/tedalcorn/Documents/*Resumes/ -Job Applications/2026 01 Hochul Policy Shop/-SOTS")
 
 YEAR_CONFIGS = {

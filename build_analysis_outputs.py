@@ -6,7 +6,7 @@ from collections import defaultdict
 from pathlib import Path
 
 
-ROOT = Path("/Users/tedalcorn/Desktop/codex-projects/NYSOTS")
+ROOT = Path(__file__).resolve().parent
 INPUT_FILES = {
     "2022": ROOT / "2022-first-pass-inventory.csv",
     "2023": ROOT / "2023-first-pass-inventory.csv",

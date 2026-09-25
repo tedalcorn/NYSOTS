@@ -9,9 +9,7 @@ from pathlib import Path
 SOURCE_PDF = Path(
     "/Users/tedalcorn/Documents/*Resumes/ -Job Applications/2026 01 Hochul Policy Shop/-SOTS/2022StateoftheStateBook.pdf"
 )
-OUTPUT_CSV = Path(
-    "/Users/tedalcorn/Desktop/codex-projects/NYSOTS/2022-first-pass-inventory.csv"
-)
+OUTPUT_CSV = Path(__file__).resolve().parent / "2022-first-pass-inventory.csv"
 
 
 SECTION_MAP = {

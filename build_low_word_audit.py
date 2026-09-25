@@ -4,7 +4,7 @@ import csv
 from pathlib import Path
 
 
-ROOT = Path("/Users/tedalcorn/Desktop/codex-projects/NYSOTS")
+ROOT = Path(__file__).resolve().parent
 INPUTS = [
     ROOT / "2022-enriched-inventory.csv",
     ROOT / "2023-cleaned-enriched-inventory.csv",

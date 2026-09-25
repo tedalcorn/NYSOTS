@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 
 
-ROOT = Path("/Users/tedalcorn/Desktop/codex-projects/NYSOTS")
+ROOT = Path(__file__).resolve().parent
 SITE_ROOT = ROOT / "site"
 DATA_DIR = SITE_ROOT / "data"
 
