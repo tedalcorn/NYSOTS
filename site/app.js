@@ -96,7 +96,12 @@ async function init() {
   const response = await fetch("./data/site-data.json");
   state.data = await response.json();
   const initialId = new URLSearchParams(window.location.search).get("commitment");
-  state.selectedCommitmentId = state.data.commitments.find((item) => item.id === initialId)?.id || state.data.commitments[0]?.id || null;
+  const linkedCommitment = state.data.commitments.find((item) => item.id === initialId);
+  state.selectedCommitmentId = linkedCommitment?.id || state.data.commitments[0]?.id || null;
+  if (linkedCommitment) {
+    state.modalType = "commitment";
+    state.modalOpen = true;
+  }
   state.selectedAgencyName = state.data.agencies[0]?.name || null;
   renderHeaderStats();
   renderSiteNote();
