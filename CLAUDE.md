@@ -16,7 +16,7 @@ Composition analysis (`crosswalks/build_composition.py`):
 - Outputs `composition-by-domain.csv` (share of items and share of words per domain per year) and `agenda-character-by-year.csv` (new vs continuation, quantification, dollar figures, median length).
 - Accuracy: ~10% unclassified, and spot-checks still find occasional wrong-bucket calls. Good for direction of travel on large moves; do NOT quote single-year shares to a decimal as fact. An LLM classification pass over the 997 items is the real fix.
 
-Fixes 2026-10-17 (local; not yet committed or pushed):
+Fixes 2026-10-17 (commit fa7734f, pushed and verified live):
 - `build_analysis_outputs.py`: HEADERISH_2023 had listed five real 2023 Section II mental health commitments as headers
   (added in adc949e "drop header rows"), so the 2023 inventory lacked insurance coverage, school-age services,
   admissions/discharge and outpatient items and held only bullet stubs for the rest. Restored: 2023 corpus 133 -> 137.
@@ -25,4 +25,4 @@ Fixes 2026-10-17 (local; not yet committed or pushed):
   as bullets); (b) the footnote stripper no longer deletes digits after a decimal point ("$1.2 billion" had become
   "$1. billion" in 44 places); the "$1. Billion" title override was removed.
 - Pipeline order: build_analysis_outputs.py -> extract_commitment_text.py -> rerun_text_inference.py -> build_site_data.py
-  -> cp site/data/site-data.json docs/data/ (docs/ NOT yet updated).
+  -> cp site/data/site-data.json docs/data/
