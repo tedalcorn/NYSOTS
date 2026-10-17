@@ -35,12 +35,9 @@ HEADERISH_2023 = {
     "EQUITABLE CHILD CARE SYSTEM",
     "TRANSPORTATION SAFETY, EQUITY, AND EFFICIENCY",
     "GOVERNMENT: THE CUSTOMER EXPERIENCE",
-    "Expand Insurance Coverage for Mental Health Services",
-    "Expand Mental Health Services for School-Aged Children",
-    "Increase Operational Capacity for Inpatient Psychiatric Treatment by 1,000 Beds",
-    "Improve Admissions and Discharge Planning and Establish Systemic Accountability",
-    "Dramatically Expand Outpatient Services",
 }
+# 10/17/26: commit adc949e had listed the five 2023 mental health chapter items above as headers; they are real
+# commitments (2023 book pp.55-64), so they were restored.
 
 TITLE_FIXES_2022 = {
     "Deliver the LIRR Third Track Project Under Budget and On-Schedule by the End of 2022 New Transportation and Infrastructure Priorities": "Deliver the LIRR Third Track Project Under Budget and On-Schedule by the End of 2022",

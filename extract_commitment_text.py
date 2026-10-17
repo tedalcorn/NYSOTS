@@ -38,7 +38,6 @@ YEAR_CONFIGS = {
 }
 
 TITLE_MATCH_OVERRIDES = {
-    "Accelerate $1.2 Billion in Middle-Class Tax Cuts for 6 Million New Yorkers": "Accelerate $1. Billion in Middle-Class Tax Cuts for 6 Million New Yorkers",
     "Automatically Admit Top Students to SUNY and CUNY Campuses": "Automatically Admit High Achieving Students from Top 10 Percent of High School Classes to SUNY and CUNY Campuses",
     "Build First-Rate Digital and Design Teams": "Building First-Rate Digital and Design Teams",
     "Increase Transitional Housing for Individuals Referred Through Court System": "Increase Transitional Housing for Individuals Referred Through the Court System",
@@ -81,7 +80,8 @@ def normalize_quotes(text):
 
 def strip_footnote_markers(text):
     text = re.sub(r"(?<=[A-Za-z%])\d{1,3}(?=[\s\.,;:])", "", text)
-    text = re.sub(r"(?<=[\.\)])\d{1,3}(?=\s)", "", text)
+    # a footnote number after a sentence-ending period or paren; not a decimal ("$1.2 billion"), fixed 10/17/26
+    text = re.sub(r"(?<=[^\d\s][\.\)])\d{1,3}(?=\s)", "", text)
     return normalize_space(text)
 
 
@@ -149,12 +149,12 @@ def page_blocks(pdf_path, body_start):
             if current:
                 text_block = strip_footnote_markers(" ".join(current))
                 if text_block:
-                    blocks.append({"page": page_number, "text": text_block, "match": normalize_for_match(text_block), "is_heading": looks_like_heading(text_block)})
+                    blocks.append({"page": page_number, "text": text_block, "match": normalize_for_match(text_block), "is_heading": looks_like_heading(text_block), "is_bullet": text_block.lstrip().startswith(("•", "-"))})
                 current = []
         if current:
             text_block = strip_footnote_markers(" ".join(current))
             if text_block:
-                blocks.append({"page": page_number, "text": text_block, "match": normalize_for_match(text_block), "is_heading": looks_like_heading(text_block)})
+                blocks.append({"page": page_number, "text": text_block, "match": normalize_for_match(text_block), "is_heading": looks_like_heading(text_block), "is_bullet": text_block.lstrip().startswith(("•", "-"))})
     return blocks
 
 
@@ -221,6 +221,9 @@ def attach_text(rows, blocks):
         confidence = ""
         for idx in range(cursor, len(blocks)):
             block_norm = blocks[idx]["match"]
+            # a chapter's opening bullet list repeats item titles; the item itself starts at a heading, not a bullet
+            if blocks[idx]["is_bullet"]:
+                continue
             if is_match(title_norm, block_norm):
                 found = idx
                 confidence = "high"
@@ -228,6 +231,8 @@ def attach_text(rows, blocks):
         if found is None:
             for idx in range(cursor, len(blocks)):
                 block_norm = blocks[idx]["match"]
+                if blocks[idx]["is_bullet"]:
+                    continue
                 if is_soft_match(title_norm, block_norm):
                     found = idx
                     confidence = "medium"
